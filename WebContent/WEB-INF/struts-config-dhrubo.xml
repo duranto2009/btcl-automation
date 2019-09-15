@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+<!-- <!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts 
+	Configuration 1.3//EN" "struts-config_1_3.dtd"> -->
+<struts-config>
+	<!-- ======================================== Form Bean Definitions -->
+	<form-beans>
+<!-- 		DNS Management -->
+		<form-bean name="loginForm" type="login.LoginForm" />
+<!-- 		Update Distance -->
+		<form-bean name="upazilaDistanceDTO" type="distance.form.UpazilaDistanceDTO" />
+		<form-bean name="districtOfcInstallationDTO" type="vpn.ofcinstallation.DistrictOfcInstallationDTO" />
+		
+<!-- 		Colocation -->
+		<!--<form-bean name="colocationDTO" type="coLocation.ColocationDTO" />-->
+		<!--<form-bean name="colocationCostConfigDTO" type="coLocation.cost.ColocationCostConfigDTO" />-->
+		
+<!-- 		VPN Link Shift -->
+		<form-bean name="vpnLinkShiftForm" type="vpn.link.VpnLinkShiftDTO" />
+		
+		<form-bean name="lliLinkShiftForm" type="lli.link.LliLinkShiftDTO" />
+		
+		<!-- VPN Link Bandwidth Change -->
+		<form-bean name="vpnLinkBandwidthChangeForm" type="vpn.link.VpnBandWidthChangeRequestDTO" />
+
+	</form-beans>
+
+	<!-- =================================== Action Mapping Definitions -->
+	<action-mappings>
+<!-- 		DNS -->
+		<action path="/AddNewDNS" type="dns.domain.AddNewDNSAction" name="loginForm" input="dnsdomin/add_dns/dnsAdd.jsp">
+			<forward name="add_dns_success" path="/dnsdomain/add_dns/dnsAdd.jsp" />
+		</action>
+		<action path="/SearchDNS" type="dns.domain.SearchDNSAction" name="loginForm" >
+			<forward name="search_dns_success" path="/dnsdomain/search_dns/dnsSearch.jsp" />
+		</action>
+		<action path="/UpdateDNS" type="dns.domain.UpdateDNSAction" name="loginForm" input="dnsdomin/search_dns/dnsSearch.jsp">
+			<forward name="update_dns_success" path="/dnsdomain/update_dns/dnsUpdate.jsp" />
+		</action>
+		<action path="/UpdateExistingDNS" type="dns.domain.UpdateExistingDNSAction" name="loginForm" input="dnsdomin/search_dns/dnsSearch.jsp">
+			<forward name="update_existing_dns_success" path="/SearchDNS.do" redirect="true"/>
+		</action>
+		<action path="/DeleteDNSMultiple" type="dns.domain.DeleteDNSMultipleAction" name="loginForm" input="dnsdomin/search_dns/dnsSearch.jsp">
+			<forward name="delete_multiple_dns_success" path="/SearchDNS.do" redirect="true"/>
+		</action>
+		<action path="/GetDNSForView" type="dns.domain.GetDNSForViewAction" name="loginForm" input="dnsdomin/search_dns/dnsSearch.jsp">
+			<forward name="get_dns_success" path="/dnsdomain/view_dns/dnsView.jsp" />
+		</action>
+		
+		<action path="/VerifyDNSDomainWithAjax" type="dns.domain.VerifyDNSDomainWithAjax" name="loginForm" input="dnsdomin/add_dns/dnsSearch.jsp">
+		</action>
+		
+		
+<!-- 		Update Distance -->
+		
+		<action path="/Distance/*" type="distance.action.UpdateDistanceAction" name="upazilaDistanceDTO" input="distance/updateUpazilaDistance.jsp">
+			<forward name="GetUpdateDistrictPage" path="/distance/updateDistrictDistance.jsp"/>
+			<forward name="GetUpdateUpazilaPage" path="/distance/updateUpazilaDistance.jsp"/>
+			<forward name="GetUpdateUnionPage" path="/distance/updateUnionDistance.jsp"/>
+			
+			<forward name="NoPermission" path="/" redirect="true" />			
+		</action>
+		
+		<action path="/DistrictOfcInstallation/*" type="vpn.ofcinstallation.DistrictOfcInstallationAction" name="districtOfcInstallationDTO" input="ofcinstallation/districtOfcInstallationCost.jsp">
+			<forward name="GetUpdateDistrictOfcInstallationCost" path="/ofcinstallation/districtOfcInstallationCost.jsp"/>
+		</action>
+		
+		
+<!-- 		Client Details Copy	 -->
+		<action path="/GetClientFormData" type="vpn.client.GetClientFormData" scope="request">
+		</action>
+		
+<!-- 		Dashboard Count with Ajax	 -->
+		<action path="/GetDashboardCounts" type="dashboard.util.GetDashboardCountAction" scope="request"></action>
+		
+<!-- 		Update Migrated Client	 -->
+		<action path="/MigratedClientUpdate" parameter="method" type="vpn.client.MigratedClientUpdateAction" scope="request">
+			<forward name="successVpn" path="/vpn/client/migratedClientUpdate.jsp"/>
+			<forward name="successLli" path="/lli/client/migratedClientUpdate.jsp"/>
+		</action>
+		
+<!-- 		Report Template	 -->
+		<action path="/ReportTemplate" type="report.ReportTemplateAction" scope="request"></action>
+		<action path="/ReportTemplateSearch" type="report.ReportTemplateSearchAction" scope="request"></action>
+		
+<!-- 		Colocation -->
+		<action path="/ColocationAdd" type="coLocation.colocation.ColocationAddAction" scope="request" name="colocationDTO" >
+			<forward name="getAddColocationSuccess" path="/coLocation/colocation/colocationAdd.jsp"/>
+			<forward name="postAddColocationSuccess" path="/coLocation/colocation/colocationAdd.jsp"/>
+		</action>
+		<action path="/ColocationEdit" type="coLocation.colocation.ColocationEditAction" scope="request" name="colocationDTO" >
+			<forward name="getEditColocationSuccess" path="/coLocation/colocation/colocationEdit.jsp"/>
+			<forward name="postEditColocationSuccess" path="/ColocationView.do" redirect="true"/>
+		</action>
+		<action path="/ColocationView" type="coLocation.colocation.ColocationViewAction" scope="request" name="colocationDTO" >
+			<forward name="getViewColocationSuccess" path="/coLocation/colocation/colocationView.jsp"/>
+			<forward name="postViewColocationSuccess" path="/coLocation/colocation/colocationView.jsp"/>
+		</action>
+		<action path="/ColocationSearch" type="coLocation.colocation.ColocationSearchAction" scope="request" name="colocationDTO" >
+			<forward name="searchColocationSuccess" path="/coLocation/colocation/colocationSearch.jsp"/>
+		</action>
+		<action path="/ColocationCostConfigure" type="coLocation.colocation.ColocationCostConfigureAction" scope="request" name="colocationCostConfigDTO" >
+			<forward name="getConfigureColocationCostSuccess" path="/coLocation/colocation/colocationCostConfigure.jsp"/>
+			<forward name="postConfigureColocationCostSuccess" path="/coLocation/colocation/colocationCostConfigure.jsp"/>
+		</action>
+		<action path="/ColocationInternalFR" type="coLocation.colocation.ColocationInternalFRAction" scope="request" name="colocationDTO">
+			<forward name="getInternalFRColocationSuccess" path="/coLocation/colocation/colocationInternalFR.jsp"/>
+			<forward name="postInternalFRColocationSuccess" path="/coLocation/colocation/colocationInternalFR.jsp"/>
+		</action>
+		
+		
+		<!-- LLI -->
+		<action path="/LliAutocomplete" type="lli.link.action.LliAutocompleteAction"></action>
+		<action path="/VpnAjax" type="vpn.link.action.VpnAjaxAction"></action>
+		
+		<!-- VPN Link Shift -->
+		<action name="vpnLinkShiftForm" input="/vpn/link/linkShift.jsp" path="/VpnLinkShift" scope="request" type="vpn.link.action.VpnLinkAction">
+			<forward name="success" path="/vpn/link/linkShift.jsp"/>
+		</action>
+		
+		<!-- Inventory Item View -->
+		<action path="/ViewInventory" type="inventory.action.ViewInventoryItemAction">
+			<forward name="success" path="/vpn/inventory/viewInventoryItem.jsp"/>
+		</action>
+		
+		
+		
+		
+		<!-- Domain Renew -->
+		<action path = "/DomainRenew" type="domain.request.DomainRenewAction" parameter ="method">
+			<forward name="preview" path="/domain/renewDomain/renewDomainPreview.jsp"/>
+		</action>
+		
+		<!-- LLI Link IP Address -->
+		<action path = "/LliLinkIpaddress/*" type="lli.link.request.ipaddress.LliLinkIpaddressAction">
+			<forward name="new" path="/lli/link/lliLinkIpaddressNewRequest.jsp"/>
+<!-- 			<forward name="submit" path="/LliLinkIpaddress/preview.do" redirect="true"/> -->
+			<forward name="preview" path="/lli/link/lliLinkIpaddressPreviewRequest.jsp"/>
+			<forward name="responseInternalFR" path="/lli/link/lliLinkIpaddressResponseInternalFR.jsp"/>
+		</action>
+		<!-- LLI Ajax API -->
+		<action path="/LliAjax" type="lli.link.action.LliAjaxAction"></action>
+		
+		<!-- Client Ajax API -->
+		<action path="/ClientType/*" type="client.ClientTypeAction"></action>
+		
+
+		<!-- =============================== DOMAIN =============================== -->
+		 
+			
+		<!-- =============================== VPN =============================== -->
+		 
+		<!-- === Link === -->
+		<!-- Add -->
+		<action path="/VPN/Link/Add" type = "org.apache.struts.actions.ForwardAction" parameter="/vpn/link/newLinkRequest.jsp"></action>
+		<!-- Update -->
+		<action path="/VPN/Link/Update/*" type = "vpn.link.action.VpnLinkUpdateAction">
+			<forward name="getUpdateLink" path="/vpn/link/updateLinkAfterActivation.jsp"/>
+		</action>
+		<!-- Shift -->
+		<action path="/VPN/Link/Shift/*" type="vpn.link.action.VpnLinkShiftAction">
+			<forward name="preview" path="/vpn/link/vpnLinkShiftPreview.jsp"/>
+			<forward name="add" path="/vpn/link/linkShift.jsp"/>
+		</action>
+		<!-- Bandwidth Change -->
+		<action path="/VpnBandwidthChange/*" type="vpn.link.action.VpnBandwidthChangeAction">
+			<forward name="new" path="/vpn/link/bandwidthChange.jsp"/>
+			<forward name="preview" path="/vpn/link/bandwidthChangePreview.jsp"/>
+			<forward name="submit" path="/vpn/link/bandwidthChange.jsp"/>
+		</action>
+		
+		<action path="/LliBandwidthChange/*" type="lli.link.action.LliBandwidthChangeAction">
+			<forward name="new" path="/lli/link/bandwidthChange.jsp"/>
+			<forward name="preview" path="/lli/link/bandwidthChangePreview.jsp"/>
+			<forward name="submit" path="/lli/link/bandwidthChange.jsp"/>
+		</action>
+		
+		<!-- Shift -->
+		<action path="/LLI/Link/Shift/*" type="lli.link.action.LliLinkShiftAction">
+			<forward name="preview" path="/lli/link/lliLinkShiftPreview.jsp"/>
+			<forward name="add" path="/lli/link/linkShift.jsp"/>
+		</action>
+		
+		<!-- =============================== LLI =============================== -->
+		
+ 		<action path="/LLI/Client/Add" type = "org.apache.struts.actions.ForwardAction"	parameter="/client/client/clientAdd.jsp?moduleID=7"></action>
+		<action path="/LLI/Connection/Add" type = "org.apache.struts.actions.ForwardAction"	parameter="/lli/link/newLinkRequest.jsp"></action>
+		
+		<action path="/LLI/Link/Update/*" type = "lli.link.action.LliLinkUpdateAction">
+			<forward name="getUpdateLink" path="/lli/link/updateLinkAfterActivation.jsp"/>
+		</action>
+		
+		<action path="/LLI/Instruction/*" type = "lli.instruction.LliInstructionAction">
+			<forward name="payment" path="/lli/instruction/payment.jsp"/>
+		</action>
+		
+		
+	</action-mappings>
+
+	<!-- ================================ Message Resources Definitions ============= -->
+	<message-resources parameter="BTCLBilling" />
+
+</struts-config>

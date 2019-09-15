@@ -1,0 +1,67 @@
+batchmigration - done
+clientmodule - done
+clients - done
+configuration - done
+dslm - done
+exchange - done
+include - done
+	batchmigration - done
+	clients - done
+	clientstatus - done
+	dslm - done
+	exchange - done
+	mdf - done
+	migration - done
+	operator - done
+	operatorcommission - done
+	othcharge - done
+	prepaidpayment - done
+	recharge - done
+	region - done
+mdf - done
+operatorcommission - done
+othercharge - done
+prepaidpayment - done
+recharge - done
+region - done
+user - done
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

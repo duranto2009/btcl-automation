@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+<struts-config>
+    <form-beans>
+        <form-bean name="report" type="login.LoginForm"/>
+    </form-beans>
+    <action-mappings>
+        <action path="report/**" type="reportnew.ReportAction" name="report">
+            <forward name="report-application" path="/report/application/report.jsp"/>
+            <forward name="report-connection" path="/report/connection/report.jsp"/>
+            <forward name="report-client" path="/report/client/report.jsp"/>
+            <forward name="report-bill" path="/report/bill/report.jsp"/>
+            <forward name="report-payment" path="/report/payment/report.jsp"/>
+        </action>
+    </action-mappings>
+</struts-config>

@@ -1,0 +1,675 @@
+///////////////////////////////////////////
+CREATE TABLE `ip_region` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `created_by` varchar(255) DEFAULT NULL,
+  `created_date` bigint(20) DEFAULT NULL,
+  `last_modified_by` varchar(255) DEFAULT NULL,
+  `last_modified_date` bigint(20) DEFAULT NULL,
+  `availability` bit(1) DEFAULT NULL,
+  `name_bn` varchar(255) DEFAULT NULL,
+  `name_en` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6002 DEFAULT CHARSET=latin1;
+
+INSERT IGNORE INTO `vbsequencer` (table_name, next_id, table_LastModificationTime) VALUES ('ip_region', 1, 0);
+
+////////////////////////////////////////////
+
+CREATE TABLE `ip_region_vs_district` (
+  `id`  bigint(20) NOT NULL AUTO_INCREMENT,
+  `region_id` bigint(20) NOT NULL,
+  `district_id` bigint(20) NOT NULL,
+  `isDeleted` tinyint(1) DEFAULT NULL,
+   PRIMARY KEY (`id`),
+   CONSTRAINT FOREIGN KEY (`region_id`) REFERENCES `ip_region` (`id`),
+   CONSTRAINT FOREIGN KEY (`district_id`) REFERENCES `geo_district` (`id`)
+)  ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT IGNORE INTO `vbsequencer` (table_name, next_id, table_LastModificationTime) VALUES ('ip_region_vs_district', 1, 0);
+/////////////////////////////////////////////
+
+
+21/11/18 change
+
+*****billing address change******
+
+/*...billing address change flow state...*/
+
+create table at_lli_new_billing_address_application
+(
+
+   id                       bigint                  not null primary key,
+  clientID                    bigint                      not null,
+  applicationID           bigint                      not null,
+  firstName                  varchar(200) charset latin1 null,
+  lastName              varchar(100) charset latin1 null,
+  address               text                        null,
+  city                  varchar(100) charset latin1 null,
+  postCode              varchar(20) charset latin1  null,
+  email                 varchar(200) charset latin1 null,
+  faxNumber             varchar(500) charset latin1 null,
+  mobileNumber           varchar(100) charset latin1 null,
+  telephoneNumber           varchar(100) charset latin1 null,
+  suggestedDate      bigint                      not null
+)
+  charset = utf8;
+
+INSERT IGNORE INTO `vbSequencer` (table_name, next_id, table_LastModificationTime) VALUES ('at_lli_new_billing_address_application', 1, 0);
+
+
+INSERT INTO flow_state (name, flow, description, color, view_description) VALUES ('BILLING_ADDRESS_CHANGE_SUBMIT', (SELECT id FROM flow WHERE name = 'Billing Address Change'), 'Billing Address Change Submitted', '#f99a2f', 'Billing Address Change Submitted');
+INSERT INTO flow_state (name, flow, description, color, view_description) VALUES ('BILLING_ADDRESS_CHANGE_APPROVE', (SELECT id FROM flow WHERE name = 'Billing Address Change'), 'Billing Address Change Approved', '#f99a2f', 'Billing Address Change Approved');
+INSERT INTO flow_state (name, flow, description, color, view_description) VALUES ('BILLING_ADDRESS_CHANGE_APPROVE', (SELECT id FROM flow WHERE name = 'Billing Address Change'), 'Billing Address Change Approved', '#f99a2f', 'Billing Address Change Reject');
+
+
+
+
+/*...billing address change flow state transition...*/
+
+insert into flow_state_transition (source, destination) values ((select id from flow_state where name = 'BILLING_ADDRESS_CHANGE_SUBMIT'), (select id from flow_state where name = 'APPROVED'));
+
+insert into flow_state_transition (source, destination) values ((select id from flow_state where name = 'BILLING_ADDRESS_CHANGE_SUBMIT'), (select id from flow_state where name = 'REJECTED'));
+
+
+
+/*...billing address change flow state transition role...*/
+
+insert into flow_state_transition_role (flow_state_transition, role) VALUES ((select id from flow_state_transition where source = (select id from flow_state where name = 'BILLING_ADDRESS_CHANGE_SUBMIT') and destination = (select id from flow_state where name = 'REJECTED')), (select rlRoleID from adrole where rlRoleName = 'CDGM'));
+
+insert into flow_state_transition_role (flow_state_transition, role) VALUES ((select id from flow_state_transition where source = (select id from flow_state where name = 'BILLING_ADDRESS_CHANGE_SUBMIT') and destination = (select id from flow_state where name = 'APPROVED')), (select rlRoleID from adrole where rlRoleName = 'CDGM'));
+
+
+*****billing address change end*****
+
+
+*****Additional IP*****
+26/11/018
+
+create table at_lli_additional_ip
+(
+
+   id                    bigint                  not null primary key,
+  applicationID          bigint                  not null,
+  connectionID           bigint                  not null,
+  ipCount                int                     not null,
+  suggestedDate          bigint                  not null
+)
+  charset = utf8;
+
+INSERT IGNORE INTO `vbsequencer` (table_name, next_id, table_LastModificationTime) VALUES ('at_lli_additional_ip', 1, 0);
+
+*****Additional Ip End*****
+
+*****Additional Port****
+27/11/018
+
+create table at_lli_additional_port
+(
+
+   id                    bigint                  not null primary key,
+  applicationID          bigint                  not null,
+  connectionID           bigint                  not null,
+  portCount                int                     not null,
+  suggestedDate          bigint                  not null
+)
+  charset = utf8;
+
+INSERT IGNORE INTO `vbSequencer` (table_name, next_id, table_LastModificationTime) VALUES ('at_lli_additional_port', 1, 0);
+
+*****Additonal Port****
+
+
+
+********port ip change log*******
+5/12/018
+
+CREATE TABLE `at_ip_port_activity_log` (
+  `id` bigint(20) NOT NULL,
+  `updatedBy` bigint(20) NOT NULL,
+  `connectionId` bigint(20) NOT NULL,
+  `clientId` bigint(20) NOT NULL,
+  `newInfo` varchar(200) NOT NULL,
+  `previousInfo` varchar(200) NOT NULL,
+  `lastModificationTime` bigint(20) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+INSERT IGNORE INTO `vbSequencer` (table_name, next_id, table_LastModificationTime) VALUES ('at_ip_port_activity_log', 1, 0);
+
+********* port ip chagne log*****
+******NIX tables*******
+-----NIX FLow----
+-- flow state
+
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5001, 'NIX_APPLICATION_SUBMIT', 501, 'Nix application submitted', '#008000', 'Nix application submited');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5002, 'NIX_APPLICATION_REJECT', 501, 'Nix application rejected', '#008000', 'Nix application rejected');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5003, 'NIX_APPLICATION_REOPEN', 501, 'Nix application reopened', '#008000', 'Nix application reopened');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5004, 'NIX_APPLICATION_CORRECTION', 501, 'Nix application correction', '#008000', 'Nix application correction');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5005, 'NIX_APPLICATION_CORRECTION_DONE', 501, 'Nix application correction done', '#008000', 'Nix application correction done');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5006, 'NIX_APPLICATION_IFR', 501, 'Nix application ifr requested', '#008000', 'Nix application ifr requested');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5007, 'NIX_APPLICATION_IFR_RESPONDED', 501, 'Nix application ifr responded', '#008000', 'Nix application ifr responded');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5008, 'NIX_APPLICATION_EFR', 501, 'Nix application efr requested', '#008000', 'Nix application efr requested');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5009, 'NIX_APPLICATION_EFR_RESPONDED', 501, 'Nix application responded', '#008000', 'Nix application responded');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5010, 'NIX_APPLICATION_DEMAND_NOTE_GENERATED', 501, 'Nix application demand note generated', '#008000', 'Nix application demand note generated');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5011, 'NIX_APPLICATION_PAYMENT_DONE', 501, 'Nix application payment done', '#008000', 'Nix application payment done');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5012, 'NIX_APPLICATION_PAYMENT_VERIFIED', 501, 'Nix application payment verified', '#008000', 'Nix application payment verified');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5013, 'NIX_APPLICATION_WORK_ORDER_GENERATED', 501, 'Nix application work order generated ', '#008000', 'Nix application work order generated');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5014, 'NIX_APPLICATION_WORK_DONE', 501, 'Nix application work done ', '#008000', 'Nix application work done');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5015, 'NIX_APPLICATION_PUBLISH_ADVICE_NOTE', 501, 'Nix application advice note published', '#008000', 'Nix application advice note published');
+
+
+--flow state transition
+
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5001, 5001, 5002, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5002, 5002, 5003, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5003, 5001, 5006, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5004, 5001, 5004, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5005, 5003, 5006, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5006, 5004, 5005, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5007, 5005, 5006, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5008, 5006, 5007, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5009, 5007, 5008, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5010, 5008, 5009, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5011, 5009, 5010, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5012, 5010, 5011, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5013, 5011, 5012, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5014, 5012, 5013, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5015, 5013, 5014, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5016, 5014, 5015, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5017, 5007, 5010, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5018, 5012, 5015, 'NULL');
+--INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5018, 5005, 5004, 'NULL')
+
+
+ --flow state transition role
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5001, 5001, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5002, 5002, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5003, 5003, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5004, 5004, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5005, 5005, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5006, 5006, -1);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5007, 5007, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5008, 5008, 16021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5009, 5009, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5010, 5010, 16020);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5011, 5011, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5012, 5012, -1);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5013, 5013, 6020);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5014, 5014, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5015, 5015, 16020);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5016, 5016, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5017, 5017, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5018, 5018, 22021);
+
+
+-----NIX FLow END----
+
+CREATE TABLE `nix_application` (
+	`id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+	`client` BIGINT(20) NOT NULL DEFAULT '0',
+	`type` INT(11) NOT NULL DEFAULT '0',
+	`state` INT(11) NOT NULL DEFAULT '0',
+	`demand_note` BIGINT(20) NOT NULL DEFAULT '0',
+	`skip_demand_note` INT(11) NOT NULL DEFAULT '0',
+	`loop_provider` INT(11) NOT NULL DEFAULT '0',
+	`zone` BIGINT(20) NOT NULL DEFAULT '0',
+	`submission_date` BIGINT(20) NOT NULL DEFAULT '0',
+	`suggested_date` BIGINT(20) NOT NULL DEFAULT '0',
+	`rejection_comment` VARCHAR(255) NULL DEFAULT NULL,
+	`skip_payment` INT(11) NOT NULL DEFAULT '0',
+	`created` BIGINT(20) NOT NULL DEFAULT '0',
+	`modified` BIGINT(20) NOT NULL DEFAULT '0',
+	`port_count` INT(11) NULL DEFAULT '0',
+	`port_type` INT(11) NULL DEFAULT '0',
+	`is_forwarded` INT(11) NULL DEFAULT '0',
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=2
+;
+INSERT IGNORE INTO `vbSequencer` (table_name, next_id, table_LastModificationTime) VALUES ('nix_application', 1, 0);
+
+
+CREATE TABLE `nix_application_local_loop` (
+	`id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+	`office_id` BIGINT(20) NOT NULL DEFAULT '0',
+	`ofc_type` INT(11) NOT NULL DEFAULT '0',
+	`pop_id` BIGINT(20) NOT NULL DEFAULT '0',
+	`vlan_id` BIGINT(20) NOT NULL DEFAULT '0',
+	`router_switch_id` BIGINT(20) NOT NULL DEFAULT '0',
+	`port_id` BIGINT(20) NOT NULL DEFAULT '0',
+	`port_type` INT(11) NOT NULL DEFAULT '0',
+	`client_distance` INT(11) NOT NULL DEFAULT '0',
+	`btcl_distance` INT(11) NOT NULL DEFAULT '0',
+	`ocd_distance` INT(11) NOT NULL DEFAULT '0',
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=2
+;
+INSERT IGNORE INTO `vbSequencer` (table_name, next_id, table_LastModificationTime) VALUES ('nix_application_local_loop', 1, 0);
+
+
+CREATE TABLE `nix_application_office` (
+	`id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(127) NULL DEFAULT NULL,
+	`address` VARCHAR(1023) NULL DEFAULT NULL,
+	`application` BIGINT(20) NOT NULL DEFAULT '0',
+	`history` BIGINT(20) NOT NULL DEFAULT '0',
+	`created` BIGINT(20) NOT NULL DEFAULT '0',
+	`modified` BIGINT(20) NOT NULL DEFAULT '0',
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=3
+;
+INSERT IGNORE INTO `vbSequencer` (table_name, next_id, table_LastModificationTime) VALUES ('nix_application_office', 1, 0);
+
+CREATE TABLE `nix_connection` (
+	`id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+	`application_id` BIGINT(20) NOT NULL DEFAULT '0',
+	`status` INT(11) NOT NULL DEFAULT '0',
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+INSERT IGNORE INTO `vbSequencer` (table_name, next_id, table_LastModificationTime) VALUES ('nix_connection', 1, 0);
+
+CREATE TABLE `nix_efr` (
+	`id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+	`application` BIGINT(20) NOT NULL DEFAULT '0',
+	`source` VARCHAR(1023) NULL DEFAULT NULL,
+	`source_type` INT(11) NOT NULL DEFAULT '0',
+	`destination` VARCHAR(1023) NULL DEFAULT NULL,
+	`destination_type` INT(11) NOT NULL DEFAULT '0',
+	`vendor` BIGINT(20) NOT NULL DEFAULT '0',
+	`vendor_type` INT(11) NOT NULL DEFAULT '0',
+	`work_given` INT(11) NOT NULL DEFAULT '0',
+	`work_completed` INT(11) NOT NULL DEFAULT '0',
+	`deadline` BIGINT(20) NOT NULL DEFAULT '0',
+	`proposed_loop_distance` DOUBLE NOT NULL DEFAULT '0',
+	`actual_loop_distance` DOUBLE NOT NULL DEFAULT '0',
+	`loop_distance_approved` DOUBLE NOT NULL DEFAULT '0',
+	`pop` BIGINT(20) NOT NULL DEFAULT '0',
+	`ofc_type` INT(11) NOT NULL DEFAULT '0',
+	`created` BIGINT(20) NOT NULL DEFAULT '0',
+	`modified` BIGINT(20) NOT NULL DEFAULT '0',
+	`is_forwarded` INT(11) NULL DEFAULT '0',
+	`office` BIGINT(20) NULL DEFAULT '0',
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=2
+;
+INSERT IGNORE INTO `vbSequencer` (table_name, next_id, table_LastModificationTime) VALUES ('nix_efr', 1, 0);
+
+
+CREATE TABLE `nix_ifr` (
+	`id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+	`application` BIGINT(20) NOT NULL DEFAULT '0',
+	`office` BIGINT(20) NOT NULL DEFAULT '0',
+	`pop` BIGINT(20) NOT NULL DEFAULT '0',
+	`replied` INT(11) NOT NULL DEFAULT '0',
+	`selected` INT(11) NOT NULL DEFAULT '0',
+	`ignored` INT(11) NOT NULL DEFAULT '0',
+	`submission_date` BIGINT(20) NOT NULL DEFAULT '0',
+	`created` BIGINT(20) NOT NULL DEFAULT '0',
+	`modified` BIGINT(20) NOT NULL DEFAULT '0',
+	`is_forwarded` INT(11) NULL DEFAULT '0',
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=2002
+;
+
+INSERT IGNORE INTO `vbSequencer` (table_name, next_id, table_LastModificationTime) VALUES ('nix_ifr', 1, 0);
+
+CREATE TABLE `nix_local_loop` (
+	`id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+	`application_local_loop` BIGINT(20) NOT NULL DEFAULT '0',
+	`connection` BIGINT(20) NOT NULL DEFAULT '0',
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+INSERT IGNORE INTO `vbSequencer` (table_name, next_id, table_LastModificationTime) VALUES ('nix_local_loop', 1, 0);
+
+CREATE TABLE `nix_office` (
+	`id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+	`application` BIGINT(20) NOT NULL DEFAULT '0',
+	`connection` BIGINT(20) NOT NULL DEFAULT '0',
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+INSERT IGNORE INTO `vbSequencer` (table_name, next_id, table_LastModificationTime) VALUES ('nix_office', 1, 0);
+
+
+18/12/2018
+demandnote of nix
+
+CREATE TABLE `nix_demand_note` (
+	`id` BIGINT(20) NOT NULL,
+	`security_money` DOUBLE NULL DEFAULT '0',
+	`registration_charge` DOUBLE NULL DEFAULT '0',
+	`fiber_charge` DOUBLE NULL DEFAULT '0',
+	`local_loop_charge` DOUBLE NULL DEFAULT '0',
+	`advance_adjustment` DOUBLE NULL DEFAULT '0',
+	`lli_nc_dn_parent_bill_id` BIGINT(20) NULL DEFAULT '0',
+	`port_charge` DOUBLE NULL DEFAULT '0',
+	`port_upgrade_charge` DOUBLE NULL DEFAULT '0',
+	`port_downgrade_charge` DOUBLE NULL DEFAULT '0',
+	`instant_degradation_charge` DOUBLE NULL DEFAULT '0',
+	`closing_charge` DOUBLE NULL DEFAULT '0',
+	`reconnect_charge` DOUBLE NULL DEFAULT '0',
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+
+
+INSERT IGNORE INTO `vbSequencer` (table_name, next_id, table_LastModificationTime) VALUES ('nix_demand_note', 1, 0);
+
+----19/12/018----
+------Flow addition for server room test and complete------
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5016, 'SERVER_ROOM_TESTING_AND_COMPLETE', 501, 'Server room test and complete', '#008000', 'Server room test and complete ');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5019, 5015, 5016, 'NULL')
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5019, 5019, 16021);
+-----Flow addition for server room test and complete-----
+
+-----when loop provider client----
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5024, 'WITHOUT_LOOP_IFR_RESPONDED', 501, 'Without loop ifr responded', '#008000', 'without loop ifr responded');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5025, 'WITHOUT_LOOP_DEMAND_NOTE_GENERATED', 501, 'Without loop demand note generated', '#008000', 'without loop demand note generated');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5026, 'WITHOUT_LOOP_PAYMENT_DONE', 501, 'Without loop payment done', '#008000', 'Without loop payment done');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5027, 'WITHOUT_LOOP_PAYMENT_VERIFIED', 501, 'Without loop payment verified', '#008000', 'Without loop payment verified');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5028, 'WITHOUT_LOOP_PUBLISH_ADVICE_NOTE', 501, 'Without loop advice note published', '#008000', 'Without loop advice note published');
+
+--INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5017, 'NIX_APPLICATION_FORWARD_ADVICE_NOTE', 501, 'Nix application advice note forwarded', '#008000', 'Nix application advice note forwarded');
+
+
+--flow state transition
+
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5024, 5024, 5025, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5025, 5025, 5026, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5026, 5026, 5027, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5027, 5027, 5028, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5028, 5028, 5016, 'NULL');
+
+
+ --flow state transition role
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5024, 5024, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5025, 5025, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5026, 5026, -1);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5027, 5027, 6020);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5028, 5028, 22021);
+
+--loop provider client end---
+
+
+27/12/018
+ALTER TABLE `nix_office` ADD COLUMN `name` varchar(200) NOT NULL;
+ALTER TABLE `nix_application` ADD COLUMN `connection` BIGINT NOT NULL;
+
+ALTER TABLE `nix_connection` ADD COLUMN `name` varchar(200) NOT NULL;
+
+31/12/018
+
+CREATE TABLE `nix_upgrade_application` (
+	`id` BIGINT(20) NOT NULL,
+	`parent_application` BIGINT(20) NULL DEFAULT '0',
+	`office_id` BIGINT(20) NULL DEFAULT '0',
+	`old_port_id` BIGINT(20) NULL DEFAULT '0',
+	`old_port_type` INT(11) NULL DEFAULT '0',
+	`new_port_type` INT(11) NULL DEFAULT '0',
+	`new_port_id` BIGINT(20) NULL DEFAULT '0',
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+
+INSERT IGNORE INTO `vbSequencer` (table_name, next_id, table_LastModificationTime) VALUES ('nix_upgrade_application', 1, 0);
+
+;
+
+CREATE TABLE `nix_downgrade_application` (
+	`id` BIGINT(20) NOT NULL,
+	`parent_application` BIGINT(20) NULL DEFAULT '0',
+	`office_id` BIGINT(20) NULL DEFAULT '0',
+	`old_port_id` BIGINT(20) NULL DEFAULT '0',
+	`old_port_type` INT(11) NULL DEFAULT '0',
+	`new_port_type` INT(11) NULL DEFAULT '0',
+	`new_port_id` BIGINT(20) NULL DEFAULT '0',
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+
+INSERT IGNORE INTO `vbSequencer` (table_name, next_id, table_LastModificationTime) VALUES ('nix_downgrade_application', 1, 0);
+
+
+
+CREATE TABLE `nix_port_charge_conf` (
+	`id` INT(11) NOT NULL,
+	`port_type` varchar(20) NULL,
+	`port_charge` INT(11) NULL DEFAULT '0',
+	`registration_charge` INT(11) NULL DEFAULT '0',
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+
+INSERT IGNORE INTO `vbSequencer` (table_name, next_id, table_LastModificationTime) VALUES ('nix_port_charge_conf', 1, 0);
+
+*******NIX TABLE*****
+
+******NIX_FLOW******
+
+-- flow state NIX Application with loop provider BTCL
+
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5001, 'NIX_APPLICATION_SUBMIT', 501, 'Nix application submitted', '#008000', 'Nix application submited');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5002, 'NIX_APPLICATION_REJECT', 501, 'Nix application rejected', '#008000', 'Nix application rejected');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5003, 'NIX_APPLICATION_REOPEN', 501, 'Nix application reopened', '#008000', 'Nix application reopened');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5004, 'NIX_APPLICATION_CORRECTION', 501, 'Nix application correction', '#008000', 'Nix application correction');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5005, 'NIX_APPLICATION_CORRECTION_DONE', 501, 'Nix application correction done', '#008000', 'Nix application correction done');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5006, 'NIX_APPLICATION_IFR', 501, 'Nix application ifr requested', '#008000', 'Nix application ifr requested');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5007, 'NIX_APPLICATION_IFR_RESPONDED', 501, 'Nix application ifr responded', '#008000', 'Nix application ifr responded');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5008, 'NIX_APPLICATION_EFR', 501, 'Nix application efr requested', '#008000', 'Nix application efr requested');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5009, 'NIX_APPLICATION_EFR_RESPONDED', 501, 'Nix application responded', '#008000', 'Nix application responded');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5010, 'NIX_APPLICATION_DEMAND_NOTE_GENERATED', 501, 'Nix application demand note generated', '#008000', 'Nix application demand note generated');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5011, 'NIX_APPLICATION_PAYMENT_DONE', 501, 'Nix application payment done', '#008000', 'Nix application payment done');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5012, 'NIX_APPLICATION_PAYMENT_VERIFIED', 501, 'Nix application payment verified', '#008000', 'Nix application payment verified');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5013, 'NIX_APPLICATION_WORK_ORDER_GENERATED', 501, 'Nix application work order generated ', '#008000', 'Nix application work order generated');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5014, 'NIX_APPLICATION_WORK_DONE', 501, 'Nix application work done ', '#008000', 'Nix application work done');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5015, 'NIX_APPLICATION_PUBLISH_ADVICE_NOTE', 501, 'Nix application advice note published', '#008000', 'Nix application advice note published');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5016, 'SERVER_ROOM_TESTING_AND_COMPLETE', 501, 'Server room test and complete', '#008000', 'Server room test and complete ');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5018, 'FORWARD_TO_LDGM_FOR_EFR', 501, 'Forward to LDGM for EFR', '#008000', 'Forwareded to LDGM for EFR ');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5019, 'GENERATE_WORK_ORDER', 501, 'Generate work order', '#008000', 'Work Order generated');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5017, 'FORWARD_TO_LDGM', 501, 'FORWARD_TO_LDGM', '#89CFF0', 'forwarded to ldgm');
+
+-- flow state with loop provider client
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5024, 'WITHOUT_LOOP_IFR_RESPONDED', 501, 'Without loop ifr responded', '#008000', 'without loop ifr responded');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5025, 'WITHOUT_LOOP_DEMAND_NOTE_GENERATED', 501, 'Without loop demand note generated', '#008000', 'without loop demand note generated');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5026, 'WITHOUT_LOOP_PAYMENT_DONE', 501, 'Without loop payment done', '#008000', 'Without loop payment done');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5027, 'WITHOUT_LOOP_PAYMENT_VERIFIED', 501, 'Without loop payment verified', '#008000', 'Without loop payment verified');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5028, 'WITHOUT_LOOP_PUBLISH_ADVICE_NOTE', 501, 'Without loop advice note published', '#008000', 'Without loop advice note published');
+
+
+--1/9/2019
+
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5020, 'REQUEST_FOR_CC', 501, 'Request for cc', '#008000', 'Requested for cc');
+
+--INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5017, 'NIX_APPLICATION_FORWARD_ADVICE_NOTE', 501, 'Nix application advice note forwarded', '#008000', 'Nix application advice note forwarded');
+
+
+--flow state transition
+
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5001, 5001, 5002, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5002, 5002, 5003, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5003, 5001, 5006, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5004, 5001, 5004, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5005, 5003, 5006, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5006, 5004, 5005, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5007, 5005, 5006, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5008, 5006, 5007, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5009, 5007, 5008, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5010, 5008, 5009, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5011, 5009, 5010, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5012, 5010, 5011, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5013, 5011, 5012, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5014, 5012, 5013, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5015, 5013, 5014, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5016, 5014, 5015, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5017, 5012, 5017, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5019, 5015, 5016, 'NULL')
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5021, 5007, 5018, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5022, 5018, 5008, 'NULL');
+
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5029, 5012, 5019, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5030, 5019, 5014, 'NULL');
+
+--flow state transition
+
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5024, 5024, 5025, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5025, 5025, 5026, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5026, 5026, 5027, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5027, 5027, 5028, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5028, 5028, 5016, 'NULL');
+
+
+--1/9/2019
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5023, 5001, 5020, 'NULL');
+
+
+
+ --flow state transition role
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5001, 5001, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5002, 5002, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5003, 5003, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5004, 5004, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5005, 5005, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5006, 5006, -1);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5007, 5007, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5008, 5008, 16021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5009, 5009, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5010, 5010, 16020);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5011, 5011, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5012, 5012, -1);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5013, 5013, 6020);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5014, 5014, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5015, 5015, 16020);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5016, 5016, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5017, 5017, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5018, 5018, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5019, 5019, 16021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5021, 5021, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5022, 5022, 22020);
+
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5029, 5021, 22020);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5030, 5022, 16020);
+
+--1/9/2019
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5023, 5023, 22021);
+
+
+--INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5017, 'NIX_APPLICATION_FORWARD_ADVICE_NOTE', 501, 'Nix application advice note forwarded', '#008000', 'Nix application advice note forwarded');
+
+
+
+
+ --flow state transition role
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5024, 5024, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5025, 5025, -1);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5026, 5026, 6020);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5027, 5027, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5028, 5028, 16021);
+
+--INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5020, 5020, 16021);
+
+1/09/2019
+ALTER TABLE `nix_application` ADD COLUMN `is_service_started` int(11) NULL DEFAULT '0';
+
+1/13/2019
+ALTER TABLE `nix_application` ADD COLUMN `status` int(11) NULL DEFAULT '0';
+ALTER TABLE `nix_application_local_loop` ADD COLUMN `vendor_id` BIGINT NULL default 0;
+ALTER TABLE `nix_efr` ADD COLUMN `is_selected` INT NULL default 0;
+
+
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5021, 'ACCOUNT_CC_POSITIVE', 501, 'Account Payment Condition Positive', '#008000', 'Account Payment Condition Positive');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5022, 'ACCOUNT_CC_NEGETIVE', 501, 'Account Payment Condition Negative', '#ff0000', 'Account Payment Condition Negative');
+INSERT INTO `flow_state` (`id`, `name`, `flow`, `description`, `color`, `view_description`) VALUES (5023, 'REJECT_WO_FORWARD_TO_VENDOR', 501, 'Reject Work order and forward to vendor', '#ff0000', 'Reject Work order and forward to vendor');
+
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5031, 5020, 5021, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5032, 5020, 5022, 'NULL');
+
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5033, 5022, 5020, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5034, 5022, 5002, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5035, 5022, 5006, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5036, 5022, 5004, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5037, 5021, 5002, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5038, 5021, 5006, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5039, 5021, 5004, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5040, 5005, 5020, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5041, 5005, 5004, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5042, 5005, 5002, 'NULL');
+
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5043, 5003, 5002, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5044, 5003, 5004, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5045, 5003, 5020, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5046, 5023, 5014, 'NULL');
+INSERT INTO `flow_state_transition` (`id`, `source`, `destination`, `comment`) VALUES (5047, 5014, 5023, 'NULL');
+
+
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5031, 5031, 6020);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5032, 5032, 6020);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5033, 5033, 22021);
+
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5034, 5034, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5035, 5035, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5036, 5036, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5037, 5037, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5038, 5038, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5039, 5039, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5040, 5040, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5041, 5041, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5042, 5042, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5043, 5043, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5044, 5044, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5045, 5045, 22021);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5046, 5046, 16020);
+INSERT INTO `flow_state_transition_role` (`id`, `flow_state_transition`, `role`) VALUES (5047, 5047,22021);
+
+******NIX_FLOW******
+
+15/01/2019
+ALTER TABLE `at_lli_application_office`
+    	ADD `oldOfficeId` BIGINT NULL DEFAULT 0;
+
+16/01/2019
+
+CREATE TABLE `nix_ip_vs_connection` (
+	`id` BIGINT(20) NOT NULL,
+	`connection_id` BIGINT(20) NOT NULL,
+	`ip_usage_id` BIGINT(20) NOT NULL,
+	`routing_info_id` BIGINT(20) NOT NULL,
+	`ip_usage_type` VARCHAR(50) NOT NULL,
+	`creation_time` BIGINT(20) NOT NULL,
+	`last_modification_time` BIGINT(20) NOT NULL,
+	`active_from` BIGINT(20) NOT NULL,
+	`active_to` BIGINT(20) NOT NULL,
+	`is_deleted` TINYINT(1) NOT NULL,
+	PRIMARY KEY (`id`) USING BTREE
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+ROW_FORMAT=DYNAMIC
+;
+INSERT IGNORE INTO `vbSequencer` (table_name, next_id, table_LastModificationTime) VALUES ('nix_ip_vs_connection', 1, 0);

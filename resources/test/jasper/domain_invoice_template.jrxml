@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.0.final using JasperReports Library version 6.5.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="domain_invoice_template" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="41028b7b-176c-4396-abee-444a1e685c9e">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<parameter name="domain_name" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="47" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="550" height="40" uuid="842537b7-7e37-435c-b5a5-de58c1b94858"/>
+				<image>
+					<reportElement x="0" y="0" width="80" height="30" uuid="68b244b8-dfce-4c35-825d-b7a26b01ac6a"/>
+					<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+				</image>
+			</frame>
+			<frame>
+				<reportElement x="90" y="1" width="400" height="38" uuid="033cf6e1-027a-41ca-b7b6-e1cd1d615185"/>
+				<staticText>
+					<reportElement positionType="FixRelativeToBottom" x="4" y="0" width="200" height="28" uuid="fc3a5363-1b2d-4b30-ad67-a896c3395164"/>
+					<textElement textAlignment="Right" markup="styled">
+						<font fontName="Arial Unicode Bill" size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Invoice of .bd and]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="210" y="0" width="40" height="28" uuid="b91fc6ec-6b25-4c88-9316-dc4c3bf4f2f0">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement verticalAlignment="Top" markup="styled">
+						<font fontName="Arial Unicode Bill" size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[.বাংলা]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="250" y="0" width="74" height="28" uuid="ff38f4e8-6789-4f9d-b612-ab75e4c6c2b7">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement verticalAlignment="Top" markup="styled">
+						<font fontName="Arial Unicode Bill" size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Domain]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="506" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="53" width="570" height="97" uuid="d742bcb1-3e91-45fe-8e78-b96a5d2ae83b"/>
+				<staticText>
+					<reportElement x="0" y="10" width="80" height="20" uuid="f8c44c4c-1211-4d02-bf94-5146a0aae03c"/>
+					<text><![CDATA[Domain name : ]]></text>
+				</staticText>
+				<image>
+					<reportElement x="80" y="10" width="120" height="30" uuid="4ff61986-9e0c-4b00-badc-debc9753db64"/>
+					<imageExpression><![CDATA[$P{domain_name}]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="570" height="50" uuid="cd7dd64d-cb6d-4026-acc3-c0f91bef7026"/>
+				<staticText>
+					<reportElement x="80" y="0" width="400" height="20" uuid="c4b15582-4b00-4d2d-903d-f4b8e70a9932"/>
+					<text><![CDATA[For domain related query, support or complain, please email at domain@btcl.com.bd]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="330" y="26" width="239" height="20" forecolor="#0FF222" uuid="eabdd2aa-59ee-4351-aa31-36915fd7292f"/>
+					<textElement markup="styled"/>
+					<text><![CDATA[Bangladesh Telecommunications Company Limited]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</pageFooter>
+</jasperReport>

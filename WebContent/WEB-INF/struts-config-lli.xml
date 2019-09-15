@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+    <form-beans>
+        <form-bean name="lliConnection" type="login.LoginForm"/>
+        <form-bean name="lliRevise" type="login.LoginForm"/>
+
+    </form-beans>
+
+    <action-mappings>
+
+        <action path="/lli/changeIPPort/*" type="lli.changeIPPort.ChangeIPPortAction" name="lliConnection">
+            <!-- get-change-ip-port -->
+            <forward name="get-change-ip-port" path="/lli/change-ip-port/lli-change-ip-port.jsp"/>
+        </action>
+
+        <action path="/lli/connection/*" type="lli.LLIConnectionAction" name="lliConnection">
+            <!-- New -->
+            <forward name="lli-connection-new" path="/lli/connection/lli-connection-new.jsp"/>
+            <!-- Revision -->
+            <forward name="lli-connection-revise" path="/lli/connection/lli-connection-revise.jsp"/>
+            <!-- View -->
+            <forward name="lli-connection-view" path="/lli/connection/lli-connection-view.jsp"/>
+            <!-- Search -->
+            <forward name="lli-connection-search" path="/lli/connection/lli-connection-search.jsp"/>
+            <forward name="lli-connections-of-a-client" path="/lli/connection/lli-all-connections-client.jsp"/>
+
+        </action>
+        <action path="/lli/monthly-bill-summary/*" type="lli.monthlyBillSummary.LLIMonthlyBillSummaryAction"
+                name="lliConnection">
+            <!-- search page -->
+            <forward name="lli-monthly-bill-summary"
+                     path="/lli/monthly-bill-summary/lli-monthly-bill-summary.jsp"/>
+            <forward name="lli-multiple-monthly-bill-summary"
+                     path="/lli/monthly-bill-summary/lli-multiple-monthly-bill-summary.jsp"/>
+            <forward name="lli-final-monthly-bill-summary"
+                     path="/lli/monthly-bill-summary/lli-final-monthly-bill-summary.jsp"/>
+
+        </action>
+
+        <action path="/lli/monthly-outsource-bill/*" type="lli.outsourceBill.LLIMonthlyOutsourceBillAction"
+                name="lliConnection">
+            <!-- search page -->
+            <forward name="lli-monthly-outsourcing-bill-page" path="/lli/outsourcing-bill/lli-oc-bill.jsp"/>
+
+        </action>
+        <action path="/lli/monthly-bill/*" type="lli.monthlyBill.LLIMonthlyBillAction" name="lliConnection">
+            <!-- search page -->
+            <forward name="lli-monthly-bill-search-page" path="/lli/monthly-bill/lli-monthly-bill-search.jsp"/>
+            <!-- generate page-->
+            <forward name="lli-monthly-bill-generate-page"
+                     path="/lli/monthly-bill/lli-current-month-bill-generate.jsp"/>
+            <!-- check page-->
+            <forward name="lli-monthly-bill-generation-check"
+                     path="/lli/monthly-bill/lli-current-month-bill-generate-check.jsp"/>
+        </action>
+
+        <action path="/lli/monthly-usage/*" type="lli.monthlyUsage.LLIMonthlyUsageAction" name="lliConnection">
+            <!-- search page -->
+            <forward name="lli-monthly-usage-search-page"
+                     path="/lli/monthly-usage/lli-monthly-usage-search.jsp"/>
+        </action>
+
+        <action path="/lli/application/*" type="lli.Application.LLIApplicationAction" name="lliConnection">
+
+
+            <!-- 1 -->
+            <!-- New Connection Submission-->
+            <forward name="lli-application-new-connection"
+                     path="/lli/application/new-connection/lli-application-new-connection.jsp"/>
+            <!-- New Connection View -->
+            <forward name="lli-application-new-connection-view"
+                     path="/lli/application/new-connection/view/lli-application-new-connection-view.jsp"/>
+            <!-- New Connection Details -->
+            <forward name="lli-application-new-connection-details"
+                     path="/lli/application/new-connection/lli-application-new-connection-details.jsp"/>
+            <!-- New Connection Process -->
+            <forward name="lli-application-new-connection-process"
+                     path="/lli/application/new-connection/lli-application-new-connection-process.jsp"/>
+            <!-- New Connection Edit -->
+            <forward name="lli-application-new-connection-edit"
+                     path="/lli/application/new-connection/lli-application-new-connection-edit.jsp"/>
+            <!-- New Connection Completion -->
+            <forward name="lli-application-new-connection-completion"
+                     path="/lli/application/new-connection/lli-application-new-connection-completion.jsp"/>
+            <!-- 2 -->
+            <!-- Upgrade Bandwidth Submission-->
+            <forward name="lli-application-upgrade-bandwidth"
+                     path="/lli/application/upgrade-bandwidth/lli-application-upgrade-bandwidth.jsp"/>
+            <!-- Upgrade Bandwidth View -->
+            <forward name="lli-application-upgrade-bandwidth-view"
+                     path="/lli/application/upgrade-bandwidth/lli-application-upgrade-bandwidth-view.jsp"/>
+            <!-- Upgrade Bandwidth Process -->
+            <forward name="lli-application-upgrade-bandwidth-process"
+                     path="/lli/application/upgrade-bandwidth/lli-application-upgrade-bandwidth-process.jsp"/>
+            <!-- Upgrade Bandwidth Edit -->
+            <forward name="lli-application-upgrade-bandwidth-edit"
+                     path="/lli/application/upgrade-bandwidth/lli-application-upgrade-bandwidth-edit.jsp"/>
+            <!-- Upgrade Bandwidth Completion -->
+            <forward name="lli-application-upgrade-bandwidth-completion"
+                     path="/lli/application/upgrade-bandwidth/lli-application-upgrade-bandwidth-completion.jsp"/>
+            <!-- 3 -->
+            <!-- Downgrade Bandwidth Submission-->
+            <forward name="lli-application-downgrade-bandwidth"
+                     path="/lli/application/downgrade-bandwidth/lli-application-downgrade-bandwidth.jsp"/>
+            <!-- Downgrade Bandwidth View -->
+            <forward name="lli-application-downgrade-bandwidth-view"
+                     path="/lli/application/downgrade-bandwidth/lli-application-downgrade-bandwidth-view.jsp"/>
+            <!-- Downgrade Bandwidth Process -->
+            <forward name="lli-application-downgrade-bandwidth-process"
+                     path="/lli/application/downgrade-bandwidth/lli-application-downgrade-bandwidth-process.jsp"/>
+            <!-- Downgrade Bandwidth Edit -->
+            <forward name="lli-application-downgrade-bandwidth-edit"
+                     path="/lli/application/downgrade-bandwidth/lli-application-downgrade-bandwidth-edit.jsp"/>
+            <!-- Downgrade Bandwidth Completion -->
+            <forward name="lli-application-downgrade-bandwidth-completion"
+                     path="/lli/application/downgrade-bandwidth/lli-application-downgrade-bandwidth-completion.jsp"/>
+            <!-- 4 -->
+            <!-- Temporary Upgrade Bandwidth Submission-->
+            <forward name="lli-application-temporary-upgrade-bandwidth"
+                     path="/lli/application/temporary-upgrade-bandwidth/lli-application-temporary-upgrade-bandwidth.jsp"/>
+            <!-- Temporary Upgrade Bandwidth View -->
+            <forward name="lli-application-temporary-upgrade-bandwidth-view"
+                     path="/lli/application/temporary-upgrade-bandwidth/lli-application-temporary-upgrade-bandwidth-view.jsp"/>
+            <!-- Temporary Upgrade Bandwidth Process -->
+            <forward name="lli-application-temporary-upgrade-bandwidth-process"
+                     path="/lli/application/temporary-upgrade-bandwidth/lli-application-temporary-upgrade-bandwidth-process.jsp"/>
+            <!-- Temporary Upgrade Bandwidth Edit -->
+            <forward name="lli-application-temporary-upgrade-bandwidth-edit"
+                     path="/lli/application/temporary-upgrade-bandwidth/lli-application-temporary-upgrade-bandwidth-edit.jsp"/>
+            <!-- Temporary Upgrade Bandwidth Completion -->
+            <forward name="lli-application-temporary-upgrade-bandwidth-completion"
+                     path="/lli/application/temporary-upgrade-bandwidth/lli-application-temporary-upgrade-bandwidth-completion.jsp"/>
+            <!-- 5 -->
+            <!-- Additional Port Submission-->
+            <forward name="lli-application-additional-port"
+                     path="/lli/application/additional-port/lli-application-additional-port.jsp"/>
+            <!-- Additional Port View -->
+            <forward name="lli-application-additional-port-view"
+                     path="/lli/application/additional-port/lli-application-additional-port-view.jsp"/>
+            <!-- Additional Port Process -->
+            <forward name="lli-application-additional-port-process"
+                     path="/lli/application/additional-port/lli-application-additional-port-process.jsp"/>
+            <!-- Additional Port Edit -->
+            <forward name="lli-application-additional-port-edit"
+                     path="/lli/application/additional-port/lli-application-additional-port-edit.jsp"/>
+            <!-- Additional Port Completion -->
+            <forward name="lli-application-additional-port-completion"
+                     path="/lli/application/additional-port/lli-application-additional-port-completion.jsp"/>
+            <!-- 6 -->
+            <!-- Release Port Submission-->
+            <forward name="lli-application-release-port"
+                     path="/lli/application/release-port/lli-application-release-port.jsp"/>
+            <!-- Release Port View -->
+            <forward name="lli-application-release-port-view"
+                     path="/lli/application/release-port/lli-application-release-port-view.jsp"/>
+            <!-- Release Port Process -->
+            <forward name="lli-application-release-port-process"
+                     path="/lli/application/release-port/lli-application-release-port-process.jsp"/>
+            <!-- Release Port Edit -->
+            <forward name="lli-application-release-port-edit"
+                     path="/lli/application/release-port/lli-application-release-port-edit.jsp"/>
+            <!-- Release Port Completion -->
+            <forward name="lli-application-release-port-completion"
+                     path="/lli/application/release-port/lli-application-release-port-completion.jsp"/>
+            <!-- 7 -->
+            <!-- Additional Local Loop Submission-->
+            <forward name="lli-application-additional-local-loop"
+                     path="/lli/application/additional-local-loop/lli-application-additional-local-loop.jsp"/>
+            <!-- Additional Local Loop View -->
+            <forward name="lli-application-additional-local-loop-view"
+                     path="/lli/application/additional-local-loop/lli-application-additional-local-loop-view.jsp"/>
+            <!-- Additional Local Loop Process -->
+            <forward name="lli-application-additional-local-loop-process"
+                     path="/lli/application/additional-local-loop/lli-application-additional-local-loop-process.jsp"/>
+            <!-- Additional Local Loop Edit -->
+            <forward name="lli-application-additional-local-loop-edit"
+                     path="/lli/application/additional-local-loop/lli-application-additional-local-loop-edit.jsp"/>
+            <!-- Additional Local Loop Completion -->
+            <forward name="lli-application-additional-local-loop-completion"
+                     path="/lli/application/additional-local-loop/lli-application-additional-local-loop-completion.jsp"/>
+            <!-- 8 -->
+            <!-- Release Local Loop Submission-->
+            <forward name="lli-application-release-local-loop"
+                     path="/lli/application/release-local-loop/lli-application-release-local-loop.jsp"/>
+            <!-- Release Local Loop View -->
+            <forward name="lli-application-release-local-loop-view"
+                     path="/lli/application/release-local-loop/lli-application-release-local-loop-view.jsp"/>
+            <!-- Release Local Loop Process -->
+            <forward name="lli-application-release-local-loop-process"
+                     path="/lli/application/release-local-loop/lli-application-release-local-loop-process.jsp"/>
+            <!-- Release Local Loop Edit -->
+            <forward name="lli-application-release-local-loop-edit"
+                     path="/lli/application/release-local-loop/lli-application-release-local-loop-edit.jsp"/>
+            <!-- Release Local Loop Completion -->
+            <forward name="lli-application-release-local-loop-completion"
+                     path="/lli/application/release-local-loop/lli-application-release-local-loop-completion.jsp"/>
+            <!-- 9 -->
+            <!-- Additional IP Submission-->
+            <forward name="lli-application-additional-ip"
+                     path="/lli/application/additional-ip/lli-application-additional-ip.jsp"/>
+            <!-- Additional IP View -->
+            <forward name="lli-application-additional-ip-view"
+                     path="/lli/application/additional-ip/lli-application-additional-ip-view.jsp"/>
+
+            <!--&lt;!&ndash; Additional IP Process &ndash;&gt;<forward name="lli-application-additional-ip-process" path="/lli/application/additional-ip/lli-application-additional-ip-process.jsp"/>
+            &lt;!&ndash; Additional IP Edit &ndash;&gt;<forward name="lli-application-additional-ip-edit" path="/lli/application/additional-ip/lli-application-additional-ip-edit.jsp"/>
+            &lt;!&ndash; Additional IP Completion &ndash;&gt;<forward name="lli-application-additional-ip-completion" path="/lli/application/additional-ip/lli-application-additional-ip-completion.jsp"/>
+            -->
+
+            <!-- 10 -->
+            <!-- Release IP Submission-->
+            <forward name="lli-application-release-ip"
+                     path="/lli/application/release-ip/lli-application-release-ip.jsp"/>
+            <!-- Release IP View -->
+            <forward name="lli-application-release-ip-view"
+                     path="/lli/application/release-ip/lli-application-release-ip-view.jsp"/>
+
+            <!--&lt;!&ndash; Release IP Process &ndash;&gt;<forward name="lli-application-release-ip-process" path="/lli/application/release-ip/lli-application-release-ip-process.jsp"/>
+            &lt;!&ndash; Release IP Edit &ndash;&gt;<forward name="lli-application-release-ip-edit" path="/lli/application/release-ip/lli-application-release-ip-edit.jsp"/>
+            &lt;!&ndash; Release IP Completion &ndash;&gt;<forward name="lli-application-release-ip-completion" path="/lli/application/release-ip/lli-application-release-ip-completion.jsp"/>
+-->
+            <!-- 11 -->
+            <!-- Additional Connection Address Submission-->
+            <forward name="lli-application-additional-connection-address"
+                     path="/lli/application/additional-connection-address/lli-application-additional-connection-address.jsp"/>
+            <!-- Additional Connection Address View -->
+            <forward name="lli-application-additional-connection-address-view"
+                     path="/lli/application/additional-connection-address/lli-application-additional-connection-address-view.jsp"/>
+            <!-- Additional Connection Address Process -->
+            <forward name="lli-application-additional-connection-address-process"
+                     path="/lli/application/additional-connection-address/lli-application-additional-connection-address-process.jsp"/>
+            <!-- Additional Connection Address Edit -->
+            <forward name="lli-application-additional-connection-address-edit"
+                     path="/lli/application/additional-connection-address/lli-application-additional-connection-address-edit.jsp"/>
+            <!-- Additional Connection Address Completion -->
+            <forward name="lli-application-additional-connection-address-completion"
+                     path="/lli/application/additional-connection-address/lli-application-additional-connection-address-completion.jsp"/>
+            <!-- 12 -->
+            <!-- Shift Connection Address Submission-->
+            <forward name="lli-application-shift-address"
+                     path="/lli/application/shift-address/lli-application-shift-address.jsp"/>
+            <!-- Shift Connection Address View -->
+            <forward name="lli-application-shift-address-view"
+                     path="/lli/application/shift-address/lli-application-shift-address-view.jsp"/>
+            <!-- Shift Connection Address Process -->
+            <forward name="lli-application-shift-address-process"
+                     path="/lli/application/shift-address/lli-application-shift-address-process.jsp"/>
+            <!-- Shift Connection Address Edit -->
+            <forward name="lli-application-shift-address-edit"
+                     path="/lli/application/shift-address/lli-application-shift-address-edit.jsp"/>
+            <!-- Shift Connection Address Completion -->
+            <forward name="lli-application-shift-address-completion"
+                     path="/lli/application/shift-address/lli-application-shift-address-completion.jsp"/>
+            <!-- 13 -->
+            <!-- Release Connection Address Submission-->
+            <forward name="lli-application-release-connection-address"
+                     path="/lli/application/release-connection-address/lli-application-release-connection-address.jsp"/>
+            <!-- Release Connection Address View -->
+            <forward name="lli-application-release-connection-address-view"
+                     path="/lli/application/release-connection-address/lli-application-release-connection-address-view.jsp"/>
+            <!-- Release Connection Address Process -->
+            <forward name="lli-application-release-connection-address-process"
+                     path="/lli/application/release-connection-address/lli-application-release-connection-address-process.jsp"/>
+            <!-- Release Connection Address Edit -->
+            <forward name="lli-application-release-connection-address-edit"
+                     path="/lli/application/release-connection-address/lli-application-release-connection-address-edit.jsp"/>
+            <!-- Release Connection Address Completion -->
+            <forward name="lli-application-release-connection-address-completion"
+                     path="/lli/application/release-connection-address/lli-application-release-connection-address-completion.jsp"/>
+            <!-- 14 -->
+            <!-- Shift Pop Submission-->
+            <forward name="lli-application-shift-pop"
+                     path="/lli/application/shift-pop/lli-application-shift-pop.jsp"/>
+            <!-- Shift Pop View -->
+            <forward name="lli-application-shift-pop-view"
+                     path="/lli/application/shift-pop/lli-application-shift-pop-view.jsp"/>
+            <!-- Shift Pop Process -->
+            <forward name="lli-application-shift-pop-process"
+                     path="/lli/application/shift-pop/lli-application-shift-pop-process.jsp"/>
+            <!-- Shift Pop Edit -->
+            <forward name="lli-application-shift-pop-edit"
+                     path="/lli/application/shift-pop/lli-application-shift-pop-edit.jsp"/>
+            <!-- Shift Pop Completion -->
+            <forward name="lli-application-shift-pop-completion"
+                     path="/lli/application/shift-pop/lli-application-shift-pop-completion.jsp"/>
+            <!-- 15 -->
+            <!-- New Long Term Submission-->
+            <forward name="lli-application-new-long-term"
+                     path="/lli/application/new-long-term/lli-application-new-long-term.jsp"/>
+            <!-- New Long Term View -->
+            <forward name="lli-application-new-long-term-view"
+                     path="/lli/application/new-long-term/lli-application-new-long-term-view.jsp"/>
+            <!-- New Long Term Process -->
+            <forward name="lli-application-new-long-term-process"
+                     path="/lli/application/new-long-term/lli-application-new-long-term-process.jsp"/>
+            <!-- New Long Term Edit -->
+            <forward name="lli-application-new-long-term-edit"
+                     path="/lli/application/new-long-term/lli-application-new-long-term-edit.jsp"/>
+            <!-- New Long Term Completion -->
+            <forward name="lli-application-new-long-term-completion"
+                     path="/lli/application/new-long-term/lli-application-new-long-term-completion.jsp"/>
+            <!-- 16 -->
+            <!-- Break Long Term Submission-->
+            <forward name="lli-application-break-long-term"
+                     path="/lli/application/break-long-term/lli-application-break-long-term.jsp"/>
+            <!-- Break Long Term View -->
+            <forward name="lli-application-break-long-term-view"
+                     path="/lli/application/break-long-term/lli-application-break-long-term-view.jsp"/>
+            <!-- Break Long Term Process -->
+            <forward name="lli-application-break-long-term-process"
+                     path="/lli/application/break-long-term/lli-application-break-long-term-process.jsp"/>
+            <!-- Break Long Term Edit -->
+            <forward name="lli-application-break-long-term-edit"
+                     path="/lli/application/break-long-term/lli-application-break-long-term-edit.jsp"/>
+            <!-- Break Long Term Completion -->
+            <forward name="lli-application-break-long-term-completion"
+                     path="/lli/application/break-long-term/lli-application-break-long-term-completion.jsp"/>
+            <!-- 17 -->
+            <!-- Shift Bandwidth Submission-->
+            <forward name="lli-application-shift-bandwidth"
+                     path="/lli/application/shift-bandwidth/lli-application-shift-bandwidth.jsp"/>
+            <!-- Shift Bandwidth View -->
+            <forward name="lli-application-shift-bandwidth-view"
+                     path="/lli/application/shift-bandwidth/lli-application-shift-bandwidth-view.jsp"/>
+            <!-- Shift Bandwidth Process -->
+            <forward name="lli-application-shift-bandwidth-process"
+                     path="/lli/application/shift-bandwidth/lli-application-shift-bandwidth-process.jsp"/>
+            <!-- Shift Bandwidth Edit -->
+            <forward name="lli-application-shift-bandwidth-edit"
+                     path="/lli/application/shift-bandwidth/lli-application-shift-bandwidth-edit.jsp"/>
+            <!-- Shift Bandwidth Completion -->
+            <forward name="lli-application-shift-bandwidth-completion"
+                     path="/lli/application/shift-bandwidth/lli-application-shift-bandwidth-completion.jsp"/>
+
+            <!-- 19 -->
+            <!-- Reconnect Submission-->
+            <forward name="lli-application-reconnect"
+                     path="/lli/application/reconnect/lli-application-reconnect.jsp"/>
+            <!-- Reconnect View -->
+            <forward name="lli-application-reconnect-view"
+                     path="/lli/application/reconnect/lli-application-reconnect-view.jsp"/>
+            <!-- Reconnect Process -->
+            <forward name="lli-application-reconnect-process"
+                     path="/lli/application/reconnect/lli-application-reconnect-process.jsp"/>
+            <!-- Reconnect Edit -->
+            <forward name="lli-application-reconnect-edit"
+                     path="/lli/application/reconnect/lli-application-reconnect-edit.jsp"/>
+            <!-- Reconnect Completion -->
+            <forward name="lli-application-reconnect-completion"
+                     path="/lli/application/reconnect/lli-application-reconnect-completion.jsp"/>
+            <!-- 20 -->
+            <!-- 21 -->
+            <!-- Close Connection Submission-->
+            <forward name="lli-application-close-connection"
+                     path="/lli/application/close-connection/lli-application-close-connection.jsp"/>
+            <!-- Close Connection View -->
+            <forward name="lli-application-close-connection-view"
+                     path="/lli/application/close-connection/lli-application-close-connection-view.jsp"/>
+            <!-- Close Connection Process -->
+            <forward name="lli-application-close-connection-process"
+                     path="/lli/application/close-connection/lli-application-close-connection-process.jsp"/>
+            <!-- Close Connection Edit -->
+            <forward name="lli-application-close-connection-edit"
+                     path="/lli/application/close-connection/lli-application-close-connection-edit.jsp"/>
+            <!-- Close Connection Completion -->
+            <forward name="lli-application-close-connection-completion"
+                     path="/lli/application/close-connection/lli-application-close-connection-completion.jsp"/>
+
+            <!-- Global -->
+            <!-- Content Preview -->
+            <forward name="lli-application-preview-content"
+                     path="/lli/application/global/lli-application-preview-content.jsp"/>
+            <!-- Reuqest For Correction -->
+            <forward name="lli-application-request-for-correction"
+                     path="/lli/application/global/lli-application-request-for-correction.jsp"/>
+            <!-- Reject -->
+            <forward name="lli-application-reject" path="/lli/application/global/lli-application-reject.jsp"/>
+            <!-- All Application Search -->
+            <forward name="lli-application-search" path="/lli/application/search/lli-application-search.jsp"/>
+        </action>
+
+        <action path="/lli/options/*" type="lli.Options.LLIOptionsAction" name="lliConnection">
+        </action>
+
+        <action path="/lli/bill/**" type="lli.LLIBillAction" name="lliConnection">
+            <forward name="lli-manual-bill" path="/lli/monthly-bill/lli-manual-bill.jsp"/>
+            <forward name="lli-oc-bill" path="/lli/outsourcing-bill/lli-oc-bill.jsp"/>
+            <forward name="lli-manual-bill-view" path="/lli/monthly-bill/lli-manual-bill-view.jsp"/>
+            <forward name="lli-monthly-bill-view" path="/lli/monthly-bill/lli-monthly-bill-view.jsp"/>
+        </action>
+
+        <action path="lli/dn/**" type="lli.demandNote.LLIDemandNoteAction" name="lliConnection">
+            <forward name="get-local-loop-breakdown" path="/lli/demand-note/lli-local-loop-breakdown.jsp" />
+            <!-- DN Generation -->
+            <!-- New Connection DN-->
+            <forward name="lli-dn-new-connection" path="/lli/demand-note/lli-dn-new-connection.jsp"/>
+            <!--temp add by bony for check-->
+            <!-- New Connection DN-->
+            <forward name="lli-dn-new-connection-shift-bw" path="/lli/demand-note/lli-dn-new-connection.jsp"/>
+            <!--end add by bony-->
+
+            <!-- Upgrade Bandwidth DN-->
+            <forward name="lli-dn-upgrade-bandwidth" path="/lli/demand-note/lli-dn-revise-connection.jsp"/>
+            <!-- Downgrade Bandwidth DN-->
+            <forward name="lli-dn-downgrade-bandwidth" path="/lli/demand-note/lli-dn-revise-connection.jsp"/>
+            <!-- Temporary Upgrade Bandwidth DN-->
+            <forward name="lli-dn-temporary-upgrade-bandwidth"
+                     path="/lli/demand-note/lli-dn-revise-connection.jsp"/>
+            <!-- Additional Port DN-->
+            <forward name="lli-dn-additional-port" path="/lli/demand-note/lli-dn-revise-connection.jsp"/>
+            <!-- Additional Local Loop DN-->
+            <forward name="lli-dn-additional-local-loop" path="/lli/demand-note/lli-dn-revise-connection.jsp"/>
+            <!-- Additional IP DN-->
+            <forward name="lli-dn-additional-ip" path="/lli/demand-note/lli-dn-revise-connection.jsp"/>
+            <!-- Additional Connection Address DN-->
+            <forward name="lli-dn-additional-connection-address"
+                     path="/lli/demand-note/lli-dn-revise-connection.jsp"/>
+            <!-- Shift Connection Address DN-->
+            <forward name="lli-dn-shift-address" path="/lli/demand-note/lli-dn-revise-connection.jsp"/>
+            <!-- Shift Pop DN-->
+            <forward name="lli-dn-shift-pop" path="/lli/demand-note/lli-dn-revise-connection.jsp"/>
+            <!-- Break Long Term DN-->
+            <forward name="lli-dn-break-long-term" path="/lli/demand-note/lli-dn-break-long-term.jsp"/>
+            <!--&lt;!&ndash; Shift Bandwidth DN&ndash;&gt;<forward name="lli-dn-shift-bandwidth" path="/lli/demand-note/lli-dn-shift-bandwidth.jsp"/>-->
+            <!-- Change Ownership DN-->
+            <forward name="lli-dn-change-ownership" path="/lli/demand-note/lli-dn-ownership-change.jsp"/>
+            <!-- Reconnect DN-->
+            <forward name="lli-dn-reconnect" path="/lli/demand-note/lli-dn-reconnect-connection.jsp"/>
+            <!--&lt;!&ndash; Change Billing Address DN&ndash;&gt;<forward name="lli-dn-change-billing-address" path="/lli/demand-note/lli-dn-change-billing-address.jsp"/>-->
+            <!-- Close Connection DN-->
+            <forward name="lli-dn-close-connection" path="/lli/demand-note/lli-dn-close-connection.jsp"/>
+
+            <!-- DN View -->
+            <forward name="lli-dn-new-connection-view" path="/lli/demand-note/lli-dn-new-connection-view.jsp"/>
+            <forward name="lli-dn-upgrade-bandwidth-view"
+                     path="/lli/demand-note/lli-dn-revise-connection-view.jsp"/>
+            <forward name="lli-dn-downgrade-bandwidth-view"
+                     path="/lli/demand-note/lli-dn-revise-connection-view.jsp"/>
+            <forward name="lli-dn-temporary-upgrade-bandwidth-view"
+                     path="/lli/demand-note/lli-dn-revise-connection-view.jsp"/>
+            <forward name="lli-dn-additional-port-view"
+                     path="/lli/demand-note/lli-dn-revise-connection-view.jsp"/>
+            <forward name="lli-dn-additional-local-loop-view"
+                     path="/lli/demand-note/lli-dn-revise-connection-view.jsp"/>
+            <forward name="lli-dn-additional-ip-view"
+                     path="/lli/demand-note/lli-dn-revise-connection-view.jsp"/>
+            <forward name="lli-dn-additional-connection-address-view"
+                     path="/lli/demand-note/lli-dn-revise-connection-view.jsp"/>
+            <forward name="lli-dn-shift-address-view"
+                     path="/lli/demand-note/lli-dn-revise-connection-view.jsp"/>
+            <forward name="lli-dn-shift-pop-view" path="/lli/demand-note/lli-dn-revise-connection-view.jsp"/>
+            <forward name="lli-dn-close-connection-view"
+                     path="/lli/demand-note/lli-dn-close-connection-view.jsp"/>
+            <forward name="lli-dn-break-long-term-view"
+                     path="/lli/demand-note/lli-dn-break-long-term-view.jsp"/>
+            <forward name="lli-dn-change-ownership-view"
+                     path="/lli/demand-note/lli-dn-ownership-change-view.jsp"/>
+            <forward name="lli-dn-reconnect-view"
+                     path="/lli/demand-note/lli-dn-reconnect-connection-view.jsp"/>
+
+
+            <forward name="pdf" path="/lli/demand-note/pdf/invoiceDownload.jsp"/>
+
+
+            <!--owner change-->
+            <forward name="owner-change" path="/lli/application/change-ownership/common/owner-change.jsp"/>
+        </action>
+
+        <action path="/lli/client/*" type="lli.LLIClientAction" name="lliConnection">
+            <!-- Board -->
+            <forward name="lli-client-board" path="/lli/client/lli-client-board.jsp"/>
+        </action>
+
+        <action path="/lli/longterm/*" type="lli.LLILongTermAction" name="lliConnection">
+            <!-- New Long Term -->
+            <forward name="lli-longterm-new" path="/lli/longterm/lli-longterm-new.jsp"/>
+            <!--  Search Long Term -->
+            <forward name="lli-longterm-search" path="/lli/longterm/lli-longterm-search.jsp"/>
+            <!-- View Long Term -->
+            <forward name="lli-longterm-view" path="/lli/longterm/lli-longterm-view.jsp"/>
+        </action>
+
+        <action path="/lli/td/**" type="lli.client.td.LLIClientTDAction" name="lliConnection">
+            <!--<forward name="search-client-td-status" path="/lli/td/nix-search-client-td-status.jsp"/>-->
+            <!--<forward name="td-create-view" path="/lli/td/nix-td-create-nix-view.jsp"/>-->
+            <forward name="td-view" path="/lli/td/td-view.jsp"/>
+            <!--<forward name="requestedtdlist" path="/lli/td/nix-requested-td-list-nix-view.jsp"/>-->
+        </action>
+
+
+        <!--bony & forhad-->
+        <action path="/lli/revise/**" type="lli.Application.ReviseClient.ReviseClientAction" name="lliRevise">
+
+            <!-- Change Billing Address Submission-->
+            <forward name="lli-application-change-billing-address"
+                     path="/lli/application/change-billing-address/lli-application-change-billing-address.jsp"/>
+            <!--&lt;!&ndash; Change Billing Address View &ndash;&gt;<forward name="lli-application-change-billing-address-view" path="/lli/application/change-billing-address/lli-application-change-billing-address-nix-view.jsp"/>
+            &lt;!&ndash; Change Billing Address Process &ndash;&gt;<forward name="lli-application-change-billing-address-process" path="/lli/application/change-billing-address/lli-application-change-billing-address-process.jsp"/>
+            &lt;!&ndash; Change Billing Address Edit &ndash;&gt;<forward name="lli-application-change-billing-address-edit" path="/lli/application/change-billing-address/lli-application-change-billing-address-edit.jsp"/>
+            &lt;!&ndash; Change Billing Address Completion &ndash;&gt;<forward name="lli-application-change-billing-address-completion" path="/lli/application/change-billing-address/lli-application-change-billing-address-completion.jsp"/>
+-->
+            <forward name="search-client-td-status" path="/lli/revise/search-client-td-status.jsp"/>
+
+
+            <forward name="newview" path="/lli/revise/view.jsp"/>
+            <forward name="search" path="/lli/revise/search-revise-application.jsp"/>
+            <forward name="tdcreate" path="/lli/revise/td-create-view.jsp"/>
+
+
+        </action>
+
+        <!--end bony & forhad-->
+
+        <action path="/lli/configuration/**" type="lli.configuration.LLIConfigurationAction" name="lliConnection">
+            <forward name="fixed-cost-configuration"
+                     path="/lli/configuration/lli-configuration-fixed-cost.jsp"/>
+            <forward name="add-new-category-ui" path="/lli/configuration/lli-configuration-new-category.jsp"/>
+        </action>
+        <action path="/pdf/**" type="common.pdf.PdfAction" name="lliConnection">
+        </action>
+        <action path="/lli/inventory/*" type="lli.LLIInventoryAction" name="lliConnection"/>
+
+        <action path="/lli/ownershipChange/**" type="lli.Application.ownership.LLIOwnerChangeAction"
+                name="lliConnection">
+            <!-- Change Ownership Submission-->
+            <forward name="lli-application-change-ownership"
+                     path="/lli/application/change-ownership/lli-application-change-ownership.jsp">
+            </forward>
+            <forward name="owner-change-search"
+                     path="/lli/application/change-ownership/search/lli-application-change-ownership-search.jsp">
+            </forward>
+
+            <forward name="owner-change-view"
+                     path="/lli/application/change-ownership/view/lli-application-change-ownership-view.jsp">
+            </forward>
+
+
+            <forward name="lli-connections-of-prev-client"
+                     path="/lli/application/change-ownership/view/lli-connections-of-prev-client.jsp">
+            </forward>
+
+
+            <forward name="owner-change-details"
+                     path="/lli/application/change-ownership/view/lli-owner-change-application-details.jsp">
+
+        </forward>
+        </action>
+
+
+
+
+        <action path="/lli-migration/**" type="lli.migration.LLIMigrationAction" name="lliConnection">
+
+            <forward name="add-new-connection"
+                     path="/dataEntry/connection-entry.jsp"/>
+
+        </action>
+
+
+    </action-mappings>
+
+    <!-- ================================ Message Resources Definitions ============= -->
+
+</struts-config>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="login" type="login.LoginForm" />
+
+	</form-beans>
+
+	<action-mappings>
+		<action path="/ip/**" type = "ip.IPAction" name="login">
+			<forward name="subnet-tool-v4" path="/ip/subnet-tool/subnet-tool-v4.jsp"></forward> 
+			<forward name="subnet-tool-v6" path="/ip/subnet-tool/subnet-tool-v6.jsp"></forward> 
+			<forward name="inventory-ipblock-add" path="/ip/inventory/add-ipblock.jsp"></forward>
+			<forward name="ip-region-create-page" path="/ip/region/ip-region-create.jsp"></forward>
+			<forward name="ip-region-search-page" path="/ip/region/ip-region-search.jsp"></forward>
+			<forward name="assign-nat-page" path="/ip/inventory/assignNat.jsp"></forward>
+
+			<forward name="ip-sub-region-create-page" path="/ip/sub-region/ip-sub-region-create.jsp"></forward>
+			<forward name="show-all-sub-regions" path="/ip/sub-region/ip-all-sub-regions.jsp"></forward>
+
+			<forward name="ip-usage-search" path="/ip/usage/search-ip-usage.jsp"></forward>
+			<forward name="ip-inventory-search" path="/ip/inventory/search-ip-inventory.jsp"></forward>
+
+
+		</action>
+
+
+		<action path="/geo/**" type = "geoLocation.GeoAction" name="login"></action>
+	</action-mappings>
+
+	<!-- ================================ Message Resources Definitions ============= -->
+	<message-resources parameter="BTCLBilling" />
+</struts-config>

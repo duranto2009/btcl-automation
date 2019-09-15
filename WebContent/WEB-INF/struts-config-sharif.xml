@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="paymentForm" type="common.payment.PaymentDTO" />
+		<form-bean name="webSecurityLogForm" type="websecuritylog.WebSecurityLogDTO" />
+		<form-bean name="InventoryItemForm" type="inventory.form.InventoryItemDetailsForm" />
+		
+		<!-- 		Web Security Log -->
+		<form-bean name="webSecurityLogDTO" type="websecuritylog.WebSecurityLogDTO" />
+		
+	</form-beans>
+
+
+	<global-exceptions>
+		
+	</global-exceptions>
+
+
+	<!-- =================================== Global Forward Definitions -->
+
+	<global-forwards>
+
+	</global-forwards>
+
+	<!-- =================================== Action Mapping Definitions -->
+
+	<action-mappings>
+	 	<!--==========domain ======-->
+		<action  path = "/OwnershipChangeRequestPreview"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/domain/ownership/requestForOwnershipPreview.jsp" />
+			
+		<action  path = "/BandwidthChangeRequestPreview"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/vpn/link/bandwidthChangePreview.jsp" />
+	
+		<!-- Payment  -->
+		<action name="paymentForm" path="/BankPayment" scope="request" type="common.payment.BankPaymentAction" validate="true">			
+			<forward name="success" path="/common/payment/bankPayment.jsp" />
+			<forward name="error" path="/common/payment/bankPayment.jsp" />
+		</action>
+		
+		<action  path = "/MultipleBillPaymentView"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/common/payment/linkPaymentAdd.jsp" />
+
+<!-- 		<action  path = "/MultipleBillPaymentViewLLI" -->
+<!-- 			type = "org.apache.struts.actions.ForwardAction" -->
+<!-- 			parameter="/lli/payment/lliLinkPaymentAdd.jsp" /> -->
+			
+		<action name="paymentForm"  path = "/MultipleBillPayment" type="vpn.payment.VpnMultipleBillPaymentAction"  parameter="/common/payment/linkPaymentAdd.jsp">
+			<forward name="success" path="/common/payment/paymentSearch.jsp" />
+			<forward name="error" path="/MultipleBillPaymentView.do" />
+		</action>	
+		
+		<action name="paymentForm"  path = "/MultipleVpnBillSkip" type="vpn.payment.VpnMultipleBillSkipAction"  parameter="/common/payment/linkPaymentAdd.jsp">
+			<forward name="success" path="/common/payment/paymentSearch.jsp" />
+			<forward name="error" path="/common/bill/billSearch.jsp" />
+		</action>	
+		
+		<action name="paymentForm" path="/DomainDisputeResolver" scope="request" type="common.payment.DomainDisputeResolverAction" validate="true">			
+			<forward name="success" path="/common/payment/domainDisputeResolver.jsp" />
+			<forward name="error" path="/common/payment/domainDisputeResolver.jsp" />
+		</action>
+		<!-- /Payment -->
+		
+		<action name="webSecurityLogForm" path="/WebSecurityLogSearch" scope="request" type="websecuritylog.WebSecurityLogSearchAction" validate="true">			
+			<forward name="success" path="/websecuritylog/webSecurityLogSearch.jsp" />
+			<forward name="error" path="/websecuritylog/webSecurityLogSearch.jsp" />
+		</action>
+		
+		<action  path = "/inventory/add"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/vpn/inventory/addInventoryItem.jsp" />
+		
+		
+		<action  path = "/VpnLinkClose"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/vpn/link/linkClose.jsp" />
+			
+		<action  path = "/VpnLinkClosePreview"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/vpn/link/linkClosePreview.jsp" />
+		
+		<action  path = "/VpnLinkTD"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/vpn/link/linkTD.jsp" />
+		<action  path = "/VpnLinkTdPreview"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/vpn/link/linkTdPreview.jsp" />	
+			
+		<action  path = "/VpnLinkEnable"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/vpn/link/linkEnable.jsp" />
+		<action  path = "/VpnLinkEnablePreview"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/vpn/link/linkEnablePreview.jsp" />				
+		
+		<action  path = "/VpnLinkShift"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/vpn/link/shiftVpnLink.jsp" />	
+		<action  path = "/VpnLinkShiftPreview"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/vpn/link/shiftVpnLinkPreview.jsp" />
+			
+		<action name="paymentForm"  path = "/VpnBalanceTransfer" type = "vpn.payment.VpnTransferBalanceAction" parameter="/vpn/payment/balanceTransfer.jsp" >
+			<forward name="success" path="/vpn/payment/balanceTransfer.jsp" />
+		</action>
+			
+			
+		<!-- VPN -->
+		
+		<action name="InventoryItemForm" path="/InventoryItemAction" scope="request" type="inventory.action.InventoryItemAction" validate="true">			
+			<forward name="delete" path="/vpn/inventory/searchInventoryAll.jsp" />
+			<forward name="edit" path="/vpn/inventory/editInventoryItem.jsp" />
+			<forward name="success" path="/vpn/inventory/searchInventoryAll.jsp" />
+			<forward name="error" path="/vpn/inventory/searchInventoryAll.jsp" />
+		</action>
+		
+		<action name="InventoryItemForm" path="/GetInventoryItem" scope="request" type="inventory.action.InventoryItemAction" validate="true">			
+			
+		</action>
+		
+		<action name="InventoryItemForm" path="/UpdateInventoryItem" scope="request" type="inventory.action.InventoryItemAction" validate="true">			
+			
+		</action>
+		
+		<action path="/GetAllAttempts" type="websecuritylog.WebSecurityLogAction"></action>
+		
+		
+	</action-mappings>
+	
+	<!-- ===================================== Controller Configuration ============ -->
+
+
+	<!-- ================================ Message Resources Definitions ============= -->
+
+	<message-resources parameter="BTCLBilling" />
+
+</struts-config>

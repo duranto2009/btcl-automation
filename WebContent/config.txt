@@ -1,0 +1,8 @@
+localBindIP=192.168.30.199
+localBindPort=30001
+smsServerIp=192.168.20.32
+smsServerPort=4334
+smsSenderUsername=121212
+callSenderUsername=121212
+callSenderPassword=1234
+smsCallerID=121212

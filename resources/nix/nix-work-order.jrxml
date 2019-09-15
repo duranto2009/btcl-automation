@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="nix-work-order" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="87ac827c-4204-4062-b1b4-1761a14ab902">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<subDataset name="efrBeanList" whenResourceMissingType="Empty" uuid="3e21e9aa-9463-4b61-8573-ce5041c0f739">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<parameter name="btcl_logo_heading" class="java.lang.String"/>
+	<parameter name="recipient_name" class="java.lang.String"/>
+	<parameter name="recipient_address" class="java.lang.String"/>
+	<parameter name="letter_body" class="java.lang.String"/>
+	<parameter name="sender_name" class="java.lang.String"/>
+	<parameter name="sender_designation" class="java.lang.String"/>
+	<parameter name="sender_department" class="java.lang.String"/>
+	<parameter name="efrBeanList" class="java.util.List"/>
+	<parameter name="ccList" class="java.util.List"/>
+	<parameter name="subject" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="171" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="0" y="0" width="555" height="79" uuid="d8138728-e8cd-4da8-8bc2-e7e2e800dc9d"/>
+				<imageExpression><![CDATA[$P{btcl_logo_heading}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="0" y="80" width="80" height="15" uuid="bafe8f37-d11b-4a5f-94d5-deba97880081">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["To"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="95" width="180" height="15" uuid="7689a242-3ac7-41e8-a068-6634d71974f6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["Chief Executive Officer (CEO)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="110" width="550" height="15" uuid="50ac2972-0ac8-4d6c-ae7d-bdad2a2adfe6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{recipient_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="125" width="550" height="15" uuid="60855632-0594-4514-9f62-7699b2c436ca">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{recipient_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="141" width="550" height="30" uuid="cc4f01bb-7610-446e-be1c-c7d76ba3320c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{subject}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{ccList}.isEmpty()==false]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="15" width="555" height="23" uuid="1324c3f8-2f84-4085-9e1f-924d17867bbd"/>
+				<subreportParameter name="ccList">
+					<subreportParameterExpression><![CDATA[$P{ccList}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{ccList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["nix/CC-work-order.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="2" y="0" width="550" height="15" uuid="f6d8598a-c158-4519-8e53-c75da4ac77a8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["CC:"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="95">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="15" uuid="1cc735a6-9208-4ce2-9a8c-725191b8ed0e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["Dear Concern,"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="15" width="555" height="75" uuid="fdd83094-13ea-43cb-b5ae-c991d35e465e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{letter_body}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="32">
+			<printWhenExpression><![CDATA[$P{efrBeanList}.isEmpty()==false]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="24" uuid="25fd9a4e-f1ea-4da1-bc26-e307ff2c15f9">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<subreportParameter name="efrBeanList">
+					<subreportParameterExpression><![CDATA[$P{efrBeanList}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{efrBeanList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["nix/wo_list.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="100">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="1" width="70" height="15" uuid="fedb7a1e-76ff-4bcf-9715-2d1334848741"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Serif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cautions:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="18" width="550" height="80" uuid="a033dde0-3ee4-4456-8af2-530a88908ec5"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Serif" size="9"/>
+					<paragraph lineSpacing="1_1_2" lineSpacingSize="0.0"/>
+				</textElement>
+				<text><![CDATA[1. You are requested to report to the below signed authority within 3 days of getting this letter following completion of the work.
+2. You will also have to set up the connection if the local loop distance is more than 3 km.
+3. Please take connection from BTCL (PoP) or from DC Office (which is nearer) for government organizations.
+4. Please set up BTCL connection if the client is non-government organizations.]]></text>
+			</staticText>
+		</band>
+		<band height="68">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="555" height="20" isRemoveLineWhenBlank="true" uuid="ec456c5d-3663-4d5b-9671-9d37208276a0"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Serif" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sender_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="20" width="555" height="20" isRemoveLineWhenBlank="true" uuid="089c0482-88bf-4c27-9be0-f6721deebb8a"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sender_designation}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="40" width="555" height="20" isRemoveLineWhenBlank="true" uuid="8ae01f82-3b3e-439d-a6d9-164a8dce0104"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sender_department}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

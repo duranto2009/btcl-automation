@@ -1,0 +1,128 @@
+	<!-- Identification -->
+   	<div id=identificationDiv>
+	   	<br><hr><br>
+		<h3 class="form-section">Identification</h3>
+		
+		<div class="row">
+			<div class="col-md-offset-2 col-md-10">
+				<div class="portlet box light">
+					<div class="portlet-title"><div class="caption">Instructions</div></div>
+					<div class="portlet-body form">
+						<ul>
+						    <li>All photocopies must be attested by first class Govt. Officers</li>
+						    <li>In the forwarding letter, below things must be present
+						    	<ul>
+								    <li>Signature of authorized person</li>
+								    <li>Required Bandwidth amount</li>
+								    <li>If 5 years contract/not</li>
+								</ul>
+						    </li>
+						    <li>Client will supply all client side equipments</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class=row>
+			<div class=form-group id="document_<%=FileTypeConstants.NID_SUFFIX%100%>">
+				<div class=col-md-12>
+					<div class="col-md-2 control-label">NID</div>
+					<input type="hidden" data-type="nid" data-text="NID" name="clientDetailsDTO.identityType" 
+					value="<%=ClientConstants.getIndentityTypeByModuleIDAndDocumentSuffix(moduleID, FileTypeConstants.NID_SUFFIX)%>">
+					<div class=col-md-7><input type=text name="clientDetailsDTO.identityNo" class="form-control"></div>
+					<div class=col-md-3>
+						<div id="nid" class="btn btn-default form-control fileinput-button">
+							<i class="fa fa-upload"></i>
+							<span>NID Documents</span>
+							<input class="jFile" type="file" name="<%=ClientConstants.getIndentityTypeByModuleIDAndDocumentSuffix(moduleID, FileTypeConstants.NID_SUFFIX)%>" >
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			<div class=form-group id="document_<%=FileTypeConstants.PASSPORT_SUFFIX%100%>">
+				<div class=col-md-12>
+					<div class="col-md-2 control-label">Passport</div>
+					<input type="hidden" data-type="passport" data-text="Passport" name="clientDetailsDTO.identityType" 
+					value="<%=ClientConstants.getIndentityTypeByModuleIDAndDocumentSuffix(moduleID, FileTypeConstants.PASSPORT_SUFFIX)%>">
+					<div class=col-md-7><input type=text name="clientDetailsDTO.identityNo" class="form-control"></div>
+					<div class=col-md-3>
+						<div id="passport" class="btn btn-default form-control fileinput-button">
+							<i class="fa fa-upload"></i>
+							<span>Passport Documents</span> 
+							<input class="jFile" type="file" name="<%=ClientConstants.getIndentityTypeByModuleIDAndDocumentSuffix(moduleID, FileTypeConstants.PASSPORT_SUFFIX)%>" >
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class=form-group id="document_<%=FileTypeConstants.TIN_SUFFIX%100%>">
+				<div class=col-md-12>
+					<div class="col-md-2 control-label">TIN</div>
+					<input type="hidden" data-type="tin" data-text="TIN" 
+						name="clientDetailsDTO.identityType"  value="<%=ClientConstants.getIndentityTypeByModuleIDAndDocumentSuffix(moduleID, FileTypeConstants.TIN_SUFFIX)%>">
+					<div class=col-md-7><input type=text name="clientDetailsDTO.identityNo" class="form-control"></div>
+					<div class=col-md-3>
+						<div id="tin" class="btn btn-default form-control fileinput-button">
+							<i class="fa fa-upload"></i>
+							<span>TIN Documents</span> 
+							<input class="jFile" type="file" name="<%=ClientConstants.getIndentityTypeByModuleIDAndDocumentSuffix(moduleID, FileTypeConstants.TIN_SUFFIX)%>" >
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class=form-group id="document_<%=FileTypeConstants.TRADE_SUFFIX%100%>">
+				<div class=col-md-12>
+					<div class="col-md-2 control-label">Trade License</div>
+					<input type="hidden" data-type="trade" data-text="Trade License" 
+						name="clientDetailsDTO.identityType"  value="<%=ClientConstants.getIndentityTypeByModuleIDAndDocumentSuffix(moduleID, FileTypeConstants.TRADE_SUFFIX)%>">
+					<div class=col-md-7><input type=text name="clientDetailsDTO.identityNo" class="form-control"></div>
+					<div class=col-md-3>
+						<div id="trade" class="btn btn-default form-control fileinput-button">
+							<i class="fa fa-upload"></i>
+							<span>Trade License Documents</span> 
+							<input class="jFile" type="file" name="<%=ClientConstants.getIndentityTypeByModuleIDAndDocumentSuffix(moduleID, FileTypeConstants.TRADE_SUFFIX)%>" >
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class=form-group id="document_<%=FileTypeConstants.FORWARDING_LETTER_SUFFIX%100%>">
+				<div class=col-md-12>
+					<div class="col-md-2 control-label">Forwarding Letter</div>
+					<input type="hidden"  data-type="forwardingLetterFile" data-text="Forwarding Letter"
+						name="clientDetailsDTO.identityType" value="<%=ClientConstants.getIndentityTypeByModuleIDAndDocumentSuffix(moduleID, FileTypeConstants.FORWARDING_LETTER_SUFFIX)%>">
+					<div class=col-md-7><input type=text name="clientDetailsDTO.identityNo" class="form-control"></div>
+					<div class=col-md-3>
+						<div id="forwardingLetterFile" class="btn btn-default form-control fileinput-button">
+							<i class="fa fa-upload"></i>
+							<span>Forwarding Letter Documents</span> 
+							<input class="jFile" type="file" name="<%=ClientConstants.getIndentityTypeByModuleIDAndDocumentSuffix(moduleID, FileTypeConstants.FORWARDING_LETTER_SUFFIX)%>" >
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+   	</div>
+   	
+   	
+   	<div class=row>
+		<div class="col-md-12">
+			<span class="fileupload-process"/>
+			<div class="col-md-12 fileupload-progress fade">
+				<div class="progress progress-striped active" role="progressbar" aria-valuemin=0 aria-valuemax=100>
+					<div class="progress-bar progress-bar-success" style="width:0%"></div>
+				</div>
+				<div class=progress-extended>&nbsp;</div>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<table role=presentation class="table table-stripped">
+				<tbody class=files></tbody>
+			</table>
+		</div>
+		<jsp:include page="../../common/ajaxfileUploadTemplate.jsp" />	
+	</div>

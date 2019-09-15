@@ -1,0 +1,22 @@
+//Edit the util.ConformationMessage file and insert the following variables
+public static final String LLI_ADD="LLI_ADD";
+public static final String LLI_EDIT="LLI_EDIT";
+public static final String LLI_DELETE="LLI_DELETE";
+
+
+//Insert the following variables in sessionmanager.SessionConstants file
+public final static String NAV_LLI = "navLli";
+public final static String VIEW_LLI = "viewLli";
+public static final String[][] SEARCH_LLI = {{"BANDWIDTH","LLBANDWIDTH"}, {"MONTH","LLMONTH"}, {"ADDRESS","LLADDRESS"}, {"LOOPPROVIDER","LLLOOPPROVIDER"}, {"EQUIPMENTNAME","LLEQUIPMENTNAME"}, {"EQUIPMENTMODEL","LLEQUIPMENTMODEL"}, {"EQUIPMENTINTERFACE","LLEQUIPMENTINTERFACE"}, {"IPNEED","LLIPNEED"}, {"IPROUTE","LLIPROUTE"}};
+
+
+//Insert the following variables and change value in login.PermissionConstants file
+public static final int MANAGE_LLI = 901;
+public static final int LLI_ADD = 902;
+public static final int LLI_SEARCH = 903;
+
+//sql
+
+insert into vbSequencer values(ADLLI,0,0);
+
+

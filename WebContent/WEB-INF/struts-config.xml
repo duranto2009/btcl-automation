@@ -1,0 +1,2565 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+<!-- <!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts 
+	Configuration 1.3//EN" "struts-config_1_3.dtd"> -->
+<struts-config>
+
+	<!-- ==================================== Data Source Configuration -->
+
+
+	<!-- ======================================== Form Bean Definitions -->
+
+	<!-- Added by Pravakar -->
+	<form-beans>
+
+		<form-bean name="loginForm" type="login.LoginForm" />
+		
+		<form-bean name="forbiddenWordForm" type="domain.UncensoredWordDTO" />
+
+		<form-bean name="passwordMailForm" type="login.PasswordMailForm" />
+
+		<form-bean name="userForm" type="user.form.UserForm" />
+
+		<form-bean name="roleForm" type="role.form.RoleForm" />
+
+		<!-- <form-bean name="clientForm" type="client.form.ClientForm" /> -->
+
+		<form-bean name="clientStatusForm" type="client.form.ClientStatusForm" />
+
+		<form-bean name="operatorForm" type="operator.form.OperatorForm" />
+
+		<form-bean name="clientIDForm" type="client.form.ClientIDForm" />
+
+		<form-bean name="changeAccountPasswordForm" type="clientmodule.password.form.PasswordForm" />
+
+		<form-bean name="monitoringForm" type="report.form.MonitoringForm" />
+
+		<form-bean name="helpForm" type="help.form.HelpForm" />
+
+		<form-bean name="regionForm" type="regiontype.form.RegionForm" />
+
+		<form-bean name="otherChargeForm" type="othercharge.form.OtherForm" />
+
+		<form-bean name="bonusForm" type="bonus.form.BonusForm" />
+
+		<form-bean name="discountForm" type="discount.form.DiscountForm" />
+
+		<form-bean name="trackerForm" type="tracker.form.TrackerForm" />
+
+		<form-bean name="dslmForm" type="dslm.form.DslmForm" />
+
+		<form-bean name="invoiceorderForm" type="invoiceorder.form.InvoiceOrderForm" />
+
+		<form-bean name="invoiceForm" type="invoice.form.InvoiceForm" />
+
+		<form-bean name="migrationForm" type="migration.form.MigrationForm" />
+
+		<form-bean name="batchMigrationForm" type="batchmigration.form.BatchMigrationForm" />
+
+		<form-bean name="rechargeOperatorForm" type="rechargeoperator.form.RechargeOperatorForm" />
+
+		<form-bean name="messageFormatForm" type="messageformat.form.MessageFormatForm" />
+
+		<form-bean name="messageForm" type="message.form.MessageForm" />
+
+		<form-bean name="prepaidPaymentForm" type="prepaidpayment.form.PrepaidPaymentForm" />
+
+		<form-bean name="operatorCommissionForm"
+			type="operatorcommission.form.OperatorCommissionForm" />
+
+		<form-bean name="essentialForm" type="essential.form.EssentialForm" />
+
+		<form-bean name="exchangeForm" type="exchange.form.ExchangeForm" />
+
+
+		<form-bean name="smsForm" type="sms.form.SmsForm" />
+
+		<form-bean name="mailForm" type="mail.form.MailForm" />
+
+		<!-- Added by Dhiman -->
+
+		<form-bean name="packageForm" type="packages.form.PackageForm" />
+
+		<form-bean name="tariffForm" type="packages.form.TariffForm" />
+
+		<form-bean name="rechargeClientForm" type="recharge.form.RechargeClientForm" />
+
+		<form-bean name="generateBillForm" type="billing.form.GenerateBillForm" />
+
+		<form-bean name="removeClientForm" type="remove.form.RemoveClientForm" />
+
+		<form-bean name="shiftClientForm" type="shifting.form.ShiftClientForm" />
+
+		<form-bean name="idForm" type="org.apache.struts.action.DynaActionForm">
+
+			<form-property name="id" type="java.lang.String" />
+		</form-bean>
+
+		<form-bean name="dateDurationForm"
+			type="clientmodule.usagehistory.form.DateDurationForm">
+		</form-bean>
+
+		<form-bean name="changeBillForm" type="billing.form.ChangeForm">
+		</form-bean>
+
+		<!--Added by Tausun -->
+
+		<form-bean name="chooseReportForm" type="report.form.ChooseReportForm" />
+
+		<form-bean name="reportWizardForm" type="report.form.ReportWizardForm" />
+
+		<form-bean name="singleReportForm" type="report.form.SingleReportForm" />
+
+		<form-bean name="saveOrDownloadForm" type="report.form.SaveOrDownloadForm" />
+
+		<form-bean name="reportForm" type="report.form.ReportConfigurationForm" />
+
+		<form-bean name="downloadForm" type="Download.form.DownloadForm" />
+		<!-- Tausun -->
+
+		<!-- kayesh change start -->
+		<form-bean name="clientForm" type="vpn.client.ClientForm" />
+		<form-bean name="vpnCostForm" type="vpn.client.form.VPNCostForm" />
+		<form-bean name="commentForm" type="comment.CommentDTO" />
+		<!-- kayesh change end -->
+		<form-bean name="hostingPackageForm" type="hostingpackage.form.HostingPackageForm" />
+		<form-bean name="hostingPaymentForm" type="hostingpayment.form.HostingPaymentForm" />
+		<form-bean name="hostingdomainForm" type="hostingdomain.form.HostingdomainForm" />
+		<form-bean name="hostingPackage2Form" type="hostingpackage2.form.Hostingpackage2Form" />
+		<form-bean name="iigForm" type="iig.form.IigForm" />
+		<form-bean name="orderForm" type="order.form.OrderForm" />
+		<form-bean name="vpnForm" type="vpn.form.VpnForm" />
+		<form-bean name="lliForm" type="lli.form.LliForm" />
+
+		<!-- abhijit -->
+		<form-bean name="addRechargeCardBatchForm" type="rechargecard.form.AddRechargeCardBatchForm" />
+		<!-- Start Direct Credit Card -->
+		<form-bean name="creditCardPayment"
+			type="creditcardpayment.form.CreditCardPaymentForm" />
+		<!-- End Direct Credit Card -->
+		<form-bean name="districtDistanceDTO" type="distance.form.DistrictDistanceDTO" />
+		<form-bean name="InventoryItemForm" type="inventory.form.InventoryItemDetailsForm" />
+		
+	
+		<!-- VPN -->
+		<!-- @kawser -->
+		<form-bean name="vpnConnectionForm" type="vpn.VpnConnectionDTO" />
+		<form-bean name="vpnLinkForm" type="vpn.link.VpnNewLinkCreateDTO" />
+		<form-bean name="lliLinkForm" type="lli.link.LliNewLinkCreateDTO" />
+		<form-bean name="vpnChangeBWForm" type="vpn.link.VpnBandWidthChangeRequestDTO" />
+		<form-bean name="lliChangeBWForm" type="lli.link.LliBandWidthChangeRequestDTO" />
+		<!-- /VPN -->
+
+		<!-- Domain -->
+		<!-- $h@rif -->
+		<form-bean name="domainPackageTypeForm" type="domain.DomainPackageTypeDTO" />
+		<!-- @kawser -->
+		<form-bean name="domainClientForm" type="domain.client.DomainClientForm" />
+		<form-bean name="domainDTO" type="login.LoginForm" />
+		<form-bean name="domainAddForm" type="domain.DomainAddForm"></form-bean>
+		<!-- /Domain -->
+
+		<!-- Complain -->
+		<!-- @kawser -->
+		<form-bean name="complainForm" type="complain.ComplainDTO" />
+		<form-bean name="complainHistoryForm" type="complain.ComplainHistoryDTO" />
+		<!-- /Complain -->
+
+		<!-- Common -->
+		<!-- @kawser -->
+		<form-bean name="commonRequestForm" type="request.CommonRequestDTO" />
+		<!-- /Common -->
+		<form-bean name="domainChargeConfigForm" type="domain.DomainChargeConfigDTO" />
+
+		<form-bean name="testForm" type="test.form.TestForm" />
+		<form-bean name="costConfigForm" type="costConfig.form.CostConfigForm" />
+		<form-bean name="clientForm" type="vpn.client.ClientForm" />
+
+
+		<form-bean name="testForm" type="test.form.TestForm" />
+		<form-bean name="costConfigForm" type="costConfig.form.CostConfigForm" />
+		<form-bean name="requestForm" type="request.form.RequestForm" />
+
+		<form-bean name="vpnCommonChargeConfigForm" type="vpnCommonChargeConfig.form.vpnCommonChargeConfigForm" />
+		
+		<form-bean name="lliCommonChargeConfigForm" type="lliCommonChargeConfig.form.lliCommonChargeConfigForm" />
+		
+		<form-bean name="myTestForm" type="mytest.form.MyTestForm" />
+		<!-- sh@rif -->
+		<form-bean name="FileDTO" type="file.FileDTO" />
+		
+		
+	</form-beans>
+
+
+	<global-exceptions>
+		<exception key="error.global.mesage" type="java.io.IOException"
+			path="/common/failure.jsp" />
+	</global-exceptions>
+
+
+	<!-- =================================== Global Forward Definitions -->
+
+	<global-forwards>
+		
+		<forward name="login" path="/home/login.jsp" redirect="true" />
+
+		<forward name="mailPassword" path="/home/mailPassword.jsp"
+			redirect="true" />
+
+		<forward name="home" path="/dashboard.do" redirect="true" />
+
+		<forward name="failure" path="/common/failure.jsp" redirect="true" />
+
+		<forward name="SystemFailure" path="/common/failure.jsp" />
+
+		<forward name="SessionTimeOut" path="/common/failure.jsp"
+			redirect="true" />
+			
+		<forward name="applicationRoot" path="/" redirect="true" />
+		<forward name="404" path="/common/404.jsp" />
+	</global-forwards>
+
+	<!-- =================================== Action Mapping Definitions -->
+
+	<action-mappings>
+		<action name="fileDTO" path="/file/**"  type="file.upload.FileAction"/>
+
+
+
+
+
+		<action name="clientIDForm" input="/clients/clientAdd.jsp"
+			path="/ChkIDvalidity" scope="request" type="client.action.ChkIDvalidityAction"
+			validate="false">
+
+			<forward name="success" path="/clients/clientAdd.jsp"
+				redirect="false" />
+
+			<forward name="actionError" path="/clients/clientAdd.jsp" />
+		</action>
+
+		<!-- ======== AutoComplete(DEMO)========= -->
+		<action path="/AutoComplete" scope="request"
+			type="autocomplete.AutoCompleteAction"></action>
+
+
+		<!-- ======== Add Region ======== -->
+
+		<action name="regionForm" input="/region/regionAdd.jsp" path="/AddRegion"
+			scope="request" type="regiontype.action.AddRegionAction" validate="true">
+
+			<forward name="success" path="/region/regionAdd.jsp"
+				redirect="true" />
+
+			<forward name="actionError" path="/region/regionAdd.jsp" />
+		</action>
+
+		<!-- ======== View Region ======== -->
+
+		<action name="regionForm" input="/region/region.jsp" path="/ViewRegion"
+			scope="request" type="regiontype.action.ViewRegionAction" validate="false">
+
+			<forward name="success" path="/region/region.jsp" redirect="true" />
+		</action>
+
+		<!-- ======== Drop Region ======== -->
+
+		<action name="regionForm" input="/ViewRegion.do" path="/DropRegion"
+			scope="request" type="regiontype.action.DropRegionAction" validate="false">
+
+			<forward name="success" path="/ViewRegion.do" redirect="true" />
+		</action>
+
+		<!-- ======== Get Region ======== -->
+
+		<action name="regionForm" input="/region/regionEdit.jsp" path="/GetRegion"
+			scope="request" type="regiontype.action.GetRegionAction" validate="false">
+
+			<forward name="success" path="/region/regionEdit.jsp" />
+			<forward name="failure" path="/region/failure.jsp" />
+
+		</action>
+
+		<action name="regionForm" input="/region/regionEdit.jsp" path="/ParentRegionChange"
+			scope="request" type="regiontype.action.ParentRegionChangeAction"
+			validate="false">
+
+			<forward name="success" path="/region/parentEdit.jsp" />
+
+		</action>
+
+		<!-- ======== Update Region ======== -->
+
+		<action name="regionForm" input="/region/regionEdit.jsp" path="/UpdateRegion"
+			scope="request" type="regiontype.action.UpdateRegionAction" validate="true">
+
+			<forward name="success" path="/ViewRegion.do?id=current" />
+
+			<forward name="actionError" path="/region/regionEdit.jsp" />
+		</action>
+
+		<action name="regionForm" input="/region/parentEdit.jsp" path="/ChangeParentRegion"
+			scope="request" type="regiontype.action.ChangeParentRegionAction"
+			validate="true">
+
+			<forward name="success" path="/ViewRegion.do?id=current" />
+
+			<forward name="actionError" path="/region/parentEdit.jsp" />
+		</action>
+
+
+
+		<!-- ======== Add Sms ======== -->
+
+		<action name="smsForm" input="/message/SendSms.jsp" path="/sendSms"
+			scope="request" type="sms.action.AddSmsAction" validate="true">
+
+			<forward name="success" path="/message/SendSms.jsp" redirect="true" />
+
+			<forward name="actionError" path="/message/SendSms.jsp" />
+		</action>
+
+		<action name="loginForm" path="/payment/api/*" scope="request"
+			type="payment.api.PaymentAction">
+		</action>
+
+
+
+		<!-- ======== Add Mail ======== -->
+
+		<action name="mailForm" input="/message/SendMail.jsp" path="/sendMail"
+			scope="request" type="mail.action.AddMailAction" validate="true">
+
+			<forward name="success" path="/message/SendMail.jsp"
+				redirect="true" />
+
+			<forward name="actionError" path="/message/SendMail.jsp" />
+		</action>
+
+
+		<!-- ======== Get Reply Report ======== -->
+
+		<action name="reportForm" input="/general/helplist.jsp" path="/GetReplyList"
+			scope="request" type="help.action.GetReplyReportAction" validate="false">
+
+			<forward name="success" path="/general/replylist.jsp"
+				redirect="true" />
+		</action>
+
+
+		<!-- ======== Add Token ======== -->
+
+		<action name="helpForm" input="/help/helpAdd.jsp" path="/AddTokenHelp"
+			scope="request" type="help.action.AddTokenHelpAction" validate="true">
+
+			<forward name="success" path="/help/helpAdd.jsp" redirect="true" />
+
+			<forward name="actionError" path="/help/helpAdd.jsp" />
+		</action>
+
+		<!-- ======== Search Reply for User ======== -->
+
+		<action name="helpForm" input="/help/replySearch.jsp" path="/ViewReplySearch"
+			scope="request" type="help.action.ViewHelpAction" validate="false">
+
+			<forward name="success" path="/help/replySearch.jsp"
+				redirect="true" />
+		</action>
+
+		<!-- ======== View Reply ======== -->
+
+		<action name="helpForm" input="/help/reply.jsp" path="/ViewReply"
+			scope="request" type="help.action.ViewReplyAction" validate="false">
+
+			<forward name="success" path="/help/reply.jsp" redirect="true" />
+		</action>
+
+		<!-- ======== Get Reply ======== -->
+
+		<action name="helpForm" input="/help/replyAdd.jsp" path="/GetReply"
+			scope="request" type="help.action.GetHelpAction" validate="false">
+
+			<forward name="success" path="/help/replyAdd.jsp" />
+		</action>
+
+		<!-- ======== Get Reply Perticular ======== -->
+
+		<action name="helpForm" input="/help/replyAddPerticular.jsp"
+			path="/GetReplyPerticular" scope="request"
+			type="help.action.GetReplyPerticularActon" validate="false">
+
+			<forward name="success" path="/help/replyAddPerticular.jsp" />
+		</action>
+
+		<!-- ======== Complete Add Help ======== -->
+
+		<action name="helpForm" input="/help/helpAdd.jsp" path="/AddHelp"
+			scope="request" type="help.action.AddHelpAction" validate="true">
+
+			<forward name="success" path="/help/helpReply.jsp" redirect="true" />
+
+			<forward name="actionError" path="/help/helpAdd.jsp" />
+		</action>
+
+		<!-- ======== Complete Add Help Request ======== -->
+
+		<action name="helpForm" path="/AddHelpRequest" scope="request"
+			type="help.action.AddHelpRequestAction" validate="true">
+
+			<forward name="success" path="/help/helpReply.jsp" redirect="true" />
+
+			<forward name="actionError" path="/help/helpReply.jsp" />
+		</action>
+
+		<!-- ======== Complete Add Help Solution ======== -->
+
+		<action name="helpForm" input="/help/ReplyAdd.jsp" path="/AddHelpSolution"
+			scope="request" type="help.action.AddHelpSolutionAction" validate="true">
+
+			<forward name="success" path="/ViewReply.do" redirect="true" />
+
+			<forward name="actionError" path="/help/ReplyAdd.jsp" />
+		</action>
+
+		<!-- ======== Add Reply ======== -->
+
+		<action name="helpForm" input="/help/replyAdd.jsp" path="/AddReply"
+			scope="request" type="help.action.AddReplyAction" validate="true">
+
+			<forward name="success" path="/ViewReply.do?id=current" />
+
+			<forward name="actionError" path="/help/replyAdd.jsp" />
+		</action>
+
+		<!-- ======== View Help ======== -->
+
+		<action name="helpForm" input="/help/help.jsp" path="/ViewHelp"
+			scope="request" type="help.action.ViewHelpAction" validate="false">
+
+			<forward name="success" path="/help/help.jsp" redirect="true" />
+		</action>
+
+		<!-- ======== Get Help ======== -->
+
+		<action name="helpForm" input="/help/helpReply.jsp" path="/GetHelp"
+			scope="request" type="help.action.GetHelpAction" validate="false">
+
+			<forward name="success" path="/help/helpReply.jsp" />
+		</action>
+
+		<!-- ======== Get Help Yes ======== -->
+
+		<action name="helpForm" input="/help/helpReply.jsp" path="/GetHelpYes"
+			scope="request" type="help.action.GetHelpAction" validate="false">
+
+			<forward name="success" path="/help/helpReplyYes.jsp" />
+		</action>
+
+		<!-- ======== Close Token ======== -->
+
+		<action name="helpForm" input="/ViewHelp.do" path="/CloseToken"
+			scope="request" type="help.action.CloseTokenAction" validate="false">
+
+			<forward name="success" path="/ViewHelp.do" redirect="true" />
+		</action>
+
+		<!-- ======== Drop Help ======== -->
+
+		<action name="helpForm" input="/ViewHelp.do" path="/DropHelp"
+			scope="request" type="help.action.DropHelpAction" validate="false">
+
+			<forward name="success" path="/ViewHelp.do" redirect="true" />
+		</action>
+
+		<!-- ======== Drop Reply ======== -->
+
+		<action name="helpForm" input="/ViewReply.do" path="/DropHelp"
+			scope="request" type="help.action.DropHelpAction" validate="false">
+
+			<forward name="success" path="/ViewReply.do" redirect="true" />
+		</action>
+		<!-- ================End of Added By JESMIN====================== -->
+
+
+		<!-- ======== Change Password ======== -->
+
+		<action name="changeAccountPasswordForm" path="/ChangeClientPassword"
+			scope="request" type="clientmodule.password.action.PasswordAction"
+			validate="true">
+
+			<forward name="success" path="/clientModule/ChangePasswordConformation.jsp"
+				redirect="true" />
+
+			<forward name="actionError" path="/clientmodule/ChangePassword.jsp" />
+		</action>
+
+		<!-- ======== 0 Login ======== -->
+
+		<action name="loginForm" input="/home/login.jsp" path="/Login"
+			scope="request" type="login.LoginAction" validate="true">
+
+			<forward name="actionError" path="/home/login.jsp" />
+		</action>
+
+		<!-- ======== 0 Mail Password ======== -->
+
+		<action name="passwordMailForm" input="/home/mailPassword.jsp"
+			path="/PasswordMail" scope="request" type="login.PasswordMailAction"
+			validate="true">
+
+			<forward name="actionError" path="/home/mailPassword.jsp" />
+		</action>
+
+<!-- 		================ Add User =================== -->
+		<action name="userForm" input="/users/userAdd.jsp" path="/AddUser"
+			scope="request" type="user.UserAction" validate="true">
+			<forward name="success" path="/users/userAdd.jsp" redirect="true" />
+			<forward name="actionError" path="/users/userAdd.jsp" />
+		</action>
+		<!-- ============ Search User ===================== -->
+		<action name="userForm" input="/users/user.jsp" path="/SearchUser" scope="request" type="user.UserAction" validate="false">
+			<forward name="success" path="/users/user.jsp" />
+		</action>
+		<!-- ============== View User ========= -->
+		<action name="userForm" input="/users/user.jsp" path="/ViewUser" scope="request" type="user.UserAction" validate="false">
+			<forward name="success" path="/users/user.jsp" redirect="true" />
+		</action>
+		<!-- ======== Get User ======== -->
+		<action name="userForm" input="/users/userEdit.jsp" path="/GetUser" scope="request" type="user.UserAction" validate="false">
+			<forward name="success" path="/users/userEdit.jsp" />
+		</action>
+		<!-- ======== Update User ======== -->
+		<action name="userForm" input="/users/userEdit.jsp" path="/UpdateUser" scope="request" type="user.UserAction" validate="true">
+			<forward name="success" path="/ViewUser.do?id=current" />
+			<forward name="actionError" path="/users/userEdit.jsp" />
+		</action>
+		<!-- ======== Drop User ======== -->
+		<action name="userForm" input="/ViewUser.do" path="/DropUser" scope="request" type="user.UserAction" validate="false">
+			<forward name="success" path="/ViewUser.do" redirect="true" />
+		</action>
+
+		<action name="userForm"  path="/get-user" scope="request" type="user.UserAction" >
+			<!--<forward name="success" path="/users/userEdit.jsp" />-->
+		</action>
+		<action name="userForm" path="/get-user-by-role" scope="request" type="user.UserAction"></action>
+		
+		
+		<!-- ======== GET Add Role ======== -->
+		<action path="/getAddRole" name="roleForm" 
+			type="role.action.RoleAction" scope="request">
+			<forward name="getAddRole" path="/roles/roleEdit.jsp" />
+		</action>	
+		<!-- ======== Add Role ======== -->
+		<action name="roleForm" path="/AddRole"
+			scope="request" type="role.action.RoleAction">
+			<forward name="success" path="/roles/roleEdit.jsp" redirect="true" />
+			<forward name="actionError" path="/roles/roleEdit.jsp" />
+		</action>
+		<!-- ======== View Role ======== -->
+		<action name="roleForm" input="/roles/role.jsp" path="/ViewRole"
+			scope="request" type="role.action.ViewRoleAction" validate="false">
+			<forward name="success" path="/roles/role.jsp" />
+		</action>
+		<!-- ======== Get Role ======== -->
+		<action name="roleForm" input="/roles/roleEdit.jsp" path="/GetRole"
+			scope="request" type="role.action.GetRoleAction" validate="false">
+			<forward name="success" path="/roles/roleEdit.jsp" />
+		</action>
+		<!-- ======== Update Role ======== -->
+		<action name="roleForm" input="/roles/roleEdit.jsp" path="/UpdateRole"
+			scope="request" type="role.action.UpdateRoleAction" validate="true">
+			<forward name="success" path="/ViewRole.do?id=current" />
+			<forward name="actionError" path="/roles/roleEdit.jsp" />
+		</action>
+		<!-- ======== Drop Role ======== -->
+		<action name="roleForm" input="/ViewRole.do" path="/DropRole"
+			scope="request" type="role.action.DropRoleAction" validate="false">
+			<forward name="success" path="/ViewRole.do" redirect="true" />
+		</action>
+
+		<!-- ======== Logout ======== -->
+
+		<action path="/Logout" scope="request" type="logout.LogoutAction"
+			validate="false">
+		</action>
+
+		<action path="/Registration" name="clientForm" type="vpn.client.ClientRegistrationAction"  scope="request">
+			<forward name="registration" path="/registration/addNewClient.jsp" redirect="false" />
+		</action>
+		
+		<!-- ======== Change Password ======== -->
+		<action path="/ClientProfileInfo" 
+				name="clientForm"
+				type="profile.ClientInfoAction"
+				scope="request" >
+			<forward name="profile" path="/profile/profile.jsp" redirect="false" />
+			<forward name="changePasswordAdmin" path="/profile/changePasswordAdmin.jsp" redirect="false" />
+		</action>
+		
+
+		<action path="/AddClient" name="clientForm" type="vpn.client.ClientAddAction" input="/client/client/clientAdd.jsp" scope="request" validate="false">
+			<forward name="domainClientAddSuccess" path="/GetClientForView.do" />
+			<forward name="webHostingClientAddSuccess" path="/GetClientForView.do" />
+			<forward name="ipaddressClientAddSuccess" path="/GetClientForView.do" />
+			<forward name="colocationClientAddSuccess" path="/GetClientForView.do" />
+			<forward name="iigClientAddSuccess" path="/GetClientForView.do" />
+			<forward name="vpnClientAddSuccess" path="/GetClientForView.do" />
+			<forward name="lliClientAddSuccess" path="/GetClientForView.do" />
+			<forward name="adslClientAddSuccess" path="/GetClientForView.do" />
+			<forward name="nixClientAddSuccess" path="/GetClientForView.do" />
+			<forward name="dnshostingClientAddSuccess" path="/GetClientForView.do" />
+			
+			<forward name="domainClientAddError" path="/client/client/clientAdd.jsp" redirect="false" />
+			<forward name="webHostingClientAddError" path="/client/client/clientAdd.jsp"/>
+			<forward name="ipaddressClientAddError" path="/client/client/clientAdd.jsp"/>
+			<forward name="colocationClientAddError" path="/client/client/clientAdd.jsp"/>
+			<forward name="iigClientAddError" path="/client/client/clientAdd.jsp"/>
+			<forward name="vpnClientAddError" path="/client/client/clientAdd.jsp" redirect="false"/>
+			<forward name="lliClientAddError" path="/client/client/clientAdd.jsp?moduleID=7" redirect="false"/>
+			<forward name="adslClientAddError" path="/adsl/client/clientAdd.jsp"/>
+			<forward name="nixClientAddError" path="/nix/client/clientAdd.jsp"/>
+			<forward name="dnshostingClientAddError" path="/client/client/clientAdd.jsp"/>
+		
+			<forward name="registrationError" path="/Client/Registration.do" redirect="true" />
+			<forward name="login" path="/" redirect="true" />
+		</action>
+
+		<!-- ======== Search Client ======== -->
+
+
+		<action name="clientForm" input="/client/client/clientSearch.jsp"
+			path="/SearchClient" scope="request" type="vpn.client.ClientSearchAction"
+			validate="false">
+			<forward name="search" path="/client/client/clientSearch.jsp" />
+
+		</action>
+		<!-- ======== Get Client ======== -->
+
+
+		<!-- Client Preview -->
+		<action path="/GetClientForEdit" name="clientForm"	input="/client/client/clientEdit.jsp" scope="request" type="vpn.client.ClientGetForEditAction" validate="false">
+			<forward name="getClientPreview" path="/client/client/clientPreview.jsp" />
+			<forward name="getClientUpdate" path="/client/client/clientEdit.jsp" />
+		</action>
+
+		<!-- Client view -->
+		<action path="/GetClientForView" name="clientForm" scope="request"
+			type="vpn.client.ClientGetForViewAction" validate="false">
+			<forward name="view" path="/client/client/clientView.jsp" />
+			<forward name="domain" path="/domain/client/clientView.jsp" />
+		</action>
+
+		<!-- ======== Verify Client ======== -->
+
+		<action name="clientForm" input="/clients/VerifyClients.jsp"
+			path="/VerifyClient" scope="request" type="client.action.VerifyClientAction"
+			validate="false">
+
+			<forward name="success" path="/clients/VerifyClients.jsp"
+				redirect="true" />
+		</action>
+
+		<!-- ======== Approve Client ======== -->
+
+		<action name="clientForm" input="/clients/ApproveClients.jsp"
+			path="/ApproveClient" scope="request" type="client.action.ApproveClientAction"
+			validate="false">
+
+			<forward name="success" path="/clients/ApproveClients.jsp"
+				redirect="true" />
+		</action>
+
+
+		<!-- ======== Get Balance ======== -->
+
+		<action path="/getclientbalance" scope="request"
+			type="client.action.GetClientBalanceAction" validate="false">
+
+			<forward name="success" path="/clients/clientBalance.jsp" />
+		</action>
+
+		<!-- ======== Update Client ======== -->
+		<!-- -->
+		<action name="clientForm" input="/client/client/clientEdit.jsp"
+			path="/EditClient" scope="request" type="vpn.client.ClientUpdateAction"
+			validate="true">
+			<forward name="domainClientEditSuccess" path="/GetClientForView.do" redirect="false"/>
+			<forward name="webHostingClientEditSuccess" path="/GetClientForView.do" redirect="false"/>
+			<forward name="ipddressClientEditSuccess" path="/GetClientForView.do" redirect="false"/>
+			<forward name="colocationClientEditSuccess" path="/GetClientForView.do" redirect="false"/>
+			<forward name="iigClientEditSuccess" path="/GetClientForView.do" redirect="false"/>
+			<forward name="vpnClientEditSuccess" path="/GetClientForView.do" redirect="false"/>
+			<forward name="lliClientEditSuccess" path="/GetClientForView.do" redirect="false"/>
+			<forward name="adslClientEditSuccess" path="/GetClientForView.do" redirect="false"/>
+			<forward name="nixClientEditSuccess" path="/GetClientForView.do" redirect="false"/>
+			<forward name="dnshostingClientEditSuccess" path="/GetClientForView.do" redirect="false"/>
+			
+			<forward name="domainClientEditError" path="/GetClientForEdit.do" redirect="false"/>
+			<forward name="webHostingClientEditError" path="/GetClientForEdit.do" redirect="false"/>
+			<forward name="ipddressClientEditError" path="/GetClientForEdit.do" redirect="false"/>
+			<forward name="colocationClientEditError" path="/GetClientForEdit.do" redirect="false"/>
+			<forward name="iigClientEditError" path="/GetClientForEdit.do" redirect="false"/>
+			<forward name="vpnClientEditError" path="/GetClientForEdit.do" redirect="false"/>
+			<forward name="lliClientEditError" path="/GetClientForEdit.do" redirect="false"/>
+			<forward name="adslClientEditError" path="/GetClientForEdit.do" redirect="false"/>
+			<forward name="nixClientEditError" path="/GetClientForEdit.do" redirect="false"/>
+			<forward name="dnshostingClientEditError" path="/GetClientForEdit.do" redirect="false"/>
+			
+			<forward name="success" path="/client/client/clientView.jsp" />
+		</action>
+
+		<!-- ======== Drop Client ======== -->
+
+		<action name="clientForm" input="/ViewClient.do" path="/DropClient"
+			scope="request" type="client.action.DropClientAction" validate="false">
+
+			<forward name="success" path="/ViewClient.do" redirect="true" />
+		</action>
+
+		<!-- ======== Execute Approve Client ======== -->
+
+		<action name="clientForm" input="/ApproveClient.do" path="/ExecuteApproveClient"
+			scope="request" type="client.action.ExecuteApproveClientAction"
+			validate="false">
+
+			<forward name="success" path="/ApproveClient.do" redirect="true" />
+		</action>
+
+		<!-- ======== Execute Verify Client ======== -->
+
+		<action name="clientForm" input="/VerifyClient.do" path="/ExecuteVerifyClient"
+			scope="request" type="client.action.ExecuteVerifyClientAction"
+			validate="false">
+
+			<forward name="success" path="/VerifyClient.do" redirect="true" />
+		</action>
+
+		<!-- ======== View Client Status ======== -->
+
+		<action name="clientStatusForm" input="/clients/changeStatus.jsp"
+			path="/ViewClientStatus" scope="request" type="client.action.ViewStatusAction"
+			validate="false">
+
+			<forward name="success" path="/clients/changeStatus.jsp"
+				redirect="true" />
+
+			<forward name="actionError" path="/clients/changeStatus.jsp" />
+		</action>
+
+		<!-- ======== Change Client Status ======== -->
+
+		<action name="clientStatusForm" input="/clients/changeStatus.jsp"
+			path="/ChangeStatus" scope="request" type="client.action.ChangeStatusAction"
+			validate="false">
+
+			<forward name="success" path="/ViewClientStatus.do?id=current"
+				redirect="true" />
+
+			<forward name="actionError" path="/clients/changeStatus.jsp" />
+		</action>
+
+		<!-- ======== View Change Client Status ======== -->
+
+		<action name="clientStatusForm" path="/ViewClientStatusChange"
+			scope="request" type="client.action.ViewClientStatusChangeAction"
+			validate="false">
+
+			<forward name="success" path="/clients/ViewChangeClientStatus.jsp"
+				redirect="true" />
+
+			<forward name="actionError" path="/clients/ViewChangeClientStatus.jsp" />
+		</action>
+
+
+
+
+
+		<!-- ======== Add Bonus ======== -->
+
+		<action name="bonusForm" input="/bonus/AddBonus.jsp" path="/AddBonus"
+			scope="request" type="bonus.action.AddBonusAction" validate="true">
+
+			<forward name="success" path="/bonus/AddBonus.jsp" redirect="true" />
+
+			<forward name="actionError" path="/bonus/AddBonus.jsp" />
+		</action>
+		<!-- ======== View Bonus ======== -->
+
+		<action name="bonusForm" input="/bonus/Bonus.jsp" path="/ViewBonus"
+			scope="request" type="bonus.action.ViewBonusAction" validate="false">
+
+			<forward name="success" path="/bonus/Bonus.jsp" redirect="true" />
+		</action>
+		<!-- ======== Get Bonus ======== -->
+
+		<action name="bonusForm" input="/bonus/EditBonus.jsp" path="/GetBonus"
+			scope="request" type="bonus.action.GetBonusAction" validate="false">
+
+			<forward name="success" path="/bonus/EditBonus.jsp" />
+		</action>
+
+		<!-- ======== Update Bonus ======== -->
+
+		<action name="bonusForm" input="/bonus/EditBonus.jsp" path="/UpdateBonus"
+			scope="request" type="bonus.action.UpdateBonusAction" validate="true">
+
+			<forward name="success" path="/ViewBonus.do?id=current" />
+
+			<forward name="actionError" path="/bonus/EditBonus.jsp" />
+		</action>
+
+		<!-- ======== 23 Drop Bonus ======== -->
+
+		<action name="bonusForm" input="/ViewBonus.do" path="/DropBonus"
+			scope="request" type="bonus.action.DropBonusAction" validate="false">
+
+			<forward name="success" path="/ViewBonus.do" redirect="true" />
+		</action>
+
+		<!-- ======== 8 GetPackages ======== -->
+
+		<action path="/bonus/GetPackages" scope="request"
+			type="bonus.action.GetPackagesAction">
+		</action>
+		<!-- ======== 8 GetPackages client ======== -->
+
+		<action path="/client/GetPackages" scope="request"
+			type="client.action.GetPackagesAction">
+		</action>
+
+		<!-- ======== 8 GetCharges Prepaid Payment ======== -->
+
+		<action path="/prepaidpayment/GetCharges" scope="request"
+			type="prepaidpayment.action.GetChargesAction">
+		</action>
+
+		<!-- ======== 8 GetCommission ======== -->
+
+		<action path="/operatorcommission/GetCommission" scope="request"
+			type="operatorcommission.action.GetCommissionAction">
+		</action>
+
+		<!-- ======== View Log ======== -->
+
+		<action name="idForm" input="/general/SearchLog.jsp" path="/ViewRecord"
+			scope="request" type="tracker.action.ViewRecordAction" validate="false">
+
+
+			<forward name="success" path="/general/SearchLog.jsp"
+				redirect="true" />
+		</action>
+
+
+
+		<!-- ======== View Log ======== -->
+
+		<action name="idForm" input="/general/SearchMMLLog.jsp" path="/ViewMMLLog"
+			scope="request" type="tracker.action.ViewMMLLogAction" validate="false">
+
+			<forward name="success" path="/general/SearchMMLLog.jsp"
+				redirect="true" />
+		</action>
+
+
+
+
+
+
+
+		<!-- ======== Add Discount ======== -->
+
+		<action name="discountForm" input="/discount/AddDiscount.jsp"
+			path="/AddDiscount" scope="request" type="discount.action.AddDiscountAction"
+			validate="true">
+
+			<forward name="success" path="/discount/AddDiscount.jsp"
+				redirect="true" />
+
+			<forward name="actionError" path="/discount/AddDiscount.jsp" />
+		</action>
+		<!-- ======== View Discount ======== -->
+
+		<action name="discountForm" input="/discount/Discount.jsp"
+			path="/ViewDiscount" scope="request" type="discount.action.ViewDiscountAction"
+			validate="false">
+
+			<forward name="success" path="/discount/Discount.jsp"
+				redirect="true" />
+		</action>
+		<!-- ======== Get Discount ======== -->
+
+		<action name="discountForm" input="/discount/EditDiscount.jsp"
+			path="/GetDiscount" scope="request" type="discount.action.GetDiscountAction"
+			validate="false">
+
+			<forward name="success" path="/discount/EditDiscount.jsp" />
+		</action>
+
+		<!-- ======== Update Discount ======== -->
+
+		<action name="discountForm" input="/discount/EditDiscount.jsp"
+			path="/UpdateDiscount" scope="request" type="discount.action.UpdateDiscountAction"
+			validate="true">
+
+			<forward name="success" path="/ViewDiscount.do?id=current" />
+
+			<forward name="actionError" path="/discount/EditDiscount.jsp" />
+		</action>
+
+		<!-- ======== 23 Drop Discount ======== -->
+
+		<action name="discountForm" input="/ViewDiscount.do" path="/DropDiscount"
+			scope="request" type="discount.action.DropDiscountAction" validate="false">
+
+			<forward name="success" path="/ViewDiscount.do" redirect="true" />
+		</action>
+
+		<!-- ======== Add DSLM ======== -->
+
+		<action name="dslmForm" input="/dslm/addDslm.jsp" path="/AddDslm"
+			scope="request" type="dslm.action.AddDslmAction" validate="true">
+
+			<forward name="success" path="/dslm/addDslm.jsp" redirect="true" />
+
+			<forward name="actionError" path="/dslm/addDslm.jsp" />
+		</action>
+		<!-- ======== View DSLM ======== -->
+
+		<action name="dslmForm" input="/dslm/Dslm.jsp" path="/ViewDslm"
+			scope="request" type="dslm.action.ViewDslmAction" validate="false">
+
+			<forward name="success" path="/dslm/Dslm.jsp" redirect="true" />
+		</action>
+
+		<!-- ======== Get DSLM ======== -->
+
+		<action name="dslmForm" input="/dslm/EditDslm.jsp" path="/GetDslm"
+			scope="request" type="dslm.action.GetDslmAction" validate="false">
+
+			<forward name="success" path="/dslm/EditDslm.jsp" />
+		</action>
+
+		<!-- ======== Update DSLM ======== -->
+
+		<action name="dslmForm" input="/dslm/EditDslm.jsp" path="/UpdateDslm"
+			scope="request" type="dslm.action.UpdateDslmAction" validate="true">
+
+			<forward name="success" path="/ViewDslm.do?id=current" />
+
+			<forward name="actionError" path="/dslm/EditDslm.jsp" />
+		</action>
+
+		<!-- ======== 23 Drop DSLM ======== -->
+
+		<action name="dslmForm" input="/ViewDslm.do" path="/DropDslm"
+			scope="request" type="dslm.action.DropDslmAction" validate="false">
+
+			<forward name="success" path="/ViewDslm.do" redirect="true" />
+		</action>
+
+		<!-- ======== Add EXCHANGE ======== -->
+
+		<action name="exchangeForm" input="/exchange/addExchange.jsp"
+			path="/AddExchange" scope="request" type="exchange.action.AddExchangeAction"
+			validate="true">
+
+			<forward name="success" path="/exchange/addExchange.jsp"
+				redirect="true" />
+
+			<forward name="actionError" path="/exchange/addExchange.jsp" />
+		</action>
+		<!-- ======== View EXCHANGE ======== -->
+
+		<action name="exchangeForm" input="/exchange/Exchange.jsp"
+			path="/ViewExchange" scope="request" type="exchange.action.ViewExchangeAction"
+			validate="false">
+
+			<forward name="success" path="/exchange/Exchange.jsp"
+				redirect="true" />
+		</action>
+
+		<!-- ======== Get EXCHANGE ======== -->
+
+		<action name="exchangeForm" input="/exchange/EditExchange.jsp"
+			path="/GetExchange" scope="request" type="exchange.action.GetExchangeAction"
+			validate="false">
+
+			<forward name="success" path="/exchange/EditExchange.jsp" />
+		</action>
+
+		<!-- ======== Update EXCHANGE ======== -->
+
+		<action name="exchangeForm" input="/exchange/EditExchange.jsp"
+			path="/UpdateExchange" scope="request" type="exchange.action.UpdateExchangeAction"
+			validate="true">
+
+			<forward name="success" path="/ViewExchange.do?id=current" />
+
+			<forward name="actionError" path="/exchange/EditExchange.jsp" />
+		</action>
+
+		<!-- ======== 23 Drop EXCHANGE ======== -->
+
+		<action name="exchangeForm" input="/ViewExchange.do" path="/DropExchange"
+			scope="request" type="exchange.action.DropExchangeAction" validate="false">
+
+			<forward name="success" path="/ViewExchange.do" redirect="true" />
+		</action>
+
+		<!-- ======== Add Payment ======== -->
+
+		<action name="prepaidPaymentForm" input="/prepaidpayment/AddPayment.jsp"
+			path="/AddPayment" scope="request"
+			type="prepaidpayment.action.AddPrepaidPaymentAction" validate="true">
+
+			<forward name="success" path="/prepaidpayment/PrintablePaymentVoucher.jsp"
+				redirect="true" />
+
+			<forward name="actionError" path="/prepaidpayment/AddPayment.jsp" />
+		</action>
+		<!-- ======== View Payment ======== -->
+
+		<action name="prepaidPaymentForm" input="/prepaidpayment/SearchPayment.jsp"
+			path="/viewPrepaidPayment" scope="request"
+			type="prepaidpayment.action.ViewPrepaidPaymentAction" validate="false">
+
+			<forward name="success" path="/prepaidpayment/SearchPayment.jsp"
+				redirect="true" />
+		</action>
+
+		<!-- ======== Add Operator ======== -->
+
+		<action name="operatorForm" input="/operator/addOperator.jsp"
+			path="/AddOperator" scope="request" type="operator.action.AddOperatorAction"
+			validate="true">
+
+			<forward name="success" path="/operator/addOperator.jsp"
+				redirect="true" />
+
+			<forward name="actionError" path="/operator/addOperator.jsp" />
+		</action>
+		<!-- ======== View Operator ======== -->
+
+		<action name="operatorForm" input="/operator/Operators.jsp"
+			path="/ViewOperator" scope="request" type="operator.action.ViewOperatorAction"
+			validate="false">
+
+			<forward name="success" path="/operator/Operators.jsp"
+				redirect="true" />
+		</action>
+		<!-- ======== Get Operator ======== -->
+
+		<action name="operatorForm" input="/operator/EditOperators.jsp"
+			path="/GetOperator" scope="request" type="operator.action.GetOperatorAction"
+			validate="false">
+
+			<forward name="success" path="/operator/EditOperators.jsp" />
+		</action>
+
+		<!-- ======== Update Operator ======== -->
+
+		<action name="operatorForm" input="/operator/EditOperators.jsp"
+			path="/UpdateOperator" scope="request" type="operator.action.UpdateOperatorAction"
+			validate="true">
+
+			<forward name="success" path="/ViewOperator.do?id=current" />
+
+			<forward name="actionError" path="/operator/EditOperators.jsp" />
+		</action>
+
+		<!-- ======== 23 Drop Operator ======== -->
+
+		<action name="operatorForm" input="/ViewOperator.do" path="/DropOperator"
+			scope="request" type="operator.action.DropOperatorAction" validate="false">
+
+			<forward name="success" path="/ViewOperator.do" redirect="true" />
+		</action>
+
+		<!-- ======== Add RechargeOperator ======== -->
+
+		<action name="rechargeOperatorForm" input="/rechargeoperator/addRechargeOperator.jsp"
+			path="/AddRechargeOperator" scope="request"
+			type="rechargeoperator.action.AddRechargeOperatorAction" validate="true">
+
+			<forward name="success" path="/rechargeoperator/addRechargeOperator.jsp"
+				redirect="true" />
+
+			<forward name="actionError" path="/rechargeoperator/addRechargeOperator.jsp" />
+		</action>
+		<!-- ======== View Operator ======== -->
+
+		<action name="rechargeOperatorForm" input="/rechargeoperator/RechargeOperators.jsp"
+			path="/ViewRechargeOperator" scope="request"
+			type="rechargeoperator.action.ViewRechargeOperatorAction" validate="false">
+
+			<forward name="success" path="/rechargeoperator/RechargeOperators.jsp"
+				redirect="true" />
+		</action>
+		<!-- ======== Get Operator ======== -->
+
+		<action name="rechargeOperatorForm" input="/rechargeOperator/EditRechargeOperator.jsp"
+			path="/GetRechargeOperator" scope="request"
+			type="rechargeoperator.action.GetRechargeOperatorAction" validate="false">
+
+			<forward name="success" path="/rechargeoperator/EditRechargeOperator.jsp" />
+		</action>
+
+		<!-- ======== 23 Drop Operator ======== -->
+
+		<action name="rechargeOperatorForm" input="/ViewRechargeOperator.do"
+			path="/DropRechargeOperator" scope="request"
+			type="rechargeoperator.action.DropRechargeOperatorAction" validate="false">
+
+			<forward name="success" path="/ViewRechargeOperator.do"
+				redirect="true" />
+		</action>
+
+		<!-- ======== Add Invoice Order ======== -->
+
+		<action name="invoiceorderForm" input="/invoiceorder/addInvoiceOrder.jsp"
+			path="/AddInvoiceOrder" scope="request"
+			type="invoiceorder.action.AddInvoiceOrderAction" validate="true">
+
+			<forward name="success" path="/invoiceorder/addInvoiceOrder.jsp"
+				redirect="true" />
+
+			<forward name="actionError" path="/invoiceorder/addInvoiceOrder.jsp" />
+		</action>
+		<!-- ======== View Invoice Order ======== -->
+
+		<action name="invoiceorderForm" input="/invoiceorder/InvoiceOrders.jsp"
+			path="/ViewInvoiceOrder" scope="request"
+			type="invoiceorder.action.ViewInvoiceOrderAction" validate="false">
+
+			<forward name="success" path="/invoiceorder/InvoiceOrders.jsp"
+				redirect="true" />
+		</action>
+		<!-- ======== Get Invoice Order ======== -->
+
+		<action name="invoiceorderForm" input="/invoiceorder/InvoiceOrders.jsp"
+			path="/GetInvoiceOrder" scope="request"
+			type="invoiceorder.action.GetInvoiceOrderAction" validate="false">
+
+			<forward name="success" path="/invoiceorder/viewInvoiceOrder.jsp" />
+		</action>
+
+		<!-- ======== 23 Drop Invoice Order ======== -->
+
+		<action name="invoiceorderForm" input="/ViewInvoiceOrder.do"
+			path="/DropInvoiceOrder" scope="request"
+			type="invoiceorder.action.DropInvoiceOrderAction" validate="false">
+
+			<forward name="success" path="/ViewInvoiceOrder.do" redirect="true" />
+		</action>
+
+		<!-- ======== View Invoice ======== -->
+
+		<action name="invoiceForm" input="/invoice/Invoices.jsp" path="/ViewInvoice"
+			scope="request" type="invoice.action.ViewInvoiceAction" validate="true">
+
+			<forward name="success" path="/invoice/Invoices.jsp"
+				redirect="true" />
+		</action>
+		<!-- ======== Get Invoice ======== -->
+
+		<action name="invoiceForm" input="/invoice/Invoices.jsp" path="/GetInvoice"
+			scope="request" type="invoice.action.GetInvoiceAction" validate="false">
+
+			<forward name="success" path="/invoice/viewInvoice.jsp" />
+		</action>
+
+		<!-- ======== View MDF ======== -->
+
+		<action name="clientForm" input="/mdf/client.jsp" path="/ViewMDF"
+			scope="request" type="mdf.action.ViewMDFAction" validate="false">
+
+			<forward name="success" path="/mdf/client.jsp" />
+		</action>
+
+		<!-- ======== Add Batch Migration ======== -->
+
+		<action name="batchMigrationForm" input="/batchmigration/AddBatchMigration.jsp"
+			path="/AddBatchMigration" scope="request"
+			type="batchmigration.action.AddBatchMigrationAction" validate="true">
+
+			<forward name="success" path="/batchmigration/AddBatchMigration.jsp"
+				redirect="true" />
+
+			<forward name="actionError" path="/batchmigration/AddBatchMigration.jsp" />
+		</action>
+		<!-- ======== View Migration ======== -->
+
+		<action name="batchMigrationForm" input="/batchmigration/ViewBatchMigration.jsp"
+			path="/ViewBatchMigration" scope="request"
+			type="batchmigration.action.ViewBatchMigrationAction" validate="false">
+
+			<forward name="success" path="/batchmigration/ViewBatchMigration.jsp"
+				redirect="true" />
+		</action>
+
+		<!-- ======== Add Migration ======== -->
+
+		<action name="migrationForm" input="/migration/addMigration.jsp"
+			path="/AddMigration" scope="request" type="migration.action.AddMigrationAction"
+			validate="true">
+
+			<forward name="success" path="/migration/addMigration.jsp"
+				redirect="true" />
+
+			<forward name="actionError" path="/migration/addMigration.jsp" />
+
+
+		</action>
+		<!-- ======== View Migration ======== -->
+
+		<action name="idForm" input="/migration/Migration.jsp" path="/ViewMigration"
+			scope="request" type="migration.action.ViewMigrationAction" validate="false">
+
+			<forward name="success" path="/migration/Migration.jsp"
+				redirect="true" />
+		</action>
+		<!-- ======== Get Migration ======== -->
+
+		<action name="idForm" input="/migration/Migration.jsp" path="/GetMigration"
+			scope="request" type="migration.action.GetMigrationAction" validate="false">
+
+			<forward name="success" path="/migration/ViewMigration.jsp" />
+		</action>
+
+		<!-- ======== 23 Drop Migration ======== -->
+
+		<action name="migrationForm" input="/ViewMigration.do" path="/DropMigration"
+			scope="request" type="migration.action.DropMigrationAction" validate="false">
+
+			<forward name="success" path="/ViewMigration.do" redirect="true" />
+		</action>
+
+		<!-- ======== 8 Get Client ======== -->
+
+		<action path="/recharge/GetClient" scope="request"
+			type="recharge.action.GetClientAction">
+		</action>
+
+		<!-- ======== 8 Get Client ======== -->
+
+		<action path="/shifting/GetClient" scope="request"
+			type="shifting.action.GetClientAction">
+		</action>
+		<!-- ======== 8 Get Client ======== -->
+
+		<action path="/remove/GetClient" scope="request"
+			type="remove.action.GetClientAction">
+		</action>
+		<!-- ======== 8 Get Exchange ======== -->
+
+		<action path="/dslm/GetExchange" scope="request"
+			type="dslm.action.GetExchangeAction">
+		</action>
+		<!-- ======== 8 Get Dslms ======== -->
+
+		<action path="/dslm/GetDslms" scope="request"
+			type="dslm.action.GetDslmsAction">
+		</action>
+		<!-- ======== -->
+
+
+		<!-- ======== 23 Connect Client ======== -->
+
+		<action name="clientForm" path="/ConnectClient" scope="request"
+			type="mdf.action.ConnectClientAction" validate="false">
+
+			<forward name="success" path="/mdf/toBeConnected.jsp"
+				redirect="true" />
+		</action>
+
+		<action name="clientForm" path="/DisconnectClient" scope="request"
+			type="mdf.action.DisconnectClientAction" validate="false">
+
+			<forward name="success" path="/mdf/toBeDisconnected.jsp"
+				redirect="true" />
+		</action>
+
+		<!-- ======== 8 Get Dslms ======== -->
+
+		<action path="/dslm/GetShiftDslms" scope="request"
+			type="dslm.action.GetShiftDslmsAction">
+		</action>
+
+		<!-- ======== View MessageFormat ======== -->
+
+		<action name="messageFormatForm" input="/messageformat/MessageFormats.jsp"
+			path="/ViewMessageFormat" scope="request"
+			type="messageformat.action.ViewMessageFormatAction" validate="false">
+
+			<forward name="success" path="/messageformat/MessageFormats.jsp"
+				redirect="true" />
+		</action>
+		<!-- ======== Get MessageFormat ======== -->
+
+		<action name="messageFormatForm" input="/messageformat/EditMessageFormat.jsp"
+			path="/GetMessageFormat" scope="request"
+			type="messageformat.action.GetMessageFormatAction" validate="false">
+
+			<forward name="success" path="/messageformat/EditMessageFormat.jsp" />
+		</action>
+
+		<!-- ======== Update Message Format ======== -->
+
+		<action name="messageFormatForm" input="/messageformat/EditMessageFormat.jsp"
+			path="/UpdateMessageFormat" scope="request"
+			type="messageformat.action.UpdateMessageFormatAction" validate="true">
+
+			<forward name="success" path="/ViewMessageFormat.do?id=current" />
+
+			<forward name="actionError" path="/messageformat/EditMessageFormat.jsp" />
+		</action>
+
+		<!-- ======== 8 Get Format ======== -->
+
+		<action path="/messageformat/GetFormat" scope="request"
+			type="messageformat.action.GetFormatAction">
+		</action>
+
+		<!-- ======== 8 Get Categories ======== -->
+
+		<action path="/messageformat/GetCategories" scope="request"
+			type="messageformat.action.GetCategoriesAction">
+		</action>
+
+		<!-- ======== View Message ======== -->
+
+		<action name="messageForm" input="/message/Messages.jsp" path="/ViewMessage"
+			scope="request" type="message.action.ViewMessageAction" validate="false">
+
+			<forward name="success" path="/message/Messages.jsp"
+				redirect="true" />
+		</action>
+
+		<!-- ======== Add Commission ======== -->
+
+		<action name="operatorCommissionForm" input="/operatorcommission/EditCommission.jsp"
+			path="/AddOperatorCommission" scope="request"
+			type="operatorcommission.action.AddOperatorCommissionAction"
+			validate="true">
+
+			<forward name="success" path="/operatorcommission/EditCommission.jsp"
+				redirect="true" />
+
+			<forward name="actionError" path="/operatorcommission/EditCommission.jsp" />
+		</action>
+		<!-- ======== View Operator Commission ======== -->
+
+		<action name="operatorCommissionForm" input="/operatorcommission/Commissions.jsp"
+			path="/ViewOperatorCommission" scope="request"
+			type="operatorcommission.action.ViewOperatorCommissionAction"
+			validate="false">
+
+			<forward name="success" path="/operatorcommission/Commissions.jsp"
+				redirect="true" />
+		</action>
+
+		<!-- ======== Get Operator Commission ======== -->
+
+		<action name="operatorCommissionForm" input="/operatorcommission/Commissions.jsp"
+			path="/GetCommission" scope="request"
+			type="operatorcommission.action.GetOperatorCommissionAction"
+			validate="false">
+
+			<forward name="success" path="/operatorcommission/EditCommission.jsp" />
+		</action>
+
+		<!-- ======== Add Essential ======== -->
+
+		<!--<action name="essentialForm" input="/configuration/Configure.jsp"-->
+			<!--path="/Configure" scope="request" type="essential.action.AddEssentialAction"-->
+			<!--validate="true">-->
+
+			<!--<forward name="success" path="/GetEssential.do" redirect="true" />-->
+
+			<!--<forward name="actionError" path="/configuration/Configure.jsp" />-->
+		<!--</action>-->
+
+		<!-- ======== Get Essential ======== -->
+
+		<!--<action name="essentialForm" path="/GetEssential" scope="request"-->
+			<!--type="essential.action.GetEssentialAction" validate="false">-->
+
+			<!--<forward name="success" path="/configuration/Configure.jsp" />-->
+		<!--</action>-->
+
+
+
+
+
+
+		<!-- ======== View Clients with Pending Commands ======== -->
+
+		<action name="idForm" path="/ViewClientsWithPendingMMLCommands"
+			scope="request" type="pendingmmlcommandhandler.action.ViewPendingMMLCommandsAction"
+			validate="false">
+
+			<forward name="success"
+				path="/pendingmmlcommands/ViewClientsWithPendingCommands.jsp"
+				redirect="true" />
+		</action>
+		<!-- ======== Get Client Commands ======== -->
+
+		<action name="idForm" path="/GetClientCommands" scope="request"
+			type="pendingmmlcommandhandler.action.GetMMLCommandsForClientAction"
+			validate="false">
+
+			<forward name="success" path="/pendingmmlcommands/ClientCommandDetails.jsp" />
+		</action>
+
+
+
+
+		<!-- ======== Execute all Commands ======== -->
+
+		<action name="idForm" path="/ExecuteMMLCommands" scope="request"
+			type="pendingmmlcommandhandler.action.ExecuteMMLCommandsAction"
+			validate="false">
+
+			<forward name="success" path="/ViewClientsWithPendingMMLCommands.do" />
+		</action>
+
+
+		<!-- ======== Get Message ======== -->
+
+		<action name="messageForm" input="/message/MessageDetails.jsp"
+			path="/GetMessage" scope="request" type="message.action.GetMessageAction"
+			validate="false">
+
+			<forward name="success" path="/message/MessageDetails.jsp" />
+		</action>
+
+		<!-- Added by Dhiman -->
+
+		<action name="packageForm" path="/addPrepaidPackage" scope="request"
+			type="packages.action.AddPrepaidPackageAction">
+
+			<forward name="success" path="/package/prepaidPackageAdd.jsp"
+				redirect="true" />
+
+			<forward name="actionError" path="/package/prepaidPackageAdd.jsp" />
+		</action>
+
+		<action name="packageForm" path="/addPostpaidPackage" scope="request"
+			type="packages.action.AddPostpaidPackageAction">
+
+			<forward name="success" path="/package/postpaidPackageAdd.jsp"
+				redirect="true" />
+
+			<forward name="actionError" path="/package/postpaidPackageAdd.jsp" />
+		</action>
+
+		<action name="packageForm" path="/addVPNPackage" scope="request"
+			type="packages.action.AddVPNPackageAction">
+
+			<forward name="success" path="/package/VPNPackageAdd.jsp"
+				redirect="true" />
+
+			<forward name="actionError" path="/package/VPNPackageAdd.jsp" />
+		</action>
+
+		<action name="tariffForm" path="/addTariff" scope="request"
+			type="packages.action.AddTariffAction" validate="false">
+
+			<forward name="success" path="/includes/getBack.jsp"
+				redirect="true" />
+		</action>
+
+		<action name="packageForm" path="/viewPackage" scope="request"
+			type="packages.action.ViewPackageAction" validate="false">
+
+			<forward name="success" path="/package/packageSearch.jsp"
+				redirect="true" />
+		</action>
+
+		<action name="packageForm" path="/editVPNPackage" scope="request"
+			type="packages.action.EditVPNPackageAction" validate="false">
+
+			<forward name="success" path="/includes/getBack.jsp"
+				redirect="true" />
+		</action>
+
+		<action name="packageForm" path="/editPrepaidPackage" scope="request"
+			type="packages.action.EditPrepaidPackageAction" validate="false">
+
+			<forward name="success" path="/includes/getBack.jsp"
+				redirect="true" />
+		</action>
+
+		<action name="packageForm" path="/editPostpaidPackage" scope="request"
+			type="packages.action.EditPostpaidPackageAction" validate="false">
+
+			<forward name="success" path="/includes/getBack.jsp"
+				redirect="true" />
+		</action>
+
+		<action name="tariffForm" path="/updateTariff" scope="request"
+			type="packages.action.UpdateTariffAction" validate="false">
+
+			<forward name="success" path="/includes/getBack.jsp"
+				redirect="true" />
+		</action>
+
+		<action name="packageForm" path="/dropPackage" scope="request"
+			type="packages.action.DropPackageAction" validate="false">
+
+			<forward name="success" path="/viewPackage.do" />
+		</action>
+
+		<action name="tariffForm" path="/activateTariff" scope="request"
+			type="packages.action.ActivateTariffAction" validate="false">
+
+			<forward name="success" path="/includes/getBack.jsp"
+				redirect="true" />
+		</action>
+
+		<action name="tariffForm" path="/dropTariff" scope="request"
+			type="packages.action.DropTariffAction" validate="false">
+
+			<forward name="success" path="/includes/getBack.jsp"
+				redirect="true" />
+		</action>
+
+		<action name="packageForm" path="/getPackage" scope="request"
+			type="packages.action.GetPackageAction" validate="false">
+
+			<forward name="prepaid" path="/package/prepaidPackageEdit.jsp" />
+
+			<forward name="postpaid" path="/package/postpaidPackageEdit.jsp" />
+
+			<forward name="vpn" path="/package/VPNPackageEdit.jsp" />
+		</action>
+
+		<action name="rechargeClientForm" input="/recharge/rechargeClient.jsp"
+			path="/rechargeClient" scope="request" type="recharge.action.RechargeClientAction"
+			validate="true">
+
+			<forward name="success" path="/recharge/PrintableRechargeVoucher.jsp"
+				redirect="true" />
+			<forward name="actionError" path="/recharge/rechargeClient.jsp" />
+		</action>
+
+		<action name="idForm" path="/viewRechargeInfo" scope="request"
+			type="recharge.action.ViewRechargeInfoAction" validate="false">
+
+			<forward name="success" path="/recharge/searchRecharge.jsp"
+				redirect="true" />
+		</action>
+
+		<action name="generateBillForm" input="/billing/generateBill.jsp"
+			path="/generateBill" scope="request" type="billing.action.GenerateBillAction"
+			validate="true">
+
+			<forward name="success" path="/searchBill.do" redirect="true" />
+			<forward name="actionError" path="/getClientsForBill.do" />
+		</action>
+
+		<action name="idForm" path="/getClientsForBill" scope="request"
+			type="billing.action.GetClientsForBillAction" validate="false">
+
+			<forward name="success" path="/billing/generateBill.jsp"
+				redirect="true" />
+		</action>
+
+		<action name="generateBillForm" path="/searchBill" scope="request"
+			type="billing.action.ViewBillAction" validate="false">
+
+			<forward name="success" path="/billing/searchBill.jsp"
+				redirect="true" />
+		</action>
+
+		<action name="generateBillForm" path="/BillingOptions" scope="request"
+			type="billing.action.BillingOptionsAction" validate="false">
+
+			<forward name="success" path="/searchBill.do" redirect="true" />
+		</action>
+
+		<action name="removeClientForm" input="/remove/removeClient.jsp"
+			path="/removeClient" scope="request" type="remove.action.RemoveClientAction"
+			validate="true">
+
+			<forward name="success" path="/remove/removeClient.jsp"
+				redirect="true" />
+			<forward name="actionError" path="/remove/removeClient.jsp" />
+
+		</action>
+
+		<action name="removeClientForm" path="/viewRemovalInfo" scope="request"
+			type="remove.action.ViewRemovedClientAction" validate="false">
+
+			<forward name="success" path="/remove/searchRemoval.jsp"
+				redirect="true" />
+		</action>
+
+		<action name="shiftClientForm" path="/shiftClient" input="/shift/shiftClient.jsp"
+			scope="request" type="shifting.action.ShiftClientAction" validate="true">
+
+			<forward name="success" path="/shift/shiftClient.jsp"
+				redirect="true" />
+			<forward name="actionError" path="/shift/shiftClient.jsp" />
+		</action>
+
+		<action name="shiftClientForm" path="/viewShiftingInfo" scope="request"
+			type="shifting.action.ViewShiftClientAction" validate="false">
+
+			<forward name="success" path="/shift/searchShifting.jsp"
+				redirect="true" />
+		</action>
+
+		<action name="idForm" path="/showShiftingDetails" scope="request"
+			type="shifting.action.ViewShiftClientDetailAction" validate="false">
+
+			<forward name="success" path="/shift/showDetails.jsp" />
+		</action>
+
+		<action name="dateDurationForm" input="/clientModule/getUsage.jsp"
+			path="/getClientSpecificUsage" scope="request"
+			type="clientmodule.usagehistory.action.GetClientSpecificUsageHistoryAction"
+			validate="true">
+
+			<forward name="success" path="/clientModule/UsageDetail.jsp"
+				redirect="true" />
+			<forward name="actionError" path="/clientModule/getUsage.jsp" />
+
+		</action>
+
+		<action name="idForm" path="/clientModule/viewClientRechargeInfo"
+			scope="request" type="clientmodule.rechargeinfo.action.ShowRechargeAction"
+			validate="false">
+
+			<forward name="success" path="/clientModule/showRecharge.jsp"
+				redirect="true" />
+		</action>
+
+		<action name="changeBillForm" path="/ChangeBillDate" scope="request"
+			type="billing.action.ChangeBillDateAction" validate="false">
+
+			<forward name="success" path="/billing/ChangeBillGenerationDate.jsp"
+				redirect="true" />
+		</action>
+
+		<action name="idForm" path="/showClientSummary" scope="request"
+			type="client.action.ShowClientSummaryAction" validate="false">
+
+			<forward name="success" path="/clients/showClientSummary.jsp"
+				redirect="true" />
+		</action>
+
+		<action name="idForm" path="/getCilentImage" scope="request"
+			type="client.action.GetClientImageAction">
+		</action>
+
+		<!-- tausun -->
+
+		<action name="generateBillForm" path="/DownloadBill" scope="request"
+			type="billing.action.DownloadBillAction" validate="false">
+
+			<forward name="success" path="/searchBill.do" redirect="true" />
+		</action>
+
+
+		<!--======== Report //tausun ======== -->
+
+		<action path="/GeneralReports" name="singleReportForm"
+			type="report.action.GeneralReportsAction" scope="request" validate="false">
+			<forward name="typeOfConnectivity" path="/wizard/typeOfConnectivity.jsp"
+				redirect="true" />
+			<forward name="customerDetails" path="/wizard/customerDetails.jsp"
+				redirect="true" />
+			<forward name="billingPackages" path="/wizard/billingPackages.jsp"
+				redirect="true" />
+			<forward name="usageDetails" path="/wizard/usageDetails.jsp"
+				redirect="true" />
+			<forward name="systemAdmin" path="/wizard/systemAdmin.jsp"
+				redirect="true" />
+			<forward name="trafficDetails" path="/wizard/trafficDetails.jsp"
+				redirect="true" />
+			<forward name="tariffDetails" path="/wizard/tariffDetails.jsp"
+				redirect="true" />
+			<forward name="packageWiseCustomerDetails" path="/wizard/report.jsp"
+				redirect="true" />
+			<forward name="bwConsumption" path="/wizard/bwConsumption.jsp"
+				redirect="true" />
+			<forward name="regionWise" path="/wizard/regionWise.jsp"
+				redirect="true" />
+			<forward name="noPermission" path="/wizard/noPermission.jsp"
+				redirect="true" />
+			<forward name="packageWiseCustomerDetails" path="/wizard/packageWiseCustomerDetails.jsp"
+				redirect="true" />
+			<forward name="loginStatus" path="/wizard/loginStatus.jsp"
+				redirect="true" />
+			<forward name="loginFailureStatus" path="/wizard/loginFailureStatus.jsp"
+				redirect="true" />
+			<forward name="clientStatus" path="/wizard/clientStatus.jsp"
+				redirect="true" />
+			<forward name="exchanges" path="/wizard/exchanges.jsp"
+				redirect="true" />
+			<forward name="exchangeWise" path="/wizard/exchangeWise.jsp"
+				redirect="true" />
+			<forward name="passwordChange" path="/wizard/passwordChange.jsp"
+				redirect="true" />
+
+
+		</action>
+		<action path="/ChooseReport" name="chooseReportForm"
+			type="report.action.ChooseReportAction" scope="request" validate="false">
+			<forward name="compact" path="/wizard/reportWizard.jsp"
+				redirect="true" />
+			<forward name="single" path="/wizard/singleReportWizard.jsp"
+				redirect="true" />
+		</action>
+
+		<action path="/ReportWizard" name="reportWizardForm"
+			type="report.action.ReportWizardAction" scope="request" validate="false">
+			<forward name="success" path="/wizard/report.jsp" redirect="true" />
+		</action>
+
+		<action path="/SingleReport" name="singleReportForm"
+			type="report.action.SingleReportAction" scope="request" validate="false">
+			<forward name="success" path="/wizard/report.jsp" redirect="true" />
+		</action>
+		<action path="/SaveOrDownloadReport" name="saveOrDownloadForm"
+			type="report.action.SaveOrDownloadAction" scope="request" validate="false">
+			<forward name="success" path="/wizard/report.jsp" redirect="true" />
+		</action>
+		<action path="/ViewReportAction" type="report.action.ViewReportAction"
+			name="reportForm" validate="true" scope="request">
+			<forward name="success" path="/wizard/reportSearch.jsp"
+				redirect="true" />
+		</action>
+		<action path="/DeleteConfiguration" type="report.action.DeleteConfigurationAction"
+			name="reportForm" validate="false" scope="request">
+			<forward name="success" path="/ViewReportAction.do" redirect="true" />
+		</action>
+		<action path="/GetReportConfiguration" type="report.action.GetReportConfigurationAction"
+			name="reportForm" scope="request" validate="false">
+			<forward name="success" path="/wizard/reportConfiguration.jsp"
+				redirect="true" />
+		</action>
+
+		<!-- End of Report -->
+
+		<action path="/Download" type="Download.action.DownloadAction"
+			name="downloadForm" validate="false" scope="request">
+			<forward name="downloadCdr" path="/wizard/downloadCdr.jsp"
+				redirect="true" />
+			<forward name="downloads" path="/wizard/downloads.jsp"
+				redirect="true" />
+		</action>
+		<action path="/ViewUsage" type="report.action.ViewUsageAction"
+			name="downloadForm" validate="false" scope="request">
+			<forward name="success" path="/wizard/usageSearch.jsp"
+				redirect="true" />
+		</action>
+
+		<action path="/BillReport" type="report.action.BillReportAction"
+			name="downloadForm" validate="false" scope="request">
+			<forward name="success" path="/wizard/usageSearch.jsp"
+				redirect="true" />
+		</action>
+
+		<action path="/ViewHtmlBill" type="billing.action.ViewHtmlBillAction"
+			name="downloadForm" scope="request" validate="false">
+			<forward name="success" path="/wizard/viewBill.jsp" redirect="true" />
+		</action>
+		<!-- End of Report -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<action name="otherChargeForm" path="/ViewOther" scope="request"
+			type="othercharge.action.ViewOtherAction" validate="false">
+
+			<forward name="success" path="/othercharge/OtherCharge.jsp"
+				redirect="true" />
+
+
+		</action>
+
+		<action name="otherChargeForm" input="/othercharge/AddOtherCharge.jsp"
+			path="/AddOtherCharge" scope="request" type="othercharge.action.AddOtherAction"
+			validate="true">
+
+			<forward name="success" path="/othercharge/AddOtherCharge.jsp"
+				redirect="true" />
+
+
+		</action>
+
+		<action path="/GetFilters" type="report.action.GetFiltersAction"
+			name="singleReportForm" validate="false" scope="request">
+			<forward name="success" path="/wizard/singleReportWizard.jsp"
+				redirect="true" />
+		</action>
+
+		<action path="/GetExchanges" type="report.action.GetExchangesAction"
+			name="singleReportForm" validate="false" scope="request">
+			<forward name="success" path="/wizard/customerDetails.jsp"
+				redirect="true" />
+		</action>
+		<action input="/wizard/systemAdmin.jsp" name="singleReportForm"
+			path="/GetUserList" scope="request" type="user.action.GetUserList">
+			<forward name="success" path="/wizard/singleReportWizard.jsp"
+				redirect="true" />
+		</action>
+		
+		<!-- Domain Actions : kawser -->
+		<!-- Domain Client Add -->
+		<action name="domainClientForm" input="/domain/client/clientAdd.jsp"
+			path="/DomainAction" scope="request" type="domain.DomainAction"
+			validate="true">
+			<forward name="success" path="/domain/client/clientAdd.jsp" />
+			<forward name="addPackage" path="/domain/package/addDomainPackage.jsp" />
+			<forward name="packageTypeSuccess" path="/domain/package/addPackageType.jsp" />
+		</action>
+		<!-- Domain View Page -->
+		<action  name="domainDTO" path="/ViewDomain" scope="request" type="domain.DomainAction" validate="true">
+			<forward name="viewDomain" path="/domain/domainSearch/domainView.jsp" />
+		</action>
+		<!-- Domain Add -->
+		<action input="/domain/package/addDomainPackage.jsp" path="/AddPackage"
+			scope="request" type="domain.DomainAction" validate="true">
+		</action>
+		
+		<action name="domainAddForm" input="/domain/newDomain/addDomain.jsp" path="/AddDomain"
+			scope="request" type="domain.DomainAction" validate="true">
+			<forward name="addDomain" path="/domain/newDomain/addDomain.jsp" />
+		</action>
+		<!-- Forbidden Word -->
+		<action name="domainAddForm" input="/domain/forbiddenDomain/addForbiddenWord.jsp" path="/AddForbiddenWord"
+			scope="request" type="domain.DomainAction" validate="true">
+			<forward name="add-forbidden-word" path="/domain/forbiddenDomain/addForbiddenWord.jsp" />
+		</action>
+		<action name="forbiddenWordForm" path="/SearchForbiddenWord" scope="request"
+			type="domain.ForbiddenWordSearchAction">
+			<forward name="success" path="/domain/forbiddenDomain/searchForbiddenWord.jsp" />
+		</action>
+		<!--/Forbidden Word  -->
+		<!-- Domain Search(Soled) -->
+		<action name="domainDTO" path="/SearchDomain" scope="request"
+			type="domain.DomainSearchAction">
+			<forward name="success" path="/domain/domainSearch/domainSearch.jsp" />
+		</action>
+		<!-- Domain Package Search -->
+		<action name="domainDTO" path="/SearchDomainPackage" scope="request" type="domain.DomainPackageSearchAction">
+			<forward name="success" path="/domain/package/domainPackageSearch.jsp" />
+		</action>
+		<!-- Domain Package Type Add/Edit -->
+		<action name="domainPackageTypeForm" path="/DomainPackageType" scope="request" type="domain.PackageTypeAction" input="/domain/package/addPackageType.jsp">
+			<forward name="path" path="/DomainPackageType.do" />
+			<forward name="add" path="/domain/package/addPackageType.jsp" />
+			<forward name="edit" path="/domain/package/editPackageType.jsp" redirect="false" />
+			<forward name="view" path="/SearchPackageType.do" redirect="true" />
+			<forward name="success" path="/domain/package/addPackageType.jsp" />
+		</action>
+		<!-- Domain Package Type Search -->
+		<action name="domainPackageTypeForm" path="/SearchPackageType" scope="request" type="domain.PackageTypeSearchAction">
+			<forward name="success" path="/domain/package/packageTypeSearch.jsp" />
+		</action>
+		<!-- Domain Search(Admin : High Cost/Forbidden) -->
+		<action name="domainDTO" path="/SearchDomainName" scope="request"
+			type="domain.DomainNameSearchAction">
+			<forward name="success" path="/domain/domainNameSearch/domainNameSearch.jsp" />
+		</action>
+		<!-- Domain Query For Buy -->
+		<action name="domainDTO" path="/DomainAction" scope="request"
+			type="domain.DomainAction" validate="true">
+			<forward name="success" path="/domain/domainQueryForBuy/domainQueryForBuy.jsp" />
+			<forward name="domainCheck" path="/domain/ownership/requestForOwnership.jsp" />
+			<forward name="transferCheck" path="/domain/transfer/transferDomain.jsp" />
+			<forward name="failure" path="/domain/domainQueryForBuy/domainQueryForBuy.jsp" />
+		</action>
+		<action name="domainDTO" path="/DomainChecker" scope="request"
+			type="domain.DomainAction" validate="true">
+			<forward name="without_login" path="/domain/domainQueryForBuy/searchDomain.jsp" />
+		</action>
+		<action name="domainChargeConfigForm" input="/domain/package/domainCommonChargeCofig.jsp" path="/DomainChargeConfig" scope="request" type="domain.DomainAction" validate="true">
+			<forward name="success" path="/domain/package/domainCommonChargeCofig.jsp"></forward>
+		</action>
+
+		<!-- /Domain Actions -->
+
+		<!-- kayesh change start -->
+		<!-- CommonAction : kawser -->
+		<action
+			name="commonRequestForm"
+			path="/CommonAction"
+			scope="request"
+			type="common.action.CommonAction" 
+			validate="true">
+			<forward name="migrationBillVpn" path="/vpn/link/generateDemandNoteMigration.jsp" redirect="true"></forward>
+			<forward name="migrationBillLli" path="/lli/link/generateDemandNoteMigration.jsp" redirect="true"></forward>
+		</action>
+
+		<action name="domainDTO" path="/bill/search" scope="request"
+			type="common.bill.BillSearchAction">
+			<forward name="success" path="/common/bill/billSearch.jsp" />
+
+		</action>
+		<!-- added by sharif -->
+		<action name="paymentForm" path="/payment/search" scope="request" type="common.payment.PaymentSearchAction">
+			<forward name="success" path="/common/payment/paymentSearch.jsp" />
+		</action>
+		<!-- CommonAction -->
+
+		<!-- VPN Connection Action : kawser -->
+
+		<action name="vpnConnectionForm" input="/vpn/vpnConnectionRequest.jsp"
+			path="/VpnConnectionAction" scope="request" type="vpn.action.VpnConnectionAction"
+			validate="true">
+
+			<forward name="success" path="/vpn/connection/vpnConnectionRequest.jsp"
+				redirect="true" />
+			<forward name="view" path="/vpn/connection/connectionView.jsp" />
+			<forward name="actionError" path="/vpn/connection/vpnConnectionRequest.jsp" />
+		</action>
+		<action name="vpnConnectionForm" path="/VpnConnectionSearch"
+			scope="request" type="vpn.action.VpnConnectionAction" validate="true">
+			<forward name="success" path="/vpn/connection/vpnConnectionSearch.jsp" />
+			<forward name="actionError" path="/vpn/connection/vpnConnectionSearch.jsp" />
+		</action>
+		<!-- /VPN Connection Action -->
+		<!-- ======================================== -->
+
+
+		<!-- VPN Link Action : kawser -->
+
+		<action name="vpnLinkForm" input="/vpn/link/newLinkRequest.jsp" path="/VpnLinkAction" scope="request" type="vpn.link.action.VpnLinkAction" validate="true">
+			<forward name="success" path="/vpn/link/newLinkRequest.jsp" />
+			<forward name="view" path="/vpn/link/linkView.jsp" />
+			<forward name="details" path="/vpn/link/linkPreview.jsp" />
+			<forward name="edit" path="/vpn/link/linkEdit.jsp" />
+			<forward name="bandwidth" path="/vpn/link/bandwidthChange.jsp" />
+			<forward name="linkClose" path="/vpn/link/linkClose.jsp" />
+			<forward name="internalFrResponse" path="/vpn/link/internalFrResponse.jsp" />
+			<forward name="migratedVpnUpdate" path="/vpn/link/updateMigratedVPN.jsp" />
+		</action>
+		
+		
+		<action name="vpnChangeBWForm" input="/vpn/link/newLinkRequest.jsp"
+			path="/VpnLinkUgBW" scope="request" type="vpn.link.action.VpnLinkAction"
+			validate="true">
+
+			<forward name="success" path="/vpn/link/newLinkRequest.jsp" />
+		</action>
+
+		<action name="vpnLinkForm" path="/VpnLinkSearch" scope="request"
+			type="vpn.link.action.VpnLinkAction">
+
+			<forward name="success" path="/vpn/link/linkSearch.jsp" />
+			<forward name="failure" path="/vpn/link/linkSearch.jsp" />
+		</action>
+
+		<action path="/FetchAutoLoadAction" type="vpn.link.action.FetchAutoLoadAction"></action>
+
+		<!-- /VPN Link Action -->
+	
+		
+		
+		<!-- Comment: kawser -->
+
+		<action name="commentForm" path="/Comment" type="comment.CommentAction"
+			scope="request" validate="true">
+			<forward name="domainClient" path="/GetClientForView.do" />
+			<forward name="domainView" path="/ViewDomain.do" />
+			
+			<forward name="webHostingClient" path="/GetClientForView.do" />
+			
+			<forward name="ipaddressClient" path="/GetClientForView.do" />
+			
+			<forward name="colocationClient" path="/GetClientForView.do" />
+			
+			<forward name="iigClient" path="/GetClientForView.do" />
+			
+			<forward name="vpnClient" path="/GetClientForView.do" />
+			<forward name="vpnLink" path="/VpnLinkAction.do" />
+			
+			<forward name="lliClient" path="/GetClientForView.do" />
+			
+			<forward name="adslClient" path="/GetClientForView.do" />
+			
+			<forward name="nixClient" path="/GetClientForView.do" />
+			
+			<forward name="dnshostingClient" path="/GetClientForView.do" />
+			
+		</action>
+
+		<!-- /Comment -->
+
+		<!-- Complain : kawser -->
+		<action name="complainForm" input="/complain/addComplain.jsp"
+			path="/Complain" scope="request" type="complain.ComplainAction"
+			validate="true">
+
+			<forward name="success" path="/complain/addComplain.jsp" />
+			<forward name="view" path="/complain/viewComplain.jsp" />
+		</action>
+
+		<action name="complainForm" path="/ComplainSearch" scope="request"
+			type="complain.ComplainAction">
+
+			<forward name="success" path="/complain/complainSearch.jsp" />
+			<forward name="failure" path="/complain/complainSearch.jsp" />
+		</action>
+
+		<action name="complainHistoryForm" input="/complain/viewComplain.jsp"
+			path="/ComplainHistory" scope="request" type="complain.ComplainAction"
+			validate="true">
+
+		</action>
+		<!-- /Complain -->
+
+		<!-- ============= Add VPN Client =========== -->
+
+		<action name="clientForm" input="/vpnclients/clientAdd.jsp" path="/AddVPNClient" scope="request" type="vpn.client.ClientAddAction" 	validate="true">
+
+			<forward name="success" path="/vpnclients/clientAdd.jsp" />
+
+			<forward name="actionError" path="/vpnclients/clientAdd.jsp" />
+		</action>
+
+		<!-- ============== View VPN Client ========= -->
+
+		<action name="clientForm" input="/vpnclients/client.jsp"
+			path="/ViewVPNClient" scope="request" type="vpn.client.action.ViewClientAction"
+			validate="false">
+
+			<forward name="success" path="/vpnclients/client.jsp"
+				redirect="true" />
+		</action>
+
+		<!-- ======== Get VPN Client ======== -->
+
+		<action name="clientForm" input="/vpnclients/clientEdit.jsp"
+			path="/GetVPNClient" scope="request" type="vpn.client.action.GetClientAction"
+			validate="false">
+
+			<forward name="success" path="/vpnclients/clientEdit.jsp" />
+
+
+		</action>
+
+		<action name="clientForm" input="/vpnclients/clientEdit.jsp"
+			path="/UpdateClient" scope="request" type="vpn.client.action.UpdateClientAction"
+			validate="false">
+
+			<forward name="success" path="/vpnclients/clientEdit.jsp" />
+
+
+		</action>
+
+		<!-- ======== Add VPN Cost ======== -->
+
+		<action name="vpnCostForm" input="/vpnclients/costAdd.jsp"
+			path="/AddVPNCost" scope="request" type="vpn.client.action.AddCostAction"
+			validate="true">
+
+			<forward name="success" path="/vpnclients/costAdd.jsp"
+				redirect="true" />
+
+			<forward name="actionError" path="/vpnclients/costAdd.jsp" />
+		</action>
+
+		<!-- ======== View VPN Cost ======== -->
+
+		<action name="clientForm" input="/vpnclients/client.jsp"
+			path="/ViewVPNClient" scope="request" type="vpn.client.action.ViewClientAction"
+			validate="false">
+
+			<forward name="success" path="/vpnclients/client.jsp"
+				redirect="true" />
+		</action>
+
+		<!-- ======== Get VPN Cost ======== -->
+
+		<action name="clientForm" input="/vpnclients/clientEdit.jsp"
+			path="/GetVPNClient" scope="request" type="vpn.client.action.GetClientAction"
+			validate="false">
+
+			<forward name="success" path="/vpnclients/clientEdit.jsp" />
+
+
+		</action>
+		<!-- kayesh change end -->
+
+		<action path="/ViewHostingPackage" name="hostingPackageForm"
+			type="hostingpackage.action.ViewHostingPackageAction" validate="true"
+			input="/hostingpackage/hostingPackage.jsp" scope="request">
+			<forward name="success" path="/hostingpackage/hostingPackage.jsp" />
+		</action>
+
+		<action path="/ViewHostingPackageReport" name="hostingPackageForm"
+			type="hostingpackage.action.ViewHostingPackageReportAction" validate="true"
+			input="/hostingpackage/hostingPackageReport.jsp" scope="request">
+			<forward name="success" path="/hostingpackage/hostingPackageReport.jsp" />
+		</action>
+
+		<!-- <action path="/AddHostingPayment" name="hostingPaymentForm" type="hostingpayment.action.AddHostingPaymentAction" 
+			validate="true" input="/hostingpayment/hostingPaymentAdd.jsp" scope="request" 
+			> <forward name="success" path="/hostingpayment/hostingPaymentAdd.jsp" redirect="true" 
+			/> <forward name="actionError" path="/hostingpayment/hostingPaymentAdd.jsp" 
+			/> </action> -->
+
+		<action path="/AddHostingPayment" name="hostingPaymentForm"
+			type="hostingpayment.action.AddHostingPaymentAction" validate="false"
+			input="/hosting/payment.jsp" scope="request">
+			<forward name="success" path="/ViewHostingPayment.do"
+				redirect="true" />
+			<forward name="actionError" path="/hosting/payment.jsp" />
+		</action>
+
+		<action path="/ViewHostingPayment" name="hostingPaymentForm"
+			type="hostingpayment.action.ViewHostingPaymentAction" validate="true"
+			input="/hostingpayment/hostingPayment.jsp" scope="request">
+			<forward name="success" path="/hostingpayment/hostingPayment.jsp" />
+		</action>
+
+		<action path="/GetHostingPayment" name="hostingPaymentForm"
+			type="hostingpayment.action.GetHostingPaymentAction" validate="true"
+			input="/hosting/paymentEdit.jsp" scope="request">
+			<forward name="success" path="/hosting/paymentEdit.jsp" />
+		</action>
+
+
+		<action path="/ViewHostingdomain" name="hostingdomainForm"
+			type="hostingdomain.action.ViewHostingdomainAction" validate="true"
+			input="/hostingdomain/hostingdomain.jsp" scope="request">
+			<forward name="success" path="/hostingdomain/hostingdomain.jsp" />
+		</action>
+
+		<action path="/ViewHostingdomainreport" name="hostingdomainForm"
+			type="hostingdomain.action.ViewHostingdomainReportAction" validate="true"
+			input="/hostingdomain/hostingdomainReport.jsp" scope="request">
+			<forward name="success" path="/hostingdomain/hostingdomainReport.jsp" />
+		</action>
+
+
+
+		<action path="/AddHostingdomain" name="hostingdomainForm"
+			type="hostingdomain.action.AddHostingdomainAction" validate="true"
+			input="/hosting/buydomain.jsp" scope="request">
+			<forward name="search" path="/ViewHostingdomain.do" redirect="true" />
+			<forward name="success" path="/hosting/buydomain.jsp" />
+			<forward name="actionError" path="/hosting/buydomain.jsp" />
+		</action>
+
+		<action path="/GetHostingdomain" name="hostingdomainForm"
+			type="hostingdomain.action.GetHostingdomainAction" validate="true"
+			input="/hosting/buydomain.jsp" scope="request">
+			<forward name="success" path="/hostingdomain/hostingdomainEdit.jsp" />
+			<forward name="actionError" path="/hosting/buydomain.jsp" />
+		</action>
+
+		<action path="/GetServiceInfo" type="hosting.GetServiceInfoAction"
+			validate="true" scope="request">
+			<forward name="success" path="/hostingdomain/hostingdomainEdit.jsp" />
+			<forward name="actionError" path="/hosting/buydomain.jsp" />
+		</action>
+
+		<action path="/ChangeStatus" name="hostingdomainForm"
+			type="hostingdomain.action.ChangeStatusAction" validate="true"
+			input="/ViewHostingdomain.do" scope="request">
+			<forward name="success" path="/GetHostingdomain.do" redirect="true" />
+		</action>
+
+
+		<!--======== Action for Iig ======== -->
+		<!--======== View Iig ======== -->
+		<action path="/ViewIig" name="iigForm" type="iig.action.ViewIigAction"
+			validate="true" input="/iig/iig.jsp" scope="request">
+			<forward name="success" path="/iig/iig.jsp" />
+		</action>
+
+		<action path="/ViewIigReport" name="iigForm" type="iig.action.ViewIigAction"
+			validate="true" input="/iig/iigReport.jsp" scope="request">
+			<forward name="success" path="/iig/iigReport.jsp" />
+		</action>
+		<!--======== ADD Iig ======== -->
+		<action path="/AddIig" name="iigForm" type="iig.action.AddIigAction"
+			validate="true" input="/iig/iigAdd.jsp" scope="request">
+			<forward name="success" path="/iig/iigAdd.jsp" redirect="true" />
+			<forward name="actionError" path="/iig/iigAdd.jsp" />
+		</action>
+		<!--======== GET Iig ======== -->
+		<action path="/GetIig" name="iigForm" type="iig.action.GetIigAction"
+			validate="true" input="/iig/iigEdit.jsp" scope="request">
+			<forward name="success" path="/iig/iigEdit.jsp" />
+		</action>
+		<!--======== UPDATE Iig ======== -->
+		<action path="/UpdateIig" name="iigForm" type="iig.action.UpdateIigAction"
+			validate="true" input="/iig/iigEdit.jsp" scope="request">
+			<forward name="success" path="/ViewIig.do?id=current" />
+			<forward name="actionError" path="/iig/iigEdit.jsp" />
+		</action>
+		<!--======== DROP Iig ======== -->
+		<action path="/DropIig" name="iigForm" type="iig.action.DropIigAction"
+			validate="true" input="/ViewIig.do" scope="request">
+			<forward name="success" path="/ViewIig.do" redirect="true" />
+		</action>
+
+		<action path="/ChangeIIGStatus" name="iigForm"
+			type="iig.action.ChangeIIGStatusAction" validate="true" input="/ViewIig.do"
+			scope="request">
+			<forward name="success" path="/ViewIig.do" redirect="true" />
+		</action>
+
+		<action path="/ChangePackageStatus" name="hostingPackageForm"
+			type="hostingpackage.action.ChangePackageStatusAction" validate="true"
+			input="/ViewHostingPackage.do" scope="request">
+			<forward name="success" path="/ViewHostingPackage.do"
+				redirect="true" />
+		</action>
+
+		<action path="/BuyPackage" name="hostingPackageForm"
+			type="hostingpackage2.action.BuyPackageAction" validate="true"
+			input="/ViewHostingPackage.do" scope="request">
+			<forward name="success" path="/ViewHostingPackage.do"
+				redirect="true" />
+		</action>
+
+		<action path="/AddHostingPackage" name="hostingPackageForm"
+			type="hostingpackage.action.AddHostingPackageAction" validate="true"
+			input="/hostingpackage/hostingPackageAdd.jsp" scope="request">
+			<forward name="success" path="/hostingpackage/hostingPackageAdd.jsp"
+				redirect="true" />
+			<forward name="actionError" path="/hostingpackage/hostingPackageAdd.jsp" />
+		</action>
+
+		<action path="/GetHostingPackage" name="hostingPackageForm"
+			type="hostingpackage.action.GetHostingPackageAction" validate="true"
+			input="/hostingpackage/hostingPackage.jsp" scope="request">
+			<forward name="success" path="/hostingpackage/hostingPackageEdit.jsp" />
+			<forward name="actionError" path="/hostingpackage/hostingPackageEdit.jsp" />
+		</action>
+
+		<action path="/AddHostingPackage2" name="hostingPackage2Form"
+			type="hostingpackage2.action.AddHostingpackage2Action" validate="true"
+			input="/hostingpackage2/hostingPackageAdd.jsp" scope="request">
+			<forward name="success" path="/hostingpackage2/hostingPackageAdd.jsp"
+				redirect="true" />
+			<forward name="actionError" path="/hostingpackage2/hostingPackageAdd.jsp" />
+		</action>
+
+		<action path="/ViewHostingpackage2" name="hostingPackage2Form"
+			type="hostingpackage2.action.ViewHostingpackage2Action" validate="true"
+			input="/hostingpackage2/hostingPackage.jsp" scope="request">
+			<forward name="success" path="/hostingpackage2/hostingPackage.jsp" />
+		</action>
+
+		<action path="/ViewOrder" name="orderForm" type="order.action.ViewOrderAction"
+			validate="true" input="/order/order.jsp" scope="request">
+			<forward name="success" path="/order/order.jsp" />
+		</action>
+
+
+		<action path="/DownloadFile" name="FileDTO" type="file.action.DownloadFileAction">
+		</action>
+
+
+		<action path="/ChangeOrderStatus" name="orderForm"
+			type="order.action.ChangeStatusAction" validate="true" input="/ViewOrder.do"
+			scope="request">
+			<forward name="success" path="/ViewOrder.do" redirect="true" />
+		</action>
+
+
+		<!--======== Action for Vpn ======== -->
+		<!--======== View Vpn ======== -->
+		<action path="/ViewVpn" name="vpnForm" type="vpn.action.ViewVpnAction"
+			validate="true" input="/vpn/vpn.jsp" scope="request">
+			<forward name="success" path="/vpn/vpn.jsp" />
+		</action>
+		<action path="/ViewVpnReport" name="vpnForm"
+			type="vpn.action.ViewVpnReportAction" validate="true" input="/vpn/vpnReport.jsp"
+			scope="request">
+			<forward name="success" path="/vpn/vpnReport.jsp" />
+		</action>
+		<!--======== ADD Vpn ======== -->
+		<action path="/AddVpn" name="vpnForm" type="vpn.action.AddVpnAction"
+			validate="true" input="/vpn/vpnAdd.jsp" scope="request">
+			<forward name="success" path="/vpn/vpnAdd.jsp" redirect="true" />
+			<forward name="actionError" path="/vpn/vpnAdd.jsp" />
+		</action>
+		<!--======== GET Vpn ======== -->
+		<action path="/GetVpn" name="vpnForm" type="vpn.action.GetVpnAction"
+			validate="true" input="/vpn/vpn.jsp" scope="request">
+			<forward name="success" path="/vpn/vpnEdit.jsp" />
+		</action>
+		<!--======== UPDATE Vpn ======== -->
+		<action path="/UpdateVpn" name="vpnForm" type="vpn.action.UpdateVpnAction"
+			validate="true" input="/vpn/vpnEdit.jsp" scope="request">
+			<forward name="success" path="/ViewVpn.do?id=current" />
+			<forward name="actionError" path="/vpn/vpnEdit.jsp" />
+		</action>
+		<!--======== DROP Vpn ======== -->
+		<action path="/DropVpn" name="vpnForm" type="vpn.action.DropVpnAction"
+			validate="true" input="/ViewVpn.do" scope="request">
+			<forward name="success" path="/ViewVpn.do" redirect="true" />
+		</action>
+
+		<action path="/ChangeVPNStatus" name="vpnForm"
+			type="vpn.action.ChangeVPNStatusAction" validate="true" input="/ViewVpn.do"
+			scope="request">
+			<forward name="success" path="/ViewVpn.do" redirect="true" />
+		</action>
+
+
+		<!--======== Action for Lli ======== -->
+		<!--======== View Lli ======== -->
+		<action path="/ViewLli" name="lliForm" type="lli.action.ViewLliAction"
+			validate="true" input="/lli/lli.jsp" scope="request">
+			<forward name="success" path="/lli/lli.jsp" />
+		</action>
+		<action path="/ViewLliReport" name="lliForm"
+			type="lli.action.ViewLliReportAction" validate="true" input="/lli/lliReport.jsp"
+			scope="request">
+			<forward name="success" path="/lli/lliReport.jsp" />
+		</action>
+		<!--======== ADD Lli ======== -->
+		<action path="/AddLli" name="lliForm" type="lli.action.AddLliAction"
+			validate="true" input="/lli/lliAdd.jsp" scope="request">
+			<forward name="success" path="/lli/lliAdd.jsp" redirect="true" />
+			<forward name="actionError" path="/lli/lliAdd.jsp" />
+		</action>
+		<!--======== GET Lli ======== -->
+		<action path="/GetLli" name="lliForm" type="lli.action.GetLliAction"
+			validate="true" input="/lli/lliEdit.jsp" scope="request">
+			<forward name="success" path="/lli/lliEdit.jsp" />
+		</action>
+		<!--======== UPDATE Lli ======== -->
+		<action path="/UpdateLli" name="lliForm" type="lli.action.UpdateLliAction"
+			validate="true" input="/lli/lliEdit.jsp" scope="request">
+			<forward name="success" path="/ViewLli.do?id=current" />
+			<forward name="actionError" path="/lli/lliEdit.jsp" />
+		</action>
+		<!--======== DROP Lli ======== -->
+		<action path="/DropLli" name="lliForm" type="lli.action.DropLliAction"
+			validate="true" input="/ViewLli.do" scope="request">
+			<forward name="success" path="/ViewLli.do" redirect="true" />
+		</action>
+
+		<action path="/ChangeLliStatus" name="lliForm"
+			type="lli.action.ChangeLliStatusAction" validate="true" input="/ViewLli.do"
+			scope="request">
+			<forward name="success" path="/ViewLli.do" redirect="true" />
+		</action>
+
+
+
+		<!-- -->
+
+		<action path="/RechargeAccountByCard" name="addRechargeCardBatchForm"
+			type="rechargecard.action.RechargeAccountByCardAction" validate="true"
+			input="/rechargecard/RechargeAccount.jsp" scope="request">
+			<forward name="success" path="/rechargecard/RechargeAccount.jsp"
+				redirect="true" />
+			<forward name="actionError" path="/rechargecard/RechargeAccount.jsp" />
+		</action>
+
+
+
+
+		<!--======== ? direct credit card payment ======== -->
+
+
+		<action path="/CreditCardPayment" name="creditCardPayment"
+			type="creditcardpayment.action.CreditCardPaymentAction" validate="false"
+			input="/rechargecard/RechargeAccount.jsp" scope="request">
+
+			<forward name="success" path="/rechargecard/RechargeAccount.jsp" />
+			<forward name="actionError" path="/rechargecard/RechargeAccount.jsp" />
+			<forward name="failure" path="/rechargecard/RechargeAccount.jsp" />
+		</action>
+
+		<!--======== update district distance by Sharif ======== -->
+
+		<action name="districtDistanceDTO" input="/distance/updateDistance.jsp"
+			path="/updateDistrictDistance" scope="request" type="distance.action.UpdateDistrictDistanceAction"
+			validate="true">
+			<forward name="success" path="/distance/updateDistrictDistance.jsp" redirect="true" />
+			<forward name="actionError" path="/distance/updateDistrictDistance.jsp" />
+		</action>
+		
+		<!-- ======== AutoComplete(DEMO)========= -->
+
+<!-- 		<action path="/PopulateDistance" scope="request" type="distance.action.PopulateDistanceAction"> </action> -->
+<!-- 		<action path="/PopulateLocation" type="distance.action.PopulateLocationAction"></action> -->
+
+
+
+
+
+
+
+
+		<!-- ====================cost config action by abhijit -->
+
+		<action path="/AddCostConfig" name="costConfigForm"
+			type="costConfig.action.AddCostConfigAction" input="/CostConfig.do"
+			scope="request">
+			<forward name="success" path="/vpn/vpnCosting.jsp" redirect="true" />
+		</action>
+
+
+		<action path="/GetCostConfig" name="costConfigForm"
+			type="costConfig.action.GetCostConfigAction" input="/GetCostConfig.do"
+			scope="request">
+			<forward name="success" path="/vpn/finance/vpnCostingUpdate.jsp"
+				redirect="false" />
+			<forward name="successLLI" path="/lli/finance/lliCostingUpdate.jsp"
+				redirect="false" />
+		</action>
+
+		<action path="/UpdateCostConfig" name="costConfigForm"
+			type="costConfig.action.UpdateCostConfigAction" input="/vpn/vpnCostingUpdate.jsp"
+			scope="request">
+			<forward name="success" path="/GetCostConfig.do" />
+		</action>
+
+		<action name="clientForm" input="/request/requestSearch.jsp"
+			path="/SearchRequest" scope="request" type="request.action.SearchRequestAction"
+			validate="false">
+			<forward name="success" path="/request/requestSearch.jsp" />
+		</action>
+
+		<action name="commonRequestForm" input="/common/commonRequestSearch.jsp"
+			path="/CommonRequestSearch" scope="request"
+			type="common.action.CommonRequestSearchAction" validate="false">
+			<forward name="success" path="/common/commonRequestSearch.jsp" />
+		</action>
+
+
+		<action path="/AutoDistrict" scope="request"
+			type="distance.action.AutoDistrictAction"></action>
+		<action path="/AutoDistance" type="distance.action.AutoDistanceAction"></action>
+
+
+
+
+
+
+		<!-- ====================cost config action by abhijit -->
+
+		<action path="/AddCostConfig" name="costConfigForm"
+			type="costConfig.action.AddCostConfigAction" input="/CostConfig.do"
+			scope="request">
+			<forward name="success" path="/vpn/finance/vpnCosting.jsp"
+				redirect="true" />
+		</action>
+
+
+<!-- 		<action path="/GetCostConfig" name="costConfigForm" -->
+<!-- 			type="costConfig.action.GetCostConfigAction" input="/GetCostConfig.do" -->
+<!-- 			scope="request"> -->
+<!-- 			<forward name="success" path="/vpn/finance/vpnCostingUpdate.jsp" -->
+<!-- 				redirect="false" /> -->
+<!-- 		</action> -->
+
+		<action path="/UpdateCostConfig" name="costConfigForm"                                                                                  
+			type="costConfig.action.UpdateCostConfigAction" input="/vpn/finance/vpnCostingUpdate.jsp"
+			scope="request">
+			<forward name="success" path="/GetCostConfig.do" />
+		</action>
+
+
+
+
+		<action path="/GetRequestForView" name="requestForm" scope="request"
+			type="request.action.GetRequestForViewAction" validate="false">
+
+			<forward name="success" path="/request/requestView.jsp" />
+		</action>
+
+
+
+
+		<!-- Abhijit Creating vpn common charge config actions -->
+		<action path="/GetCommonChargeConfig" name="vpnCommonChargeConfigForm"
+			type="vpnCommonChargeConfig.action.GetVpnCommonChargeConfigAction"
+			input="/GetCostConfig.do" scope="request">
+			<forward name="success" path="/vpncommoncharge/vpnCommonChargeConfigAdd.jsp"
+				redirect="false" />
+		</action>
+
+		<action path="/UpdateCommonChargeConfig" name="vpnCommonChargeConfigForm"
+			type="vpnCommonChargeConfig.action.AddVpnCommonChargeConfigAction"
+			input="/vpncommoncharge/vpnCommonChargeConfigAdd.jsp" scope="request">
+			<forward name="success" path="/GetCommonChargeConfig.do" />
+		</action>
+	
+		<action path="/GetCommonChargeConfigLLI" name="lliCommonChargeConfigForm"
+			type="lliCommonChargeConfig.action.GetLliCommonChargeConfigAction"
+			input="/GetCostConfig.do" scope="request">
+			<forward name="success" path="/llicommoncharge/lliCommonChargeConfigAdd.jsp"
+				redirect="false" />
+		</action>
+
+		<action path="/UpdateCommonChargeConfigLLI" name="lliCommonChargeConfigForm"
+			type="lliCommonChargeConfig.action.AddLliCommonChargeConfigAction"
+			input="/llicommoncharge/lliCommonChargeConfigAdd.jsp" scope="request">
+			<forward name="success" path="/GetCommonChargeConfigLLI.do" />
+		</action>
+		
+		<!-- Add inventory Action -->
+		<action name="InventoryItemForm" path="/AddInventory"
+			type="inventory.action.AddInventoryItemAction" input="/AddInventory.do"
+			scope="request">
+			<forward name="success" path="/vpn/inventory/addInventoryItem.jsp"
+				redirect="true" />
+		</action>
+		<action path="/AutoInventoryItem" scope="request"
+			type="inventory.action.InventoryItemAutoCompleteAction"></action>
+
+
+
+		<action name="InventoryItemForm" input="/vpn/inventory/searchInventory.jsp"
+			path="/SearchInventoryItem" scope="request"
+			type="inventory.action.SearchInventoryItemAction" validate="false">
+			<forward name="success" path="/vpn/inventory/searchInventory.jsp" />
+		</action>
+
+		<action name="InventoryItemForm" input="/vpn/inventory/searchInventoryAll.jsp"
+			path="/inventory/search" scope="request"
+			type="inventory.action.SearchInventoryItemAllAction" validate="false">
+			<forward name="success" path="/vpn/inventory/searchInventoryAll.jsp" />
+		</action>
+		
+		
+	</action-mappings>
+	
+	
+	
+	
+	
+	<!-- ===================================== Controller Configuration ============ -->
+
+
+	<!-- ================================ Message Resources Definitions ============= -->
+
+	<message-resources parameter="BTCLBilling" />
+
+	<!-- ======================================= Plug Ins Configuration =============== -->
+
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+	</plug-in>
+
+</struts-config>

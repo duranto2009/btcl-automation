@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="CRMInventoryItemForm" type="crm.inventory.form.CRMInventoryItemDetailsForm" />
+	</form-beans>
+
+
+	<global-exceptions>
+
+	</global-exceptions>
+
+
+	<!-- =================================== Global Forward Definitions -->
+
+	<global-forwards>
+
+	</global-forwards>
+
+	<!-- =================================== Action Mapping Definitions -->
+
+	<action-mappings>
+	
+
+		
+		<action path="/DomainSearchLog/*" type="domain.search.log.DomainSearchLogAction"
+					parameter="searchComplain"  name="loginForm">
+					<forward name="success" path="/domain/searchLog/searchLog.jsp"/>
+				</action>
+		
+		<!-- Support/CRM -->
+			<!-- General -->
+				<action path="/CrmAction/*" type="crm.action.CrmGeneralPurposeMappingDispatchAction">
+					<forward name="view" path="/crm/general/addCrmComplain.jsp"/>
+					<forward name="view" path="/crm/general/editCrmComplain.jsp"/>
+				</action>
+				
+				<action path="/EditCrmComplain" type="crm.action.CrmGeneralPurposeMappingDispatchAction"
+					parameter="editComplain">
+					<forward name="success" path="/crm/general/editCrmComplain.jsp"/>
+				</action>
+				
+				<action path="/DelectCrmComplain" type="crm.action.CrmGeneralPurposeMappingDispatchAction"
+					parameter="deleteComplain">
+					<forward name="success" path="/crm/general/searchCrmComplain.jsp"/>
+				</action>	
+				
+				<action path="/SearchCrmComplain" type="crm.action.CrmGeneralPurposeMappingDispatchAction"
+					parameter="searchComplain">
+					<forward name="success" path="/crm/general/searchCrmComplain.jsp"/>
+				</action>
+				
+				<action path="/CrmDesignation/*" type="crm.action.CrmDesignationAction"  name="loginForm">
+					<forward name="DesignationConfigurationView" path="/crm/configure/crmDesignationConfig.jsp"/>
+				</action>
+				
+				<action path="/CrmEmployee/*" type="crm.action.CrmEmployeeAction" name="loginForm">
+					<forward name="employeeView" path="/crm/tree/crmEmployeeView.jsp"/>
+					<forward name="getSearchCrmEmployee" path="/crm/tree/crmEmployeeSearch.jsp" />
+					<forward name="getEmployeeView" path="/crm/tree/viewCrmEmployee.jsp" />
+				</action>
+				
+				<action path="/CrmComplain/*" type="crm.action.CrmComplainAction">
+					<forward name="GetCreateComplainView" path="/crm/complain/addCrmComplain.jsp"/>
+					<forward name="GetComplainSearch" path = "/CrmComplainSearch/Complains.do"/>
+				</action>
+				
+				<action name="CRMInventoryItemForm" path="/CrmComplainSearch/*" type="crm.action.CrmComplainSearchAction">
+					<forward name="success" path="/crm/complain/searchCrmComplain.jsp"/>
+				</action>
+				
+
+				
+				<action name="CRMInventoryItemForm"  path="/CrmClientComplainSearch/*"  type="crm.action.CrmClientComplainSearchAction"
+					parameter="searchCleintComplain">
+					<forward name="success" path="/crm/clientComplain/searchCrmClientComplain.jsp"/>
+				</action>
+				
+				<action path="/CrmClientComplain/*" type="crm.action.CrmClientComplainAction">
+					<forward name="GetCreateComplainView" path="/crm/clientComplain/addCrmClientComplain.jsp"/>
+					<forward name="GetClientComplainView" path="/crm/clientComplain/viewCrmClientComplain.jsp"/>
+					<forward name="GetClientComplainSearch" path="/CrmClientComplainSearch/Complains.do"/>
+				</action>
+				
+				<action path="/CrmEntity/*" type="crm.action.CrmEntityAction"/>
+				<!---->
+				<!--<action path="/report/*" name="loginForm"-->
+					<!--type="report.ReportAction" scope="request">-->
+					<!--<forward name="GetServiceEntityReport" path="/report/serviceEntity/report.jsp"/>-->
+					<!---->
+				<!--</action>	-->
+				
+				<action path="/Log/*" name="loginForm"
+					type="log.LogAction" scope="request">
+					<forward name="GetNewLog" path="/log/newReport.jsp"/>
+				</action>	
+				
+				<!-- <action path="/PaymentReport/*" name="loginForm"
+					type="payment.PaymentReportAction" scope="request">
+					<forward name="GetNewPaymentReport" path="/payment/newReport.jsp"/>
+				</action> -->	
+				
+			<!-- /General -->
+				
+			<!-- Configure -->
+				
+				
+			<!-- /Configure -->
+		<!-- /Support/CRM -->
+		<!-- Bank -->
+				<action path="/Bank/*" type="bank.action.BankAction">
+					<forward name="GetAddBankView" path="/bank/general/addBank.jsp"/>
+					<forward name="GetBankView" path="/bank/general/viewBank.jsp"/>
+					<forward name="BankSearchPage" path="/BankSearch/Banks.do"/>
+				</action>
+				<action  name="CRMInventoryItemForm" path="/BankSearch/*" type="bank.action.BankSearchAction" >
+					<forward name="success" path="/bank/general/searchBank.jsp"/>
+				</action>
+		<!-- /Bank -->
+		
+		<!-- pay order -->
+				<action path="/PayOrder/*" type="payOrder.action.PayOrderAction">
+					<forward name="GetAddPayOrderView" path="/payOrder/general/addPayOrder.jsp"/>
+					<forward name="GetPayOrderView" path="/payOrder/general/viewPayOrder.jsp"/>
+					<forward name="PayOrderSearchPage" path="/PayOrderSearch/PayOrders.do"/>
+				</action>
+				<action  name="CRMInventoryItemForm" path="/PayOrderSearch/*" type="payOrder.action.PayOrderSearchAction" >
+					<forward name="success" path="/payOrder/general/searchPayOrder.jsp"/>
+				</action>
+		<!-- /pay order -->
+
+			
+			<action name="clientForm" input="/note/noteSearch.jsp" path="/SearchNote"
+				scope="request" type="note.action.SearchNoteAction" validate="false">
+				<forward name="success" path="/note/noteSearch.jsp" />
+			</action>
+
+	</action-mappings>
+
+	<!-- ===================================== Controller Configuration ============ -->
+
+
+	<!-- ================================ Message Resources Definitions ============= -->
+
+	<message-resources parameter="BTCLBilling" />
+
+</struts-config>

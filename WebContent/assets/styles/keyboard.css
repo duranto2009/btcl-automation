@@ -1,0 +1,26 @@
+table.inlinekbtable tbody tr {
+	border: 1px solid #cfcfcf;
+}
+
+table.inlinekbtable tbody td {
+	background: #333;
+	padding: 5px;
+	font-weight: normal;
+	font-size: 1.3em;
+	color: #fff;
+	font-family: SolaimanLipi, AponaLohit, Bangla, Siyam Rupali, Likhan,
+		Vrinda, Verdana, Helvetica, Arial, Sans-serif;
+	cursor: pointer;
+	text-align: center !important;
+	width: 50px;
+	height: 38px;
+}
+
+table.inlinekbtable tbody td:hover {
+	background-color: #D0D7BC !important;
+	color: #000000;
+}
+
+.popover {
+	max-width: 500px;
+}

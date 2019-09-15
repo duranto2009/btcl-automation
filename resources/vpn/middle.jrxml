@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="middle" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="8d56417b-c283-4e45-9bc8-a512d26acf0e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="invoiceID" class="java.lang.String"/>
+	<parameter name="registrationCharge" class="java.lang.String"/>
+	<parameter name="bandwidthCharge" class="java.lang.String"/>
+	<parameter name="securityCharge" class="java.lang.String"/>
+	<parameter name="localLoopCharge" class="java.lang.String"/>
+	<parameter name="instantDegradationCharge" class="java.lang.String"/>
+	<parameter name="reconnectCharge" class="java.lang.String"/>
+	<parameter name="closingCharge" class="java.lang.String"/>
+	<parameter name="shiftingCharge" class="java.lang.String"/>
+	<parameter name="ownershipChangeCharge" class="java.lang.String"/>
+	<parameter name="discount" class="java.lang.String"/>
+	<parameter name="subTotal" class="java.lang.String"/>
+	<parameter name="vat" class="java.lang.String"/>
+	<parameter name="otherCharge" class="java.lang.String"/>
+	<parameter name="total" class="java.lang.String"/>
+	<parameter name="billLastPaymentDate" class="java.lang.String"/>
+	<parameter name="otcLocalLoopBTCL" class="java.lang.String"/>
+	<parameter name="demandedAmount" class="java.lang.String"/>
+	<parameter name="vatPercentage" class="java.lang.String"/>
+	<parameter name="discountPercentage" class="java.lang.String"/>
+	<parameter name="vatCalculableWOSecurity" class="java.lang.String"/>
+	<parameter name="advance" class="java.lang.String"/>
+	<parameter name="bandwidthChargeMinusDiscount" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="341" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="550" height="20" uuid="be3eeb43-342d-4b94-b1b8-b5e5010fac31"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Invoice ID: " + $P{invoiceID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="20" width="163" height="20" uuid="d1be3ba4-f566-476e-b011-88528e85d1a4"/>
+				<box topPadding="5" rightPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Description"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="163" y="20" width="137" height="20" uuid="943d0376-6eac-4e35-93e1-9fbe688b5fc6"/>
+				<box topPadding="5" leftPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Amount (BDT)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="20" width="250" height="20" uuid="13c669df-a9a2-4bc9-9158-24741413de6d"/>
+				<box topPadding="5" leftPadding="0">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Remarks"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="40" width="163" height="180" uuid="76c2cf49-e642-4fe0-a5ca-e7bc3b2041c5"/>
+				<box topPadding="5" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Registration Charge" + "\n" +
+"Local Loop OTC (for BTCL Loop Provider)" + "\n" +
+"Bandwidth Charge" + "\n" +
+"Discount (" + $P{discountPercentage} + " % on BW Charge)" + "\n"+
+"Bandwidth Charge (-discount)" + "\n" +
+"Security Charge" + "\n" +
+"Local Loop Charge" + "\n" +
+"Instant Degradation Charge" + "\n" +
+"Reconnect Charge" + "\n" +
+"Closing Charge" + "\n" +
+"Shifting Charge" + "\n" +
+"Ownership Change Charge" + "\n" +
+"Other Charge" + "\n" +
+"Advance" + "\n"+
+"Sub Total"+ "\n" +
+"VAT Calculable (without security)" + "\n" + 
+"VAT (" + $P{vatPercentage} + " % on VAT Calculable)" + "\n"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="163" y="40" width="137" height="180" uuid="1a87a6ae-394d-4ec1-bb9a-cb9a86d310f2"/>
+				<box topPadding="5" leftPadding="0">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{registrationCharge} + "\n" + 
+$P{otcLocalLoopBTCL} + "\n" +
+$P{bandwidthCharge} + "\n" + 
+$P{discount} + "\n" +
+$P{bandwidthChargeMinusDiscount} + "\n" +
+$P{securityCharge} + "\n" + 
+$P{localLoopCharge} + "\n" + 
+$P{instantDegradationCharge} + "\n" + 
+$P{reconnectCharge} + "\n" + 
+$P{closingCharge} + "\n" + 
+$P{shiftingCharge} + "\n" + 
+$P{ownershipChangeCharge} + "\n" + 
+$P{otherCharge} + "\n" + 
+$P{advance} + "\n" +
+$P{subTotal} + "\n" +
+$P{vatCalculableWOSecurity} + "\n" + 
+$P{vat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="40" width="250" height="180" uuid="b4f69b6a-4029-43fd-a3ae-cf6f5f9bd8b9"/>
+				<box topPadding="5" leftPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement markup="html">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Payment Procedure</b><br>" +
+"<b>a. Cheque/Pay order :</b><br>" +  
+"For Govt. / semi Govt / autonomous organizations cheque/pay order should be sent in favor of Senior Account Officer, Telephone   Revenue (North), BTCL, Dhaka.<br>" + 
+"<b>b. Cash Payment in BTCL Booth:</b><br>" +
+"In BASIC Bank, Ramna/Sher-e-Bangla nagar/Gulshan BTCL Booth."+
+"<b>c. Cash Payment in Bank:</b><br>" +
+"In Social Islami Bank Limited, New Iskaton Branch, Dhaka.<br><br> " + 
+"<b>Address of sending cheque/pay order:</b><br>" +
+"Accounting Officer (trunk & telex), BTCL, Telephone bhaban, 4th Floor, Moghbazar, Dhaka."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="220" width="163" height="30" uuid="ed956aab-269c-4aa8-9083-a425a466cd64"/>
+				<box topPadding="5" rightPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Total (with VAT)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="163" y="220" width="137" height="30" uuid="195e536d-6442-4198-aa5a-23d3c7d6dc10"/>
+				<box topPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="220" width="250" height="30" uuid="5527a40b-a8b3-49ec-ba63-5e9799812aa3"/>
+				<box topPadding="5" leftPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Demand Note Valid upto " + $P{billLastPaymentDate}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="0" y="263" width="548" height="78" uuid="7fdc1e2d-fee6-49d8-a9f3-a2a305f789c1"/>
+				<textField>
+					<reportElement x="0" y="40" width="280" height="38" uuid="0f9eed35-a57b-4da5-8bca-888b67b7c0df"/>
+					<textElement verticalAlignment="Top">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Amount : _______________________________________  has been accepted"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="0" width="548" height="18" uuid="e601836c-26e8-4f5a-8b3a-062969fdbe81"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Demanded Amount : " +$P{demandedAmount} + " taka only."]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="280" y="40" width="268" height="38" uuid="c3fcf9ac-aa3e-42e5-a007-91748d77582f"/>
+					<textElement verticalAlignment="Top" markup="html">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Signature of Officer with Rank"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+</jasperReport>

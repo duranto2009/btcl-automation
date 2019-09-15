@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="dn-new-connection" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="60b43fd9-3324-4358-bfda-f264f2476b8e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="footerLeft" class="java.lang.String"/>
+	<parameter name="footerRight" class="java.lang.String"/>
+	<parameter name="NB" class="java.lang.String"/>
+	<parameter name="NIXDemandNote" class="java.lang.String"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<parameter name="billLastPaymentDate" class="java.lang.String"/>
+	<parameter name="connectionName" class="java.lang.String"/>
+	<parameter name="clientFullName" class="java.lang.String"/>
+	<parameter name="clientEmail" class="java.lang.String"/>
+	<parameter name="clientLoginName" class="java.lang.String"/>
+	<parameter name="clientAddress" class="java.lang.String"/>
+	<parameter name="billGenerationDate" class="java.lang.String"/>
+	<parameter name="securityMoney" class="java.lang.String"/>
+	<parameter name="bwMRC" class="java.lang.String"/>
+	<parameter name="registrationCharge" class="java.lang.String"/>
+	<parameter name="instantDegradationCharge" class="java.lang.String"/>
+	<parameter name="otherCharge" class="java.lang.String"/>
+	<parameter name="total" class="java.lang.String"/>
+	<parameter name="VAT" class="java.lang.String"/>
+	<parameter name="invoiceID" class="java.lang.String"/>
+	<parameter name="otherItems" class="java.lang.String"/>
+	<parameter name="discount" class="java.lang.String"/>
+	<parameter name="demandNoteCause" class="java.lang.String"/>
+	<parameter name="demandedAmount" class="java.lang.String"/>
+	<parameter name="advancedAmount" class="java.lang.String"/>
+	<parameter name="localLoopCharge" class="java.lang.String"/>
+	<parameter name="fibreCharge" class="java.lang.String"/>
+	<parameter name="contractBreakingFine" class="java.lang.String"/>
+	<parameter name="brokenBandwidth" class="java.lang.String"/>
+	<parameter name="otherCost" class="java.lang.String"/>
+	<parameter name="contractID" class="java.lang.String"/>
+	<parameter name="connectionAddress" class="java.lang.String"/>
+	<parameter name="skipped" class="java.lang.Boolean"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<group name="Group1">
+		<groupHeader>
+			<band height="550">
+				<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				<frame>
+					<reportElement x="0" y="0" width="555" height="510" uuid="f667671e-98a3-4a4b-8127-a772c56e5e4d"/>
+					<textField>
+						<reportElement x="0" y="2" width="555" height="18" uuid="014d01e7-e96a-41fb-9eb0-39735caf57ad"/>
+						<textElement textAlignment="Center">
+							<font size="14" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Short Bill"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="120" y="22" width="310" height="16" uuid="d58024a4-ab0a-4ed7-84c4-11008c6d90fb"/>
+						<textElement textAlignment="Center">
+							<font size="10" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["for Duplex Leased Line Internet Connection and for Unpaid Bills"]]></textFieldExpression>
+					</textField>
+					<frame>
+						<reportElement x="0" y="64" width="554" height="116" uuid="56e52cbb-aef6-49b1-9897-c9d372573b38"/>
+						<textField>
+							<reportElement x="320" y="7" width="234" height="53" uuid="c7da1ca5-c5c3-4b64-a284-144295bc2e6a"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Right">
+								<font isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Connection Address: " + $P{connectionAddress}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="80" y="7" width="240" height="53" uuid="36cd2872-9d41-493c-b09e-4e7040c3c8af"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement verticalAlignment="Middle" markup="html"/>
+							<textFieldExpression><![CDATA[":<b>" + $P{clientFullName}+" </b>" + "<br>" + 
+":<b>" + $P{clientLoginName}+"</b>"  + "<br>" +
+":<b>" + $P{clientEmail}+"</b>"  + "<br>" +
+":<b>" + $P{clientAddress}	+"</b> "]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="0" y="7" width="80" height="53" uuid="64dade62-cece-4ba6-86f2-5f7e7608fca4"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement verticalAlignment="Middle" markup="html"/>
+							<textFieldExpression><![CDATA["<b>Client Name </b>" + "<br>" + 
+"<b>User Name </b>"  + "<br>" +
+"<b>Email </b>"  + "<br>" +
+"<b> Billing Address </b> "]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="0" y="63" width="554" height="33" uuid="11b4f38d-6f00-47bc-b62c-f267b3c5d7fe"/>
+							<textElement textAlignment="Center" verticalAlignment="Top" markup="html"/>
+							<textFieldExpression><![CDATA[$P{demandNoteCause}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement mode="Opaque" x="0" y="96" width="554" height="20" forecolor="#3345BD" uuid="f567b980-7135-4e27-80c7-77cd6b3f51a8"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$P{skipped} ? "THIS DEMAND NOTE WILL BE ADDED IN YOUR FIRST MONTHLY BILL. NO NEED TO PAY THIS DEMAND NOTE." : ""]]></textFieldExpression>
+						</textField>
+					</frame>
+					<textField>
+						<reportElement x="0" y="50" width="280" height="16" uuid="55c16959-7bfa-4d81-9152-9ae720982f75"/>
+						<textElement textAlignment="Left" markup="html">
+							<font size="10" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[String.format("%-40s : %80s", "<b>Contract ID</b>", "<b>" + $P{contractID}+"</b>")]]></textFieldExpression>
+					</textField>
+					<frame>
+						<reportElement x="0" y="180" width="554" height="346" uuid="a6b6b671-daf6-4454-880f-bcef330dd99e">
+							<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement x="0" y="5" width="554" height="20" uuid="7a5ddebc-0e01-4a9c-a757-68f75ac01d93"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" markup="html">
+								<font size="14"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Invoice ID : " + "<b>"  + $P{invoiceID} + "</b>"]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="0" y="25" width="181" height="22" uuid="8bd1855b-ae88-4ee5-996f-f9bcf5b3c11f"/>
+							<box leftPadding="0" rightPadding="5">
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Right" verticalAlignment="Middle">
+								<font isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Description"]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="181" y="25" width="119" height="22" uuid="9c29befc-0807-45fe-8c64-d1f5ca758c22"/>
+							<box leftPadding="5">
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Left" verticalAlignment="Middle">
+								<font isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Amount (Tk.)"]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="300" y="25" width="254" height="22" uuid="a4026d2f-0a88-4776-98ff-ff69b37d3680"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Remarks"]]></textFieldExpression>
+						</textField>
+						<frame>
+							<reportElement x="0" y="48" width="554" height="344" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="f8006b38-6bd1-44cb-8f9c-078a80e10e05"/>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement mode="Transparent" x="0" y="0" width="181" height="220" backcolor="#F3FADC" uuid="d4b5d74d-0531-4cb7-a96b-7033225cdba3"/>
+								<box topPadding="15" leftPadding="0" rightPadding="5">
+									<pen lineWidth="1.0"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Top" markup="html">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Contract Breaking Fine<br>" + 
+"Broken Bandwidth<br>" + 
+"Other Cost<br>"+
+"VAT<br>" +
+"Discount"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement mode="Transparent" x="181" y="0" width="119" height="220" backcolor="#F3FADC" uuid="b7909c48-0ccd-4b5c-93ce-725397cb99bb"/>
+								<box topPadding="15" leftPadding="5" bottomPadding="0" rightPadding="0">
+									<pen lineWidth="1.0"/>
+								</box>
+								<textElement markup="html">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{contractBreakingFine} + "<br>" + 
+$P{brokenBandwidth} + "<br>" +
+$P{otherCost} + "<br>" +
+$P{VAT}  +  "<br>" + 
+$P{discount}  +  "</b>"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement mode="Transparent" x="300" y="0" width="254" height="240" backcolor="#F3FADC" uuid="4313c09d-4699-4f05-93de-f62e652bd7df"/>
+								<box topPadding="10" leftPadding="10">
+									<pen lineWidth="1.0"/>
+								</box>
+								<textElement markup="html">
+									<font size="9" isBold="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA["<b>Payment Procedure</b>" + "<br>" + 
+"a. &nbsp; <b>Cheque/Pay order</b> :" + "<br>" + 
+"For Govt. / semi Govt / autonomous organizations cheque/pay order  should be sent in favor of SChief General Manager(North), BTCL Gulshan, Dhaka" + "<br>" + 
+"b. &nbsp; <b>Cash Payment in BTCL Booth</b>: " + "<br>" + 
+"In BASIC Bank, Ramna/Sher-e-Bangla nagar/Gulshan BTCL Booth." + "<br>" + 
+"c. &nbsp; <b>Cash Payment in Bank</b>: " +"<br>" + 
+"In Social Islami Bank Limited, New Iskaton Branch, Dhaka." + "<br><br><br>" + 
+"<b>Address of sending cheque/pay order</b>: " + "<br>" + 
+"DGM (Finance & Revenue), OTR, BTCL Moghbazar, Telephone Bhaban, 3rd Floor, Moghbazar, Dhaka"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement mode="Transparent" x="0" y="240" width="554" height="18" backcolor="#F3FADC" uuid="aa4d2e4d-3d6d-4fbf-a7a0-7cf73e74f43d"/>
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Demand Note Valid upto " + "<b>" + $P{billLastPaymentDate} + "<b>"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement mode="Transparent" x="0" y="220" width="181" height="20" backcolor="#F3FADC" uuid="78a86091-4347-4b07-96da-2c5db67fe286"/>
+								<box rightPadding="5">
+									<pen lineWidth="1.0"/>
+								</box>
+								<textElement textAlignment="Right" markup="html">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Total (with VAT)"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement mode="Transparent" x="181" y="220" width="119" height="20" backcolor="#F3FADC" uuid="81f6c2da-7932-4df3-a99a-fc669686b4c4"/>
+								<box leftPadding="5">
+									<pen lineWidth="1.0"/>
+								</box>
+								<textElement>
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="280" y="284" width="274" height="38" uuid="5da7b455-3fc4-4f65-9ec4-078c22f71006"/>
+								<textElement verticalAlignment="Top" markup="html">
+									<font size="10" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Signature of Officer with Rank"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="0" y="284" width="280" height="38" uuid="36a6772f-2456-41c5-b9bd-b7b337aa0e11"/>
+								<textElement verticalAlignment="Top">
+									<font size="10" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Amount : _______________________________________  has been accepted"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="0" y="264" width="554" height="18" uuid="9f21293e-2eb8-4f41-9f16-085265f7e2f1"/>
+								<textElement>
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Demanded Amount : " +$P{demandedAmount} + " taka only."]]></textFieldExpression>
+							</textField>
+						</frame>
+					</frame>
+					<textField>
+						<reportElement x="280" y="50" width="274" height="16" uuid="ffe0877e-6789-4dfa-89c0-e6025e5474a0"/>
+						<textElement textAlignment="Right" markup="html">
+							<font size="10" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Date : <b>" + $P{billGenerationDate} + "</b>"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="450" y="22" width="104" height="16" uuid="bef9722f-72b2-4503-8a2d-372078752bec"/>
+						<textFieldExpression><![CDATA["(" + ($V{PAGE_NUMBER}.equals(1) ? "Bank " : 
+	($V{PAGE_NUMBER}.equals(2) ? "BTCL Office " : 
+		($V{PAGE_NUMBER}.equals(3) ? "Subscriber " : "" )
+	)
+)  + "Copy)"]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+			<band height="550">
+				<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				<frame>
+					<reportElement x="0" y="0" width="555" height="510" uuid="56b1011d-883f-45b0-b362-258cc8a32ce2"/>
+					<textField>
+						<reportElement x="0" y="2" width="555" height="18" uuid="f7457f42-a766-4602-a476-57e305cce97f"/>
+						<textElement textAlignment="Center">
+							<font size="14" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Short Bill"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="120" y="22" width="310" height="16" uuid="30296149-ea07-4282-a495-a5516449e69d"/>
+						<textElement textAlignment="Center">
+							<font size="10" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["for Duplex Leased Line Internet Connection and for Unpaid Bills"]]></textFieldExpression>
+					</textField>
+					<frame>
+						<reportElement x="0" y="64" width="554" height="116" uuid="575fe378-d06c-420f-8724-b499bd49149d"/>
+						<textField>
+							<reportElement x="320" y="7" width="234" height="53" uuid="31584b66-d85f-4a6a-aa0f-041e0828572c"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Right">
+								<font isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Connection Address: " + $P{connectionAddress}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="80" y="7" width="240" height="53" uuid="a2515676-2a82-44a0-a4fc-38a8adfd6977"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement verticalAlignment="Middle" markup="html"/>
+							<textFieldExpression><![CDATA[":<b>" + $P{clientFullName}+" </b>" + "<br>" + 
+":<b>" + $P{clientLoginName}+"</b>"  + "<br>" +
+":<b>" + $P{clientEmail}+"</b>"  + "<br>" +
+":<b>" + $P{clientAddress}	+"</b> "]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="0" y="7" width="80" height="53" uuid="16bcd4be-e6d8-4f65-bf1d-b1b2cc57c4df"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement verticalAlignment="Middle" markup="html"/>
+							<textFieldExpression><![CDATA["<b>Client Name </b>" + "<br>" + 
+"<b>User Name </b>"  + "<br>" +
+"<b>Email </b>"  + "<br>" +
+"<b> Billing Address </b> "]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="0" y="63" width="554" height="33" uuid="8817893c-3b10-4a01-9729-bb7b2004b01d"/>
+							<textElement textAlignment="Center" verticalAlignment="Top" markup="html"/>
+							<textFieldExpression><![CDATA[$P{demandNoteCause}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement mode="Opaque" x="0" y="96" width="554" height="20" forecolor="#3345BD" uuid="96c7909f-a9d3-4b77-8e89-000229c1250f"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$P{skipped} ? "THIS DEMAND NOTE WILL BE ADDED IN YOUR FIRST MONTHLY BILL. NO NEED TO PAY THIS DEMAND NOTE." : ""]]></textFieldExpression>
+						</textField>
+					</frame>
+					<textField>
+						<reportElement x="0" y="50" width="280" height="16" uuid="3671944a-dd48-40a1-bbf0-be2ed548646b"/>
+						<textElement textAlignment="Left" markup="html">
+							<font size="10" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[String.format("%-40s : %80s", "<b>Contract ID</b>", "<b>" + $P{contractID}+"</b>")]]></textFieldExpression>
+					</textField>
+					<frame>
+						<reportElement x="0" y="180" width="554" height="346" uuid="3d8ae948-c674-4981-b0a8-39df4b4ae48c">
+							<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement x="0" y="5" width="554" height="20" uuid="0a5a2361-c8d4-4614-8644-364de9066995"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" markup="html">
+								<font size="14"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Invoice ID : " + "<b>"  + $P{invoiceID} + "</b>"]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="0" y="25" width="181" height="22" uuid="7868f801-8b35-47fb-b934-61a762de64d1"/>
+							<box leftPadding="0" rightPadding="5">
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Right" verticalAlignment="Middle">
+								<font isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Description"]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="181" y="25" width="119" height="22" uuid="9a77dcf5-96a4-4fd6-9537-3a7c76e3e1f7"/>
+							<box leftPadding="5">
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Left" verticalAlignment="Middle">
+								<font isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Amount (Tk.)"]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="300" y="25" width="254" height="22" uuid="9da13e13-a2f2-442d-8fac-02fe5080af26"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Remarks"]]></textFieldExpression>
+						</textField>
+						<frame>
+							<reportElement x="0" y="48" width="554" height="344" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="324ee422-f5eb-49e6-bc69-9abe11779047"/>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement mode="Transparent" x="0" y="0" width="181" height="220" backcolor="#F3FADC" uuid="b9bd24fa-54ad-475b-b6fb-88ad6460d2b8"/>
+								<box topPadding="15" leftPadding="0" rightPadding="5">
+									<pen lineWidth="1.0"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Top" markup="html">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Contract Breaking Fine<br>" + 
+"Broken Bandwidth<br>" + 
+"Other Cost<br>"+
+"VAT<br>" +
+"Discount"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement mode="Transparent" x="181" y="0" width="119" height="220" backcolor="#F3FADC" uuid="8e3dd3db-0aeb-4d0a-b0db-bb9447e1b7e1"/>
+								<box topPadding="15" leftPadding="5" bottomPadding="0" rightPadding="0">
+									<pen lineWidth="1.0"/>
+								</box>
+								<textElement markup="html">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{contractBreakingFine} + "<br>" + 
+$P{brokenBandwidth} + "<br>" +
+$P{otherCost} + "<br>" +
+$P{VAT}  +  "<br>" + 
+$P{discount}  +  "</b>"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement mode="Transparent" x="300" y="0" width="254" height="240" backcolor="#F3FADC" uuid="a6d67a2d-e65b-44c6-b451-9359d56bb482"/>
+								<box topPadding="10" leftPadding="10">
+									<pen lineWidth="1.0"/>
+								</box>
+								<textElement markup="html">
+									<font size="9" isBold="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA["<b>Payment Procedure</b>" + "<br>" + 
+"a. &nbsp; <b>Cheque/Pay order</b> :" + "<br>" + 
+"For Govt. / semi Govt / autonomous organizations cheque/pay order  should be sent in favor of SChief General Manager(North), BTCL Gulshan, Dhaka" + "<br>" + 
+"b. &nbsp; <b>Cash Payment in BTCL Booth</b>: " + "<br>" + 
+"In BASIC Bank, Ramna/Sher-e-Bangla nagar/Gulshan BTCL Booth." + "<br>" + 
+"c. &nbsp; <b>Cash Payment in Bank</b>: " +"<br>" + 
+"In Social Islami Bank Limited, New Iskaton Branch, Dhaka." + "<br><br><br>" + 
+"<b>Address of sending cheque/pay order</b>: " + "<br>" + 
+"DGM (Finance & Revenue), OTR, BTCL Moghbazar, Telephone Bhaban, 3rd Floor, Moghbazar, Dhaka"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement mode="Transparent" x="0" y="240" width="554" height="18" backcolor="#F3FADC" uuid="19c19b99-a251-4787-8c33-edfe0c71053b"/>
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Demand Note Valid upto " + "<b>" + $P{billLastPaymentDate} + "<b>"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement mode="Transparent" x="0" y="220" width="181" height="20" backcolor="#F3FADC" uuid="4d367d2d-2831-41e2-a9d0-7ecdbd013384"/>
+								<box rightPadding="5">
+									<pen lineWidth="1.0"/>
+								</box>
+								<textElement textAlignment="Right" markup="html">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Total (with VAT)"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement mode="Transparent" x="181" y="220" width="119" height="20" backcolor="#F3FADC" uuid="dccbe0c4-a825-4f6f-a769-b2beb24a44c9"/>
+								<box leftPadding="5">
+									<pen lineWidth="1.0"/>
+								</box>
+								<textElement>
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="280" y="284" width="274" height="38" uuid="1b3fd721-517a-4253-bcfa-30f53d1f6145"/>
+								<textElement verticalAlignment="Top" markup="html">
+									<font size="10" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Signature of Officer with Rank"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="0" y="284" width="280" height="38" uuid="acf49594-b27d-48d2-9f0a-dfea7c63d78e"/>
+								<textElement verticalAlignment="Top">
+									<font size="10" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Amount : _______________________________________  has been accepted"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="0" y="264" width="554" height="18" uuid="16b7abaf-6a61-4644-8949-7bc500bf5437"/>
+								<textElement>
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Demanded Amount : " +$P{demandedAmount} + " taka only."]]></textFieldExpression>
+							</textField>
+						</frame>
+					</frame>
+					<textField>
+						<reportElement x="280" y="50" width="274" height="16" uuid="5b6d28df-69b8-4884-b27e-4f12469ccfbb"/>
+						<textElement textAlignment="Right" markup="html">
+							<font size="10" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Date : <b>" + $P{billGenerationDate} + "</b>"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="450" y="22" width="104" height="16" uuid="828fb5c5-38bd-4f6d-a5d6-93fc338cb470"/>
+						<textFieldExpression><![CDATA["(" + ($V{PAGE_NUMBER}.equals(1) ? "Bank " : 
+	($V{PAGE_NUMBER}.equals(2) ? "BTCL Office " : 
+		($V{PAGE_NUMBER}.equals(3) ? "Subscriber " : "" )
+	)
+)  + "Copy)"]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+			<band height="550">
+				<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				<frame>
+					<reportElement x="0" y="0" width="555" height="510" uuid="29f86f5f-f943-4039-8157-ddc22c134638"/>
+					<textField>
+						<reportElement x="0" y="2" width="555" height="18" uuid="fcb33d8e-df22-40b7-b913-711174c8d991"/>
+						<textElement textAlignment="Center">
+							<font size="14" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Short Bill"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="120" y="22" width="310" height="16" uuid="3414546e-a94b-4710-974d-c3c91d330bc9"/>
+						<textElement textAlignment="Center">
+							<font size="10" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["for Duplex Leased Line Internet Connection and for Unpaid Bills"]]></textFieldExpression>
+					</textField>
+					<frame>
+						<reportElement x="0" y="64" width="554" height="116" uuid="e1e8a096-682b-44de-9a11-2397c3968e0a"/>
+						<textField>
+							<reportElement x="320" y="7" width="234" height="53" uuid="91456439-e7df-46b8-a070-b76ec5c87f70"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Right">
+								<font isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Connection Address: " + $P{connectionAddress}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="80" y="7" width="240" height="53" uuid="138c53e5-4564-470e-a63a-8db9bcb93244"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement verticalAlignment="Middle" markup="html"/>
+							<textFieldExpression><![CDATA[":<b>" + $P{clientFullName}+" </b>" + "<br>" + 
+":<b>" + $P{clientLoginName}+"</b>"  + "<br>" +
+":<b>" + $P{clientEmail}+"</b>"  + "<br>" +
+":<b>" + $P{clientAddress}	+"</b> "]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="0" y="7" width="80" height="53" uuid="bb6ac2fe-1961-4e03-821a-42649ac4c270"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement verticalAlignment="Middle" markup="html"/>
+							<textFieldExpression><![CDATA["<b>Client Name </b>" + "<br>" + 
+"<b>User Name </b>"  + "<br>" +
+"<b>Email </b>"  + "<br>" +
+"<b> Billing Address </b> "]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="0" y="63" width="554" height="33" uuid="9c0955a2-1d62-4555-ad10-01be7161ff76"/>
+							<textElement textAlignment="Center" verticalAlignment="Top" markup="html"/>
+							<textFieldExpression><![CDATA[$P{demandNoteCause}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement mode="Opaque" x="0" y="96" width="554" height="20" forecolor="#3345BD" uuid="3ab79c1b-9e0e-45a2-ab85-a6ec79de593b"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font size="8" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$P{skipped} ? "THIS DEMAND NOTE WILL BE ADDED IN YOUR FIRST MONTHLY BILL. NO NEED TO PAY THIS DEMAND NOTE." : ""]]></textFieldExpression>
+						</textField>
+					</frame>
+					<textField>
+						<reportElement x="0" y="50" width="280" height="16" uuid="c54dcabb-eb6a-4001-b2a9-ed014ae76cf4"/>
+						<textElement textAlignment="Left" markup="html">
+							<font size="10" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[String.format("%-40s : %80s", "<b>Contract ID</b>", "<b>" + $P{contractID}+"</b>")]]></textFieldExpression>
+					</textField>
+					<frame>
+						<reportElement x="0" y="180" width="554" height="346" uuid="4b3e8357-1f35-4d2a-84e5-17e95fe41ec3">
+							<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement x="0" y="5" width="554" height="20" uuid="057938c9-333e-4e68-9fe5-1297e8cf6c63"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" markup="html">
+								<font size="14"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Invoice ID : " + "<b>"  + $P{invoiceID} + "</b>"]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="0" y="25" width="181" height="22" uuid="241ef589-9b92-41fa-afc8-2f4f55fa650d"/>
+							<box leftPadding="0" rightPadding="5">
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Right" verticalAlignment="Middle">
+								<font isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Description"]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="181" y="25" width="119" height="22" uuid="bd10b530-401a-49dc-a908-d42197aac710"/>
+							<box leftPadding="5">
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Left" verticalAlignment="Middle">
+								<font isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Amount (Tk.)"]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="300" y="25" width="254" height="22" uuid="7e8ee177-d7a5-46bb-8cff-d26ca233dd5d"/>
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Remarks"]]></textFieldExpression>
+						</textField>
+						<frame>
+							<reportElement x="0" y="48" width="554" height="344" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="3808a2a0-b574-43fe-8832-b7d58dbc8aec"/>
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement mode="Transparent" x="0" y="0" width="181" height="220" backcolor="#F3FADC" uuid="959e41cd-e07d-4af0-8189-3903da056070"/>
+								<box topPadding="15" leftPadding="0" rightPadding="5">
+									<pen lineWidth="1.0"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Top" markup="html">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Contract Breaking Fine<br>" + 
+"Broken Bandwidth<br>" + 
+"Other Cost<br>"+
+"VAT<br>" +
+"Discount"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement mode="Transparent" x="181" y="0" width="119" height="220" backcolor="#F3FADC" uuid="c3f1ed75-40f0-41c8-8014-04d01f77f5fc"/>
+								<box topPadding="15" leftPadding="5" bottomPadding="0" rightPadding="0">
+									<pen lineWidth="1.0"/>
+								</box>
+								<textElement markup="html">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{contractBreakingFine} + "<br>" + 
+$P{brokenBandwidth} + "<br>" +
+$P{otherCost} + "<br>" +
+$P{VAT}  +  "<br>" + 
+$P{discount}  +  "</b>"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement mode="Transparent" x="300" y="0" width="254" height="240" backcolor="#F3FADC" uuid="c08c4791-4d78-4cca-b4d0-dd59672e5af1"/>
+								<box topPadding="10" leftPadding="10">
+									<pen lineWidth="1.0"/>
+								</box>
+								<textElement markup="html">
+									<font size="9" isBold="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA["<b>Payment Procedure</b>" + "<br>" + 
+"a. &nbsp; <b>Cheque/Pay order</b> :" + "<br>" + 
+"For Govt. / semi Govt / autonomous organizations cheque/pay order  should be sent in favor of SChief General Manager(North), BTCL Gulshan, Dhaka" + "<br>" + 
+"b. &nbsp; <b>Cash Payment in BTCL Booth</b>: " + "<br>" + 
+"In BASIC Bank, Ramna/Sher-e-Bangla nagar/Gulshan BTCL Booth." + "<br>" + 
+"c. &nbsp; <b>Cash Payment in Bank</b>: " +"<br>" + 
+"In Social Islami Bank Limited, New Iskaton Branch, Dhaka." + "<br><br><br>" + 
+"<b>Address of sending cheque/pay order</b>: " + "<br>" + 
+"DGM (Finance & Revenue), OTR, BTCL Moghbazar, Telephone Bhaban, 3rd Floor, Moghbazar, Dhaka"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement mode="Transparent" x="0" y="240" width="554" height="18" backcolor="#F3FADC" uuid="f6503a19-4cd8-4e73-848f-e918142465ae"/>
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Demand Note Valid upto " + "<b>" + $P{billLastPaymentDate} + "<b>"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement mode="Transparent" x="0" y="220" width="181" height="20" backcolor="#F3FADC" uuid="44ea02cb-7727-4e6c-97f2-c145b8f0f8ce"/>
+								<box rightPadding="5">
+									<pen lineWidth="1.0"/>
+								</box>
+								<textElement textAlignment="Right" markup="html">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Total (with VAT)"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement mode="Transparent" x="181" y="220" width="119" height="20" backcolor="#F3FADC" uuid="3ee0ae71-4023-4333-b869-1c534df56ada"/>
+								<box leftPadding="5">
+									<pen lineWidth="1.0"/>
+								</box>
+								<textElement>
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="280" y="284" width="274" height="38" uuid="fb37d458-d2c7-40dc-8f81-6a84cdd27c5a"/>
+								<textElement verticalAlignment="Top" markup="html">
+									<font size="10" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Signature of Officer with Rank"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="0" y="284" width="280" height="38" uuid="de9f8802-d95c-46ef-bbfe-bb5d90cc6435"/>
+								<textElement verticalAlignment="Top">
+									<font size="10" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Amount : _______________________________________  has been accepted"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="0" y="264" width="554" height="18" uuid="44cd7b66-1424-4bbb-a881-c93b877ea2fb"/>
+								<textElement>
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Demanded Amount : " +$P{demandedAmount} + " taka only."]]></textFieldExpression>
+							</textField>
+						</frame>
+					</frame>
+					<textField>
+						<reportElement x="280" y="50" width="274" height="16" uuid="0dcd437e-dd2a-4a7b-8b59-ff97906f27e2"/>
+						<textElement textAlignment="Right" markup="html">
+							<font size="10" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Date : <b>" + $P{billGenerationDate} + "</b>"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="450" y="22" width="104" height="16" uuid="f475aca7-257e-4de4-9996-024266c08d81"/>
+						<textFieldExpression><![CDATA["(" + ($V{PAGE_NUMBER}.equals(1) ? "Bank " : 
+	($V{PAGE_NUMBER}.equals(2) ? "BTCL Office " : 
+		($V{PAGE_NUMBER}.equals(3) ? "Subscriber " : "" )
+	)
+)  + "Copy)"]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="92" splitType="Stretch">
+			<frame>
+				<reportElement x="-5" y="0" width="560" height="80" uuid="d73fcef5-46a4-4290-b400-ea5ab97eefbc"/>
+				<image hAlign="Left">
+					<reportElement x="0" y="0" width="560" height="80" uuid="d6409fb7-b662-4c50-8bcf-0e4ecf92d855"/>
+					<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</columnHeader>
+	<columnFooter>
+		<band height="80">
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="555" height="38" uuid="92fc75ab-b2fd-4f4a-8349-329e6d9dfee2"/>
+				<textField>
+					<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="280" height="20" uuid="f56f1c2e-4b53-4d17-b962-5a67d28470d8"/>
+					<textElement textAlignment="Left" verticalAlignment="Bottom" markup="html">
+						<font size="10" isBold="true" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{footerLeft}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="FixRelativeToBottom" x="281" y="0" width="274" height="20" uuid="a4fbcc8e-3937-448e-895e-158889b14e74"/>
+					<textElement textAlignment="Left" verticalAlignment="Bottom" markup="html">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{footerRight}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="20" width="555" height="18" uuid="3862b277-3f9f-4118-8d80-d9150fb2b2b0"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{NB}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</columnFooter>
+</jasperReport>

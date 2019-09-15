@@ -1,0 +1,40 @@
+.infoblock {
+	font-size: 21px;
+	margin-top: 10px;
+	font-weight: 600;
+	color: gray;
+}
+
+.table>tbody+tbody {
+	border-top: 1px solid #ddd;
+}
+
+.table-head {
+	background: #fafafa none repeat scroll 0 0;
+	font-size: 18px;
+	font-weight: 600;
+}
+/* .table>tbody>tr>td {
+font-size: 15px;
+} */
+.table-bordered>thead>tr>th, .table-bordered>tbody>tr>th,
+	.table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td,
+	.table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+	border: 1px solid #ddd;
+}
+
+.sub-head {
+	
+}
+
+.full-access {
+	background: #fafafa none repeat scroll 0 0;
+}
+
+.modify-access {
+	background: #fafafa none repeat scroll 0 0;
+}
+
+.read-access {
+	background: #fafafa none repeat scroll 0 0;
+}

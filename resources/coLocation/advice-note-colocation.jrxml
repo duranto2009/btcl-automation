@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="advice-note" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ea35967f-687c-4446-b935-acc50b99dbec">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<subDataset name="Dataset1" uuid="9b496c02-79e7-4453-a249-0a1bcd37bba6">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="_THIS" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="an_status" class="java.lang.String"/>
+	<parameter name="an_number" class="java.lang.String"/>
+	<parameter name="an_date" class="java.lang.String"/>
+	<parameter name="an_title" class="java.lang.String"/>
+	<parameter name="an_cc_list" class="java.util.List"/>
+	<parameter name="sub1" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="an_to" class="java.lang.String"/>
+	<parameter name="an_letter_body" class="java.lang.String"/>
+	<parameter name="an_sender_name" class="java.lang.String"/>
+	<parameter name="an_sender_designation" class="java.lang.String"/>
+	<parameter name="client_full_name" class="java.lang.String"/>
+	<parameter name="client_user_name" class="java.lang.String"/>
+	<parameter name="client_mobile" class="java.lang.String"/>
+	<parameter name="client_billing_address" class="java.lang.String"/>
+	<parameter name="client_type" class="java.lang.String"/>
+	<parameter name="client_category" class="java.lang.String"/>
+	<parameter name="client_isp_license_type" class="java.lang.String"/>
+	<parameter name="app_id" class="java.lang.String"/>
+	<parameter name="app_type" class="java.lang.String"/>
+	<parameter name="dn_id" class="java.lang.String"/>
+	<parameter name="dn_generation_date" class="java.lang.String"/>
+	<parameter name="dn_status" class="java.lang.String"/>
+	<parameter name="dn_amount" class="java.lang.String"/>
+	<parameter name="payment_id" class="java.lang.String"/>
+	<parameter name="payment_date" class="java.lang.String"/>
+	<parameter name="payment_amount" class="java.lang.String"/>
+	<parameter name="payment_bank" class="java.lang.String"/>
+	<parameter name="payment_branch" class="java.lang.String"/>
+	<parameter name="payment_type" class="java.lang.String"/>
+	<parameter name="connection_name" class="java.lang.String"/>
+	<parameter name="connection_address" class="java.lang.String"/>
+	<parameter name="connection_activation_date" class="java.lang.String"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<parameter name="rack_size" class="java.lang.String"/>
+	<parameter name="rack_space" class="java.lang.String"/>
+	<parameter name="total_number_of_cores" class="java.lang.String"/>
+	<parameter name="power_type" class="java.lang.String"/>
+	<parameter name="power_unit" class="java.lang.String"/>
+	<parameter name="core_type" class="java.lang.String"/>
+	<parameter name="floor_space_type" class="java.lang.String"/>
+	<parameter name="floor_space_unit" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<variable name="REPORT_PAGE" class="java.lang.Integer" incrementType="Page">
+		<variableExpression><![CDATA[$V{PAGE_NUMBER}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="144" splitType="Stretch">
+			<textField>
+				<reportElement x="480" y="0" width="75" height="30" uuid="2c52ea83-95b9-441b-a681-e208a614cc30"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{an_status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="40" width="105" height="44" uuid="6bc5ba19-22bc-4271-99cd-578d19892f78"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Advice Note No: " + $P{an_number} + "\nDate: " + $P{an_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="84" width="555" height="30" forecolor="#0000FF" uuid="0bb9d4b1-758f-49ac-8c78-442fb412fbe2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{an_title}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="115" width="555" height="26" uuid="cc5e49a5-7e52-4562-b66f-6cf0816d0c8f"/>
+				<subreportParameter name="an_cc_list">
+					<subreportParameterExpression><![CDATA[$P{an_cc_list}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="an_to">
+					<subreportParameterExpression><![CDATA[$P{an_to}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="an_letter_body">
+					<subreportParameterExpression><![CDATA[$P{an_letter_body}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="an_sender_designation">
+					<subreportParameterExpression><![CDATA[$P{an_sender_designation}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="an_sender_name">
+					<subreportParameterExpression><![CDATA[$P{an_sender_name}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{an_cc_list})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["coLocation/sub1.jasper"]]></subreportExpression>
+			</subreport>
+			<frame>
+				<reportElement x="0" y="0" width="450" height="80" uuid="10d6b50e-5e98-4fc6-9858-ea3aca205b49"/>
+				<image hAlign="Center" vAlign="Middle">
+					<reportElement x="0" y="0" width="450" height="80" uuid="bd6980a1-cea9-4cea-9f28-d9e6d8a74ace"/>
+					<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<detail>
+		<band height="385" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="5" width="560" height="91" uuid="517b6ec8-481e-491a-b4f4-ac0028e94d37"/>
+				<textField>
+					<reportElement x="0" y="0" width="280" height="16" uuid="8f5aa307-b032-4d31-91a4-3fcce45f614a"/>
+					<textElement>
+						<font size="12" isBold="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Client Information"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="16" width="78" height="75" uuid="29a410dc-164b-41e5-b8ff-a751c94782ec">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textFieldExpression><![CDATA["Full Name" + "\n"
++ "User Name" + "\n"
++ "Mobile Number" + "\n"
++ "Billing Address" + "\n"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="80" y="16" width="200" height="75" uuid="3d4897c8-b152-4a25-8a7e-2607a6a78eef"/>
+					<textFieldExpression><![CDATA[": " + $P{client_full_name} + "\n"
++ ": " + $P{client_user_name} + "\n"
++ ": " + $P{client_mobile} + "\n"
++ ": " + $P{client_billing_address} + "\n"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="305" y="16" width="100" height="51" uuid="e37980fb-58aa-4f6d-b944-3bb54f61aab0"/>
+					<textFieldExpression><![CDATA["Type" + "\n" + 
+"Category" + "\n" + 
+"ISP License Type"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="405" y="16" width="155" height="51" uuid="bfd278f3-78b4-479d-82de-0f200ee5347f"/>
+					<textFieldExpression><![CDATA[": " + $P{client_type} + "\n"
++ ": " + $P{client_category} + "\n"
++ ": " + $P{client_isp_license_type}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="108" width="280" height="42" uuid="6477753c-7277-46e5-9de4-ba840fc2a3e6"/>
+				<textField>
+					<reportElement x="0" y="0" width="280" height="16" uuid="0fbcc543-485e-4fbf-8e9e-90072ad61d0f"/>
+					<textElement>
+						<font size="12" isBold="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Application Information"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="16" width="78" height="26" uuid="be3733d1-b615-4984-9eba-4cb5f1d47286"/>
+					<textFieldExpression><![CDATA["ID" + "\n"
++ "Type"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="80" y="16" width="200" height="26" uuid="83193bda-12fd-43bd-ba69-e59f80c32742"/>
+					<textFieldExpression><![CDATA[": " + $P{app_id} + "\n"
++ ": " + $P{app_type}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="170" width="280" height="67" uuid="61c3d734-a18e-458e-b8aa-6aeb1f9c5304"/>
+				<textField>
+					<reportElement x="0" y="0" width="280" height="16" uuid="6dc9bb08-853f-4650-b718-e968b44c78e3"/>
+					<textElement>
+						<font size="12" isBold="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Demand Note Information"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="16" width="78" height="51" uuid="e04c2991-c957-445d-b213-f96b42c63803"/>
+					<textFieldExpression><![CDATA["ID" + "\n"
++ "Generation Date"+ "\n"
++ "Amount (BDT)"+ "\n"
++ "Status"+ "\n"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="80" y="16" width="200" height="51" uuid="342eb525-327f-4a55-8a95-db8b9960048e"/>
+					<textFieldExpression><![CDATA[": " + $P{dn_id} + "\n"
++ ": " + $P{dn_generation_date} + "\n"
++ ": " + $P{dn_amount} + "\n"
++ ": " + $P{dn_status}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="260" width="280" height="96" uuid="d66d17ba-0b41-4734-8a44-df49000ea595"/>
+				<textField>
+					<reportElement x="0" y="0" width="280" height="16" uuid="e1fa944b-1689-483e-9ad7-b3f76e7dbbe8"/>
+					<textElement>
+						<font size="12" isBold="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Payment Information"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="16" width="78" height="80" uuid="51a2a4eb-d9e1-451a-b825-f5d94c6c9b4b"/>
+					<textFieldExpression><![CDATA["ID" + "\n"
++ "Payment Date"+ "\n"
++ "Amount (BDT)"+ "\n"
++ "Payment Type"+ "\n"
++ "Bank"+ "\n"
++ "Branch"+ "\n"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="80" y="16" width="200" height="80" uuid="ffd86794-95dd-4c28-a6a6-58eba4c27123"/>
+					<textFieldExpression><![CDATA[": " + $P{payment_id} + "\n"
++ ": " + $P{payment_date} + "\n"
++ ": " + $P{payment_amount} + "\n"
++ ": " + $P{payment_type} + "\n"
++ ": " + $P{payment_bank} + "\n"
++ ": " + $P{payment_branch}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<break>
+				<reportElement x="0" y="370" width="555" height="1" uuid="bbd0c4c1-61f8-4d45-b24c-12d04edfb9c6"/>
+			</break>
+		</band>
+		<band height="320">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<frame>
+				<reportElement x="0" y="0" width="280" height="60" uuid="dddd769a-ecd0-4cd9-b8e2-b50987b13f07"/>
+				<textField>
+					<reportElement x="0" y="0" width="280" height="16" uuid="ee72948c-e107-4a2f-ae69-db9590af9676"/>
+					<textElement>
+						<font size="12" isBold="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Connection Information"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="16" width="78" height="40" uuid="b78b285c-19fb-4664-b7b0-2ff5e604d281"/>
+					<textFieldExpression><![CDATA["Name/ID" + "\n"
+
++ "Activation Date"+ "\n"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="80" y="16" width="200" height="40" uuid="27f106a0-d9a3-41a4-80b4-3034f42c2a5d"/>
+					<textFieldExpression><![CDATA[": " + $P{connection_name} + "\n"
+
++ ": " + $P{connection_activation_date} + "\n"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="60" width="280" height="60" uuid="501ffe19-8a0e-4488-bbd6-27f439292c7d"/>
+				<textField>
+					<reportElement x="0" y="0" width="280" height="16" uuid="1fc88025-6d29-4c9e-bcb2-5cd2b9a63599"/>
+					<textElement>
+						<font size="12" isBold="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Rack Information"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="16" width="78" height="40" uuid="dda14957-323a-4ec2-9642-e5b801108e3c">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textFieldExpression><![CDATA["Rack Size" + "\n"
++ "Rack Space" + "\n"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="80" y="16" width="200" height="40" uuid="ca0a0ab9-ccbc-41bb-b0cd-2ac66f8d0dd9">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[": " + $P{rack_size} + "\n"
++ ": " + $P{rack_space}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="120" width="280" height="60" uuid="7f25a93e-72a4-448f-9b2a-3f9d63de9bed">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textField>
+					<reportElement x="0" y="0" width="280" height="16" uuid="2166ee29-6546-47a6-815e-6895efcb71f3"/>
+					<textElement>
+						<font size="12" isBold="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["OFC Information"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="16" width="78" height="40" uuid="12f85204-d210-480c-8c35-a8b2c21bfa76">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textFieldExpression><![CDATA["Core Type" + "\n" +
+"Total Core"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="80" y="16" width="200" height="40" uuid="c5e4c9ee-da08-4467-a340-1cb49ef0d430">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[": " + $P{core_type} + "\n"+
+": " + $P{total_number_of_cores}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="180" width="280" height="60" uuid="847974dd-d6a8-4f16-80b6-77b94ffb2fe5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textField>
+					<reportElement x="0" y="0" width="280" height="16" uuid="839e0c38-6d1b-4dcf-bcbb-62b5df3cd2b3"/>
+					<textElement>
+						<font size="12" isBold="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Power Information"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="16" width="78" height="40" uuid="1de19ea1-3d21-4fa5-b7a0-329668bac6fb">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textFieldExpression><![CDATA["Power Type" + "\n"
++ "Power Unit"+ "\n"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="80" y="16" width="200" height="40" uuid="f7ed799d-28ac-4b4d-aad7-c1e3812b1721">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[": " + $P{power_type} + "\n"
++ ": " + $P{power_unit} + "\n"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="240" width="280" height="60" uuid="fd9c8894-bf3d-485c-8000-7f17c21e2cb5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textField>
+					<reportElement x="0" y="0" width="280" height="16" uuid="402b26de-4abd-494c-9fda-1d45541fb236"/>
+					<textElement>
+						<font size="12" isBold="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Floor Space Information"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="16" width="78" height="40" uuid="0a53301a-f67f-4375-8e2a-806f7e9c4bf1">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textFieldExpression><![CDATA["Type" + "\n"
++ "Amount(Sq.Ft)"+ "\n"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="80" y="16" width="200" height="40" uuid="08e1551a-d349-460b-ae3a-e975f56c72ae">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[": " + $P{floor_space_type} + "\n"
++ ": " + $P{floor_space_unit} + "\n"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="43">
+			<line>
+				<reportElement x="0" y="25" width="555" height="1" uuid="07147e10-6112-473b-ad33-4a3185eee9e4"/>
+			</line>
+			<textField>
+				<reportElement x="405" y="0" width="150" height="20" uuid="ba9c62f7-85af-40d3-812b-811dedf4f491"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

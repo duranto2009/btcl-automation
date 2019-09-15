@@ -1,0 +1,1412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.0.final using JasperReports Library version 6.5.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="840" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9e51381b-9afc-4a12-ae5d-393ce1753638">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<parameter name="footer_text_2" class="java.lang.String"/>
+	<parameter name="footer_text_3" class="java.lang.String"/>
+	<parameter name="header_text_1" class="java.lang.String"/>
+	<parameter name="logo_bd" class="java.lang.String"/>
+	<parameter name="logo_btcl" class="java.lang.String"/>
+	<parameter name="top_bangla_heading" class="java.lang.String"/>
+	<parameter name="paid" class="java.lang.String"/>
+	<parameter name="domainName" class="java.lang.String"/>
+	<parameter name="registrant name" class="java.lang.String"/>
+	<parameter name="registrant address" class="java.lang.String"/>
+	<parameter name="registrant email" class="java.lang.String"/>
+	<parameter name="registrant contact" class="java.lang.String"/>
+	<parameter name="username" class="java.lang.String"/>
+	<parameter name="year" class="java.lang.Integer"/>
+	<parameter name="applicationType" class="java.lang.String"/>
+	<parameter name="serviceStart" class="java.lang.String"/>
+	<parameter name="serviceEnd" class="java.lang.String"/>
+	<parameter name="packageNotFound" class="java.lang.Boolean"/>
+	<parameter name="package per year cost" class="java.lang.Double"/>
+	<parameter name="teletalkCharge" class="java.lang.Double"/>
+	<parameter name="payable_using_teletalk" class="java.lang.Double"/>
+	<parameter name="servicePeriodHidden" class="java.lang.Boolean"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="netPayable" class="java.lang.Double"/>
+	<field name="ID" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="generationTime" class="java.lang.Long"/>
+	<field name="lastPaymentDate" class="java.lang.Long"/>
+	<field name="discount" class="java.lang.Double"/>
+	<field name="grandTotal" class="java.lang.Double"/>
+	<field name="lateFee" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="VAT" class="java.lang.Double"/>
+	<field name="totalPayable" class="java.lang.Double"/>
+	<group name="Group1" isStartNewPage="true">
+		<groupHeader>
+			<band height="620">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<frame>
+					<reportElement x="0" y="0" width="548" height="602" uuid="1011ae8a-cf18-4f8e-ad58-1db63c85a054"/>
+					<frame>
+						<reportElement x="0" y="0" width="548" height="29" uuid="b4179f60-6cb2-4ee4-aa07-aa04efeb541f"/>
+						<textField>
+							<reportElement x="182" y="0" width="180" height="29" uuid="75e57eb9-27a3-4874-866d-731cf3d5d5ed"/>
+							<textElement textAlignment="Center">
+								<font size="14"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Invoice ID: " + $F{ID}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="378" y="0" width="170" height="28" forecolor="#000000" uuid="51350c9b-95f4-4448-a600-550a116220de"/>
+							<textElement>
+								<font size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA["(" + ($V{PAGE_NUMBER}.equals(1) ? "Bank " : 
+	($V{PAGE_NUMBER}.equals(2) ? "BTCL Office " : 
+		($V{PAGE_NUMBER}.equals(3) ? "Subscriber " : "" )
+	)
+)  + "Copy)"]]></textFieldExpression>
+						</textField>
+					</frame>
+					<frame>
+						<reportElement x="0" y="29" width="548" height="39" uuid="6d3ee8cb-e62d-4c47-96c7-a3745638aaa9"/>
+						<staticText>
+							<reportElement x="0" y="0" width="121" height="18" uuid="6f12008e-d961-482e-a89a-f8c344cca41c"/>
+							<textElement markup="html"/>
+							<text><![CDATA[Invoice Issue Date]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="0" y="18" width="121" height="19" uuid="ac374825-2a09-4802-9059-d2b6611e7b30"/>
+							<text><![CDATA[Invoice validity*]]></text>
+						</staticText>
+						<textField>
+							<reportElement x="121" y="18" width="99" height="18" uuid="2cbd787d-06ce-4c97-8b75-5ed79c71a955"/>
+							<textFieldExpression><![CDATA[": " +new java.text.SimpleDateFormat("MMMM dd, yyyy").format( $F{lastPaymentDate} )]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="121" y="0" width="99" height="18" uuid="27226575-f406-449f-9d7e-f5d2dc999b59"/>
+							<textFieldExpression><![CDATA[": " + new java.text.SimpleDateFormat("MMMM dd, yyyy").format( $F{generationTime} )]]></textFieldExpression>
+						</textField>
+						<staticText>
+							<reportElement x="220" y="18" width="244" height="18" uuid="8ed28712-9aec-4623-9de5-1bc1688083ed"/>
+							<text><![CDATA[(*Please pay within the validity of the invoice)]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="0" y="68" width="548" height="142" uuid="4ed966c1-db25-4a47-bbc1-8a206f8c097c"/>
+						<frame>
+							<reportElement x="0" y="1" width="548" height="21" uuid="3a21b30b-2298-484a-a843-c32eb6c739c2"/>
+							<line>
+								<reportElement x="0" y="0" width="548" height="1" forecolor="#000000" uuid="96338de8-ffd8-4aff-98e6-8bd1d89e5436">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									<property name="com.jaspersoft.studio.unit.x" value="px"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+									<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								</reportElement>
+							</line>
+							<line>
+								<reportElement x="0" y="18" width="548" height="1" forecolor="#000000" uuid="594694a6-e03b-4747-bfe0-395df2865c19">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									<property name="com.jaspersoft.studio.unit.x" value="px"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+									<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								</reportElement>
+							</line>
+							<frame>
+								<reportElement x="0" y="1" width="548" height="17" uuid="1b184d5f-37ee-4e90-ab70-7bac403ad56f"/>
+								<staticText>
+									<reportElement x="129" y="0" width="69" height="17" uuid="f8e5c364-4e77-4eec-bfd4-708ad9668556"/>
+									<textElement>
+										<font isBold="true"/>
+									</textElement>
+									<text><![CDATA[Description]]></text>
+								</staticText>
+								<staticText>
+									<reportElement x="359" y="0" width="51" height="17" uuid="196ebd59-0181-4869-99a2-aa7afe8ce104"/>
+									<textElement>
+										<font isBold="true"/>
+									</textElement>
+									<text><![CDATA[Details]]></text>
+								</staticText>
+								<staticText>
+									<reportElement x="464" y="0" width="78" height="17" uuid="d944fe6c-aeb8-4fbb-8113-2bc4d2ee865a"/>
+									<textElement textAlignment="Right">
+										<font isBold="true"/>
+									</textElement>
+									<text><![CDATA[Amount(BDT)]]></text>
+								</staticText>
+							</frame>
+						</frame>
+						<frame>
+							<reportElement x="0" y="22" width="548" height="90" uuid="12d367a2-e6e3-41d6-b343-db47a551d037"/>
+							<rectangle>
+								<reportElement mode="Opaque" x="0" y="0" width="548" height="73" forecolor="#FFFFFF" backcolor="#E6EED5" uuid="94eb695b-1ceb-4e74-8da4-435528e3914d">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<graphicElement>
+									<pen lineColor="#FFFFFF"/>
+								</graphicElement>
+							</rectangle>
+							<frame>
+								<reportElement x="0" y="0" width="121" height="70" uuid="3bb8768c-4edd-4362-93b2-296afec0c051"/>
+								<textField>
+									<reportElement x="0" y="0" width="121" height="86" backcolor="#E6EED5" uuid="a20ac87a-e938-4f31-a8a6-bcb9185dca6b"/>
+									<textElement markup="html"/>
+									<textFieldExpression><![CDATA[String.format("%1$25s", "Domain Name") + "<br>"  + String.format("%1$25s", "Application Type") + "<br>" +
+ String.format("%1$25s", "Subscription Year") + "<br>" + ($P{servicePeriodHidden} ?
+"" : (String.format("%1$25s", "Service Period From") + "<br>" + 
+String.format("%1$25s", "Service Period To")))]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement x="121" y="0" width="200" height="70" uuid="cc991fc6-a497-458c-826c-93a3194ebf93"/>
+								<textField>
+									<reportElement x="0" y="13" width="200" height="63" backcolor="#E6EED5" uuid="26b97068-0240-48df-af32-e22f98846b99">
+										<property name="com.jaspersoft.studio.unit.y" value="px"/>
+									</reportElement>
+									<textFieldExpression><![CDATA[": "+$P{applicationType}+"\n: "+($P{year} == null ? "NA" : $P{year})+ ($P{servicePeriodHidden} ? "" : ("\n: "+$P{serviceStart} +"\n: "+ $P{serviceEnd})  )]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement x="0" y="0" width="200" height="13" backcolor="#E6EED5" uuid="dc5b993b-a566-408b-b054-d121ccc6a9c0">
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									</reportElement>
+									<imageExpression><![CDATA[$P{domainName}]]></imageExpression>
+								</image>
+							</frame>
+							<frame>
+								<reportElement x="321" y="0" width="143" height="70" uuid="fd6afb78-dc62-4ecd-87a2-57ad107c977b"/>
+								<textField>
+									<reportElement x="0" y="0" width="143" height="70" backcolor="#E6EED5" uuid="edb99049-3e29-4ec0-8fa3-b0cb842b6625"/>
+									<textElement markup="html"/>
+									<textFieldExpression><![CDATA[String.format("%1$s", "Subscription Charge") + (new java.lang.Boolean(false).equals($P{packageNotFound}) ? 
+"(" +java.lang.Math.round($P{package per year cost}) + " * " +  $P{year}  + ")" : "" ) + "<br>" + 
+"Discount (-)<br>" + "Late Fee(+)" + "<br>"   +"Net Amount"  + "<br>"
+ + "VAT(15%)(+)"]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement x="464" y="0" width="84" height="70" uuid="6ed9844d-8326-45ea-87eb-6539d59ff6e6"/>
+								<textField>
+									<reportElement x="0" y="0" width="78" height="70" backcolor="#E6EED5" uuid="c737ee08-5c88-495e-acfa-50eeb0db67c5"/>
+									<textElement textAlignment="Right"/>
+									<textFieldExpression><![CDATA[java.lang.Math.round($F{grandTotal})+"\n"+java.lang.Math.round($F{discount})+"\n"+ java.lang.Math.round($F{lateFee})+"\n" + java.lang.Math.round($F{totalPayable})+"\n"+java.lang.Math.round($F{VAT})]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement x="321" y="71" width="227" height="17" uuid="50355a0d-ded8-4158-8e9d-2ea094c7d7d0"/>
+								<staticText>
+									<reportElement x="0" y="0" width="143" height="17" uuid="47a0d39f-d493-4421-bd97-4a72db175532"/>
+									<textElement>
+										<font isBold="true"/>
+									</textElement>
+									<text><![CDATA[TOTAL PAYABLE AMOUNT]]></text>
+								</staticText>
+								<textField>
+									<reportElement x="144" y="0" width="80" height="15" uuid="d2d3f788-20dd-4125-b506-971e84961e2c"/>
+									<textElement textAlignment="Right"/>
+									<textFieldExpression><![CDATA[java.lang.Math.round($F{netPayable})]]></textFieldExpression>
+								</textField>
+							</frame>
+						</frame>
+						<line>
+							<reportElement x="0" y="120" width="548" height="1" forecolor="#000000" uuid="85ddec1c-23fb-404f-81f8-a42bb8da63d5">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+							</reportElement>
+						</line>
+						<staticText>
+							<reportElement x="0" y="123" width="548" height="17" forecolor="#000000" uuid="81f1a21a-f781-44fb-86e1-81b29c348b7e"/>
+							<textElement textAlignment="Center"/>
+							<text><![CDATA[Please pay either using Teletalk online payment or by other mentioned procedure.]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="0" y="210" width="548" height="210" uuid="201ef8e6-47bb-4bb5-bbef-a84bc745c801"/>
+						<staticText>
+							<reportElement x="0" y="0" width="548" height="20" uuid="e9af3780-1e10-41ef-a728-93d86b0bceb1"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle"/>
+							<text><![CDATA[Teletalk Payment* Steps:]]></text>
+						</staticText>
+						<frame>
+							<reportElement x="0" y="22" width="286" height="100" uuid="2eb30111-2ab4-491c-94a4-4834a5aaaaae">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+							<textField>
+								<reportElement x="0" y="3" width="280" height="96" uuid="835d2add-6e54-4522-a88e-f9f1e9aef0ef"/>
+								<textElement markup="html"/>
+								<textFieldExpression><![CDATA["<b>1.</b> Recharge <b>BDT "+java.lang.Math.round($P{payable_using_teletalk})+"</b> at Teletalk prepaid SIM.<br>"+
+"<b>2.</b> Type <b>BTCL</b> &lt;space&gt; <b>"+$F{ID}+"</b> & then send to <b>16222.</b><br>"+
+"You’ll receive a <b>8(eight)</b> digit PIN number in return SMS at mobile<br>"+
+"<b>3.</b> To confirm, type <b>BTCL</b> &lt;space&gt; <b>YES</b> &lt;space&gt; <b>8 digit</b> pin number"]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="0" y="125" width="286" height="88" uuid="da4ea5d1-4481-49be-a713-ba76790d01fe">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<staticText>
+								<reportElement x="0" y="0" width="285" height="20" uuid="382128c4-b4b3-48dd-a9ba-c41a8ff0a460"/>
+								<textElement textAlignment="Center" markup="html"/>
+								<text><![CDATA[Bank Payment Procedure]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="20" width="282" height="60" uuid="94cec562-5766-4973-9caa-b7d9df04373d">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement markup="html"/>
+								<textFieldExpression><![CDATA["1.	Pay the cash amount, "+java.lang.Math.round($F{netPayable})+" BDT at Social Islami Bank Limited (SIBL), Eskaton branch, Mogbazar, Dhaka.<br>"+
+"2.	Please bring a copy of bank receipt of this invoice to Senior Accounts Officer (SAO), "+
+"Mogbazar Telephone Bhaban, Dhaka-1217"]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="286" y="22" width="262" height="100" uuid="1ffa2594-c909-4894-8939-8ff7908a70b8">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+							</reportElement>
+							<line>
+								<reportElement x="0" y="1" width="262" height="1" uuid="f5e7ecbd-e5df-4eb6-8d54-781b0968411c">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									<property name="com.jaspersoft.studio.unit.x" value="px"/>
+									<property name="com.jaspersoft.studio.unit.y" value="px"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+							</line>
+							<line>
+								<reportElement x="0" y="19" width="262" height="1" uuid="0e98a072-08ba-4b5a-aa26-bf0a6b182c2a">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									<property name="com.jaspersoft.studio.unit.x" value="px"/>
+									<property name="com.jaspersoft.studio.unit.y" value="px"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+							</line>
+							<rectangle>
+								<reportElement key="" x="0" y="21" width="261" height="21" backcolor="#E6EED5" uuid="66533ff3-e203-4d03-8a88-2fd54f30df4d"/>
+								<graphicElement>
+									<pen lineColor="#FFFFFF"/>
+								</graphicElement>
+							</rectangle>
+							<staticText>
+								<reportElement x="3" y="2" width="120" height="16" uuid="5f0bfa20-acfa-4cea-b0ae-a034a6328f4b"/>
+								<textElement verticalAlignment="Middle">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Details]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="179" y="1" width="82" height="18" uuid="82dca72f-dc5a-448a-b812-00c9b737ce03"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Amount(BDT)]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="2" y="62" width="254" height="13" uuid="810ca02d-ab0b-4eaa-9a2c-ac56c5db8a0c"/>
+								<textElement textAlignment="Center" markup="html">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[* At most BDT <b>8900</b> is allowed to pay using Teletalk]]></text>
+							</staticText>
+							<line>
+								<reportElement x="1" y="59" width="257" height="1" forecolor="#000000" uuid="fbe6efd2-bd73-4605-9641-c1e7b1545bdf">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									<property name="com.jaspersoft.studio.unit.x" value="px"/>
+									<property name="com.jaspersoft.studio.unit.y" value="px"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+							</line>
+							<textField>
+								<reportElement x="0" y="21" width="124" height="22" uuid="28bf5b1f-7b27-4a18-ae17-7c6d8bd22dec"/>
+								<textElement>
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Total Amount\nTeletalk Service Charge(10%)(+)"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="178" y="21" width="82" height="22" uuid="e3a211e4-6862-448e-a7f9-8ca7edb80f47"/>
+								<textElement textAlignment="Right">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[java.lang.Math.round($F{netPayable}) + "\n" + java.lang.Math.round($P{teletalkCharge})]]></textFieldExpression>
+							</textField>
+							<frame>
+								<reportElement x="2" y="43" width="260" height="18" uuid="1e9827f9-ff06-40ba-bbf4-da86d8cc666b"/>
+								<textField>
+									<reportElement x="0" y="1" width="130" height="14" uuid="f716b366-6e22-43fc-abb8-78e2afbaef9d"/>
+									<textElement>
+										<font size="8"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Total payable using Teletalk"]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="190" y="0" width="69" height="16" uuid="d6878231-3fe9-47a9-8fb3-472a4a00de2c">
+										<property name="com.jaspersoft.studio.unit.x" value="px"/>
+									</reportElement>
+									<textElement textAlignment="Right">
+										<font size="8"/>
+									</textElement>
+									<textFieldExpression><![CDATA[java.lang.Math.round($P{payable_using_teletalk})]]></textFieldExpression>
+								</textField>
+							</frame>
+						</frame>
+						<frame>
+							<reportElement x="287" y="125" width="260" height="88" uuid="c61b8179-119b-44ce-ac61-133237916519">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<staticText>
+								<reportElement x="1" y="20" width="259" height="60" uuid="98ae2b0b-725e-4a53-96d1-35c517be0198">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Left" markup="html">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[1.Cheque (For Govt. offices only) or Pay order (For Govt., non Govt. offices & others organizations) is allowed.<br>
+2.Pay order should be sent in favor of Senior Account Officer, Telephone Revenue (North), BTCL, Dhaka.
+]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="1" y="0" width="259" height="20" uuid="9febd4f0-b85c-4bad-b7ca-c85832b3a6af"/>
+								<textElement textAlignment="Center" markup="html"/>
+								<text><![CDATA[<b>Payment using Bank Cheque/Pay Order</b>]]></text>
+							</staticText>
+						</frame>
+					</frame>
+					<frame>
+						<reportElement x="0" y="422" width="548" height="68" uuid="05092e2e-742c-4ec7-af42-f3a8cef4d0d2"/>
+						<line>
+							<reportElement x="0" y="67" width="547" height="1" forecolor="#000000" uuid="00559af5-200d-4061-9f66-071efb813b94">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+						</line>
+						<line>
+							<reportElement x="0" y="0" width="547" height="1" forecolor="#000000" uuid="914426bb-8f81-4c89-9948-89693195743e">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+						</line>
+						<frame>
+							<reportElement x="0" y="1" width="380" height="66" uuid="30f3b49d-cbf8-4440-985c-6b329a3644d0">
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<staticText>
+								<reportElement x="0" y="0" width="380" height="67" uuid="1d6e9ae2-dfe1-4a6d-9ba1-9d8d474aa534">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement markup="html">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[<b>Important Links:</b><br><br>
+Domain profile Sign up/Login URL: http://bdia.btcl.com.bd/<br>
+Domain & Rate info: http://www.btcl.com.bd/service/details/en/19<br>
+Userguide of domain registration & management: http://bdia.btcl.com.bd/userguide.do<br>
+Payment & renewal step details: http://bdia.btcl.com.bd/paymentstep.do]]></text>
+							</staticText>
+						</frame>
+						<frame>
+							<reportElement x="380" y="0" width="167" height="67" uuid="4016e55c-e7bf-4604-bb54-27673a881fb3">
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<staticText>
+								<reportElement x="0" y="0" width="167" height="67" uuid="0fa08cd5-67fe-4cbe-9f7d-51288d1ee293">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Center" markup="html"/>
+								<text><![CDATA[For domain related query, support or complain, please email at-<br><br>
+
+<b>domain@btcl.com.bd</b>
+]]></text>
+							</staticText>
+						</frame>
+					</frame>
+					<frame>
+						<reportElement x="0" y="490" width="548" height="70" uuid="ac3c0bf9-9444-4e55-b84e-abddf1f1a738"/>
+						<staticText>
+							<reportElement x="0" y="0" width="545" height="70" uuid="3608332a-7a2e-424f-8a1d-b83af9f0aefe">
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+							</reportElement>
+							<textElement verticalAlignment="Middle" markup="html">
+								<font size="8"/>
+							</textElement>
+							<text><![CDATA[<b>Important Facts:</b><br>1.	Any sort of payment is non-refundable. So, please know details of service charge & proceed to make payment.<br>2.	BTCL may temporarily block/park domain if payment is not received or partially/incompletely received.<br>3.	For service continuation, please renew before the service period gets over<br>
+]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="0" y="560" width="548" height="42" uuid="6a39fd42-8e7a-474e-92d4-df85a9995157"/>
+						<staticText>
+							<reportElement x="0" y="20" width="120" height="22" uuid="f10f37e5-03dd-4008-8ea7-a1fff8022ef2"/>
+							<textElement verticalAlignment="Bottom"/>
+							<text><![CDATA[Date:]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="310" y="20" width="95" height="22" uuid="544bcb31-ac98-4ae6-aab5-a873edca486c">
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+							</reportElement>
+							<textElement verticalAlignment="Bottom"/>
+							<text><![CDATA[Signature & Date:]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="0" y="0" width="140" height="20" uuid="781715af-acf3-4896-8b68-9d82f3d5b344"/>
+							<text><![CDATA[For bank usages-]]></text>
+						</staticText>
+					</frame>
+				</frame>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group2" isStartNewPage="true">
+		<groupHeader>
+			<band height="620">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<frame>
+					<reportElement x="0" y="0" width="548" height="602" uuid="737e84af-2ca8-4a2f-8420-a3823d9494f1"/>
+					<frame>
+						<reportElement x="0" y="0" width="548" height="29" uuid="f2cbdb61-004a-49e8-8e34-7dcfd9cc1daf"/>
+						<textField>
+							<reportElement x="182" y="0" width="180" height="29" uuid="34eca565-e762-4ac0-92a7-592e3512d6e6"/>
+							<textElement textAlignment="Center">
+								<font size="14"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Invoice ID: " + $F{ID}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="378" y="0" width="170" height="28" forecolor="#000000" uuid="949bd416-1bdc-44df-9d32-8c2c67879853"/>
+							<textElement>
+								<font size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA["(" + ($V{PAGE_NUMBER}.equals(1) ? "Bank " : 
+	($V{PAGE_NUMBER}.equals(2) ? "BTCL Office " : 
+		($V{PAGE_NUMBER}.equals(3) ? "Subscriber " : "" )
+	)
+)  + "Copy)"]]></textFieldExpression>
+						</textField>
+					</frame>
+					<frame>
+						<reportElement x="0" y="29" width="548" height="39" uuid="de67093e-994f-4e09-83f0-d1635c2eedbe"/>
+						<staticText>
+							<reportElement x="0" y="0" width="121" height="18" uuid="e89e7200-5eb7-4e4d-afe2-f2c92bfd0871"/>
+							<textElement markup="html"/>
+							<text><![CDATA[Invoice Issue Date]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="0" y="18" width="121" height="19" uuid="d71c4e59-5be0-4aef-a328-8d0dfe1df123"/>
+							<text><![CDATA[Invoice validity*]]></text>
+						</staticText>
+						<textField>
+							<reportElement x="121" y="18" width="99" height="18" uuid="70a68eb9-03f4-4a14-b75d-356c4e83b0b6"/>
+							<textFieldExpression><![CDATA[": " +new java.text.SimpleDateFormat("MMMM dd, yyyy").format( $F{lastPaymentDate} )]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="121" y="0" width="99" height="18" uuid="4c2676f0-865e-437c-a135-975a41349c73"/>
+							<textFieldExpression><![CDATA[": " + new java.text.SimpleDateFormat("MMMM dd, yyyy").format( $F{generationTime} )]]></textFieldExpression>
+						</textField>
+						<staticText>
+							<reportElement x="220" y="18" width="244" height="18" uuid="9d79b4ae-6e6e-4b75-ad43-24fff8ca1b30"/>
+							<text><![CDATA[(*Please pay within the validity of the invoice)]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="0" y="68" width="548" height="142" uuid="cdcb1674-7ac6-4e5c-94b7-aa5bbe6a5f12"/>
+						<frame>
+							<reportElement x="0" y="1" width="548" height="21" uuid="8f6f7f7a-23d0-4ac5-8c13-4befb96410b9"/>
+							<line>
+								<reportElement x="0" y="0" width="548" height="1" forecolor="#000000" uuid="d8b55b81-5342-4955-9fb2-77adffb4025a">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									<property name="com.jaspersoft.studio.unit.x" value="px"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+									<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								</reportElement>
+							</line>
+							<line>
+								<reportElement x="0" y="18" width="548" height="1" forecolor="#000000" uuid="0e623474-325f-462f-bbbe-b9c91926ac0e">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									<property name="com.jaspersoft.studio.unit.x" value="px"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+									<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								</reportElement>
+							</line>
+							<frame>
+								<reportElement x="0" y="1" width="548" height="17" uuid="b8ce9f89-f0a6-4432-a063-e144734e44fc"/>
+								<staticText>
+									<reportElement x="129" y="0" width="69" height="17" uuid="afa0b923-9630-4612-b64b-dd39a71d3620"/>
+									<textElement>
+										<font isBold="true"/>
+									</textElement>
+									<text><![CDATA[Description]]></text>
+								</staticText>
+								<staticText>
+									<reportElement x="359" y="0" width="51" height="17" uuid="6a4891db-8aa3-495d-892d-553279d264a6"/>
+									<textElement>
+										<font isBold="true"/>
+									</textElement>
+									<text><![CDATA[Details]]></text>
+								</staticText>
+								<staticText>
+									<reportElement x="464" y="0" width="78" height="17" uuid="e860ffc6-e8be-43b0-9ca4-48422793e54d"/>
+									<textElement textAlignment="Right">
+										<font isBold="true"/>
+									</textElement>
+									<text><![CDATA[Amount(BDT)]]></text>
+								</staticText>
+							</frame>
+						</frame>
+						<frame>
+							<reportElement x="0" y="22" width="548" height="90" uuid="4072f45f-3c8a-4036-9e6d-619fa2edef37"/>
+							<rectangle>
+								<reportElement mode="Opaque" x="0" y="0" width="548" height="73" forecolor="#FFFFFF" backcolor="#E6EED5" uuid="2025dc0b-ce1d-4dbb-99f1-4890b7c7b1dd">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<graphicElement>
+									<pen lineColor="#FFFFFF"/>
+								</graphicElement>
+							</rectangle>
+							<frame>
+								<reportElement x="0" y="0" width="121" height="70" uuid="ea7dba24-d007-42ac-be3d-eac60e9a118d"/>
+								<textField>
+									<reportElement x="0" y="0" width="121" height="86" backcolor="#E6EED5" uuid="f20e5f36-f4d3-4dde-ba92-797128fbbfef"/>
+									<textElement markup="html"/>
+									<textFieldExpression><![CDATA[String.format("%1$25s", "Domain Name") + "<br>"  + String.format("%1$25s", "Application Type") + "<br>" +
+ String.format("%1$25s", "Subscription Year") + "<br>" + ($P{servicePeriodHidden} ?
+"" : (String.format("%1$25s", "Service Period From") + "<br>" + 
+String.format("%1$25s", "Service Period To")))]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement x="121" y="0" width="200" height="70" uuid="f1219824-0c74-416d-bbc8-11a2f1c867c9"/>
+								<textField>
+									<reportElement x="0" y="13" width="200" height="63" backcolor="#E6EED5" uuid="e3b44e08-ca64-43f8-9995-c1eb0c09f204">
+										<property name="com.jaspersoft.studio.unit.y" value="px"/>
+									</reportElement>
+									<textFieldExpression><![CDATA[": "+$P{applicationType}+"\n: "+($P{year} == null ? "NA" : $P{year})+ ($P{servicePeriodHidden} ? "" : ("\n: "+$P{serviceStart} +"\n: "+ $P{serviceEnd})  )]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement x="0" y="0" width="200" height="13" backcolor="#E6EED5" uuid="7b2067ce-c5bb-4098-891b-5b9a67f57979">
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									</reportElement>
+									<imageExpression><![CDATA[$P{domainName}]]></imageExpression>
+								</image>
+							</frame>
+							<frame>
+								<reportElement x="321" y="0" width="143" height="70" uuid="10a5a239-a2b8-4a5f-831f-1a0a4babb709"/>
+								<textField>
+									<reportElement x="0" y="0" width="143" height="70" backcolor="#E6EED5" uuid="8d7017a4-8e11-4c0f-b017-a6f861e14be2"/>
+									<textElement markup="html"/>
+									<textFieldExpression><![CDATA[String.format("%1$s", "Subscription Charge") + (new java.lang.Boolean(false).equals($P{packageNotFound}) ? 
+"(" +java.lang.Math.round($P{package per year cost}) + " * " +  $P{year}  + ")" : "" ) + "<br>" + 
+"Discount (-)<br>" + "Late Fee(+)" + "<br>"   +"Net Amount"  + "<br>"
+ + "VAT(15%)(+)"]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement x="464" y="0" width="84" height="70" uuid="2dc3f982-e4e0-4e15-9fff-a62ff52742f1"/>
+								<textField>
+									<reportElement x="0" y="0" width="78" height="70" backcolor="#E6EED5" uuid="808b8283-a22e-4056-9d25-7c8d1c8734d4"/>
+									<textElement textAlignment="Right"/>
+									<textFieldExpression><![CDATA[java.lang.Math.round($F{grandTotal})+"\n"+java.lang.Math.round($F{discount})+"\n"+ java.lang.Math.round($F{lateFee})+"\n" + java.lang.Math.round($F{totalPayable})+"\n"+java.lang.Math.round($F{VAT})]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement x="321" y="71" width="227" height="17" uuid="3f9d6b39-2698-4d45-8f83-bac0eff02cc0"/>
+								<staticText>
+									<reportElement x="0" y="0" width="143" height="17" uuid="9c8fb40c-706e-42f6-a5f3-3f352da16175"/>
+									<textElement>
+										<font isBold="true"/>
+									</textElement>
+									<text><![CDATA[TOTAL PAYABLE AMOUNT]]></text>
+								</staticText>
+								<textField>
+									<reportElement x="144" y="0" width="80" height="15" uuid="1489747e-c1d5-402a-9aa6-8001223c4cf5"/>
+									<textElement textAlignment="Right"/>
+									<textFieldExpression><![CDATA[java.lang.Math.round($F{netPayable})]]></textFieldExpression>
+								</textField>
+							</frame>
+						</frame>
+						<line>
+							<reportElement x="0" y="120" width="548" height="1" forecolor="#000000" uuid="e5723e5c-d6fb-4834-a98a-f3c8b9e2201e">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+							</reportElement>
+						</line>
+						<staticText>
+							<reportElement x="0" y="123" width="548" height="17" forecolor="#000000" uuid="87633755-f84f-4c60-97a6-c5b2ed7dc9c6"/>
+							<textElement textAlignment="Center"/>
+							<text><![CDATA[Please pay either using Teletalk online payment or by other mentioned procedure.]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="0" y="210" width="548" height="210" uuid="f1c75111-d7b7-48e9-a6c9-7e7d4840849d"/>
+						<staticText>
+							<reportElement x="0" y="0" width="548" height="20" uuid="f1c8a2eb-80e9-409a-9874-e6126bc32dbb"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle"/>
+							<text><![CDATA[Teletalk Payment* Steps:]]></text>
+						</staticText>
+						<frame>
+							<reportElement x="0" y="22" width="286" height="100" uuid="ff701f92-0c48-4add-9735-d7a696805927">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+							<textField>
+								<reportElement x="0" y="3" width="280" height="96" uuid="9b89f346-055f-4b8e-ad4a-a3c5059d7881"/>
+								<textElement markup="html"/>
+								<textFieldExpression><![CDATA["<b>1.</b> Recharge <b>BDT "+java.lang.Math.round($P{payable_using_teletalk})+"</b> at Teletalk prepaid SIM.<br>"+
+"<b>2.</b> Type <b>BTCL</b> &lt;space&gt; <b>"+$F{ID}+"</b> & then send to <b>16222.</b><br>"+
+"You’ll receive a <b>8(eight)</b> digit PIN number in return SMS at mobile<br>"+
+"<b>3.</b> To confirm, type <b>BTCL</b> &lt;space&gt; <b>YES</b> &lt;space&gt; <b>8 digit</b> pin number"]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="0" y="125" width="286" height="88" uuid="be082289-825a-4889-9096-0928ee65b703">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<staticText>
+								<reportElement x="0" y="0" width="285" height="20" uuid="8b173d41-1da4-4c14-beb6-4170a4d91f86"/>
+								<textElement textAlignment="Center" markup="html"/>
+								<text><![CDATA[Bank Payment Procedure]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="20" width="282" height="60" uuid="68deb9e1-f8ca-4684-adf4-2fc89d67ebb4">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement markup="html"/>
+								<textFieldExpression><![CDATA["1.	Pay the cash amount, "+java.lang.Math.round($F{netPayable})+" BDT at Social Islami Bank Limited (SIBL), Eskaton branch, Mogbazar, Dhaka.<br>"+
+"2.	Please bring a copy of bank receipt of this invoice to Senior Accounts Officer (SAO), "+
+"Mogbazar Telephone Bhaban, Dhaka-1217"]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="286" y="22" width="262" height="100" uuid="f7d5af56-7512-4dbe-a8ae-318872f5a8a8">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+							</reportElement>
+							<line>
+								<reportElement x="0" y="1" width="262" height="1" uuid="dbfc49d8-fe56-4902-b780-c011906f0a2b">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									<property name="com.jaspersoft.studio.unit.x" value="px"/>
+									<property name="com.jaspersoft.studio.unit.y" value="px"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+							</line>
+							<line>
+								<reportElement x="0" y="19" width="262" height="1" uuid="fe54ec2a-a86a-4ed1-a104-6d4a2c77b49d">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									<property name="com.jaspersoft.studio.unit.x" value="px"/>
+									<property name="com.jaspersoft.studio.unit.y" value="px"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+							</line>
+							<rectangle>
+								<reportElement key="" x="0" y="21" width="261" height="21" backcolor="#E6EED5" uuid="2d983949-2030-4395-aab3-7f9d53b9db61"/>
+								<graphicElement>
+									<pen lineColor="#FFFFFF"/>
+								</graphicElement>
+							</rectangle>
+							<staticText>
+								<reportElement x="3" y="2" width="120" height="16" uuid="c343fe48-8bd5-4ec3-8d60-9a8e12ce0811"/>
+								<textElement verticalAlignment="Middle">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Details]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="179" y="1" width="82" height="18" uuid="95a77bfb-da5f-4aa6-9046-7f1dfc1628c3"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Amount(BDT)]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="2" y="62" width="254" height="13" uuid="593d8d5d-fd5f-445f-8b5c-14e8f8c032f0"/>
+								<textElement textAlignment="Center" markup="html">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[* At most BDT <b>8900</b> is allowed to pay using Teletalk]]></text>
+							</staticText>
+							<line>
+								<reportElement x="1" y="59" width="257" height="1" forecolor="#000000" uuid="73231008-3c96-43fc-86fa-24c8c110dd3f">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									<property name="com.jaspersoft.studio.unit.x" value="px"/>
+									<property name="com.jaspersoft.studio.unit.y" value="px"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+							</line>
+							<textField>
+								<reportElement x="0" y="21" width="124" height="22" uuid="7f4c6e2f-3f63-47ba-9307-c94a7f2a2d04"/>
+								<textElement>
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Total Amount\nTeletalk Service Charge(10%)(+)"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="178" y="21" width="82" height="22" uuid="69d9383d-54de-4233-8c23-8ed830a4c264"/>
+								<textElement textAlignment="Right">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[java.lang.Math.round($F{netPayable}) + "\n" + java.lang.Math.round($P{teletalkCharge})]]></textFieldExpression>
+							</textField>
+							<frame>
+								<reportElement x="2" y="43" width="260" height="18" uuid="1e47cfba-6a53-4058-a301-7efb4b6380e3"/>
+								<textField>
+									<reportElement x="0" y="1" width="130" height="14" uuid="8a6d4ace-cd0d-4bf9-a3d8-51cb03ca68fd"/>
+									<textElement>
+										<font size="8"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Total payable using Teletalk"]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="190" y="0" width="69" height="16" uuid="ce633a64-b750-4b91-869d-6491f07adb84">
+										<property name="com.jaspersoft.studio.unit.x" value="px"/>
+									</reportElement>
+									<textElement textAlignment="Right">
+										<font size="8"/>
+									</textElement>
+									<textFieldExpression><![CDATA[java.lang.Math.round($P{payable_using_teletalk})]]></textFieldExpression>
+								</textField>
+							</frame>
+						</frame>
+						<frame>
+							<reportElement x="287" y="125" width="260" height="88" uuid="dba3a16d-3da9-4103-b5bc-aaaa87601514">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<staticText>
+								<reportElement x="1" y="20" width="259" height="60" uuid="9cec0435-126f-4b51-b7de-de7e8096c875">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Left" markup="html">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[1.Cheque (For Govt. offices only) or Pay order (For Govt., non Govt. offices & others organizations) is allowed.<br>
+2.Pay order should be sent in favor of Senior Account Officer, Telephone Revenue (North), BTCL, Dhaka.
+]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="1" y="0" width="259" height="20" uuid="c920d7ac-2094-44cb-9063-c0a29e17253e"/>
+								<textElement textAlignment="Center" markup="html"/>
+								<text><![CDATA[<b>Payment using Bank Cheque/Pay Order</b>]]></text>
+							</staticText>
+						</frame>
+					</frame>
+					<frame>
+						<reportElement x="0" y="422" width="548" height="68" uuid="6ba4c8d5-ef02-45fa-916b-925bb51b2aa1"/>
+						<line>
+							<reportElement x="0" y="67" width="547" height="1" forecolor="#000000" uuid="577c82cd-7e91-4815-b165-396ce60c0bad">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+						</line>
+						<line>
+							<reportElement x="0" y="0" width="547" height="1" forecolor="#000000" uuid="60814301-085a-4e60-81fd-55e7f629f395">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+						</line>
+						<frame>
+							<reportElement x="0" y="1" width="380" height="66" uuid="f3f2213a-a055-40bd-b167-7887e2fd83a0">
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<staticText>
+								<reportElement x="0" y="0" width="380" height="67" uuid="3018ebd9-5e11-473b-a1b1-f4bd55c573cb">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement markup="html">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[<b>Important Links:</b><br><br>
+Domain profile Sign up/Login URL: http://bdia.btcl.com.bd/<br>
+Domain & Rate info: http://www.btcl.com.bd/service/details/en/19<br>
+Userguide of domain registration & management: http://bdia.btcl.com.bd/userguide.do<br>
+Payment & renewal step details: http://bdia.btcl.com.bd/paymentstep.do]]></text>
+							</staticText>
+						</frame>
+						<frame>
+							<reportElement x="380" y="0" width="167" height="67" uuid="63638e73-a2e4-4859-8741-a1aba9507e4f">
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<staticText>
+								<reportElement x="0" y="0" width="167" height="67" uuid="dd658302-73a4-48d0-ba49-68fb818f5eae">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Center" markup="html"/>
+								<text><![CDATA[For domain related query, support or complain, please email at-<br><br>
+
+<b>domain@btcl.com.bd</b>
+]]></text>
+							</staticText>
+						</frame>
+					</frame>
+					<frame>
+						<reportElement x="0" y="490" width="548" height="70" uuid="6af1ca60-2981-4d65-8e58-c3091b5471f3"/>
+						<staticText>
+							<reportElement x="0" y="0" width="545" height="70" uuid="2e245a6b-fda6-48b3-8a33-54657e1049d8">
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+							</reportElement>
+							<textElement verticalAlignment="Middle" markup="html">
+								<font size="8"/>
+							</textElement>
+							<text><![CDATA[<b>Important Facts:</b><br>1.	Any sort of payment is non-refundable. So, please know details of service charge & proceed to make payment.<br>2.	BTCL may temporarily block/park domain if payment is not received or partially/incompletely received.<br>3.	For service continuation, please renew before the service period gets over<br>
+]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="0" y="560" width="548" height="42" uuid="3d16526a-6e1e-425e-b8e6-70484a995669"/>
+						<staticText>
+							<reportElement x="0" y="20" width="120" height="22" uuid="299cc988-4014-423a-8f33-43030d2bf56e"/>
+							<textElement verticalAlignment="Bottom"/>
+							<text><![CDATA[Date:]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="310" y="20" width="95" height="22" uuid="215596db-fc67-4273-a985-5da3b155cc34">
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+							</reportElement>
+							<textElement verticalAlignment="Bottom"/>
+							<text><![CDATA[Signature & Date:]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="0" y="0" width="140" height="20" uuid="fc916c46-ab43-4ed9-b4e3-86cf6a210ff0"/>
+							<text><![CDATA[For bank usages-]]></text>
+						</staticText>
+					</frame>
+				</frame>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group3" isStartNewPage="true">
+		<groupHeader>
+			<band height="604">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<frame>
+					<reportElement x="0" y="0" width="548" height="602" uuid="14d59901-92ba-48f7-808e-188c1c9298a0"/>
+					<frame>
+						<reportElement x="0" y="0" width="548" height="29" uuid="3891cb9e-6072-4b28-8c44-8d3fa322026d"/>
+						<textField>
+							<reportElement x="182" y="0" width="180" height="29" uuid="d00dfd4c-7854-4dd3-b286-b24e3c85932a"/>
+							<textElement textAlignment="Center">
+								<font size="14"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Invoice ID: " + $F{ID}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="378" y="0" width="170" height="28" forecolor="#000000" uuid="8839b054-1788-442c-9641-f3f564303ba7"/>
+							<textElement>
+								<font size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA["(" + ($V{PAGE_NUMBER}.equals(1) ? "Bank " : 
+	($V{PAGE_NUMBER}.equals(2) ? "BTCL Office " : 
+		($V{PAGE_NUMBER}.equals(3) ? "Subscriber " : "" )
+	)
+)  + "Copy)"]]></textFieldExpression>
+						</textField>
+					</frame>
+					<frame>
+						<reportElement x="0" y="29" width="548" height="39" uuid="bdf47d35-3b19-4902-b556-0ece2ae1b416"/>
+						<staticText>
+							<reportElement x="0" y="0" width="121" height="18" uuid="631d0e1c-ae13-4917-acc2-52a12bd823b1"/>
+							<textElement markup="html"/>
+							<text><![CDATA[Invoice Issue Date]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="0" y="18" width="121" height="19" uuid="7918a101-48e3-40de-b2b9-c168814bd891"/>
+							<text><![CDATA[Invoice validity*]]></text>
+						</staticText>
+						<textField>
+							<reportElement x="121" y="18" width="99" height="18" uuid="3ba26d89-b851-45b1-993e-8636a22458cd"/>
+							<textFieldExpression><![CDATA[": " +new java.text.SimpleDateFormat("MMMM dd, yyyy").format( $F{lastPaymentDate} )]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="121" y="0" width="99" height="18" uuid="f21d47ef-a6bc-4e98-80d6-c3da44867522"/>
+							<textFieldExpression><![CDATA[": " + new java.text.SimpleDateFormat("MMMM dd, yyyy").format( $F{generationTime} )]]></textFieldExpression>
+						</textField>
+						<staticText>
+							<reportElement x="220" y="18" width="244" height="18" uuid="c496b502-5825-4cb3-9f5c-558f4431e2e9"/>
+							<text><![CDATA[(*Please pay within the validity of the invoice)]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="0" y="68" width="548" height="142" uuid="ffdf523a-b6b2-434e-bcfc-1f003106241e"/>
+						<frame>
+							<reportElement x="0" y="1" width="548" height="21" uuid="1a84a736-c50d-4ec7-9200-518a2b8906e5"/>
+							<line>
+								<reportElement x="0" y="0" width="548" height="1" forecolor="#000000" uuid="7c39019d-6e69-48c2-9fcc-c75b7d7f4b89">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									<property name="com.jaspersoft.studio.unit.x" value="px"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+									<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								</reportElement>
+							</line>
+							<line>
+								<reportElement x="0" y="18" width="548" height="1" forecolor="#000000" uuid="3400ad19-2b03-42f0-868f-9aef513f3040">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									<property name="com.jaspersoft.studio.unit.x" value="px"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+									<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								</reportElement>
+							</line>
+							<frame>
+								<reportElement x="0" y="1" width="548" height="17" uuid="6f742062-e2a9-4f29-b703-cfc9520fc3ae"/>
+								<staticText>
+									<reportElement x="129" y="0" width="69" height="17" uuid="e6168c9f-0314-4163-b1d0-b840a51668b7"/>
+									<textElement>
+										<font isBold="true"/>
+									</textElement>
+									<text><![CDATA[Description]]></text>
+								</staticText>
+								<staticText>
+									<reportElement x="359" y="0" width="51" height="17" uuid="d8dd4ddc-26b5-4db7-945a-90e084c62b28"/>
+									<textElement>
+										<font isBold="true"/>
+									</textElement>
+									<text><![CDATA[Details]]></text>
+								</staticText>
+								<staticText>
+									<reportElement x="464" y="0" width="78" height="17" uuid="c3a231e1-6d23-4fa3-b3c2-e4245b5a14d2"/>
+									<textElement textAlignment="Right">
+										<font isBold="true"/>
+									</textElement>
+									<text><![CDATA[Amount(BDT)]]></text>
+								</staticText>
+							</frame>
+						</frame>
+						<frame>
+							<reportElement x="0" y="22" width="548" height="90" uuid="415b9e99-6bcd-4d6a-b846-ef6f9de7fcf6"/>
+							<rectangle>
+								<reportElement mode="Opaque" x="0" y="0" width="548" height="73" forecolor="#FFFFFF" backcolor="#E6EED5" uuid="0cfa4faf-5f0a-41d8-b28f-63aea30465dd">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<graphicElement>
+									<pen lineColor="#FFFFFF"/>
+								</graphicElement>
+							</rectangle>
+							<frame>
+								<reportElement x="0" y="0" width="121" height="70" uuid="87068a92-99b2-4059-8536-e0dcbe9c8282"/>
+								<textField>
+									<reportElement x="0" y="0" width="121" height="86" backcolor="#E6EED5" uuid="f9471d6d-42ed-42c1-849b-e6fd6d036c5e"/>
+									<textElement markup="html"/>
+									<textFieldExpression><![CDATA[String.format("%1$25s", "Domain Name") + "<br>"  + String.format("%1$25s", "Application Type") + "<br>" +
+ String.format("%1$25s", "Subscription Year") + "<br>" + ($P{servicePeriodHidden} ?
+"" : (String.format("%1$25s", "Service Period From") + "<br>" + 
+String.format("%1$25s", "Service Period To")))]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement x="121" y="0" width="200" height="70" uuid="a31f27f4-9aa6-425a-a50d-29ce003c531f"/>
+								<textField>
+									<reportElement x="0" y="13" width="200" height="63" backcolor="#E6EED5" uuid="2d678775-4f8e-42c4-bf4c-e6f70cd3a141">
+										<property name="com.jaspersoft.studio.unit.y" value="px"/>
+									</reportElement>
+									<textFieldExpression><![CDATA[": "+$P{applicationType}+"\n: "+($P{year} == null ? "NA" : $P{year})+ ($P{servicePeriodHidden} ? "" : ("\n: "+$P{serviceStart} +"\n: "+ $P{serviceEnd})  )]]></textFieldExpression>
+								</textField>
+								<image>
+									<reportElement x="0" y="0" width="200" height="13" backcolor="#E6EED5" uuid="10e12d76-d726-4669-979c-f556da87b19e">
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									</reportElement>
+									<imageExpression><![CDATA[$P{domainName}]]></imageExpression>
+								</image>
+							</frame>
+							<frame>
+								<reportElement x="321" y="0" width="143" height="70" uuid="f440366c-e8a0-4467-93bf-dcd8d18361e6"/>
+								<textField>
+									<reportElement x="0" y="0" width="143" height="70" backcolor="#E6EED5" uuid="06a21312-1b05-448d-8873-795414fa4fa5"/>
+									<textElement markup="html"/>
+									<textFieldExpression><![CDATA[String.format("%1$s", "Subscription Charge") + (new java.lang.Boolean(false).equals($P{packageNotFound}) ? 
+"(" +java.lang.Math.round($P{package per year cost}) + " * " +  $P{year}  + ")" : "" ) + "<br>" + 
+"Discount (-)<br>" + "Late Fee(+)" + "<br>"   +"Net Amount"  + "<br>"
+ + "VAT(15%)(+)"]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement x="464" y="0" width="84" height="70" uuid="af8f66d1-c29a-43a5-b00a-8fb04ccfe17d"/>
+								<textField>
+									<reportElement x="0" y="0" width="78" height="70" backcolor="#E6EED5" uuid="57072cf4-3f75-4213-849c-5feca490ce7b"/>
+									<textElement textAlignment="Right"/>
+									<textFieldExpression><![CDATA[java.lang.Math.round($F{grandTotal})+"\n"+java.lang.Math.round($F{discount})+"\n"+ java.lang.Math.round($F{lateFee})+"\n" + java.lang.Math.round($F{totalPayable})+"\n"+java.lang.Math.round($F{VAT})]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement x="321" y="71" width="227" height="17" uuid="31d169ae-17de-4b1c-ba91-460bb1d94278"/>
+								<staticText>
+									<reportElement x="0" y="0" width="143" height="17" uuid="c29f1c04-cf4b-4cf1-8e6a-03a988dbc5e2"/>
+									<textElement>
+										<font isBold="true"/>
+									</textElement>
+									<text><![CDATA[TOTAL PAYABLE AMOUNT]]></text>
+								</staticText>
+								<textField>
+									<reportElement x="144" y="0" width="80" height="15" uuid="e80b3fce-113e-47eb-84a3-6ca9c7431bb0"/>
+									<textElement textAlignment="Right"/>
+									<textFieldExpression><![CDATA[java.lang.Math.round($F{netPayable})]]></textFieldExpression>
+								</textField>
+							</frame>
+						</frame>
+						<line>
+							<reportElement x="0" y="120" width="548" height="1" forecolor="#000000" uuid="12eeb1fd-9ef2-4f94-88c5-9df4d99b4b67">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+							</reportElement>
+						</line>
+						<staticText>
+							<reportElement x="0" y="123" width="548" height="17" forecolor="#000000" uuid="df993820-dbee-4fd7-a2dc-dce445d99c6c"/>
+							<textElement textAlignment="Center"/>
+							<text><![CDATA[Please pay either using Teletalk online payment or by other mentioned procedure.]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="0" y="210" width="548" height="210" uuid="2d41e9a4-8cc3-4c9b-b745-fd3a2cec6e91"/>
+						<staticText>
+							<reportElement x="0" y="0" width="548" height="20" uuid="5260048d-7c8c-45ca-845f-b05ae6aa5496"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle"/>
+							<text><![CDATA[Teletalk Payment* Steps:]]></text>
+						</staticText>
+						<frame>
+							<reportElement x="0" y="22" width="286" height="100" uuid="9cbc2d7d-6dcc-4134-b612-0bec7124e9e5">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+							</reportElement>
+							<textField>
+								<reportElement x="0" y="3" width="280" height="96" uuid="6e9f01c6-cc03-4ed5-9229-5c831179ca06"/>
+								<textElement markup="html"/>
+								<textFieldExpression><![CDATA["<b>1.</b> Recharge <b>BDT "+java.lang.Math.round($P{payable_using_teletalk})+"</b> at Teletalk prepaid SIM.<br>"+
+"<b>2.</b> Type <b>BTCL</b> &lt;space&gt; <b>"+$F{ID}+"</b> & then send to <b>16222.</b><br>"+
+"You’ll receive a <b>8(eight)</b> digit PIN number in return SMS at mobile<br>"+
+"<b>3.</b> To confirm, type <b>BTCL</b> &lt;space&gt; <b>YES</b> &lt;space&gt; <b>8 digit</b> pin number"]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="0" y="125" width="286" height="88" uuid="6daf4b01-6fb4-4ece-8558-007678d867dd">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<staticText>
+								<reportElement x="0" y="0" width="285" height="20" uuid="bd13213a-d2c7-4843-9611-2817be45d8fc"/>
+								<textElement textAlignment="Center" markup="html"/>
+								<text><![CDATA[Bank Payment Procedure]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="20" width="282" height="60" uuid="b33d5fe8-b076-45bd-93ca-f21814501e20">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement markup="html"/>
+								<textFieldExpression><![CDATA["1.	Pay the cash amount, "+java.lang.Math.round($F{netPayable})+" BDT at Social Islami Bank Limited (SIBL), Eskaton branch, Mogbazar, Dhaka.<br>"+
+"2.	Please bring a copy of bank receipt of this invoice to Senior Accounts Officer (SAO), "+
+"Mogbazar Telephone Bhaban, Dhaka-1217"]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="286" y="22" width="262" height="100" uuid="c18fb143-0650-4f8a-934e-c8a02459a5e1">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+							</reportElement>
+							<line>
+								<reportElement x="0" y="1" width="262" height="1" uuid="ae0b8e12-b359-48f7-9531-b18426dc96a9">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									<property name="com.jaspersoft.studio.unit.x" value="px"/>
+									<property name="com.jaspersoft.studio.unit.y" value="px"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+							</line>
+							<line>
+								<reportElement x="0" y="19" width="262" height="1" uuid="26981c2e-8f22-460c-9fc2-0fd283294a98">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									<property name="com.jaspersoft.studio.unit.x" value="px"/>
+									<property name="com.jaspersoft.studio.unit.y" value="px"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+							</line>
+							<rectangle>
+								<reportElement key="" x="0" y="21" width="261" height="21" backcolor="#E6EED5" uuid="88ed755e-e620-4576-a320-4f475db39362"/>
+								<graphicElement>
+									<pen lineColor="#FFFFFF"/>
+								</graphicElement>
+							</rectangle>
+							<staticText>
+								<reportElement x="3" y="2" width="120" height="16" uuid="3f06d5cc-2441-476d-ba2a-2a8725a3b013"/>
+								<textElement verticalAlignment="Middle">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Details]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="179" y="1" width="82" height="18" uuid="7d8a3137-19e7-4425-a36c-c655a887be00"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Amount(BDT)]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="2" y="62" width="254" height="13" uuid="d6af118a-36f2-40bd-8cc4-c0ae0e6f7106"/>
+								<textElement textAlignment="Center" markup="html">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[* At most BDT <b>8900</b> is allowed to pay using Teletalk]]></text>
+							</staticText>
+							<line>
+								<reportElement x="1" y="59" width="257" height="1" forecolor="#000000" uuid="aebb5d99-6140-43c3-a02f-4667df7ffc64">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									<property name="com.jaspersoft.studio.unit.x" value="px"/>
+									<property name="com.jaspersoft.studio.unit.y" value="px"/>
+									<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								</reportElement>
+							</line>
+							<textField>
+								<reportElement x="0" y="21" width="124" height="22" uuid="aae0e917-aea8-47f8-af06-a6bf61035f53"/>
+								<textElement>
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Total Amount\nTeletalk Service Charge(10%)(+)"]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement x="178" y="21" width="82" height="22" uuid="2a48a373-2078-4a70-b2b6-ba3cd8f7f3cb"/>
+								<textElement textAlignment="Right">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[java.lang.Math.round($F{netPayable}) + "\n" + java.lang.Math.round($P{teletalkCharge})]]></textFieldExpression>
+							</textField>
+							<frame>
+								<reportElement x="2" y="43" width="260" height="18" uuid="dba25cc7-4900-4efa-b619-7035baf775c3"/>
+								<textField>
+									<reportElement x="0" y="1" width="130" height="14" uuid="90ac4a9f-e1a0-4f6d-a211-0307e033376c"/>
+									<textElement>
+										<font size="8"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Total payable using Teletalk"]]></textFieldExpression>
+								</textField>
+								<textField>
+									<reportElement x="190" y="0" width="69" height="16" uuid="90618dab-cd9b-40eb-87b2-e52fb2488d8c">
+										<property name="com.jaspersoft.studio.unit.x" value="px"/>
+									</reportElement>
+									<textElement textAlignment="Right">
+										<font size="8"/>
+									</textElement>
+									<textFieldExpression><![CDATA[java.lang.Math.round($P{payable_using_teletalk})]]></textFieldExpression>
+								</textField>
+							</frame>
+						</frame>
+						<frame>
+							<reportElement x="287" y="125" width="260" height="88" uuid="9ac6ffa0-a418-4e51-9484-fe27d6498977">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<staticText>
+								<reportElement x="1" y="20" width="259" height="60" uuid="bd09bee3-8b58-49d3-a053-48d413c0532a">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Left" markup="html">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[1.Cheque (For Govt. offices only) or Pay order (For Govt., non Govt. offices & others organizations) is allowed.<br>
+2.Pay order should be sent in favor of Senior Account Officer, Telephone Revenue (North), BTCL, Dhaka.
+]]></text>
+							</staticText>
+							<staticText>
+								<reportElement x="1" y="0" width="259" height="20" uuid="5e3bf2bf-3071-41e9-be1b-93180a0ae3fa"/>
+								<textElement textAlignment="Center" markup="html"/>
+								<text><![CDATA[<b>Payment using Bank Cheque/Pay Order</b>]]></text>
+							</staticText>
+						</frame>
+					</frame>
+					<frame>
+						<reportElement x="0" y="422" width="548" height="68" uuid="aae164fb-8149-4464-9ed2-c9de7e867a70"/>
+						<line>
+							<reportElement x="0" y="67" width="547" height="1" forecolor="#000000" uuid="63e84f3f-d074-4a3e-b692-e1108a4b4993">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+						</line>
+						<line>
+							<reportElement x="0" y="0" width="547" height="1" forecolor="#000000" uuid="80992ad5-41dd-4227-a8c1-1acd5af3e2ba">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+						</line>
+						<frame>
+							<reportElement x="0" y="1" width="380" height="66" uuid="b17bde12-5cb1-4a11-a338-bff484c40e67">
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<staticText>
+								<reportElement x="0" y="0" width="380" height="67" uuid="b9a74e89-c772-4fec-a0d9-c0998b6f834e">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement markup="html">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[<b>Important Links:</b><br><br>
+Domain profile Sign up/Login URL: http://bdia.btcl.com.bd/<br>
+Domain & Rate info: http://www.btcl.com.bd/service/details/en/19<br>
+Userguide of domain registration & management: http://bdia.btcl.com.bd/userguide.do<br>
+Payment & renewal step details: http://bdia.btcl.com.bd/paymentstep.do]]></text>
+							</staticText>
+						</frame>
+						<frame>
+							<reportElement x="380" y="0" width="167" height="67" uuid="f9da7451-2930-4ae2-ab76-cbbc57cc3140">
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<staticText>
+								<reportElement x="0" y="0" width="167" height="67" uuid="9a7ee0c9-6cf9-4dba-b7aa-00785d64f3bc">
+									<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Center" markup="html"/>
+								<text><![CDATA[For domain related query, support or complain, please email at-<br><br>
+
+<b>domain@btcl.com.bd</b>
+]]></text>
+							</staticText>
+						</frame>
+					</frame>
+					<frame>
+						<reportElement x="0" y="490" width="548" height="70" uuid="b6e8a21a-0cd5-4115-b7da-c35837e170c5"/>
+						<staticText>
+							<reportElement x="0" y="0" width="545" height="70" uuid="7c744674-381a-43f9-8a64-85d62c4bdcc2">
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+							</reportElement>
+							<textElement verticalAlignment="Middle" markup="html">
+								<font size="8"/>
+							</textElement>
+							<text><![CDATA[<b>Important Facts:</b><br>1.	Any sort of payment is non-refundable. So, please know details of service charge & proceed to make payment.<br>2.	BTCL may temporarily block/park domain if payment is not received or partially/incompletely received.<br>3.	For service continuation, please renew before the service period gets over<br>
+]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="0" y="560" width="548" height="42" uuid="7742688d-12ad-4c25-9385-349fd69a248c"/>
+						<staticText>
+							<reportElement x="0" y="20" width="120" height="22" uuid="a4d450d2-fbaa-4227-8ec3-3c7379b00865"/>
+							<textElement verticalAlignment="Bottom"/>
+							<text><![CDATA[Date:]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="310" y="20" width="95" height="22" uuid="33f408b2-0527-425b-ac5f-d19675b3514a">
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+							</reportElement>
+							<textElement verticalAlignment="Bottom"/>
+							<text><![CDATA[Signature & Date:]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="0" y="0" width="140" height="20" uuid="ee655715-184b-4b33-b495-067f76570e78"/>
+							<text><![CDATA[For bank usages-]]></text>
+						</staticText>
+					</frame>
+				</frame>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="126" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<frame>
+				<reportElement x="-1" y="50" width="550" height="76" uuid="b1eb3d3d-b789-4c04-9cb1-a28821afce3a"/>
+				<staticText>
+					<reportElement x="0" y="0" width="61" height="16" uuid="87aa016c-8350-49c2-b53f-bc6df770fd04"/>
+					<textElement>
+						<font size="12" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Invoices to,]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="0" y="20" width="121" height="51" uuid="dfc8fdbb-ebfe-4712-bff0-b1cbd1975840"/>
+					<textElement markup="none"/>
+					<textFieldExpression><![CDATA["Registrant Name\nLogin Username\nRegistrant Email\nRegistrant Contact"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="283" y="31" width="267" height="40" uuid="8fd1d1bd-041c-4bd0-a8ec-0f2b4af863ab"/>
+					<textElement markup="html"/>
+					<textFieldExpression><![CDATA["Registrant Address:<br>" + ($P{registrant address} == null ? "N/A" : $P{registrant address})]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="121" y="31" width="160" height="40" uuid="71386ebb-d319-4a8c-b1f2-43e48ec8b95e"/>
+					<textElement markup="html"/>
+					<textFieldExpression><![CDATA[": "+$P{username}+"<br>: "+$P{registrant email}+"<br>: "+$P{registrant contact}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="0" y="71" width="550" height="1" forecolor="#000000" uuid="d692ca38-23da-492e-a623-221acdee45e9">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+				</line>
+				<line>
+					<reportElement x="0" y="16" width="550" height="1" forecolor="#000000" uuid="b1663d7c-40a7-4d89-96c1-c59028f50c9d">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+				</line>
+				<textField>
+					<reportElement x="121" y="17" width="428" height="14" uuid="4fdeda77-6fe4-4b56-ab31-58a100ecea32"/>
+					<textElement markup="html"/>
+					<textFieldExpression><![CDATA[": <b>"+$P{registrant name}+"</b>"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement x="146" y="20" width="328" height="30" uuid="947a001b-ea95-43a1-a49d-55ee675d6476"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Unicode Bill" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $P{header_text_1}  == null  )? ".bd & .বাংলা Domain Invoice" :org.apache.commons.lang.StringEscapeUtils.unescapeJava($P{header_text_1})]]></textFieldExpression>
+			</textField>
+			<image hAlign="Right" vAlign="Middle">
+				<reportElement stretchType="ContainerHeight" x="0" y="0" width="45" height="25" uuid="25280e70-e020-4570-814b-b6f75b0dcc49">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{logo_bd}]]></imageExpression>
+			</image>
+			<image hAlign="Left">
+				<reportElement stretchType="ContainerHeight" x="50" y="0" width="50" height="50" uuid="92c42faa-b6c5-42f7-8a13-5c66f5a965e2"/>
+				<imageExpression><![CDATA[$P{logo_btcl}]]></imageExpression>
+			</image>
+			<image hAlign="Right">
+				<reportElement x="180" y="0" width="370" height="20" uuid="a6ecaabd-aa46-4c69-a438-d74472816f91"/>
+				<imageExpression><![CDATA[$P{top_bangla_heading}]]></imageExpression>
+			</image>
+			<image hAlign="Right" vAlign="Middle">
+				<reportElement x="490" y="20" width="60" height="30" uuid="9339202b-e117-493f-9c16-81cc367a10dd"/>
+				<imageExpression><![CDATA[$P{paid}]]></imageExpression>
+			</image>
+		</band>
+	</columnHeader>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="561" height="54" uuid="db99005d-766d-4b18-bf1c-0455d4ed0487"/>
+				<textField>
+					<reportElement x="0" y="30" width="198" height="20" uuid="68dbaaea-c163-4bc7-aa13-882438ae5c70">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Century Gothic PDF Bill" isBold="true" isItalic="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[( $P{footer_text_2}  == null  )? "Powered By Reve Systems":org.apache.commons.lang.StringEscapeUtils.unescapeJava($P{footer_text_2})]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="289" y="30" width="272" height="20" forecolor="#000000" uuid="3cdc4161-fe67-403a-85b5-80b27dcbba6d">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Century Gothic PDF Bill" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[( $P{footer_text_3}  == null  )? "©Bangladesh Telecommunications Company Limited":org.apache.commons.lang.StringEscapeUtils.unescapeJava($P{footer_text_3})]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+</jasperReport>

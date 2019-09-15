@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+	<session-config>
+		<session-timeout>300</session-timeout>
+	</session-config>
+
+	<display-name>BTCLBilling</display-name>
+	
+	<!-- Standard Action Servlet Configuration (with debugging) -->
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+		<init-param>
+			<param-name>application</param-name>
+			<param-value>btclbilling</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/struts-config.xml, 
+			/WEB-INF/struts-config-alam.xml , 
+			/WEB-INF/struts-config-kawser.xml,  
+			/WEB-INF/struts-config-kayesh.xml,  
+			/WEB-INF/struts-config-sharif.xml,  
+			/WEB-INF/struts-config-niaz.xml, 
+			/WEB-INF/struts-config-dhrubo.xml, 
+			/WEB-INF/struts-config-raihan.xml, 
+			/WEB-INF/struts-config-lli.xml,
+			/WEB-INF/struts-config-ip.xml,
+			/WEB-INF/struts-config-common.xml,
+			/WEB-INF/struts-config-co-location.xml,
+			/WEB-INF/struts-config-vpn.xml,
+			/WEB-INF/struts-config-nix.xml,
+			/WEB-INF/struts-config-asn.xml,
+			/WEB-INF/struts-config-upstream.xml,
+			/WEB-INF/struts-config-report.xml,
+
+
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>2</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>2</param-value>
+		</init-param>
+		<init-param>
+			<param-name>log4j-properties-location</param-name>
+			<param-value>WEB-INF/classes/log4j.properties</param-value>
+		</init-param>
+		
+		
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	
+	<mime-mapping>
+		<extension>css</extension>
+		<mime-type>text/css</mime-type>
+	</mime-mapping>
+
+	<!-- Standard Action Servlet Mapping -->
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>JqueryFileUploadAction</servlet-name>
+		<servlet-class>file.JqueryFileUploadAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JqueryFileUploadAction</servlet-name>
+		<url-pattern>/JqueryFileUpload</url-pattern>
+	</servlet-mapping>
+	
+	<!-- File Upload by Dhrubo Begins-->
+	<!--<servlet>-->
+		<!--<servlet-name>FileServlet</servlet-name>-->
+		<!--<servlet-class>file.upload.FileServlet</servlet-class>-->
+	<!--</servlet>-->
+	<!--<servlet-mapping>-->
+		<!--<servlet-name>FileServlet</servlet-name>-->
+		<!--<url-pattern>/file</url-pattern>-->
+	<!--</servlet-mapping>-->
+	<!-- File Upload by Dhrubo Ends -->
+	
+
+	<servlet>
+		<servlet-name>SimpleCaptcha</servlet-name>
+		<servlet-class>util.SimpleCaptchaServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SimpleCaptcha</servlet-name>
+		<url-pattern>/simpleCaptcha.jpg</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>globalDomainSearch</servlet-name>
+		<servlet-class>domain.GlobalDomainSearch</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>globalDomainSearch</servlet-name>
+		<url-pattern>/domain/search</url-pattern>
+	</servlet-mapping>
+
+	<!-- The Usual Welcome File List -->
+	<welcome-file-list>
+		<welcome-file>home/login.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- login filter -->
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>filter.LoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- common exception handler filter -->
+	<filter>
+		<filter-name>CommonExceptionHandlerFilter</filter-name>
+		<filter-class>filter.CommonExceptionHandlerFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CommonExceptionHandlerFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- current time init filter -->
+	<filter>
+		<filter-name>CurrentTimeInitiatorFilter</filter-name>
+		<filter-class>filter.CurrentTimeInitiatorFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CurrentTimeInitiatorFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- logged in user activity filter -->
+	<filter>
+		<filter-name>LoggedInUserActivityFilter</filter-name>
+		<filter-class>filter.LoggedInUserActivityFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>LoggedInUserActivityFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!--charset filter -->
+	<filter>
+		<filter-name>CharsetFilter</filter-name>
+		<filter-class>util.CharsetFilter</filter-class>
+		<init-param>
+			<param-name>requestEncoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharsetFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!--load salt filter -->
+	<filter>
+    	<filter-name>loadSalt</filter-name>
+    	<filter-class>filter.LoadSalt</filter-class>
+	</filter>
+	<filter-mapping>
+    	<filter-name>loadSalt</filter-name>
+    	<url-pattern>*</url-pattern>
+	</filter-mapping>
+
+	<!-- validate salt filter -->
+	<filter>
+    	<filter-name>validateSalt</filter-name>
+    	<filter-class>filter.ValidateSalt</filter-class>
+	</filter>
+	<filter-mapping>
+   	 	<filter-name>validateSalt</filter-name>
+    	<url-pattern>*</url-pattern>
+	</filter-mapping>
+	
+	
+	<error-page>
+        <error-code>
+            400
+        </error-code>
+        <location>
+            /common/400.jsp
+        </location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/common/404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>
+            500
+        </error-code>
+        <location>
+            /common/500.jsp
+        </location>
+    </error-page>
+    
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<page-encoding>UTF-8</page-encoding>
+		</jsp-property-group>
+	</jsp-config>
+	
+	<context-param>
+    	<param-name>WriteBillToFile</param-name>
+    	<param-value>true</param-value>
+	</context-param>
+	
+</web-app>

@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="an" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c92e1140-77ba-4e49-b96e-9b5c62999723">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<parameter name="an_status" class="java.lang.String"/>
+	<parameter name="an_number" class="java.lang.String"/>
+	<parameter name="an_date" class="java.lang.String"/>
+	<parameter name="an_title" class="java.lang.String"/>
+	<parameter name="an_to" class="java.lang.String"/>
+	<parameter name="an_sender_name" class="java.lang.String"/>
+	<parameter name="an_cc_list" class="java.util.List"/>
+	<parameter name="an_sender_designation" class="java.lang.String"/>
+	<parameter name="an_letter_body" class="java.lang.String"/>
+	<parameter name="client_full_name" class="java.lang.String"/>
+	<parameter name="client_user_name" class="java.lang.String"/>
+	<parameter name="client_mobile" class="java.lang.String"/>
+	<parameter name="client_billing_address" class="java.lang.String"/>
+	<parameter name="client_type" class="java.lang.String"/>
+	<parameter name="client_category" class="java.lang.String"/>
+	<parameter name="client_isp_license_type" class="java.lang.String"/>
+	<parameter name="app_id" class="java.lang.String"/>
+	<parameter name="app_type" class="java.lang.String"/>
+	<parameter name="dn_id" class="java.lang.String"/>
+	<parameter name="dn_generation_date" class="java.lang.String"/>
+	<parameter name="dn_status" class="java.lang.String"/>
+	<parameter name="dn_amount" class="java.lang.String"/>
+	<parameter name="payment_id" class="java.lang.String"/>
+	<parameter name="payment_date" class="java.lang.String"/>
+	<parameter name="payment_amount" class="java.lang.String"/>
+	<parameter name="payment_bank" class="java.lang.String"/>
+	<parameter name="payment_branch" class="java.lang.String"/>
+	<parameter name="payment_type" class="java.lang.String"/>
+	<parameter name="print_sub2_connection_2" class="java.lang.Boolean"/>
+	<parameter name="connection_1_name" class="java.lang.String"/>
+	<parameter name="connection_1_address" class="java.lang.String"/>
+	<parameter name="connection_1_activation_date" class="java.lang.String"/>
+	<parameter name="connection_1_local_loops" class="java.util.List"/>
+	<parameter name="connection_2_address" class="java.lang.String"/>
+	<parameter name="connection_2_local_loops" class="java.util.List"/>
+	<parameter name="connection_2_name" class="java.lang.String"/>
+	<parameter name="connection_2_activation_date" class="java.lang.String"/>
+	<parameter name="ip_list" class="java.util.List"/>
+	<parameter name="mandatory_ip_count" class="java.lang.String"/>
+	<parameter name="additional_ip_count" class="java.lang.String"/>
+	<parameter name="work_order_list" class="java.util.List"/>
+	<parameter name="is_bank_payment" class="java.lang.Boolean"/>
+	<parameter name="payment_medium" class="java.lang.String"/>
+	<parameter name="IS_LLI_CLOSE" class="java.lang.Boolean"/>
+	<parameter name="total_cache_bw" class="java.lang.String"/>
+	<parameter name="total_regular_bw" class="java.lang.String"/>
+	<parameter name="total_long_term_bw" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="146" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="450" height="80" uuid="13ec771e-66db-48a0-98ac-3ea6b255523c"/>
+				<image hAlign="Center" vAlign="Middle">
+					<reportElement x="0" y="0" width="450" height="80" uuid="ebd0f98e-1f5e-4208-bd5c-1165c6f454de"/>
+					<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+				</image>
+			</frame>
+			<textField>
+				<reportElement x="480" y="0" width="75" height="30" uuid="2ab7e0d5-f74f-4035-b5e5-c7cabb169357"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{an_status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="40" width="105" height="44" uuid="9cb67657-8b27-4874-af8b-d8a725f4d409"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Advice Note No: " + $P{an_number} + "\nDate: " + $P{an_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="84" width="555" height="30" forecolor="#0000FF" uuid="9c23054b-0f9b-43f7-bb4e-96080c50b9bd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{an_title}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="115" width="555" height="26" uuid="fdb915e4-5c9a-43f5-82bd-9e0bae057001"/>
+				<subreportParameter name="an_cc_list">
+					<subreportParameterExpression><![CDATA[$P{an_cc_list}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="an_to">
+					<subreportParameterExpression><![CDATA[$P{an_to}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="an_letter_body">
+					<subreportParameterExpression><![CDATA[$P{an_letter_body}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="an_sender_designation">
+					<subreportParameterExpression><![CDATA[$P{an_sender_designation}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="an_sender_name">
+					<subreportParameterExpression><![CDATA[$P{an_sender_name}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{an_cc_list})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["lli/connectionAN/sub1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+	<detail>
+		<band height="417" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="5" width="560" height="385" uuid="95d71e2a-568e-46ac-bc05-a01275cdabbb"/>
+				<frame>
+					<reportElement x="0" y="0" width="560" height="91" uuid="23e2c226-dc12-4b64-bdd5-02714e14bad9"/>
+					<textField>
+						<reportElement x="0" y="0" width="280" height="16" uuid="e9b7205b-31d0-4879-a60e-a4add822ff53"/>
+						<textElement>
+							<font size="12" isBold="true" isUnderline="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Client Information"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="0" y="16" width="78" height="51" uuid="36ec412a-91c7-4d4b-b57b-55e011eb86d8"/>
+						<textFieldExpression><![CDATA["Full Name" + "\n"
++ "User Name" + "\n"
++ "Mobile Number" + "\n"
++ "Billing Address" + "\n"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="80" y="16" width="200" height="75" uuid="8b377fd6-aa79-4715-996e-6fc75a76bf46"/>
+						<textFieldExpression><![CDATA[": " + $P{client_full_name} + "\n"
++ ": " + $P{client_user_name} + "\n"
++ ": " + $P{client_mobile} + "\n"
++ ": " + $P{client_billing_address} + "\n"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="305" y="16" width="100" height="51" uuid="5df9463d-5f2b-4bb0-bb6a-f693f7e3cc60"/>
+						<textFieldExpression><![CDATA["Type" + "\n" + 
+"Category" + "\n" + 
+"ISP License Type"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="405" y="16" width="155" height="51" uuid="9f978bbd-4025-4471-9089-9d056730f5a1"/>
+						<textFieldExpression><![CDATA[": " + $P{client_type} + "\n"
++ ": " + $P{client_category} + "\n"
++ ": " + $P{client_isp_license_type}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="103" width="280" height="42" uuid="65487a0b-9bd1-4c3e-9ec2-0ab06ef2f961"/>
+					<textField>
+						<reportElement x="0" y="0" width="280" height="16" uuid="1b673ded-21c9-4225-92f5-95799c84b46a"/>
+						<textElement>
+							<font size="12" isBold="true" isUnderline="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Application Information"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="0" y="16" width="78" height="26" uuid="954f4626-3778-40f6-bff2-c92da594b9d6"/>
+						<textFieldExpression><![CDATA["ID" + "\n"
++ "Type"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="80" y="16" width="200" height="26" uuid="605382b6-a5cb-4f11-9df6-db849a11ef67"/>
+						<textFieldExpression><![CDATA[": " + $P{app_id} + "\n"
++ ": " + $P{app_type}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="147" width="280" height="108" uuid="b8aea186-f12f-4bcf-94b4-1bacaf5d6d62"/>
+					<textField>
+						<reportElement x="0" y="0" width="280" height="16" uuid="2433541c-e44e-45ab-8ebb-26a4b6260d67"/>
+						<textElement>
+							<font size="12" isBold="true" isUnderline="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Demand Note Information"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="0" y="16" width="78" height="92" uuid="dbc7dade-0e2b-47c6-960d-3efaebb3e8a3"/>
+						<textFieldExpression><![CDATA["ID" + "\n"
++ "Generation Date"+ "\n"
++ "Amount (BDT)"+ "\n"
++ "Status"+ "\n"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="80" y="16" width="200" height="92" uuid="21f71498-29cd-4b6e-a578-17933c414f9d"/>
+						<textFieldExpression><![CDATA[": " + ($P{dn_id} == null ? "N/A":$P{dn_id}) + "\n"
++ ": " + ($P{dn_generation_date} == null ? "N/A" : $P{dn_generation_date}) + "\n"
++ ": " + ($P{dn_amount} == null ? "N/A" : $P{dn_amount} )+ "\n"
++ ": " + ($P{dn_status} == null ? "N/A" : $P{dn_status})]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="255" width="280" height="96" uuid="05e0bb20-0634-47e7-a1b8-ec7966cfb323"/>
+					<textField>
+						<reportElement x="0" y="0" width="280" height="16" uuid="5dfcf3f8-df83-4cf9-b11d-930c0e29ff3c"/>
+						<textElement>
+							<font size="12" isBold="true" isUnderline="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Payment Information"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="0" y="16" width="78" height="116" uuid="147f3906-410f-4299-a623-0560d8187afd"/>
+						<textFieldExpression><![CDATA["ID" + "\n"
++ "Date"+ "\n"
++ "Amount (BDT)"+ "\n"
++ "Type"+ "\n"
++ "Medium" + "\n"
++( null == $P{is_bank_payment} ? "" : 
+($P{is_bank_payment} ?   "Bank\nBranch" : "") )]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="80" y="16" width="200" height="114" uuid="8d8fcd24-63a2-4ab4-b438-4c566bcaa1ad"/>
+						<textFieldExpression><![CDATA[": " + ($P{payment_id} ==null?"N/A":$P{payment_id} )+ "\n"
++ ": " + ($P{payment_date}  == null ?"N/A" : $P{payment_date} )+ "\n"
++ ": " + ($P{payment_amount} ==null ?"N/A":$P{payment_amount} )+ "\n"
++ ": " + ($P{payment_type} ==null?"N/A":$P{payment_type} )+ "\n"
++ ": " + ($P{payment_medium} == null ? "N/A" : $P{payment_medium} )+ "\n"
++ ( null == $P{is_bank_payment} ? "": 
+	  ($P{is_bank_payment} ? ": " + $P{payment_bank} + "\n" + ": "+$P{payment_branch} : "")
+	)]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement stretchType="RelativeToBandHeight" x="284" y="97" width="270" height="126" uuid="3225071f-84e1-4a77-8d21-508f2ee12261">
+						<printWhenExpression><![CDATA[$P{IS_LLI_CLOSE}]]></printWhenExpression>
+					</reportElement>
+					<textField>
+						<reportElement x="0" y="0" width="270" height="16" uuid="56e90ee9-b78f-4609-a526-4dd54a65d50a"/>
+						<textElement>
+							<font size="12" isBold="true" isUnderline="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Bandwidth Information"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="0" y="16" width="140" height="104" uuid="8805a92c-8180-4aa1-932b-8d054f3a52ec"/>
+						<textFieldExpression><![CDATA["Total Regular BW (Mbps)" + "\n"
++ "Total Long-term BW (Mbps)" + "\n"
++ "TX for Cache BW (Mbps)"+"\n"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="140" y="16" width="130" height="104" uuid="b0b910c7-bbc2-4999-9614-6883aa556b82"/>
+						<textElement markup="none"/>
+						<textFieldExpression><![CDATA[": " + $P{total_regular_bw} + "\n"
++ ": " + $P{total_long_term_bw} + "\n"
++ ": " + $P{total_cache_bw} + "\n"]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+			<break>
+				<reportElement x="0" y="399" width="100" height="1" uuid="22e556ca-4d9c-4679-ab1d-73eb29d78ab2"/>
+			</break>
+		</band>
+		<band height="122">
+			<subreport>
+				<reportElement x="0" y="102" width="555" height="20" uuid="a64d92c6-dd8b-4d87-836f-74252eeda7cc">
+					<printWhenExpression><![CDATA[$P{connection_1_local_loops}.isEmpty() == false]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="connection_1_name">
+					<subreportParameterExpression><![CDATA[$P{connection_1_name}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="connection_1_activation_date">
+					<subreportParameterExpression><![CDATA[$P{connection_1_activation_date}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="connection_1_address">
+					<subreportParameterExpression><![CDATA[$P{connection_1_address}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="connection_1_local_loops">
+					<subreportParameterExpression><![CDATA[$P{connection_1_local_loops}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="print_sub2_connection_2">
+					<subreportParameterExpression><![CDATA[$P{print_sub2_connection_2}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{connection_1_local_loops})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["lli/connectionAN/sub2-connection-1.jasper"]]></subreportExpression>
+			</subreport>
+			<frame>
+				<reportElement x="5" y="5" width="550" height="94" uuid="edb5164e-795b-42fe-ab5e-e255b594db01"/>
+				<textField>
+					<reportElement x="0" y="0" width="280" height="16" uuid="75fbff06-cc58-4312-abf2-8fea89056a34"/>
+					<textElement>
+						<font size="12" isBold="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Connection Information"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="40" width="78" height="54" uuid="78ebec56-3162-4d40-96e2-6cf861f25378"/>
+					<textFieldExpression><![CDATA["Name" + "\n"
++ "Address"+ "\n"
++ "Activation Date"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="80" y="40" width="460" height="54" uuid="bb20b9db-976b-43e8-9b8b-40c5abebd33f"/>
+					<textFieldExpression><![CDATA[": " + ($P{connection_1_name} == null ? "N/A": $P{connection_1_name})+ "\n"
++ ": " +( $P{connection_1_address} == null ? "N/A" :  $P{connection_1_address}) + "\n"
++ ": " + ($P{connection_1_activation_date} == null ? "N/A" : $P{connection_1_activation_date})]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="16" width="280" height="16" uuid="057d52d8-14d0-4baa-9d19-1f6f79323d5a">
+						<printWhenExpression><![CDATA[$P{print_sub2_connection_2} != null]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font size="11" isBold="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($P{print_sub2_connection_2} ? "Destination Connection" : "New/Existing Connection")]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="102">
+			<printWhenExpression><![CDATA[$P{print_sub2_connection_2}]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="78" width="555" height="20" uuid="8d55890e-4883-41ec-9b43-4a9c806b5b5e">
+					<printWhenExpression><![CDATA[$P{connection_2_local_loops}.isEmpty() == false]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="connection_2_address">
+					<subreportParameterExpression><![CDATA[$P{connection_2_address}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="connection_2_local_loops">
+					<subreportParameterExpression><![CDATA[$P{connection_2_local_loops}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="connection_2_name">
+					<subreportParameterExpression><![CDATA[$P{connection_2_name}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="connection_2_activation_date">
+					<subreportParameterExpression><![CDATA[$P{connection_2_activation_date}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{connection_2_local_loops})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["lli/connectionAN/sub2-connection-2.jasper"]]></subreportExpression>
+			</subreport>
+			<frame>
+				<reportElement x="5" y="5" width="550" height="70" uuid="9ecb74d1-e0bc-4254-843c-516437c2c86e"/>
+				<textField>
+					<reportElement x="0" y="0" width="280" height="16" uuid="faaca7d6-e9f5-4cdf-bd41-e755ff264188"/>
+					<textElement>
+						<font size="11" isBold="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Source Connection"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="16" width="78" height="54" uuid="2e776672-4ae6-4aa2-bfd7-6cddef937034"/>
+					<textFieldExpression><![CDATA["Name" + "\n"
++ "Address"+ "\n"
++ "Activation Date"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="80" y="16" width="470" height="54" uuid="9caf78d8-6ba2-4cb1-89bd-1b62cd3d944f"/>
+					<textFieldExpression><![CDATA[": " + $P{connection_2_name} + "\n"
++ ": " + $P{connection_2_address} + "\n"
++ ": " + $P{connection_2_activation_date}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="87">
+			<subreport>
+				<reportElement x="0" y="61" width="555" height="21" uuid="c5770a64-6a8d-477d-9c1e-189d40fd7161">
+					<printWhenExpression><![CDATA[$P{ip_list}.isEmpty() == false]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="ip_list">
+					<subreportParameterExpression><![CDATA[$P{ip_list}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="mandatory_ip_count">
+					<subreportParameterExpression><![CDATA[$P{mandatory_ip_count}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="additional_ip_count">
+					<subreportParameterExpression><![CDATA[$P{additional_ip_count}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{ip_list})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["lli/connectionAN/sub3-ip.jasper"]]></subreportExpression>
+			</subreport>
+			<frame>
+				<reportElement x="0" y="0" width="280" height="61" uuid="8cdf0dff-b923-4573-b15d-437d527590a3"/>
+				<textField>
+					<reportElement x="0" y="0" width="280" height="16" uuid="25f6cc40-4d2b-4e79-a7d1-6df949ccc562"/>
+					<textElement>
+						<font size="12" isBold="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["IP Information"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="20" width="78" height="20" uuid="ac64a12a-a119-4e4b-96df-fbcdec8db47c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["#Mandatory"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="80" y="20" width="200" height="20" uuid="7c51fd89-f72b-4490-88ab-e590d47e85cd"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[": " +$P{mandatory_ip_count}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="41" width="78" height="20" uuid="f952d0ae-1a32-4842-be7b-d187e5b2b7d3"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["#Additional"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="80" y="41" width="200" height="20" uuid="5452c0a2-59bc-4bdc-ab1d-3e7131e8eeab"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[": " +$P{additional_ip_count}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="50">
+			<subreport>
+				<reportElement x="0" y="20" width="555" height="22" uuid="57ed25f8-24c6-4f23-bea3-40c559cc8cf3">
+					<printWhenExpression><![CDATA[$P{work_order_list}.isEmpty() == false]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="work_order_list">
+					<subreportParameterExpression><![CDATA[$P{work_order_list}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{work_order_list})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["lli/connectionAN/sub4-work-order.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="0" y="0" width="555" height="16" uuid="473a779a-96b8-4bd0-871d-901b363a9290"/>
+				<textElement>
+					<font size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Work Order Information"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="24">
+			<textField>
+				<reportElement x="405" y="0" width="150" height="20" uuid="189d30f3-5424-4afa-ab5c-f7590b52f510"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+
+	<global-exceptions>
+
+	</global-exceptions>
+
+
+	<!-- =================================== Global Forward Definitions -->
+
+	<global-forwards>
+
+	</global-forwards>
+
+	<!-- =================================== Action Mapping Definitions -->
+
+	<action-mappings>
+	
+		
+		<!-- VPN -->
+			<!-- General -->
+				
+				<action path="/CostChart/*" name="costConfigForm" type="costConfig.action.CostConfigAction" scope="request">
+				</action>
+				
+			<!-- /General -->
+				
+			<!-- Configure -->
+				
+				
+			<!-- /Configure -->
+		
+		
+		
+		
+		<!-- CoLocation -->
+			<!-- General -->
+				
+				<action path="/coLocation/region/*" name="loginForm"                                                                                  
+					type="coLocation.CoLocationRegionAction" scope="request">
+					<forward name="getAddRegion" path="/coLocation/region/regionAdd.jsp"/>
+					<forward name="getSearchRegion" path="/coLocation/region/regionSearch.jsp"/>
+					<forward name="getEditRegion" path="/coLocation/region/regionAdd.jsp"/>
+
+				</action>
+					
+				
+
+				<action path="/coLocation/space/*" name="loginForm"                                                                                  
+					type="coLocation.CoLocationSpaceAction" scope="request">
+					<forward name="getAddSpace" path="/coLocation/space/spaceAdd.jsp"/>
+					<forward name="getSearchSpace" path="/coLocation/space/spaceSearch.jsp"/>
+					<forward name="getEditSpace" path="/coLocation/space/spaceAdd.jsp"/>
+				</action>
+
+				<action path="/coLocation/rack/*" name="loginForm" 
+				type="coLocation.CoLocationRackAction"	scope="request">
+					<forward name="getAddRack" path="/coLocation/rack/rackAdd.jsp" />
+					<forward name="getSearchRack" path="/coLocation/rack/rackSearch.jsp"/>
+					<forward name="getEditRack" path="/coLocation/rack/rackAdd.jsp"/>
+				</action>
+				
+				<action path="/coLocation/rackSlice/*" name="loginForm"
+				type="coLocation.CoLocationRackSliceAction" scope="request">
+					<forward name="getSearchRackSlice" path="/coLocation/rackSlice/rackSliceSearch.jsp"/>
+				</action>
+
+
+				
+								
+			<!-- /General -->
+			<!-- /CoLocation -->
+			
+			
+			<!-- crm -->
+			<!-- General -->
+				
+			<action path="/CrmDesignation/department/*" name="loginForm"
+			type="crm.action.CrmDesignationAction" scope="request">
+				<forward name="getAddDepartment" path="/crm/department/departmentAdd.jsp" />
+				<forward name="getSearchDepartment" path="/crm/department/departmentSearch.jsp"/>
+			</action>	
+			
+			
+			
+			<action path="/CrmActivityLog/*" name="loginForm"
+			type="crm.CrmActivityLogAction" scope="request">
+				<forward name="getCrmActivityLogSearch" path="/crm/activityLog/activityLogSearch.jsp"/>
+			</action>
+				
+				
+			<!-- /General -->
+			<!-- /crm -->
+			
+			<!-- report -->
+			<!-- General -->
+				
+			<action path="/lli/inventory/ipAddress/*" name="loginForm"
+					type="lli.inventory.ipaddress.LliInventoryIPAddressAction" scope="request">
+				<forward name="getIPAddressAdd" path="/lli/inventory/addIPAddress.jsp"/>
+				<forward name="getIPBlockTester" path="/lli/inventory/viewIPBlockTester.jsp" />
+			</action>
+			<action path="/lli/inventory/ipAddress/original/*" name="loginForm"
+					type="lli.inventory.ipaddress.LliInventoryIPAddressAction" scope="request">
+				<forward name="getIPAddressSearchOriginal" path="/lli/inventory/searchIPAddressOriginal.jsp"/>
+			</action>		
+			<action path="/lli/inventory/ipAddress/allocated/*" name="loginForm"
+					type="lli.inventory.ipaddress.LliInventoryIPAddressAction" scope="request">
+				<forward name="getIPAddressSearchAllocated" path="/lli/inventory/searchIPAddressAllocated.jsp" />
+			</action>		
+			
+			<action path="/DNS/Domain/*" name="loginForm"
+					type="dns.domain.DNSDomainAction" scope="request">
+				<forward name="getAddDNSDomain" path="/dnshosting/domain/addDNSDomain.jsp"/>
+				<forward name="getSearchDNSDomain" path="/dnshosting/domain/searchDNSDomain.jsp"/>
+				<forward name="getEditDNSDomain" path="/dnshosting/domain/editDNSDomain.jsp"/>
+				<forward name="getViewDNSDomain" path="/dnshosting/domain/viewDNSDomain.jsp"></forward>
+				
+			</action>	
+			
+			<!-- ROLE -->
+<!-- 			<action path="/RoleAction/*" name="roleForm" -->
+<!-- 			type="role.action.RoleAction" scope="request"> -->
+<!-- 				<forward name="getAddRole" path="/roles/roleEdit.jsp" /> -->
+<!-- 			</action>	 -->
+			
+			<!-- /ROLE -->
+			
+			<!-- Notification -->
+
+			
+			<action path="/VpnLinkDisable/*" type="vpn.link.action.VpnLinkTDAction">
+				<forward name="preview" path="/vpn/link/vpnLinkTDPreview.jsp"/>
+			</action>
+			<action path="/LliLinkDisable/*" type="lli.link.action.LliLinkTDAction">
+				<forward name="preview" path="/lli/link/lliLinkTDPreview.jsp"/>
+			</action>
+			
+			<action path="/VpnLinkEnable/*" type="vpn.link.action.VpnLinkTDAction">
+				<forward name="preview" path="/vpn/link/vpnLinkEnablePreview.jsp"/>
+			</action>
+			
+			<action path="/LliLinkEnable/*" type="lli.link.action.LliLinkTDAction">
+				<forward name="preview" path="/lli/link/lliLinkEnablePreview.jsp"/>
+			</action>
+			
+			<action path="/VpnLinkClose/*" type="vpn.link.action.VpnLinkCloseAction">
+				<forward name="preview" path="/vpn/link/vpnLinkClosePreview.jsp"/>
+			</action>
+			<action path="/LliLinkClose/*" type="lli.link.action.LliLinkCloseAction">
+				<forward name="preview" path="/lli/link/lliLinkClosePreview.jsp"/>
+			</action>
+			<!-- /Notification-->
+				
+			<!-- Configure -->
+								
+				
+			<!-- /Configure -->
+			<action  path = "/userguide"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/domain/utility/userguide.jsp" />
+			<action  path = "/paymentstep"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/domain/utility/paymentstep.jsp" />
+			
+			<action  path = "/preview"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/lli/preview/demand-note-preview.jsp" />
+			<action path="/lli/preview/*" type="lli.preview.Preview"></action>
+			
+			<action  path = "/domain/report/**" type = "domain.DomainSummaryReportAction">
+				<forward name="payment-summary" path="/domain/utility/payment-summary.jsp"></forward>
+			</action>	
+			
+			
+	</action-mappings>
+
+	<!-- ===================================== Controller Configuration ============ -->
+
+
+	<!-- ================================ Message Resources Definitions ============= -->
+
+	<message-resources parameter="BTCLBilling" />
+
+</struts-config>
+
+		

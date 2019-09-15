@@ -1,0 +1,3 @@
+<%
+String context = "../../.."  + request.getContextPath() + "/";
+%>

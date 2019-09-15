@@ -1,0 +1,191 @@
+body.body_center_align {
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	background-color: #F7F3F8;
+	margin: auto;
+	text-align: center;
+	height: 100%;
+	width: 1024px;
+	text-align: center;
+	height: expression( this.scrollHeight < 1000px ? "1000px" : "auto" );
+}
+
+input,textarea,select { /*
+	border:1px solid rgb(192,192,192); 
+	*/
+	font-family: "Arial", "Helvetica";
+	font-size: 8pt;
+	font-weight: normal;
+	margin: 1;
+}
+
+input.flat_txt {
+	border: 1px solid rgb(192, 192, 192);
+	margin: 2;
+	font-family: Arial;
+	font-size: 8pt;
+}
+
+input.flat_cmd {
+	background-color: rgb(238, 238, 238);
+	font-weight: bold;
+	border: 1px solid gray;
+}
+
+table.form1 {
+	border-collapse: collapse;
+	font-family: Verdana, Arial;
+	font-size: 8pt;
+	padding: 0;
+	border:0;
+	align:center;
+}
+
+table.form2
+{
+	border-color:black;
+	border-collapse: collapse;
+	font-family: Verdana, Arial;
+	font-size: 8pt;
+	padding:5;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-style: solid 1px bold;
+	
+}
+
+table.table_view {
+	font-family: Verdana;
+	font-size: 10pt;
+	cell-spacing: 0;
+	cell-padding: 0;
+	margin: 0;
+	border: 0px none;
+}
+
+.td_viewheader {
+	font-size: 8pt;
+	font-weight: bold;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 5;
+	padding-bottom: 5;
+	background-color: #BFF5D2;
+	margin: 0;
+	vertical-align: top;
+}
+
+.td_viewheader_r {
+	font-size: 8pt;
+	font-weight: bold;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 5;
+	padding-bottom: 5;
+/* 	background-color: #BFF5D2; */
+	margin: 0;
+	vertical-align: top;
+	background-color:black;
+	color:white;
+	border-color: #A7A7A7;
+}
+
+.td_viewdata1 {
+	font-size: 8pt;
+	padding: 2;
+	background-color: #C8EBE6;
+	vertical-align: top;
+	
+}
+
+td.td_viewdata2 {
+	font-size: 8pt;
+	padding: 2;
+	background-color:#D9F9DC;
+	vertical-align: top;
+	
+}
+
+.td_r_viewdata1 {
+	font-size: 8pt;
+	padding: 2;
+	background-color: #E7E4E4;
+	vertical-align: top;
+	border-color: #A7A7A7;
+}
+
+td.td_r_viewdata2 {
+	font-size: 8pt;
+	padding: 2;
+	background-color:#D9F9DC;
+	vertical-align: top;
+	border-color: #A7A7A7;
+}
+
+td.td_menu {
+	width: 180;
+	border-left: 1px solid #C0C0C0;
+	border-right: 0px none;
+	border-top: 0px none;
+	border-bottom: 0px none;
+	vertical-align: top;
+	background-color: rgb(217, 249, 220);
+}
+
+td.td_main {
+	border-left: 1px solid #C0C0C0;
+	border-right: 1px solid #C0C0C0;
+	border-top: 1px solid #C0C0C0;
+	padding: 0;
+	background-color: #fafefa;
+	align:center;
+	height: 600px;
+	vertical-align:top;
+	padding-bottom:20px;
+}
+
+div.div_title {
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 12pt;
+	padding-right: 5;
+	padding-top: 5;
+	padding-bottom: 5;
+	color: rgb(61,154,150);
+	/*
+	//back
+	*/
+	background-color: #d9f9dc;
+	padding-right: 10px;
+}
+
+div.div_footer {
+	background-color:  rgb(205,246,209);	
+	border:1px solid #C0C0C0;font-family:Arial; font-size: 8pt; height: 35px; line-height: 35px; padding-right:20px;text-align:right;
+	/* margin-top:20px; */
+}
+
+div.div_error_message {
+	width: 500;
+	font-size: 10 pt;
+	font-weight: normal;
+	font-family: arial;
+	text-align: center;
+	padding: 10;
+	border: 1px solid rgb(192, 192, 192);
+	background-color: rgb(255, 230, 204);
+	margin: 0;
+	vertical-align: top;
+}
+
+#grad2 {
+    height: 100px;
+    background: white; /* For browsers that do not support gradients */        
+    background: -webkit-linear-gradient(90deg, white, green); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(90deg, white, green); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(90deg, white, green); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(90deg, white, green); /* Standard syntax (must be last) */
+}

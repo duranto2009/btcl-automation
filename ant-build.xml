@@ -1,0 +1,58 @@
+<project name="btcl" basedir="." default="dist">
+
+	<property name="src.dir" value="src"/>
+	<property name="resources.dir" value="resources"/>    
+	<property name="web.dir" value="WebContent"/>    
+	
+    <property name="build.dir" value="build"/>	
+	<property name="deploy.dir" value="${build.dir}/deploy"/>
+	<property name="deploy.webinf.dir" value="${deploy.dir}/WEB-INF"/>
+	<property name="deploy.webinf.classes.dir" value="${deploy.webinf.dir}/classes"/>
+
+	<property name="webinf.dir" value="WebContent/WEB-INF"/>
+	<property name="lib.dir" value="${webinf.dir}/lib"/>
+	<property name="extlib.dir" value="${webinf.dir}/ext_lib"/>
+	<property name="libclasses.dir" value="${webinf.dir}/classes"/>
+    
+    <presetdef name="javac">
+        <javac includeantruntime="false"/>
+    </presetdef>
+
+	<path id="classpath">
+		<fileset dir="${lib.dir}" includes="**/*.jar"/>
+		<fileset dir="${extlib.dir}" includes="**/*.jar"/>
+		<dirset dir="${libclasses.dir}" includes="**"/>
+		<dirset dir="${src.dir}" includes="**"/>
+	</path>
+
+	<target name="clean">
+		<delete dir="${build.dir}"/>
+	</target>    
+
+	<target depends="clean" name="compile" >
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${deploy.dir}"/>
+        
+        <copy todir="${deploy.dir}">
+            <fileset dir="${web.dir}"/>
+        </copy>        
+
+		<javac srcdir="${src.dir}" destdir="${deploy.webinf.classes.dir}" classpathref="classpath">
+            <compilerarg line="-nowarn"/>
+        </javac>                
+
+		<copy todir="${deploy.webinf.classes.dir}">
+			<fileset dir="${src.dir}" excludes="**/*.java"/>
+			<fileset dir="${resources.dir}"/>
+		</copy>
+	</target>
+
+	<target depends="compile" name="dist">
+	   <war destfile="${build.dir}/btcl.war" webxml="${deploy.webinf.dir}/web.xml">
+	    	<fileset dir="${deploy.dir}">
+	        	<include name = "**/*.*"/>
+	      	</fileset>
+	   </war>
+	</target>	
+
+</project>

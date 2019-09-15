@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+<!-- <!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts 
+	Configuration 1.3//EN" "struts-config_1_3.dtd"> -->
+<struts-config>
+
+	<!-- Added by Alam -->
+	<form-beans>
+		<form-bean name="fileUploadForm" type="test.FileUploadForm" />
+	</form-beans>
+
+
+	<global-exceptions>
+		
+	</global-exceptions>
+
+
+	<!-- =================================== Global Forward Definitions -->
+
+	<global-forwards>
+
+	</global-forwards>
+
+	<!-- =================================== Action Mapping Definitions -->
+
+	<action-mappings>
+	
+		<action
+			path = "/ForgetPassword"
+			type = "forgetPassword.Action"
+			parameter = "method"
+		>
+		<forward name="forgetPasswordPage" path = "/forgetPassword/forgetPassword.jsp" redirect="false" ></forward>
+		<forward name="OTPSent" path="/forgetPassword/forgetPassword.jsp" redirect="false" ></forward>
+		<forward name="resetPassword" path="/forgetPassword/resetPassword.jsp" redirect="false" ></forward>
+		</action>
+		
+		<action
+			path = "/api/client"
+			type="vpn.client.api.ClientAPI"
+			parameter = "method"
+		>
+		</action>
+		
+		<action
+			path="/api/vpn/link"
+			type="vpn.link.api.VpnLinkAPI"
+			parameter = "method"
+		>
+		</action>
+		
+		<action 
+			path = "/MultipleBillView"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/common/bill/billViewHorizontal.jsp" />
+			
+		<action path = "/GetPdfBill" type = "vpn.bill.PdfBill" parameter = "method" >
+			
+		</action>
+		
+		<action  path = "/LliLinkClose"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/lli/link/linkClose.jsp" />
+		
+		<action  path = "/LLILinkTD"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/lli/link/linkTD.jsp" />	
+
+		<action  path = "/LLILinkEnable"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/lli/link/linkEnable.jsp" />	
+			
+	   <action name="lliLinkForm" input="/lli/link/newLinkRequest.jsp" path="/LliLinkAction" scope="request" type="lli.link.action.LliLinkAction" validate="true">
+			<forward name="success" path="/lli/link/newLinkRequest.jsp" />
+			<forward name="view" path="/lli/link/linkView.jsp" />
+			<forward name="details" path="/lli/link/linkPreview.jsp" />
+			<forward name="edit" path="/lli/link/linkEdit.jsp" />
+			<forward name="bandwidth" path="/lli/link/bandwidthChange.jsp" />
+			<forward name="linkClose" path="/lli/link/linkClose.jsp" />
+			<forward name="internalFrResponse" path="/lli/link/internalFrResponse.jsp" />
+			<forward name="migratedLliUpdate" path="/lli/link/updateMigratedLLI.jsp" />
+		</action>
+		
+		<action name="lliLinkForm" path="/LliLinkSearch" scope="request"
+			type="lli.link.action.LliLinkAction">
+
+			<forward name="success" path="/lli/link/linkSearch.jsp" />
+			<forward name="failure" path="/lli/link/linkSearch.jsp" />
+		</action>
+					
+		<action
+			path = "/DemandNote"
+			type = "vpn.bill.GenerateDemandNote"
+			parameter = "method"
+		>
+		<forward name="upgradeLinkDemandNotePage" path="/vpn/link/generateDemandNoteBandwidthChange.jsp" redirect='false'></forward>
+		<forward name="upgradeLinkDemandNotePageLli" path="/lli/link/generateDemandNoteBandwidthChange.jsp" redirect='false'></forward>
+		</action>
+		
+		<action  path = "/LliLinkBandwidthChange"
+			type = "org.apache.struts.actions.ForwardAction"
+			parameter="/lli/link/bandwidthChange.jsp" />
+			
+		<action  
+			path = "/TerminateVpnLink"
+			type = "vpn.link.action.TerminateVpnLinkAction"
+		>
+		<forward name="vpnLinkSearch" path="/VpnLinkSearch.do" redirect="true"></forward>
+		</action>
+		
+		<action
+			path = "/CancelBill"
+			type = "vpn.link.action.CancelBillAction"
+		>
+		<forward name="success" path="/SearchBill.do" redirect = "true" />
+		<forward name="failure" path="/SearchBill.do" redirect = "true" />
+		</action>
+		
+		<action
+			path = "/TerminateDomain"
+			type = "domain.action.TerminateDomain"
+			parameter="method"
+		>
+		<forward name="domainSearch" path="/SearchDomain.do" redirect="true" />
+		</action>
+		
+		<action
+			path="/AddBillConfiguration"
+			type="vpn.bill.AddBillConfiguraitonAction"
+			parameter="method"
+		>
+		<forward name="success" path="/AddBillConfiguration.do" redirect="false"></forward>
+		</action>
+		
+		<action
+			path="/SplitBill"
+			type="vpn.bill.SplitBill"
+			parameter="method"
+		>
+		<forward name="viewPage" path="/vpn/bill/splitBill.jsp"></forward>
+		</action>
+		
+		<action
+			path="/BillConfiguration"
+			parameter="/vpn/bill/billConfiguration.jsp"
+			type="org.apache.struts.actions.ForwardAction"	
+		>
+		</action>
+		
+		<action
+			path="/testFile"
+			type="test.FileUpload"
+			name="fileUploadForm"
+		>
+		</action>
+
+		<action
+			path="/api/upload"
+			type="test.FileUploadAPI"
+		>
+		</action>
+	</action-mappings>
+
+	<!-- ===================================== Controller Configuration ============ -->
+
+
+	<!-- ================================ Message Resources Definitions ============= -->
+
+	<message-resources parameter="BTCLBilling" />
+
+</struts-config>

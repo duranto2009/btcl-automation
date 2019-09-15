@@ -1,0 +1,55 @@
+<%@ page language="java" %>
+<%@ taglib uri="../WEB-INF/struts-html.tld" prefix="html" %>
+
+<%@ page import="java.util.ArrayList,
+sessionmanager.SessionConstants,
+utildao.*,
+java.sql.*,
+databasemanager.*" %>
+
+
+<tr>
+
+<td bgcolor="#EFEFEF" style="font-family: Verdana; font-size: 8pt; font-weight: bold; padding-left: 3" >
+
+WorkType
+
+</TD>
+
+
+
+<td bgcolor="#EFEFEF">
+
+
+
+<select  size="1" name="othworID" >
+ 						  <option value="">[None]</option> 
+                          <%
+						   			String value = (String)session.getAttribute("othworID");
+						  			Connection connection1 = DatabaseManager.getInstance().getConnection();
+                                    Statement stmt1 = connection1.createStatement();
+                                    ResultSet resultSet1 = stmt1.executeQuery("select worID , worWork from vbWorkType");
+                                    while(resultSet1.next())
+                                    {
+									  	
+									  if(value.equals(resultSet1.getString("worID"))){ 	
+                                      %>
+                        			  <option value="<%=resultSet1.getString("worID")%>" selected="selected">
+                          			  <%=resultSet1.getString("worWork") %> </option>
+						  			  <%}else{%>
+
+                          			  <option value="<%=resultSet1.getString("worID") %>">
+			                          <%=resultSet1.getString("worWork") %> </option>
+									  <%}%>
+                          <%
+                                      }
+                                      resultSet1.close();
+                                      stmt1.close();
+                                      DatabaseManager.getInstance().freeConnection(connection1);
+                                      %>
+                        </select>
+
+  
+</td>
+
+</tr>

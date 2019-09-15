@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ll_work_order" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryNewPage="true" isSummaryWithPageHeaderAndFooter="true" isFloatColumnFooter="true" whenResourceMissingType="Empty" uuid="4b207959-c9f3-4f5c-b33f-104472f2e0ac">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<property name="net.sf.jasperreports.print.create.bookmarks" value="true"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="efrBeanList" whenResourceMissingType="Empty" uuid="5372e94c-9de7-4b62-9a9e-3fa7428d3bd6">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="source" class="java.lang.String"/>
+		<field name="sourceType" class="java.lang.String"/>
+		<field name="destination" class="java.lang.String"/>
+		<field name="destinationType" class="java.lang.String"/>
+		<field name="proposedLoopDistance" class="java.lang.Long"/>
+	</subDataset>
+	<subDataset name="ccBeanList" whenResourceMissingType="Empty" uuid="bb44d1a1-e77c-4fef-a62f-e86198eb779a">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="name" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="btcl_logo_heading" class="java.lang.String"/>
+	<parameter name="recipient_designation" class="java.lang.String"/>
+	<parameter name="recipient_name" class="java.lang.String"/>
+	<parameter name="recipient_address" class="java.lang.String"/>
+	<parameter name="ref" class="java.lang.String"/>
+	<parameter name="client_name" class="java.lang.String"/>
+	<parameter name="client_address" class="java.lang.String"/>
+	<parameter name="client_bandwidth" class="java.lang.String"/>
+	<parameter name="sender_name" class="java.lang.String"/>
+	<parameter name="sender_designation" class="java.lang.String"/>
+	<parameter name="sender_address" class="java.lang.String"/>
+	<parameter name="ccBeanList" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="efrBeanList" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<group name="contentGroup">
+		<groupHeader>
+			<band height="506">
+				<frame>
+					<reportElement x="0" y="12" width="555" height="60" uuid="70dbe1f4-5e9b-46d4-aa53-06455c559b04"/>
+					<staticText>
+						<reportElement stretchType="ContainerBottom" x="0" y="0" width="555" height="15" uuid="f1115c2a-7e89-4a91-a8fd-bc07829c5d0f"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="Serif" size="10"/>
+						</textElement>
+						<text><![CDATA[To]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="15" width="555" height="15" isRemoveLineWhenBlank="true" uuid="cb754774-0015-49e6-9065-744e567b73d8"/>
+						<textElement verticalAlignment="Middle"/>
+						<textFieldExpression><![CDATA[$P{recipient_designation}]]></textFieldExpression>
+					</textField>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="30" width="555" height="15" isRemoveLineWhenBlank="true" uuid="4c435d08-08d6-4b36-af40-7242b87e07ee"/>
+						<textElement verticalAlignment="Middle">
+							<font isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{recipient_name}]]></textFieldExpression>
+					</textField>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="45" width="555" height="15" isRemoveLineWhenBlank="true" uuid="b3bc4351-3799-4ea2-8927-28574a0666bb"/>
+						<textElement verticalAlignment="Middle"/>
+						<textFieldExpression><![CDATA[$P{recipient_address}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="94" width="555" height="40" uuid="427d4409-131a-41e4-8d82-220a736b35fd"/>
+					<staticText>
+						<reportElement x="0" y="0" width="555" height="20" uuid="2a8875cc-4dc9-4bd8-bb9c-efbcf01da306"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle">
+							<font fontName="Serif" size="10" isBold="false"/>
+							<paragraph lineSpacing="Single"/>
+						</textElement>
+						<text><![CDATA[Sub: Work Order to close down Lease Line Internet local loop.]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="0" y="20" width="30" height="20" uuid="e03b1c78-d7f6-4809-92ba-19b7ef31a3ec"/>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font fontName="Serif" size="10" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Ref: ]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement x="40" y="20" width="431" height="20" uuid="0291f8e3-b641-4a19-bcd0-1dce448f0401"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle">
+							<font fontName="Serif" size="10" isBold="true" isUnderline="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{ref}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="149" width="550" height="183" uuid="4eba3065-934b-49a1-a7ba-44fb2bfe0032"/>
+					<staticText>
+						<reportElement mode="Transparent" x="0" y="0" width="550" height="80" uuid="f5e88433-2db4-4d40-b0e9-0120806c0d51"/>
+						<box padding="0">
+							<pen lineWidth="0.0"/>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Justified" verticalAlignment="Middle" rotation="None" markup="none">
+							<font fontName="Serif" size="10" isBold="false"/>
+						</textElement>
+						<text><![CDATA[Dear Concern,
+
+With regard to the mentioned subject, please take necessary measures to close down internet to the client(s) as per the table. You are requested to do this work under Agreement for Providing BTCL Quick Broadband (BQB) Service to the new customers other than Info Sarkar project with mentioned cautions.]]></text>
+					</staticText>
+					<staticText>
+						<reportElement positionType="Float" x="0" y="88" width="70" height="15" uuid="5c730991-f46e-4995-8157-0f83a05a2e8e"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle">
+							<font fontName="Serif" size="10" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Cautions:]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="0" y="103" width="550" height="80" uuid="f683577c-75ec-4405-8ff8-5d7a954ae416"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle">
+							<font fontName="Serif" size="9"/>
+							<paragraph lineSpacing="1_1_2" lineSpacingSize="0.0"/>
+						</textElement>
+						<text><![CDATA[1. You are requested to report to the below signed authority within 3 days of getting this letter following completion of the work.
+2. You will also have to set up the connection if the local loop distance is more than 3 km.
+3. Please take connection from BTCL (PoP) or from DC Office (which is nearer) for government organizations.
+4. Please set up BTCL connection if the client is non-government organizations.]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="0" y="351" width="555" height="60" uuid="c6f65a93-3773-4cf3-b31b-f924f6b1ca92"/>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="0" width="555" height="20" isRemoveLineWhenBlank="true" uuid="bbe58a49-94f2-4641-83a7-7d33b796823c"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle">
+							<font fontName="Serif" size="10" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{sender_name}]]></textFieldExpression>
+					</textField>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="20" width="555" height="20" isRemoveLineWhenBlank="true" uuid="b1b17f18-fd63-4236-98ba-4f10bf13cef9"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle">
+							<font fontName="Serif" size="10"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{sender_designation}]]></textFieldExpression>
+					</textField>
+					<textField isBlankWhenNull="true">
+						<reportElement x="0" y="40" width="555" height="20" isRemoveLineWhenBlank="true" uuid="034cdcc8-cfb2-4452-9d6d-16f0f2f1143e"/>
+						<textElement textAlignment="Justified" verticalAlignment="Middle">
+							<font fontName="Serif"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{sender_address}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="437" width="555" height="47" uuid="bf6eb2b1-936b-4ace-8880-23f8b2f57416"/>
+					<staticText>
+						<reportElement x="0" y="0" width="555" height="20" uuid="6548a6cf-c850-4720-b084-66aa456aeca7"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="Serif" size="10" isBold="true" isItalic="false"/>
+						</textElement>
+						<text><![CDATA[CC]]></text>
+					</staticText>
+					<componentElement>
+						<reportElement x="0" y="22" width="555" height="25" isRemoveLineWhenBlank="true" uuid="38273cbf-0ac1-408d-88e1-172c7e213dc0">
+							<property name="net.sf.jasperreports.export.headertoolbar.table.name" value=""/>
+						</reportElement>
+						<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+							<datasetRun subDataset="ccBeanList" uuid="b92d99e2-3a50-45c3-9bdd-ac3da72bf4c0">
+								<dataSourceExpression><![CDATA[$P{ccBeanList}]]></dataSourceExpression>
+							</datasetRun>
+							<jr:listContents height="25" width="555">
+								<textField isBlankWhenNull="true">
+									<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="555" height="25" uuid="925e7b9e-329a-4718-8eba-8b157f48231b"/>
+									<textElement verticalAlignment="Middle">
+										<font fontName="Serif"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+								</textField>
+							</jr:listContents>
+						</jr:list>
+					</componentElement>
+				</frame>
+				<break>
+					<reportElement x="0" y="493" width="100" height="1" uuid="d96eb500-0263-4174-81b7-0e7013878410"/>
+				</break>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="tableGroup">
+		<groupHeader>
+			<band height="119">
+				<property name="com.jaspersoft.studio.layout"/>
+				<frame>
+					<reportElement x="0" y="0" width="555" height="119" uuid="91f70bb3-8170-4e79-8588-39f2c0517b64"/>
+					<componentElement>
+						<reportElement x="0" y="0" width="555" height="119" isRemoveLineWhenBlank="true" printWhenGroupChanges="tableGroup" uuid="6e27c386-7894-48ae-98de-13a2f6ff9e04">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+							<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+							<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+							<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+						</reportElement>
+						<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+							<datasetRun subDataset="efrBeanList" uuid="fa03a4ed-0a76-4faf-b8fc-541aa9f5facc">
+								<dataSourceExpression><![CDATA[$P{efrBeanList}]]></dataSourceExpression>
+							</datasetRun>
+							<jr:column width="87" uuid="2b3814ce-b834-4fae-9278-f4a8426befd4">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+								<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+									<staticText>
+										<reportElement x="0" y="0" width="87" height="30" uuid="b1bf7fdb-4007-42e2-98d2-86c5b210c448"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle"/>
+										<text><![CDATA[Source]]></text>
+									</staticText>
+								</jr:tableHeader>
+								<jr:detailCell style="Table_TD" height="25">
+									<box padding="0"/>
+									<textField isStretchWithOverflow="true">
+										<reportElement x="0" y="0" width="87" height="25" uuid="019cc0ec-c1c0-43dc-ac4c-6de4649da355"/>
+										<box padding="5"/>
+										<textElement textAlignment="Left" verticalAlignment="Middle">
+											<font fontName="Serif"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{source}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="93" uuid="56d18783-59fb-4253-a9de-3b85301afc7c">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+								<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+									<staticText>
+										<reportElement x="0" y="0" width="93" height="30" uuid="d89e03f5-2821-43d7-aa85-ec7cf94099af"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle"/>
+										<text><![CDATA[Source type]]></text>
+									</staticText>
+								</jr:tableHeader>
+								<jr:detailCell style="Table_TD" height="25">
+									<box padding="0"/>
+									<textField>
+										<reportElement x="0" y="0" width="93" height="25" uuid="17b686ae-ebb1-435e-b0de-9d94f6f942a5"/>
+										<box padding="5"/>
+										<textElement verticalAlignment="Middle">
+											<font fontName="Serif"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{sourceType}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="106" uuid="f98326ae-77b1-4de3-9ffb-1deb182d3211">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+								<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+									<staticText>
+										<reportElement x="0" y="0" width="106" height="30" uuid="5fd0cd94-4e7b-436e-8423-c0420ce85cb3"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle"/>
+										<text><![CDATA[Destination]]></text>
+									</staticText>
+								</jr:tableHeader>
+								<jr:detailCell style="Table_TD" height="25">
+									<textField isStretchWithOverflow="true">
+										<reportElement x="0" y="0" width="106" height="25" uuid="a00290ca-004f-4186-8656-f38544634689"/>
+										<box padding="5"/>
+										<textElement textAlignment="Left" verticalAlignment="Middle">
+											<font fontName="Serif"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{destination}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="127" uuid="33b5edcf-5ab0-45e6-9c7e-b1ddbe94438d">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+								<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+									<staticText>
+										<reportElement x="0" y="0" width="127" height="30" uuid="d1bb172e-1d94-4594-a56d-e8a6db3b10e5"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle"/>
+										<text><![CDATA[Destination type]]></text>
+									</staticText>
+								</jr:tableHeader>
+								<jr:detailCell style="Table_TD" height="25">
+									<textField>
+										<reportElement x="0" y="0" width="127" height="25" uuid="613c7ed0-3f84-4487-af73-e96590d0cedc"/>
+										<box padding="5"/>
+										<textElement verticalAlignment="Middle">
+											<font fontName="Serif"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{destinationType}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="136" uuid="46920330-b421-43b7-a949-66a01c6f90c4">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+								<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+									<staticText>
+										<reportElement x="0" y="0" width="136" height="30" uuid="09c88087-d99e-4b33-9680-9af42ecccaef"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle"/>
+										<text><![CDATA[Proposed Loop Distance]]></text>
+									</staticText>
+								</jr:tableHeader>
+								<jr:detailCell style="Table_TD" height="25">
+									<textField>
+										<reportElement x="0" y="0" width="136" height="25" uuid="c96f54a2-83c3-4ca7-a7a7-6358e39ca7d0"/>
+										<box padding="5"/>
+										<textElement verticalAlignment="Middle">
+											<font fontName="Serif"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{proposedLoopDistance}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:table>
+					</componentElement>
+				</frame>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="81" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="550" height="81" uuid="c2abcb0f-0978-4e10-8599-bd19f0c5366c"/>
+				<imageExpression><![CDATA[$P{btcl_logo_heading}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageFooter>
+		<band height="50">
+			<textField>
+				<reportElement x="151" y="14" width="100" height="30" uuid="e6131ba6-44ae-4c89-b200-b95f265db9a9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="256" y="14" width="100" height="30" uuid="90e6b587-1af4-44e9-943b-176cfd69c1bf"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Serif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

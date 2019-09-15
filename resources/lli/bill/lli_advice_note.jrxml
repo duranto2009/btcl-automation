@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="lli_advice_note" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="be48f928-502b-4139-8fe5-b3a37416a84b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="StaticText" hTextAlign="Justified" vTextAlign="Middle" markup="styled" pattern="" isBlankWhenNull="true" fontSize="10" isBold="false"/>
+	<style name="BoldStaticText" style="StaticText" isBold="true"/>
+	<style name="title" hTextAlign="Center" vTextAlign="Middle" fontSize="20" isBold="true"/>
+	<style name="subTitle" hTextAlign="Center" vTextAlign="Middle" fontSize="13" isBold="true"/>
+	<subDataset name="Dataset1" uuid="309df1a3-490f-4557-a091-ead1589fb435">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<parameter name="btcl_logo_heading" class="java.lang.String"/>
+	<parameter name="to_location" class="java.lang.String"/>
+	<parameter name="cc_exchange" class="java.lang.String"/>
+	<parameter name="client_name" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="exchange_name" class="java.lang.String"/>
+	<parameter name="phone_number" class="java.lang.String"/>
+	<parameter name="requirement_number" class="java.lang.String"/>
+	<parameter name="requirement_date" class="java.lang.String"/>
+	<parameter name="date_of_agreement" class="java.lang.String"/>
+	<parameter name="date_of_etw" class="java.lang.String"/>
+	<parameter name="old_address_removal_date" class="java.lang.String"/>
+	<parameter name="new_address_placement_date" class="java.lang.String"/>
+	<parameter name="distance" class="java.lang.String"/>
+	<parameter name="measurement_of_loop_wearing" class="java.lang.String"/>
+	<parameter name="expand_type" class="java.lang.String"/>
+	<parameter name="type_of_transfer" class="java.lang.String"/>
+	<parameter name="rent_fee" class="java.lang.String"/>
+	<parameter name="payment_type" class="java.lang.String"/>
+	<parameter name="demand_note_number" class="java.lang.String"/>
+	<parameter name="demand_note_date" class="java.lang.String"/>
+	<parameter name="length_of_used_cable" class="java.lang.String"/>
+	<parameter name="post_line_measurement" class="java.lang.String"/>
+	<parameter name="length_of_not_used_cable" class="java.lang.String"/>
+	<parameter name="length_of_post_line" class="java.lang.String"/>
+	<parameter name="length_of_cable" class="java.lang.String"/>
+	<parameter name="number_of_used_post_head" class="java.lang.String"/>
+	<parameter name="exchange" class="java.lang.String"/>
+	<parameter name="done_by_date" class="java.lang.String"/>
+	<parameter name="second_officer" class="java.lang.String"/>
+	<parameter name="telephone_revenue_office" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<group name="Group1">
+		<groupHeader>
+			<band height="260">
+				<frame>
+					<reportElement x="0" y="0" width="555" height="260" uuid="b7fded39-fc37-4160-9509-de1db7ee670c"/>
+					<staticText>
+						<reportElement style="StaticText" x="0" y="0" width="555" height="15" uuid="80906cd5-4448-471c-b7a0-a49230b5cc77"/>
+						<text><![CDATA[To]]></text>
+					</staticText>
+					<staticText>
+						<reportElement style="StaticText" x="0" y="15" width="555" height="15" uuid="465eeb68-b846-4a09-adee-ffcc04cd7f96"/>
+						<text><![CDATA[Divisional Engineer/ Dy. Divisional Engineer/ Asst. Engineer/ Senior Dy. Asst. Engineer/ Dy. Asst. Engineer]]></text>
+					</staticText>
+					<textField isBlankWhenNull="true">
+						<reportElement style="StaticText" x="0" y="30" width="555" height="15" uuid="e8868a32-c5b7-4934-95f3-b1323ccb1a65"/>
+						<textFieldExpression><![CDATA[$P{to_location}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement style="StaticText" x="0" y="55" width="555" height="30" uuid="589ac5c3-48be-4bfc-a538-e9681e6a8b4f"/>
+						<textFieldExpression><![CDATA[$P{cc_exchange} == null ? "CC: Assistant Engineer, Chief Distribution Structure (MDF)/ Officer in Charge of Exchange." :  "CC: Assistant Engineer, Chief Distribution Structure (MDF)/ Officer in Charge <b><u>" + $P{cc_exchange} + "</u></b> Exchange."]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement style="BoldStaticText" x="0" y="100" width="555" height="30" uuid="b07a67b4-88db-4ed0-9ae8-c39a8ce2ec00"/>
+						<text><![CDATA[Therefore you are requested to allocate/transfer/extend and/or take measures and to send back the report accordingly]]></text>
+					</staticText>
+					<staticText>
+						<reportElement style="StaticText" x="0" y="150" width="555" height="15" uuid="d1ae7248-9ed3-4288-8bb4-9f121a2f81cd"/>
+						<text><![CDATA[Signature]]></text>
+					</staticText>
+					<staticText>
+						<reportElement style="StaticText" x="0" y="210" width="555" height="15" uuid="4ebbdc24-f772-429e-9052-f888618086bf"/>
+						<text><![CDATA[Office Seal]]></text>
+					</staticText>
+					<staticText>
+						<reportElement style="StaticText" x="0" y="190" width="555" height="15" uuid="f5c70677-3e56-4c4b-99b5-8ba7c8433642"/>
+						<text><![CDATA[Designation]]></text>
+					</staticText>
+				</frame>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group2">
+		<groupHeader>
+			<band height="430" splitType="Immediate">
+				<frame>
+					<reportElement x="0" y="0" width="555" height="430" uuid="9ec2f9bd-b581-491a-974e-e6e81eb1f8b1"/>
+					<frame>
+						<reportElement x="0" y="0" width="555" height="30" uuid="a0e8b492-2862-4ffa-a9a1-9e23d0f245a8"/>
+						<staticText>
+							<reportElement style="subTitle" x="0" y="0" width="555" height="30" uuid="e3cc536b-aad6-4abb-9e0a-7c5408a53461"/>
+							<text><![CDATA[Description]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="0" y="30" width="555" height="400" uuid="db311e7e-022a-4ea1-b23e-589016df794f"/>
+						<frame>
+							<reportElement x="0" y="0" width="555" height="20" uuid="190ef8ed-a0ad-48de-8812-02dcb200bcc9"/>
+							<staticText>
+								<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="06be5c34-dbdd-4e3b-af2b-f5cdced4835c"/>
+								<text><![CDATA[1. Client's Name]]></text>
+							</staticText>
+							<textField isBlankWhenNull="true">
+								<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" isRemoveLineWhenBlank="true" uuid="59b1f324-39a7-4d0a-b97f-f89c2cba5a9b"/>
+								<textFieldExpression><![CDATA[$P{client_name} == null ? ":   " : ":   " + $P{client_name}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="0" y="20" width="555" height="40" uuid="59f63490-300a-424b-a479-a7df609332de"/>
+							<staticText>
+								<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="dcb5d47d-1526-47a0-a38c-4b8facb7f2cd"/>
+								<text><![CDATA[2. Adress]]></text>
+							</staticText>
+							<textField isBlankWhenNull="true">
+								<reportElement style="BoldStaticText" x="250" y="0" width="305" height="40" isRemoveLineWhenBlank="true" uuid="61108be7-4343-44b0-beb9-a3421213d3ca"/>
+								<textFieldExpression><![CDATA[$P{address} == null ? ":   " : ":   " + $P{address}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="0" y="60" width="555" height="20" uuid="3ebe5276-7616-4ac0-83c5-4a57c4ddfd46"/>
+							<staticText>
+								<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="e985c322-309c-41f5-9c0c-170a1747be73"/>
+								<text><![CDATA[3. Exchange Name]]></text>
+							</staticText>
+							<textField isBlankWhenNull="true">
+								<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" isRemoveLineWhenBlank="true" uuid="2bc0c407-5189-48b0-9944-0696d87e2757"/>
+								<textFieldExpression><![CDATA[$P{exchange_name} == null ? ":   " : ":   " + $P{exchange_name}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="0" y="80" width="555" height="20" uuid="bf53f5dd-9211-44a5-bc32-e5900de9542d"/>
+							<staticText>
+								<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="e6fc56e3-e25a-4fbb-93c6-b18d041de6af"/>
+								<text><![CDATA[4. Phone Number]]></text>
+							</staticText>
+							<textField isBlankWhenNull="true">
+								<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" isRemoveLineWhenBlank="true" uuid="3fcee807-480e-4a25-b0ce-dff23f10dd71"/>
+								<textFieldExpression><![CDATA[$P{phone_number} == null ? ":   " : ":   " + $P{phone_number}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="0" y="100" width="555" height="20" uuid="8ac96292-d3e8-490a-b37c-2515af3f220b"/>
+							<staticText>
+								<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="fd6cd3aa-7a32-4fba-abf6-210492c58d1a"/>
+								<text><![CDATA[5. Requirement Number]]></text>
+							</staticText>
+							<textField isBlankWhenNull="true">
+								<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" isRemoveLineWhenBlank="true" uuid="476d4eb1-1e37-4119-94fb-0c4f3e8f7049"/>
+								<textFieldExpression><![CDATA[$P{requirement_number} == null ? ":   " : ":   " + $P{requirement_number}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="0" y="120" width="555" height="20" uuid="2a5b8980-1265-4d87-99b8-967a6e59fdff"/>
+							<staticText>
+								<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="a6a326a8-81ce-435e-b552-ce0da6918127"/>
+								<text><![CDATA[6. Requirement Date]]></text>
+							</staticText>
+							<textField isBlankWhenNull="true">
+								<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" isRemoveLineWhenBlank="true" uuid="4ccd4c40-8fa6-495f-8261-5c86423c6661"/>
+								<textFieldExpression><![CDATA[$P{requirement_date} == null ? ":   " : ":   " + $P{requirement_date}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="0" y="140" width="555" height="20" uuid="6a7996e0-3165-4d70-a947-9f3280b25274"/>
+							<staticText>
+								<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="a4d2c0dd-93c8-4da0-8def-261606c41174"/>
+								<text><![CDATA[7. Date of Agreement]]></text>
+							</staticText>
+							<textField isBlankWhenNull="true">
+								<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" isRemoveLineWhenBlank="true" uuid="f3ddc11f-3758-4f5c-a5ab-8cade538f863"/>
+								<textFieldExpression><![CDATA[$P{date_of_agreement} == null ? ":   " : ":   " + $P{date_of_agreement}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="0" y="160" width="555" height="20" uuid="620be6c6-fa84-49b8-a351-1637fbb33a1a"/>
+							<staticText>
+								<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="6a485890-a488-40e4-a61d-301cae6d52a6"/>
+								<text><![CDATA[8. Date of Establishment/Transfer/Withdrawal]]></text>
+							</staticText>
+							<textField isBlankWhenNull="true">
+								<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" isRemoveLineWhenBlank="true" uuid="03ca5736-6309-4dd5-9be3-09a01d042d85"/>
+								<textFieldExpression><![CDATA[$P{date_of_etw} == null ? ":   " : ":   " + $P{date_of_etw}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="0" y="180" width="555" height="60" uuid="0346fa69-8af2-46f8-b47e-c8c7cd7b3154"/>
+							<staticText>
+								<reportElement style="StaticText" x="0" y="0" width="555" height="20" uuid="8fb1a483-ba50-4a1d-958c-41ebef2a43a5"/>
+								<text><![CDATA[9. If Transferred]]></text>
+							</staticText>
+							<frame>
+								<reportElement x="50" y="20" width="505" height="40" uuid="89cb3fc1-52b0-42bf-8cfb-54c5de15348e"/>
+								<frame>
+									<reportElement x="0" y="0" width="505" height="20" uuid="a30824cd-cbc8-4c05-9142-40b2f357aa5f"/>
+									<staticText>
+										<reportElement style="StaticText" x="0" y="0" width="200" height="20" uuid="634b93fe-f22c-4ea9-b051-313310fa68d3"/>
+										<text><![CDATA[Date of Removal from Old Address]]></text>
+									</staticText>
+									<textField isBlankWhenNull="true">
+										<reportElement style="BoldStaticText" x="200" y="0" width="305" height="20" isRemoveLineWhenBlank="true" uuid="071ae5e9-2486-4b0a-9259-e7cfc3977438"/>
+										<textFieldExpression><![CDATA[$P{old_address_removal_date} == null ? ":   " : ":   " + $P{old_address_removal_date}]]></textFieldExpression>
+									</textField>
+								</frame>
+								<frame>
+									<reportElement x="0" y="20" width="505" height="20" uuid="252550b8-e10c-45ce-9709-71a94ceae25f"/>
+									<staticText>
+										<reportElement style="StaticText" x="0" y="0" width="200" height="20" uuid="d0f4e846-c3be-43f0-bcf5-d28420160699"/>
+										<text><![CDATA[Date of Placement at New Address]]></text>
+									</staticText>
+									<textField isBlankWhenNull="true">
+										<reportElement style="BoldStaticText" x="200" y="0" width="305" height="20" isRemoveLineWhenBlank="true" uuid="26c1d828-411e-494c-a1da-252e32055733"/>
+										<textFieldExpression><![CDATA[$P{new_address_placement_date} == null ? ":   " : ":   " + $P{new_address_placement_date}]]></textFieldExpression>
+									</textField>
+								</frame>
+							</frame>
+						</frame>
+						<frame>
+							<reportElement x="0" y="240" width="555" height="20" uuid="2c78f9af-2694-4bd2-8b9e-4f4ed321de40"/>
+							<staticText>
+								<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="4591353a-7810-479a-92e7-c8f7c6cbf442"/>
+								<text><![CDATA[10. Distance]]></text>
+							</staticText>
+							<textField isBlankWhenNull="true">
+								<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" isRemoveLineWhenBlank="true" uuid="d072adb0-2afb-48ca-8599-eb16113a02e2"/>
+								<textFieldExpression><![CDATA[$P{distance} == null ? ":   " : ":   " + $P{distance}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="0" y="260" width="555" height="20" uuid="8b43d80a-a327-475d-91e3-cbacc0c50282"/>
+							<staticText>
+								<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="c4880b11-a117-4682-890e-63dc79332aba"/>
+								<text><![CDATA[11. Measurement of Loop Wearing]]></text>
+							</staticText>
+							<textField isBlankWhenNull="true">
+								<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" isRemoveLineWhenBlank="true" uuid="e63bb191-bd82-4bfa-a92f-9edc071150bc"/>
+								<textFieldExpression><![CDATA[$P{measurement_of_loop_wearing} == null ? ":   " : ":   " + $P{measurement_of_loop_wearing}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="0" y="280" width="555" height="20" uuid="f473a9d2-a79d-4fa6-8225-a002f40bcd7b"/>
+							<staticText>
+								<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="f73a9b50-0073-4ce5-a534-58870574101b"/>
+								<text><![CDATA[12. Expand Type]]></text>
+							</staticText>
+							<textField isBlankWhenNull="true">
+								<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" isRemoveLineWhenBlank="true" uuid="8f64c84e-43cc-434b-a269-2d6c452a669d"/>
+								<textFieldExpression><![CDATA[$P{expand_type} == null ? ":   " : ":   " + $P{expand_type}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="0" y="300" width="555" height="20" uuid="e4b87897-da33-48bd-8da4-030f5a1d082f"/>
+							<staticText>
+								<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="fb6271ad-3348-4c4b-aab3-c3fdd814b6ac"/>
+								<text><![CDATA[13. Type of Transfer]]></text>
+							</staticText>
+							<textField isBlankWhenNull="true">
+								<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" isRemoveLineWhenBlank="true" uuid="45d61019-cdea-4400-8b1d-e37e0dd90b92"/>
+								<textFieldExpression><![CDATA[$P{type_of_transfer} == null ? ":   " : ":   " + $P{type_of_transfer}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="0" y="320" width="555" height="20" uuid="fae772de-2c66-4c26-95a7-649ab1e796b1"/>
+							<staticText>
+								<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="0172c464-dd57-4d3f-b9d6-310e897d5d54"/>
+								<text><![CDATA[14. Amount of Rent/Transfer Fee]]></text>
+							</staticText>
+							<textField isBlankWhenNull="true">
+								<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" isRemoveLineWhenBlank="true" uuid="c45f6484-8c6b-4b95-bb29-bf1faefb1372"/>
+								<textFieldExpression><![CDATA[$P{rent_fee} == null ? ":   " : ":   " + $P{rent_fee}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="0" y="340" width="555" height="20" uuid="ce0be999-631f-4bce-ae9b-8ff5c9931e83"/>
+							<staticText>
+								<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="a4debc32-5c6b-441f-9650-c8e869cbbe32"/>
+								<text><![CDATA[15. Type of Payment]]></text>
+							</staticText>
+							<textField isBlankWhenNull="true">
+								<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" isRemoveLineWhenBlank="true" uuid="3d55cd68-fb00-4aa8-9296-c121fc4c90f2"/>
+								<textFieldExpression><![CDATA[$P{payment_type} == null ? ":   " : ":   " + $P{payment_type}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="0" y="360" width="555" height="20" uuid="7682daca-1e3f-4faa-ba6e-9c8e57506f7a"/>
+							<staticText>
+								<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="804574a5-bc66-4f7b-8272-0f4ddc56249c"/>
+								<text><![CDATA[16. Demand Note Number]]></text>
+							</staticText>
+							<textField isBlankWhenNull="true">
+								<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" isRemoveLineWhenBlank="true" uuid="e842d300-b399-42d5-90b1-08c9a0ae5f74"/>
+								<textFieldExpression><![CDATA[$P{demand_note_number} == null ? ":   " : ":   " + $P{demand_note_number}]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="0" y="380" width="555" height="20" uuid="4ecf088b-5abc-401e-aa0a-048fb9cc02cb"/>
+							<staticText>
+								<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="8eceb8f5-4207-48c5-9859-fd9268be8c53"/>
+								<text><![CDATA[17. Demand Note Date]]></text>
+							</staticText>
+							<textField isBlankWhenNull="true">
+								<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" isRemoveLineWhenBlank="true" uuid="79591976-059d-4716-803b-7600aebf76c6"/>
+								<textFieldExpression><![CDATA[$P{demand_note_date} == null ? ":   " : ":   " + $P{demand_note_date}]]></textFieldExpression>
+							</textField>
+						</frame>
+					</frame>
+				</frame>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group3">
+		<groupHeader>
+			<band height="545">
+				<frame>
+					<reportElement x="0" y="10" width="560" height="535" uuid="ab208d1d-dffb-4a29-bfbb-f5c13934c1da"/>
+					<frame>
+						<reportElement x="0" y="0" width="555" height="160" uuid="92ac5e64-d1dc-424f-b5a4-4df69d24cb3c"/>
+						<staticText>
+							<reportElement style="StaticText" x="0" y="0" width="555" height="30" uuid="333ca068-34d2-44e1-b79c-be881e1ce3fc"/>
+							<text><![CDATA[Distance in case of divisional change will follow direct minimum pathway]]></text>
+						</staticText>
+						<frame>
+							<reportElement x="0" y="40" width="555" height="120" uuid="81594fa7-2ff2-4d70-bf02-ad3e933ec5a4"/>
+							<frame>
+								<reportElement x="0" y="0" width="555" height="20" uuid="2bccb0bb-8eb5-47b5-a205-9aa9d4d4f32b"/>
+								<staticText>
+									<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="ca1874f0-ac51-42f7-a588-1ff4564dbe1a"/>
+									<text><![CDATA[1. Length of Used Cable (KM/M)]]></text>
+								</staticText>
+								<textField>
+									<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" uuid="4e44e6c6-3e81-495d-a091-d22479695b90"/>
+									<textFieldExpression><![CDATA[$P{length_of_used_cable} == null ? ":   " : ":   " + $P{length_of_used_cable}]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement x="0" y="20" width="555" height="20" uuid="9c1407a3-9ac8-427b-b1f7-675b8f6181cf"/>
+								<staticText>
+									<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="a32d6cd7-118a-433f-a11c-cb102968d15a"/>
+									<text><![CDATA[2. Post Line Measurement (KM/M)]]></text>
+								</staticText>
+								<textField>
+									<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" uuid="4038defc-3aa3-4d38-b9d5-a26b80a9a10d"/>
+									<textFieldExpression><![CDATA[$P{post_line_measurement} == null ? ":   " : ":   " + $P{post_line_measurement}]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement x="0" y="40" width="555" height="20" uuid="85885d45-63d2-42c4-99f4-124dc11c0467"/>
+								<staticText>
+									<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="68f822ea-ef2b-4951-9301-6c8960a6a048"/>
+									<text><![CDATA[3. Length of Not Used Cable (KM/M)]]></text>
+								</staticText>
+								<textField>
+									<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" uuid="77725ed5-0c8e-42b7-bde0-4328d8f07ace"/>
+									<textFieldExpression><![CDATA[$P{length_of_not_used_cable} == null ? ":   " : ":   " + $P{length_of_not_used_cable}]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement x="0" y="60" width="555" height="20" uuid="e102b4e0-b398-4183-a633-0a42af02ae04"/>
+								<staticText>
+									<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="c8815866-6063-4762-9fbc-d91d333e3b92"/>
+									<text><![CDATA[4. Length of Post Line (KM/M)]]></text>
+								</staticText>
+								<textField>
+									<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" uuid="7a016bd6-d6cd-4043-8677-6eb78ff56ede"/>
+									<textFieldExpression><![CDATA[$P{length_of_post_line} == null ? ":   " : ":   " + $P{length_of_post_line}]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement x="0" y="80" width="555" height="20" uuid="286751eb-bb9c-495e-b366-dab9188ebb37"/>
+								<staticText>
+									<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="aec99f72-afd2-41d9-9fef-5728e7eb86b6"/>
+									<text><![CDATA[5. Length of Cable (KM/M)]]></text>
+								</staticText>
+								<textField>
+									<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" uuid="9676fd76-4a1f-4e23-8549-a232b78aeae4"/>
+									<textFieldExpression><![CDATA[$P{length_of_cable} == null ? ":   " : ":   " + $P{length_of_cable}]]></textFieldExpression>
+								</textField>
+							</frame>
+							<frame>
+								<reportElement x="0" y="100" width="555" height="20" uuid="5b4222ca-3a2e-44a6-834a-4c88f0290f92"/>
+								<staticText>
+									<reportElement style="StaticText" x="0" y="0" width="250" height="20" uuid="a8f8a814-0386-40e7-a4a2-cbe0a54f2765"/>
+									<text><![CDATA[6. Number of Used Post-Head]]></text>
+								</staticText>
+								<textField>
+									<reportElement style="BoldStaticText" x="250" y="0" width="305" height="20" uuid="dc375147-41b6-4897-8369-7c59e3361c82"/>
+									<textFieldExpression><![CDATA[$P{number_of_used_post_head} == null ? ":   " : ":   " + $P{number_of_used_post_head}]]></textFieldExpression>
+								</textField>
+							</frame>
+						</frame>
+					</frame>
+					<frame>
+						<reportElement x="0" y="200" width="560" height="335" uuid="15180dc7-265a-4a84-a3f1-0afe79744bea"/>
+						<frame>
+							<reportElement x="0" y="0" width="555" height="125" uuid="af92c9d4-01f1-48ec-8786-141a43c4e218"/>
+							<textField>
+								<reportElement style="StaticText" x="0" y="0" width="555" height="20" uuid="f6247f58-9e8e-48ce-83cb-413cd3850333"/>
+								<textFieldExpression><![CDATA[$P{exchange} == null ? "Sent to the __________________________________________________ exchange to take necessary measures." : "Sent to the <b><u>" + $P{exchange} + "</u></b> exchange to take necessary measures."]]></textFieldExpression>
+							</textField>
+							<textField>
+								<reportElement style="StaticText" x="0" y="20" width="555" height="20" uuid="1d4e3481-c17a-44a2-8066-26ad8e3774a5"/>
+								<textFieldExpression><![CDATA[$P{done_by_date} == null ? "Done by __________________________________________________ accordingly." : "Done by <b><u>" + $P{done_by_date} + "</u></b> accordingly."]]></textFieldExpression>
+							</textField>
+							<staticText>
+								<reportElement style="StaticText" x="210" y="50" width="100" height="15" uuid="79d1827e-ac97-4bfe-9978-a0531b7f59ad"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Signature]]></text>
+							</staticText>
+							<staticText>
+								<reportElement style="StaticText" x="210" y="80" width="100" height="15" uuid="e6e252cf-ce1e-47fc-a925-8c67ab534a07"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Designation]]></text>
+							</staticText>
+							<staticText>
+								<reportElement style="StaticText" x="210" y="95" width="100" height="15" uuid="822a98bb-753e-43a6-bfcd-93a7dbefe060"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Name of Exchange]]></text>
+							</staticText>
+							<staticText>
+								<reportElement style="StaticText" x="210" y="110" width="100" height="15" uuid="6f782398-2f36-4d0a-9b0f-d80ca93ab894"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Number]]></text>
+							</staticText>
+							<staticText>
+								<reportElement style="StaticText" x="430" y="110" width="50" height="15" uuid="8687361a-f746-499c-a15b-0e6267a63537"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Date]]></text>
+							</staticText>
+						</frame>
+						<frame>
+							<reportElement x="0" y="140" width="555" height="105" uuid="7cd98842-7fdf-41cf-a2e9-be763645aa1a"/>
+							<staticText>
+								<reportElement style="StaticText" x="215" y="30" width="100" height="15" uuid="039ac330-5f9b-475a-803b-f78dcaadcdb6"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Signature]]></text>
+							</staticText>
+							<staticText>
+								<reportElement style="StaticText" x="215" y="60" width="100" height="15" uuid="bf7a86ad-7feb-44cb-9963-4c343e454c3d"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Designation]]></text>
+							</staticText>
+							<staticText>
+								<reportElement style="StaticText" x="215" y="75" width="100" height="15" uuid="b6651b8e-83f3-4774-81eb-089487961a17"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Name of Exchange]]></text>
+							</staticText>
+							<staticText>
+								<reportElement style="StaticText" x="215" y="90" width="100" height="15" uuid="747c339c-e31a-4f8a-9996-170292b38642"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Number]]></text>
+							</staticText>
+							<staticText>
+								<reportElement style="StaticText" x="435" y="90" width="50" height="15" uuid="ecadb0e6-251d-4082-9923-0973adff4479"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Date]]></text>
+							</staticText>
+							<textField>
+								<reportElement style="StaticText" x="0" y="0" width="555" height="20" uuid="d2ebf19f-edc7-4acf-aa23-37357c19a926"/>
+								<textFieldExpression><![CDATA[$P{second_officer} == null ? "Sent to __________________________________________________ after taking necessary measures." : "Sent to  <b><u>" + $P{second_officer} + "</u></b> after taking necessary measures."]]></textFieldExpression>
+							</textField>
+						</frame>
+						<frame>
+							<reportElement x="0" y="260" width="555" height="75" uuid="2706b5cd-b403-4554-a192-01ce09e3a92f"/>
+							<textField>
+								<reportElement style="StaticText" x="0" y="0" width="555" height="20" uuid="fa49eded-7f4d-4776-80b0-694ceb95489a"/>
+								<textFieldExpression><![CDATA[$P{telephone_revenue_office} == null ? "Sent to __________________________________________________ Telephone Revenue Office." : "Sent to  <b><u>" + $P{telephone_revenue_office} + "</u></b> Telephone Revenue Office."]]></textFieldExpression>
+							</textField>
+							<staticText>
+								<reportElement style="StaticText" x="215" y="30" width="100" height="15" uuid="b50552d2-ec32-4f04-bbda-71aed04e3ee1"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Signature]]></text>
+							</staticText>
+							<staticText>
+								<reportElement style="StaticText" x="215" y="60" width="100" height="15" uuid="48db3b86-d98d-4e25-9ef7-dfb10198ed7c"/>
+								<textElement textAlignment="Right"/>
+								<text><![CDATA[Designation]]></text>
+							</staticText>
+						</frame>
+					</frame>
+				</frame>
+			</band>
+		</groupHeader>
+	</group>
+	<title>
+		<band height="110" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="550" height="80" uuid="6e4503b0-9d7d-4922-a6a4-3250ffdb0ffa"/>
+				<image hAlign="Center" vAlign="Middle">
+					<reportElement x="0" y="0" width="550" height="80" uuid="8fb50039-f6fd-430e-9c11-749cbfc1cf46"/>
+					<imageExpression><![CDATA[$P{btcl_logo_heading}]]></imageExpression>
+				</image>
+			</frame>
+			<frame>
+				<reportElement x="0" y="80" width="555" height="30" uuid="9f48f80b-6993-4c7f-a8bb-099c71a1dbbb"/>
+				<staticText>
+					<reportElement style="title" x="0" y="0" width="555" height="30" uuid="d209becd-134e-4218-9a77-6e0b58e5981e"/>
+					<text><![CDATA[Telephone Connection Order Sheet]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<lastPageFooter>
+		<band height="204">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="196" uuid="253d8a14-f61a-439f-a050-06349b7be952"/>
+				<frame>
+					<reportElement x="0" y="172" width="555" height="24" uuid="568dfba9-dbc1-40ea-81a1-f46a0941d434"/>
+					<line>
+						<reportElement x="0" y="0" width="555" height="1" uuid="f49610c3-d99d-470a-9a22-926d8fdfec41"/>
+						<graphicElement>
+							<pen lineStyle="Solid"/>
+						</graphicElement>
+					</line>
+					<staticText>
+						<reportElement style="StaticText" x="0" y="4" width="555" height="20" uuid="cd84548a-0f65-4e0e-ad15-0dd7610fb86b"/>
+						<textElement textAlignment="Center"/>
+						<text><![CDATA[Work Order sender will fill-up  part 1 and Divisional Office will fill-up part 2]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="0" y="152" width="554" height="20" uuid="7f182188-e155-4e60-9549-0d1d951d6cc7"/>
+					<staticText>
+						<reportElement style="StaticText" x="0" y="0" width="100" height="20" uuid="53d4e997-eca1-49df-a789-304e2fc4dae0"/>
+						<textElement textAlignment="Left"/>
+						<text><![CDATA[Assistant]]></text>
+					</staticText>
+					<staticText>
+						<reportElement style="StaticText" x="240" y="0" width="100" height="20" uuid="6c509168-0306-45c9-a8e1-412cb22c1602"/>
+						<textElement textAlignment="Center"/>
+						<text><![CDATA[Sent by]]></text>
+					</staticText>
+					<staticText>
+						<reportElement style="StaticText" x="454" y="0" width="100" height="20" uuid="14dc1593-3ac1-4321-a979-6fb9744fc93e"/>
+						<textElement textAlignment="Right"/>
+						<text><![CDATA[Checked by]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="0" y="20" width="555" height="100" uuid="cb6035bf-b479-4e2c-99c4-12b87fe571a6"/>
+					<frame>
+						<reportElement x="0" y="0" width="280" height="100" uuid="d5f6f235-e639-4a94-9ac5-c0d3cda9c481"/>
+						<staticText>
+							<reportElement style="BoldStaticText" x="0" y="0" width="275" height="20" uuid="2899224f-7caf-4661-854c-37cb4a9b5e61"/>
+							<text><![CDATA[For Work Order Usages]]></text>
+						</staticText>
+						<staticText>
+							<reportElement style="StaticText" x="0" y="20" width="275" height="40" uuid="0701b8de-4dcd-419c-acbf-11f1a453bf29"/>
+							<text><![CDATA[Necessary measures have been taken following]]></text>
+						</staticText>
+						<staticText>
+							<reportElement style="StaticText" x="0" y="60" width="275" height="20" uuid="422cb9ac-efb5-4545-8d32-64b720f1159c"/>
+							<text><![CDATA[1. Requirement and Work Order Entry]]></text>
+						</staticText>
+						<staticText>
+							<reportElement style="StaticText" x="0" y="80" width="275" height="20" uuid="8406fd31-f512-4b6a-925b-2625e67ab8df"/>
+							<text><![CDATA[2. Telephone Guideline mentioning]]></text>
+						</staticText>
+					</frame>
+					<frame>
+						<reportElement x="280" y="0" width="275" height="60" uuid="e6624fc9-5c80-4eb7-aad2-1c78a91fb66f"/>
+						<staticText>
+							<reportElement style="BoldStaticText" x="0" y="0" width="275" height="20" uuid="913ea9f7-2e68-47d2-959a-aadcb1c7b5c8"/>
+							<textElement textAlignment="Right"/>
+							<text><![CDATA[For Work Order Usages]]></text>
+						</staticText>
+						<staticText>
+							<reportElement style="StaticText" x="0" y="20" width="275" height="40" uuid="f5ec4204-c0a8-4cd3-9913-c53922b02a04"/>
+							<textElement textAlignment="Right"/>
+							<text><![CDATA[Necessary measures have been taken]]></text>
+						</staticText>
+					</frame>
+				</frame>
+			</frame>
+		</band>
+	</lastPageFooter>
+</jasperReport>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="top" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="8613e5ce-1e4b-4faa-94d3-3b94d1584f2f">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<parameter name="skipped" class="java.lang.Boolean"/>
+	<parameter name="recipientName" class="java.lang.String"/>
+	<parameter name="billGenerationDate" class="java.lang.String"/>
+	<parameter name="clientFullName" class="java.lang.String"/>
+	<parameter name="clientLoginName" class="java.lang.String"/>
+	<parameter name="clientEmail" class="java.lang.String"/>
+	<parameter name="clientAddress" class="java.lang.String"/>
+	<parameter name="demandNoteCause" class="java.lang.String"/>
+	<parameter name="vpnName" class="java.lang.String"/>
+	<parameter name="clientFullNameDest" class="java.lang.String"/>
+	<parameter name="clientLoginNameDest" class="java.lang.String"/>
+	<parameter name="clientEmailDest" class="java.lang.String"/>
+	<parameter name="clientAddressDest" class="java.lang.String"/>
+	<parameter name="ownerChange" class="java.lang.Boolean"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="236" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="550" height="30" uuid="17a8188b-270d-4c16-84b4-b5faac7f6360"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Demand Note\nFor Virtual Private Network (VPN)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="30" width="550" height="30" forecolor="#0000FF" uuid="f6925812-d661-46f6-9e39-45d913fd03ad"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{skipped} ? "THIS DEMAND NOTE WILL BE ADDED IN YOUR FIRST MONTHLY BILL. NO NEED TO PAY THIS DEMAND NOTE." : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="449" y="60" width="100" height="20" backcolor="#7D7D7D" uuid="285fbaef-37ed-4f76-95a4-b119dc0b83c0"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{recipientName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="449" y="80" width="100" height="20" uuid="5b8d5eec-a76f-4aa2-a942-cc2be81756e9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Date: " + $P{billGenerationDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="107" width="100" height="65" uuid="6c82f6d5-1130-4d25-9bf3-2f944dd17722"/>
+				<box topPadding="2"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["\n" + "Client Name\n" +
+"User Name\n" + 
+"Email\n" + 
+"Billing Address"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="105" width="550" height="1" uuid="feb02385-b8fc-4cd4-b7df-147c3fd55899"/>
+			</line>
+			<line>
+				<reportElement x="0" y="175" width="550" height="1" uuid="00d8b48a-d816-4b54-aa1b-1e89766f71db"/>
+			</line>
+			<textField>
+				<reportElement x="100" y="107" width="175" height="65" uuid="cc59b55e-8a85-4569-a4f8-e9b39b4aa77a"/>
+				<box topPadding="2"/>
+				<textFieldExpression><![CDATA["\n" + ": " + $P{clientFullName} + "\n" 
+ + ": "+ $P{clientLoginName} + "\n"
++ ": " + $P{clientEmail} + "\n"
++ ": " +$P{clientAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="190" width="548" height="30" uuid="b34eb069-87ba-4e0f-abdd-e5df01230b41"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{demandNoteCause}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="235" width="550" height="1" uuid="7261c922-12c1-4106-ac7c-c74b65e62eff"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="77" width="300" height="23" uuid="31771415-e3e1-45bb-a0a2-13c80e351797"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{vpnName} == null ? "" : "VPN: " + $P{vpnName})]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="275" y="107" width="275" height="65" uuid="667edf7f-3572-4a4f-b40c-e6a17e2b62ab">
+					<printWhenExpression><![CDATA[$P{ownerChange}]]></printWhenExpression>
+				</reportElement>
+				<textField>
+					<reportElement x="0" y="0" width="100" height="65" uuid="992a47af-b158-41c7-81f3-2c2f513254b3"/>
+					<box topPadding="2"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Destination\nClient Name\n" +
+"User Name\n" + 
+"Email\n" + 
+"Billing Address"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="100" y="0" width="175" height="65" uuid="ac021729-4156-4332-b335-d9f862ace8b5"/>
+					<box topPadding="2"/>
+					<textFieldExpression><![CDATA["\n" +": " + $P{clientFullNameDest} + "\n"
++ ": " + $P{clientLoginNameDest} + "\n"
++ ": " + $P{clientEmailDest} + "\n"
++ ": " + $P{clientAddressDest}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+</jasperReport>

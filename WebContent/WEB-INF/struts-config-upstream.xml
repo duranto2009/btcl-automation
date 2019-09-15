@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+<struts-config>
+    <form-beans>
+        <form-bean name="upstream" type="login.LoginForm"/>
+    </form-beans>
+    <action-mappings>
+        <action path="upstream/**" type="upstream.UpstreamAction" name="upstream">
+            <forward name="upstream" path="/upstream/common/upstream-body.jsp"></forward>
+        </action>
+    </action-mappings>
+</struts-config>

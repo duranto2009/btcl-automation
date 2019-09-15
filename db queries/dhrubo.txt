@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS `at_file`;
+CREATE TABLE `at_file`  (
+  `id` bigint(20) NOT NULL,
+  `realName` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `localName` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `tableTypeID` int(11) NULL DEFAULT NULL,
+  `rowID` bigint(20) NULL DEFAULT NULL,
+  `owner` bigint(255) NULL DEFAULT NULL,
+  `uploadTime` bigint(20) NULL DEFAULT NULL,
+  `size` int(255) NULL DEFAULT NULL,
+  `path` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+SET FOREIGN_KEY_CHECKS = 1;

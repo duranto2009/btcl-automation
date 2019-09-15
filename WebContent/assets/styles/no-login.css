@@ -1,0 +1,46 @@
+.page-content-wrapper .page-content {
+	margin-left: 15px !important;
+	margin-right: 15px !important;
+}
+.lr-no-padding {
+	padding: 0 !important;
+}
+.modal-overflow .modal-body {
+    max-height: 400px !important;
+    overflow-y: scroll;
+}
+@media screen and (max-width: 480px) {
+	.modal-body, .modal-overflow .modal-body{
+	  	max-height: 250px !important;
+    	overflow-y: scroll;
+    	overflow: auto !important;
+	}
+}
+.my-group .form-control {
+	width: 50%;
+	border-radius: 40px !important;
+}
+
+.my-group-button {
+	border-radius: 34px !important;
+}
+.tooltip {
+    background-color:#000;
+    border:1px solid #fff;
+    padding:10px 15px;
+    min-width:200px;
+    max-width:500px;
+    display:none;
+    color:#fff;
+    text-align:left;
+    font-size:8px;
+    position: right;
+ 
+    /* outline radius for mozilla/firefox only */
+    -moz-box-shadow:0 0 9px #000;
+    -webkit-box-shadow:0 0 9px #000;
+}
+
+.lr-no-padding {
+	padding: 0 !important;
+}

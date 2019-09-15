@@ -1,0 +1,116 @@
+td.td_menu_back
+{
+ /* background-color:rgb(235,242,254);*/
+ background-color:rgb(217, 249, 220);
+}
+
+div.menuHeader
+{
+   color : black;
+   font-family : verdana;
+   font-weight : bold;
+   font-size : 8pt;
+   text-align : left;
+
+   padding-left : 3;
+   padding-right : 3;
+   padding-top : 3;
+   padding-bottom : 3;
+
+   border-top:1px solid gray; 
+
+   margin-top:0;
+   /*	
+   background-color:rgb(241,241,241);
+   */
+   cursor: default;
+} 
+
+a.menuItem
+{
+   width:100%;
+   text-decoration:none;	 
+   color : black;
+   font-family : verdana;
+   font-weight : normal;
+   font-size : 8pt;
+   text-align : left;
+
+   padding-left : 5px;
+   padding-right : 5px;
+   /*
+   padding-top : 5px;
+   padding-bottom : 5px;
+	*/
+   border: 0px solid gray; 
+
+   
+   margin-right : 3px;
+   margin-left : 3px;
+   margin-top: 5px;
+	margin-bottom: 5px;
+   /*
+   background-color:rgb(241,241,241);
+   */
+   cursor: pointer;
+   
+
+} 
+
+
+div.menuItem
+{
+   width:100%;
+   
+   color : black;
+   font-family : verdana;
+   font-weight : normal;
+   font-size : 8pt;
+   text-align : left;
+
+   padding-left : 5px;
+   padding-right : 5px;
+    /*
+   padding-top : 5px;
+   padding-bottom : 5px;
+	*/
+
+   border: 0px solid gray; 
+
+   margin-top : 0px;
+   margin-right : 3px;
+   margin-left : 3px;
+	/*
+   background-color:rgb(241,241,241);
+   */
+   cursor: pointer;
+
+} 
+
+td.menuItem
+{
+	height:23;
+} 
+
+div.pulldown
+{
+   padding-left:1;
+   padding-right:1;
+   padding-top:1;
+   padding-bottom:1;
+
+   border: 1px solid gray; 
+	/*
+   background-color:rgb(241,241,241);
+	*/
+   z-index:1;
+   position:absolute;
+   visibility:hidden;
+
+}
+
+input.text
+{
+  color : red;
+ 
+}

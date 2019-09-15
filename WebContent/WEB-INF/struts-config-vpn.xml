@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+<struts-config>
+    <form-beans>
+        <form-bean name="vpn" type="login.LoginForm"/>
+    </form-beans>
+    <action-mappings>
+        <action path="vpn/**" type="vpn.VPNAction" name="vpn">
+            <forward name="vpn" path="/vpn/common/vpn.jsp"></forward>
+        </action>
+        <action path="vpn/dn/**" type="vpn.demandNote.VPNDemandNoteAction" name="colocation">
+            <forward name="vpn-dn-preview" path="/vpn/demand-note/vpn-dn-preview.jsp"></forward>
+        </action>
+
+
+        <!--vpn monthly bill-->
+
+        <action path="/vpn/monthly-bill/*" type="vpn.monthlyBill.VPNMonthlyBillAction" name="vpn">
+            <!-- search page -->
+            <forward name="vpn-monthly-bill-search-page"
+                     path="/vpn/monthly-bill/vpn-monthly-bill-search.jsp"></forward>
+            <!-- generate page-->
+            <forward name="vpn-monthly-bill-generate-page"
+                     path="/vpn/monthly-bill/vpn-current-month-bill-generate.jsp"></forward>
+            <!-- check page-->
+            <forward name="vpn-monthly-bill-generation-check"
+                     path="/vpn/monthly-bill/vpn-current-month-bill-generate-check.jsp"></forward>
+        </action>
+
+
+        <!--vpn monthly usage-->
+        <action path="/vpn/monthly-usage/*" type="vpn.monthlyUsage.VPNMonthlyUsageAction" name="vpn">
+            <!-- search page -->
+            <forward name="vpn-monthly-usage-search-page"
+                     path="/vpn/monthly-usage/vpn-monthly-usage-search.jsp"></forward>
+        </action>
+
+
+        <!--vpn monthly bill summary-->
+        <action path="/vpn/monthly-bill-summary/*" type="vpn.monthlyBillSummary.VPNMonthlyBillSummaryAction"
+                name="vpn">
+            <!-- search page -->
+            <forward name="vpn-monthly-bill-summary"
+                     path="/vpn/monthly-bill-summary/vpn-monthly-bill-summary.jsp"></forward>
+        </action>
+
+
+        <!--vpn monthly outsource bill-->
+        <action path="/vpn/monthly-outsource-bill/*" type="vpn.monthlyOutsourceBill.VPNMonthlyOutsourceBillAction"
+                name="vpn">
+            <!-- search page -->
+            <forward name="vpn-monthly-outsourcing-bill-page"
+                     path="/vpn/outsourcing-bill/vpn-oc-bill.jsp"></forward>
+        </action>
+
+
+
+    </action-mappings>
+</struts-config>

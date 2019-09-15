@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+    <form-beans>
+        <form-bean name="location" type="vpn.client.ClientForm"/>
+    </form-beans>
+
+
+    <!--<global-exceptions>-->
+    <!---->
+    <!--</global-exceptions>-->
+
+    <!--&lt;!&ndash; =================================== Global Forward Definitions &ndash;&gt;-->
+
+    <!--<global-forwards>-->
+
+    <!--</global-forwards>-->
+
+    <!-- =================================== Action Mapping Definitions -->
+
+    <action-mappings>
+
+        <action path="location/*" type="location.LocationAction" name="location">
+            <forward name="location" path="/location/location.jsp"/>
+        </action>
+
+        <action path="flow/**" type="flow.FlowAction">
+            <forward name="admin" path="/flow/admin.jsp"/>
+        </action>
+
+        <action path="notification/**" type="notification.NotificationAction">
+            <forward name="admin" path="/flow/admin.jsp"/>
+        </action>
+
+        <action path="eeSearch/**" type="eeSearch.EESearchAction" name="location">
+            <forward name="eeSearch-official-letter" path="/officialLetter/search-official-letter.jsp"/>
+        </action>
+
+        <action path="configuration/**" type="common.action.ConfigurationAction">
+            <forward name="configuration-page" path="/configuration/view.jsp"/>
+        </action>
+        <action path="scheduler/**" type="scheduler.common.SchedulerAction" name="location">
+            <forward name="scheduler-page" path="/scheduler/scheduler.jsp"/>
+        </action>
+
+        <action path="/dashboard**" type="dashboard.DashboardAction">
+            <forward name="dashboard-page" path="/dashboard/dashboard.jsp"/>
+        </action>
+
+        <!--Bill Check Action mapping -->
+        <action path="bill/check/*" type="common.bill.BillCheckAction">
+            <forward name="check-bill-clearance" path="/bill/bill-check.jsp"/>
+        </action>
+        <!--Bill Check Action Mapping End-->
+
+        <action path="client-classification**" type="client.classification.ClientClassificationAction">
+            <forward name="add-client-type-page" path="/client/classification/type/client-type-add.jsp"/>
+            <forward name="add-client-category-page" path="/client/classification/category/client-category-add.jsp"/>
+            <forward name="modify-client-type-page" path="/client/classification/type-modify/client-type-modify.jsp"/>
+            <forward name="modify-client-category-page"
+                     path="/client/classification/category-modify/client-category-modify.jsp"/>
+            <forward name="modify-client-tariff-category-page"
+                     path="/client/classification/tariff-category-modify/client-tariff-category-modify.jsp"/>
+        </action>
+
+        <action path="request-letter**" type="client.requestLetter.RequestLetterAction">
+            <forward name="request-letter-search" path="/client/request-letter/request-letter.jsp"/>
+        </action>
+        <action path="/accounting/**" type="accounting.AccountingAction" name="lliConnection">
+            <forward name="view-incident" path="/accounting/view-incident.jsp"/>
+            <forward name="search-incident" path="/accounting/search-incident.jsp"/>
+            <forward name="search-account-for-ledger" path="/accounting/search-ledger.jsp"/>
+            <forward name="subscriber-ledger" path="/accounting/subscriber-ledger.jsp"/>
+        </action>
+
+
+        <action path="clearance-certificate**" type="client.clearanceCertificate.ClearanceCertificateAction">
+            <forward name="clearance-certificate-search"
+                     path="/client/clearance-certificate/clearance-certificate.jsp"/>
+        </action>
+
+
+        <action path="common/bill/**" type="client.bill.CommonBillAction">
+            <forward name="multiple-monthly-bill-summary" path="/client/bill/multiple-monthly-bill-summary.jsp"/>
+            <forward name="final-monthly-bill-summary" path="/client/bill/final-monthly-bill-summary.jsp"/>
+        </action>
+
+
+        <!-- =============================== CLIENT =============================== -->
+        <action path="/Client/**" type="client.ClientAction">
+            <forward name="getClientRegistration" path="/client-new/newClient.jsp"/>
+            <!--step-1: Email, Phone number  taken as input-->
+            <forward name="getClientRegistrationStep2" path="/client/client/email-phone_number-input-form.jsp"/>
+            <!--step-2: verification of the information above-->
+            <forward name="reg-verification-page" path="/client/client/email-phone-verification-form.jsp"/>
+            <!--step-3: newClient_Step2.jsp loaded-->
+            <forward name="get-reg-form" path="/client/client/newClient_Step2.jsp"/>
+            <forward name="postClientUpdateSuccess" path="/GetClientForView.do" redirect="true"/>
+            <forward name="postClientUpdateError" path="/GetClientForEdit.do" redirect="true"/>
+            <!--<forward name="temporaryClientAdded" path="/get-verification-page.do" redirect="true"/>-->
+            <forward name="postClientAddSuccess" path="/GetClientForView.do" redirect="true"/>
+            <forward name="postClientAddError" path="/Client/Add.do" redirect="true"/>
+            <forward name="getClientAdd" path="/client/client/clientAdd.jsp" redirect="false"/>
+            <forward name="registrationError" path="/Client/Registration.do" redirect="true"/>
+            <forward name="login" path="/" redirect="true"/>
+        </action>
+
+
+        <!-- =============================== CLIENT DOCUMENT=============================== -->
+
+        <action path="/client-document-type/**" type="clientdocument.ClientDocumentAction">
+            <!--<forward name="getClientRegistration" path="/client-new/newClient.jsp"/>-->
+        </action>
+
+    </action-mappings>
+</struts-config>

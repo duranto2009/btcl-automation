@@ -1,0 +1,478 @@
+.page-content-wrapper .page-content.highlight-header {
+	margin-left: 15px !important;
+	margin-right: 15px !important;
+}
+.page-header.navbar.highlight-header{
+	padding: 25px; 
+	height: 130px !important;
+}
+.page-container.highlight-header{
+	margin-top: 0px auto;
+}
+/***********color************/
+.green-btcl{
+	background-color: #26c281 !important;
+}
+.green-light-btcl{
+	background-color: #bfdfaa !important;
+}
+/**icons*/
+i.icons{
+	color:  #26c281 !important;
+}
+i.icons:hover{
+	color:  #449844 !important;
+}
+i.icons{
+	font-size: 20pt;
+	vertical-align: middle;
+}
+i.icons.triangle{
+	font-size: 14pt;
+	vertical-align: middle;
+}
+/**global link**/
+a {
+    color: #1ba39c;
+}
+
+/*******header tags****/
+.h1, .h2, .h3, h1, h2, h3{
+	margin-top: 10px !important;
+	margin-bottom: 10px !important;
+}
+/*************label*************/
+.label{
+	
+}
+.label-btcl{
+	
+}
+.label-default{
+	
+}
+.label-primary{
+	
+}
+.label-success{
+	
+}
+.label-info{
+	
+}
+.label-warning{
+	
+}
+.label-danger{
+	
+}
+/************text*******************/
+.text-muted{
+	
+}
+.text-muted-btcl{
+	
+}
+.text{
+	
+}
+.text-btcl{
+	
+}
+/************active*******************/
+.active-btcl{
+	
+}
+/************btn*******************/
+.btn{
+	
+}
+.btn-btcl{
+	background-color: #1BBC9B !important;
+	border-color: #1BBC9B !important;
+	color: #fff;
+}
+.btn-btcl:hover, .btn-btcl:active, .btn-btcl:focus, .btn-btcl:target{
+	background-color: #158f76 !important;
+	border-color: #158f76 !important;
+	color: #fff;
+}
+.btn-warning-btcl{
+	background-color: #f0ad4e !important;
+	border-color: #eea236 !important;
+	color: #fff;
+}
+.btn-warning-btcl:hover, .btn-warning-btcl:active, .btn-warning-btcl:focus, .btn-warning-btcl:target{
+	background-color: #ec971f !important;
+	border-color: #d58512 !important;
+	color: #fff;
+}
+.btn-danger-btcl{
+	background-color: #d9534f  !important;
+	border-color: #d43f3a !important;
+	color: #fff;
+}
+.btn-danger-btcl:hover, .btn-danger-btcl:active, .btn-danger-btcl:focus, .btn-danger-btcl:target{
+	background-color: #c9302c  !important;
+	border-color: #ac2925 !important;
+	color: #fff;
+}
+/******newly added 08-05-2017****/
+.btn-back-btcl{
+	background-color: #f0ad4e !important;
+	border-color: #eea236 !important;
+	color: #fff;
+}
+.btn-back-btcl:hover, .btn-back-btcl:active, .btn-back-btcl:focus, .btn-back-btcl:target{
+	background-color: #ec971f !important;
+	border-color: #d58512 !important;
+	color: #fff;
+}
+.btn-print-btcl{
+	/*use btn-default*/
+}
+
+.btn-edit-btcl{
+	background-color: #578ebe !important;
+	border-color:#578ebe !important;
+	color: #fff;
+}
+.btn-edit-btcl:hover, .btn-edit-btcl:active, .btn-edit-btcl:focus, .btn-edit-btcl:target{
+	background-color: #3f74a3 !important;
+	border-color: #3f74a3 !important;
+	color: #fff;
+}
+/******end newly added 08-05-2017****/
+
+/**************btn action********************/
+.btn-submit-btcl{
+	background-color: #1BBC9B !important;
+	border-color:#1BBC9B !important;
+	color: #fff;
+	border-radius: 25px !important;
+}
+.btn-submit-btcl:hover, .btn-submit-btcl:active, .btn-submit-btcl:focus, .btn-submit-btcl:target{
+	background-color: #158f76 !important;
+	border-color: #158f76 !important;
+	color: #fff;
+}
+.btn-submit2-btcl{
+	background-color: #578ebe !important;
+	border-color:#578ebe !important;
+	color: #fff;
+	border-radius: 25px !important;
+}
+.btn-submit2-btcl:hover, .btn-submit2-btcl:active, .btn-submit2-btcl:focus, .btn-submit2-btcl:target{
+	background-color: #3f74a3 !important;
+	border-color: #3f74a3 !important;
+	color: #fff;
+}
+.btn-reset-btcl{
+	background-color: #fff  !important;
+	border-color: #ccc  !important;
+	color: #333;
+	border-radius: 25px !important;
+}
+.btn-reset-btcl:hover, .btn-reset-btcl:active, .btn-reset-btcl:focus, .btn-reset-btcl:target{
+	background-color: #95A5A6  !important;
+	border-color:#95A5A6  !important;
+	color: #fff;
+}
+.btn-cancel-btcl{
+	background-color: #f0ad4e  !important;
+	border-color: #eea236  !important;
+	color: #fff;
+	border-radius: 25px !important;
+}
+.btn-cancel-btcl:hover, .btn-cancel-btcl:active, .btn-cancel-btcl:focus, .btn-cancel-btcl:target{
+	background-color: #ec971f  !important;
+	border-color:#d58512  !important;
+	color: #fff;
+}
+.btn-delete-btcl{
+	background-color: #d9534f  !important;
+	border-color: #d9534f !important;
+	color: #fff;
+	border-radius: 25px !important;
+}
+.btn-delete-btcl:hover, .btn-delete-btcl:active, .btn-delete-btcl:focus, .btn-delete-btcl:target{
+	background-color: #c9302c  !important;
+	border-color: #ac2925 !important;
+	color: #fff;
+}
+.btn-search-btcl{
+	background-color: #1BBC9B !important;
+	border-color: #1BBC9B !important;
+	color: #fff;
+	border-radius: 25px !important;
+}
+.btn-search-btcl:hover, .btn-search-btcl:active, .btn-search-btcl:focus, .btn-search-btcl:target{
+	background-color: #158f76 !important;
+	border-color: #158f76 !important;
+	color: #fff;
+}
+.btn.btn-outline.grey-mint{
+	border: 1px solid #c2cad8;
+}
+.input-group{
+	
+}
+.input-group-btn{
+	
+}
+.btn-group-justified{
+	
+}
+/**badge*/
+
+.badge{
+	
+}
+.badge-btcl{
+	
+}
+/**close and caption**/
+.caption{
+	
+}
+.caption-btcl{
+	
+}
+.close{
+	
+}
+.close-btcl{
+	
+}
+/**alert**/
+.alert-btcl{
+	
+}
+.alert-link-btcl{
+	
+}
+.alert-warning-btcl{
+	
+}
+.alert-danger-btcl{
+	
+}
+.alert-dismissable-btcl{
+	
+}
+
+/********** panel************/
+.panel-btcl{
+	border-color: #26c281 !important;
+}
+.panel-btcl >.panel-body{
+	
+}
+.panel-btcl > .panel-heading{
+	background-color: #26c281;
+    border-color: #26c281;
+    color:	#fff;
+}
+.panel-btcl > .panel-title{
+	color: #fff;
+}
+.panel-btcl > .panel-footer{
+	
+}.
+.panel-btcl .panel-body >tr td:first-child, tr th:first-child{
+	color: #333;
+    font-weight: bold:
+    font-size: 16px;
+}
+.panel-btcl.light{
+	border-color:  #bfdfaa !important;
+}
+.panel-btcl.light> .panel-body{
+}
+.panel-btcl.light> .panel-heading{
+	background-color: #bfdfaa;
+    border-color: #bfdfaa;
+    color:	#fff;
+}
+
+/*******portlet******/
+.portlet-btcl.box{
+	// border: 1px solid #26c281 !important;
+}
+.portlet-btcl.box>.portlet-title {
+   background-color: #1BBC9B !important;
+   border-color: #1BBC9B !important;
+   color: #fff;
+}
+.portlet-btcl.box>.portlet-title>.caption>i {
+   color: #fff;
+}
+.portlet-btcl.box.portlet-body{
+	
+}
+
+/****light portlet(2nd portlet in same page)****/
+.portlet-btcl.box.light{
+	// border: 1px solid #bfdfaa !important;
+}
+.portlet-btcl.box.light>.portlet-title {
+   background-color: #bfdfaa !important;
+   border-color: #bfdfaa !important;
+   color: #fff;
+}
+
+.portlet-btcl.box.light>.portlet-title>.caption>i {
+   color: #fff;
+}
+.portlet-btcl.box.light> .portlet-body {
+	padding: 8px !important;
+}
+.portlet > .portlet-title{
+	min-height: 35px !important;
+}
+.portlet.box > .portlet-title > .caption, .portlet > .portlet-title > .tools{
+	padding: 8px 0 !important;
+}
+.portlet > .portlet-title > .nav-tabs > li > a{
+	margin: 1px 0 0 1px !important;
+	padding: 7px 10px !important;
+}
+.portlet > .portlet-title > .caption{
+	/*padding: 0px !important;*/
+}
+.portlet.box > .portlet-title > .actions{
+	padding-top: 3px !important;
+	padding-bottom: 3px !important;
+}
+/*******modal********/
+.modal-btcl{
+	
+}
+.modal-btcl> .modal-dialog{
+	
+}
+.modal-btcl>.modal-content{
+	
+}
+.modal-btcl>.modal-backdrop{
+	
+}
+.modal-btcl>.modal-header{
+	
+}
+.modal-btcl>.modal-title{
+	
+}
+.modal-btcl>.modal-body{
+	
+}
+.modal-btcl>.modal-footer{
+	
+}
+/**table**/
+.table-btcl > thead> tr{
+	background-color: #e7ecf1;
+}
+
+/*****row and div*****/
+.row.no-gutter {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.clear-left{
+	margin-left:0px; 
+	padding-left: 0px;
+}
+.clear-right{
+	margin-right:0px; 
+	padding-right: 0px;
+}
+.clear-both{
+	margin-right:0px; 
+	padding-right: 0px;
+}
+/*****layout*****/
+h3.header-btcl{
+	border-bottom: 1px solid #eef1f5;
+	margin: 5px 0px;
+	clear: both;
+	padding-bottom: 5px;
+}
+ .form-horizontal .contact-info .control-label{
+	text-align: left !important;
+}
+/****table related css*****/
+tbody tr th:first-child { width: 25%; !important }
+
+/****custom form control*****/
+.form-group {
+    margin-bottom: 8px !important;
+}
+.form-control {
+    height: 34px !important;
+    padding: 4px 8px !important;
+    border: 1px solid #e6e6e6;
+}
+.input-icon > .form-control{
+	padding-left: 33px !important;
+}
+.intl-tel-input.separate-dial-code.iti-sdc-4 input, .intl-tel-input.separate-dial-code.iti-sdc-4 input[type=text], .intl-tel-input.separate-dial-code.iti-sdc-4 input[type=tel]{
+    padding-left: 90px !important;
+}
+textarea.form-control {
+    height: auto !important;
+}
+.form .form-body, .portlet-form .form-body {
+    padding: 10px 20px !important;
+}
+hr, p {
+    margin: 5px 0 !important;
+}
+.form .form-section, .portlet-form .form-section{
+	margin: 10px !important;
+}
+.form .form-actions, .portlet-form .form-actions{
+	padding: 8px;
+}
+
+/* unnecessary modification - default is already beautiful
+.table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th{
+	 background: #e7ecf1 none repeat scroll 0 0; 
+}
+.table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th{
+	font-size: 15px;
+}
+
+.table > tbody > tr > td{
+	font-size: 14px;
+}
+*/
+ th > .h1,  th > .h2,  th >  .h3, th > h1,  th > h2,  th > h3 {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+}
+
+/*Dhrubo*/
+	/*JQUERY UI Autocomplete Color Change*/ 
+.ui-state-hover,.ui-widget-content .ui-state-hover,.ui-widget-header .ui-state-hover,.ui-state-focus,.ui-widget-content .ui-state-focus,.ui-widget-header .ui-state-focus {
+    border: 1px solid #1BBC9B;
+    background: #1BBC9B;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.ui-state-hover a,.ui-state-hover a:hover,.ui-state-hover a:link,.ui-state-hover a:visited,.ui-state-focus a,.ui-state-focus a:hover,.ui-state-focus a:link,.ui-state-focus a:visited {
+    color: #FFFFFF;
+    text-decoration: none
+}
+	/*Form Inut Modification*/
+p.form-control {
+	border: none;
+	max-height:34px !important;
+}

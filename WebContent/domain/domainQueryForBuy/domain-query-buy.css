@@ -1,0 +1,87 @@
+.my-group .form-control {
+	width: 50%;
+	border-radius: 40px !important;
+}
+
+.my-group-button {
+	border-radius:34px!important;
+}
+
+.tooltip {
+	background-color: #000;
+	border: 1px solid #fff;
+	padding: 10px 15px;
+	min-width: 200px;
+	max-width: 500px;
+	display: none;
+	color: #fff;
+	text-align: left;
+	font-size: 8px;
+	position: right;
+	/* outline radius for mozilla/firefox only */
+	-moz-box-shadow: 0 0 9px #000;
+	-webkit-box-shadow: 0 0 9px #000;
+}
+
+.lr-no-padding {
+	padding: 0 !important;
+}
+
+.modal-overflow .modal-body {
+	max-height: 400px !important;
+	overflow-y: scroll;
+}
+
+.modal.fade.in {
+	top: -5% !important;
+}
+
+@media screen and (max-width: 480px) {
+	.modal-body, .modal-overflow .modal-body {
+		max-height: 250px !important;
+		overflow-y: scroll;
+		overflow: auto !important;
+	}
+}
+
+.custom th {
+	width: 50%;
+}
+table.inlinekbtable tbody tr {
+	border: 1px solid #cfcfcf;
+}
+
+table.inlinekbtable tbody td {
+	background: #333;
+	padding: 5px;
+	font-weight: normal;
+	font-size: 1.3em;
+	color: #fff;
+	font-family: SolaimanLipi, AponaLohit, Bangla, Siyam Rupali, Likhan,
+		Vrinda, Verdana, Helvetica, Arial, Sans-serif;
+	cursor: pointer;
+	text-align: center !important;
+	width: 50px;
+	height: 38px;
+}
+
+table.inlinekbtable tbody td:hover {
+	background-color: #D0D7BC !important;
+	color: #000000;
+}
+
+.popover {
+	max-width: 500px;
+}
+
+
+.modal {
+  padding: 0!important;
+  width: 600px !important;
+}
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  margin: 0px auto;
+}

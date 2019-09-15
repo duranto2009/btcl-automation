@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="an" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c92e1140-77ba-4e49-b96e-9b5c62999723">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<parameter name="an_status" class="java.lang.String"/>
+	<parameter name="an_number" class="java.lang.String"/>
+	<parameter name="an_date" class="java.lang.String"/>
+	<parameter name="an_title" class="java.lang.String"/>
+	<parameter name="an_to" class="java.lang.String"/>
+	<parameter name="an_sender_name" class="java.lang.String"/>
+	<parameter name="an_cc_list" class="java.util.List"/>
+	<parameter name="an_sender_designation" class="java.lang.String"/>
+	<parameter name="an_letter_body" class="java.lang.String"/>
+	<parameter name="prev_client_full_name" class="java.lang.String"/>
+	<parameter name="prev_client_user_name" class="java.lang.String"/>
+	<parameter name="prev_client_mobile" class="java.lang.String"/>
+	<parameter name="prev_client_billing_address" class="java.lang.String"/>
+	<parameter name="prev_client_type" class="java.lang.String"/>
+	<parameter name="prev_client_category" class="java.lang.String"/>
+	<parameter name="prev_client_isp_license_type" class="java.lang.String"/>
+	<parameter name="app_id" class="java.lang.String"/>
+	<parameter name="app_type" class="java.lang.String"/>
+	<parameter name="dn_id" class="java.lang.String"/>
+	<parameter name="dn_generation_date" class="java.lang.String"/>
+	<parameter name="dn_status" class="java.lang.String"/>
+	<parameter name="dn_amount" class="java.lang.String"/>
+	<parameter name="payment_id" class="java.lang.String"/>
+	<parameter name="payment_date" class="java.lang.String"/>
+	<parameter name="payment_amount" class="java.lang.String"/>
+	<parameter name="payment_bank" class="java.lang.String"/>
+	<parameter name="payment_branch" class="java.lang.String"/>
+	<parameter name="payment_type" class="java.lang.String"/>
+	<parameter name="is_bank_payment" class="java.lang.Boolean"/>
+	<parameter name="payment_medium" class="java.lang.String"/>
+	<parameter name="connection_detail_link" class="java.lang.String"/>
+	<parameter name="number_of_connections" class="java.lang.String"/>
+	<parameter name="total_regular_bw" class="java.lang.String"/>
+	<parameter name="total_long_term_bw" class="java.lang.String"/>
+	<parameter name="total_cache_bw" class="java.lang.String"/>
+	<parameter name="current_client_full_name" class="java.lang.String"/>
+	<parameter name="current_client_user_name" class="java.lang.String"/>
+	<parameter name="current_client_mobile" class="java.lang.String"/>
+	<parameter name="current_client_billing_address" class="java.lang.String"/>
+	<parameter name="current_client_type" class="java.lang.String"/>
+	<parameter name="current_client_category" class="java.lang.String"/>
+	<parameter name="current_client_isp_license_type" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="146" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="450" height="80" uuid="13ec771e-66db-48a0-98ac-3ea6b255523c"/>
+				<image hAlign="Center" vAlign="Middle">
+					<reportElement x="0" y="0" width="450" height="80" uuid="ebd0f98e-1f5e-4208-bd5c-1165c6f454de"/>
+					<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+				</image>
+			</frame>
+			<textField>
+				<reportElement x="480" y="0" width="75" height="30" uuid="2ab7e0d5-f74f-4035-b5e5-c7cabb169357"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{an_status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="40" width="105" height="44" uuid="9cb67657-8b27-4874-af8b-d8a725f4d409"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Advice Note No: " + $P{an_number} + "\nDate: " + $P{an_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="84" width="555" height="30" forecolor="#0000FF" uuid="9c23054b-0f9b-43f7-bb4e-96080c50b9bd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{an_title}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="115" width="555" height="26" uuid="fdb915e4-5c9a-43f5-82bd-9e0bae057001"/>
+				<subreportParameter name="an_cc_list">
+					<subreportParameterExpression><![CDATA[$P{an_cc_list}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="an_to">
+					<subreportParameterExpression><![CDATA[$P{an_to}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="an_letter_body">
+					<subreportParameterExpression><![CDATA[$P{an_letter_body}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="an_sender_designation">
+					<subreportParameterExpression><![CDATA[$P{an_sender_designation}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="an_sender_name">
+					<subreportParameterExpression><![CDATA[$P{an_sender_name}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{an_cc_list})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["nix/connectionAN/sub1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+	<detail>
+		<band height="417" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="5" width="554" height="412" uuid="95d71e2a-568e-46ac-bc05-a01275cdabbb"/>
+				<frame>
+					<reportElement x="0" y="0" width="554" height="80" uuid="23e2c226-dc12-4b64-bdd5-02714e14bad9"/>
+					<textField>
+						<reportElement x="0" y="0" width="280" height="16" uuid="e9b7205b-31d0-4879-a60e-a4add822ff53"/>
+						<textElement>
+							<font size="12" isBold="true" isUnderline="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Previous Client Information"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="0" y="16" width="78" height="51" uuid="36ec412a-91c7-4d4b-b57b-55e011eb86d8"/>
+						<textFieldExpression><![CDATA["Full Name" + "\n"
++ "User Name" + "\n"
++ "Mobile Number" + "\n"
++ "Billing Address" + "\n"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="80" y="16" width="200" height="64" uuid="8b377fd6-aa79-4715-996e-6fc75a76bf46"/>
+						<textFieldExpression><![CDATA[": " + $P{prev_client_full_name} + "\n"
++ ": " + $P{prev_client_user_name} + "\n"
++ ": " + $P{prev_client_mobile} + "\n"
++ ": " + $P{prev_client_billing_address} + "\n"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="299" y="16" width="100" height="51" uuid="5df9463d-5f2b-4bb0-bb6a-f693f7e3cc60"/>
+						<textFieldExpression><![CDATA["Type" + "\n" + 
+"Category" + "\n" + 
+"ISP License Type"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="399" y="16" width="155" height="51" uuid="9f978bbd-4025-4471-9089-9d056730f5a1"/>
+						<textFieldExpression><![CDATA[": " + $P{prev_client_type} + "\n"
++ ": " + $P{prev_client_category} + "\n"
++ ": " + $P{prev_client_isp_license_type}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="180" width="280" height="42" uuid="65487a0b-9bd1-4c3e-9ec2-0ab06ef2f961"/>
+					<textField>
+						<reportElement x="0" y="0" width="280" height="16" uuid="1b673ded-21c9-4225-92f5-95799c84b46a"/>
+						<textElement>
+							<font size="12" isBold="true" isUnderline="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Application Information"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="0" y="16" width="78" height="26" uuid="954f4626-3778-40f6-bff2-c92da594b9d6"/>
+						<textFieldExpression><![CDATA["ID" + "\n"
++ "Type"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="80" y="16" width="200" height="26" uuid="605382b6-a5cb-4f11-9df6-db849a11ef67"/>
+						<textFieldExpression><![CDATA[": " + $P{app_id} + "\n"
++ ": " + $P{app_type}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="340" width="275" height="67" uuid="b8aea186-f12f-4bcf-94b4-1bacaf5d6d62"/>
+					<textField>
+						<reportElement x="0" y="0" width="275" height="16" uuid="2433541c-e44e-45ab-8ebb-26a4b6260d67"/>
+						<textElement>
+							<font size="12" isBold="true" isUnderline="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Demand Note Information"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="0" y="16" width="78" height="51" uuid="dbc7dade-0e2b-47c6-960d-3efaebb3e8a3"/>
+						<textFieldExpression><![CDATA["ID" + "\n"
++ "Generation Date"+ "\n"
++ "Amount (BDT)"+ "\n"
++ "Status"+ "\n"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="80" y="16" width="195" height="51" uuid="21f71498-29cd-4b6e-a578-17933c414f9d"/>
+						<textFieldExpression><![CDATA[": " + ($P{dn_id} == null ? "N/A":$P{dn_id}) + "\n"
++ ": " + ($P{dn_generation_date} == null ? "N/A" : $P{dn_generation_date}) + "\n"
++ ": " + ($P{dn_amount} == null ? "N/A" : $P{dn_amount} )+ "\n"
++ ": " + ($P{dn_status} == null ? "N/A" : $P{dn_status})]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="280" y="180" width="272" height="130" uuid="05e0bb20-0634-47e7-a1b8-ec7966cfb323"/>
+					<textField>
+						<reportElement x="2" y="0" width="268" height="16" uuid="5dfcf3f8-df83-4cf9-b11d-930c0e29ff3c"/>
+						<textElement>
+							<font size="12" isBold="true" isUnderline="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Payment Information"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="2" y="16" width="74" height="116" uuid="147f3906-410f-4299-a623-0560d8187afd"/>
+						<textFieldExpression><![CDATA["ID" + "\n"
++ "Date"+ "\n"
++ "Amount (BDT)"+ "\n"
++ "Type"+ "\n"
++ "Medium" + "\n"
++( null == $P{is_bank_payment} ? "" : 
+($P{is_bank_payment} ?   "Bank\nBranch" : "") )]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="79" y="16" width="191" height="114" uuid="8d8fcd24-63a2-4ab4-b438-4c566bcaa1ad"/>
+						<textFieldExpression><![CDATA[": " + ($P{payment_id} ==null?"N/A":$P{payment_id} )+ "\n"
++ ": " + ($P{payment_date}  == null ?"N/A" : $P{payment_date} )+ "\n"
++ ": " + ($P{payment_amount} ==null ?"N/A":$P{payment_amount} )+ "\n"
++ ": " + ($P{payment_type} ==null?"N/A":$P{payment_type} )+ "\n"
++ ": " + ($P{payment_medium} == null ? "N/A" : $P{payment_medium} )+ "\n"
++ ( null == $P{is_bank_payment} ? "": 
+	  ($P{is_bank_payment} ? ": " + $P{payment_bank} + "\n" + ": "+$P{payment_branch} : "")
+	)]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="260" width="280" height="70" uuid="329b1236-81ff-4e73-a202-05690fc0e725"/>
+					<textField>
+						<reportElement x="0" y="0" width="280" height="16" uuid="a77ac6e9-1b4a-41d6-a261-2b7741d3be52"/>
+						<textElement>
+							<font size="12" isBold="true" isUnderline="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Connection Information"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="0" y="16" width="110" height="14" uuid="fcdc9e5c-baca-4bf4-ab9a-66a3148ad58e"/>
+						<textFieldExpression><![CDATA["No. of Connections"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="110" y="16" width="170" height="14" uuid="46db0167-2ce3-47d9-aaaf-ed825fabe043"/>
+						<textElement markup="html"/>
+						<textFieldExpression><![CDATA[": " + $P{number_of_connections} + "<br>"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="0" y="30" width="110" height="24" uuid="a81645ce-1b36-4b13-bbbf-a56dde6c8179"/>
+						<textFieldExpression><![CDATA["Detail Link" + "\n"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="110" y="30" width="170" height="24" forecolor="#3C43C7" uuid="016b9a6a-eafc-471b-901a-56b13ac18caf"/>
+						<textElement markup="html"/>
+						<textFieldExpression><![CDATA[": <a href='" + $P{connection_detail_link} + "' target='_blank''>Page Link</a>"]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="85" width="554" height="80" uuid="c75cf683-6d35-44b6-9faf-1bdb5177ad2d"/>
+					<textField>
+						<reportElement x="0" y="0" width="280" height="16" uuid="c5703f7c-e09f-4c07-8fce-f4b1cc5b058f"/>
+						<textElement>
+							<font size="12" isBold="true" isUnderline="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Current Client Information"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="0" y="16" width="78" height="51" uuid="2bb2cdfe-f835-4463-b0cc-357d440b7c42"/>
+						<textFieldExpression><![CDATA["Full Name" + "\n"
++ "User Name" + "\n"
++ "Mobile Number" + "\n"
++ "Billing Address" + "\n"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="80" y="16" width="200" height="64" uuid="3d0a5fc4-f3fc-4663-9dd7-0c3fec581b62"/>
+						<textFieldExpression><![CDATA[": " + $P{current_client_full_name} + "\n"
++ ": " + $P{current_client_user_name} + "\n"
++ ": " + $P{current_client_mobile} + "\n"
++ ": " + $P{current_client_billing_address} + "\n"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="299" y="16" width="100" height="51" uuid="8ee8bd0b-f046-488f-a1a8-b1d37247692e"/>
+						<textFieldExpression><![CDATA["Type" + "\n" + 
+"Category" + "\n" + 
+"ISP License Type"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="399" y="16" width="155" height="51" uuid="e1dc8d21-9ee7-4171-9294-e97f66f6767c"/>
+						<textFieldExpression><![CDATA[": " + $P{current_client_type} + "\n"
++ ": " + $P{current_client_category} + "\n"
++ ": " + $P{current_client_isp_license_type}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="24">
+			<textField>
+				<reportElement x="405" y="0" width="150" height="20" uuid="189d30f3-5424-4afa-ab5c-f7590b52f510"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,8 @@
+1. We will maintain git branch module wise(like-nix,colocation,lli etc)
+2. Master will hold marged code of different branch
+3. Client_SQA_issues branch will be used to solve any issue of SQA portal
+4. Any time before issue fix take update of master to client SQA issues.
+5. if anyone need branch he will create branch locally then marge in the respected 
+module branch after his work and push it to git. he must not push his local branch to git.
+6. During development of module, module wise bug will be fixed on respected module wise branch, 
+client_SQA issues will be used only after deployment of a module to server.
